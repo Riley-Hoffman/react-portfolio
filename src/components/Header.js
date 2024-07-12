@@ -14,7 +14,7 @@ function Header() {
             <div className="max-1200px flex" style={{ alignItems: 'center' }}>
                 <div>
                     <div className="logo">
-                        <NavLink to="/" style={{ textDecoration: 'none', display: 'block' }} activeclasscame="active">
+                        <NavLink to="/" style={{ textDecoration: 'none', display: 'block' }} activeclassname="active">
                             <p className="text-halfbold text-center text-uppercase" style={{ color: '#212738', fontFamily: '"Karla", sans-serif', margin: '0', padding: '0 0 0 10px', fontSize: '18px' }}>Riley Hoffman <span className="sr-only"> Home</span></p>
                         </NavLink>
                     </div>
@@ -23,22 +23,22 @@ function Header() {
                     <Hamburger />         
                     <ul className="flex block-700" style={{ alignItems: 'center' }} >
                         <li>
-                            <NavLink className="button" to="/" activeclasscame="active">
+                            <NavLink className="button" to="/" activeclassname="active">
                                 Home
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/projects" activeclasscame="active">
+                            <NavLink className="button" to="/projects" activeclassname="active">
                                 Projects
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/skills" activeclasscame="active">
+                            <NavLink className="button" to="/skills" activeclassname="active">
                                 Skills
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/contact" activeclasscame="active">
+                            <NavLink className="button" to="/contact" activeclassname="active">
                                 Contact
                             </NavLink>
                         </li>
