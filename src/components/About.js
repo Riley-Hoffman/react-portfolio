@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import ParticleGame from './ParticleGame';
 import '../styles/_particleGame.scss';
 import riley from '../assets/riley.png'
+import thumbnail from '../assets/thumbnail.jpg'
 import pinkCloud from '../assets/pink-cloud.jpg'
 
 function About() {
@@ -33,6 +34,7 @@ function About() {
         <div id="content"> 
                 <Helmet>
                     <title>Riley Hoffman - Web Developer</title>
+                    <meta property="og:image" content={thumbnail}></meta>
                     <meta name="description" content="I'm a front-end developer focused on building accessible and responsive web applications. My background in technical troubleshooting and customer service gave me experience responding to user experience, and a wide variety of software and communication skills." />
                     <link rel="canonical" href="https://rileyhoffman.com/" />
                 </Helmet>  
