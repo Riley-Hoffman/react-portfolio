@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ParticleGame from './ParticleGame';
 import '../styles/_particleGame.scss';
@@ -44,7 +44,7 @@ function About() {
                             <p style={{ marginTop: '30px' }}>I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
                         </div>
                         <div className="max-40 min-40 text-center">
-                            <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" class='max-300px' style={{ marginRight: '0', paddingTop: '20px', opacity: 0.9, display: 'inline-block' }}/>  
+                            <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className='max-300px' style={{ marginRight: '0', paddingTop: '20px', opacity: 0.9, display: 'inline-block' }}/>  
                         </div>
                     </div>
                 </div>   

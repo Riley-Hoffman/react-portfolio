@@ -3,7 +3,7 @@ function Form() {
     return (
         <form className="max-700px" action="https://formspree.io/f/xwkyonza" method="POST" style={{ padding: '20px 20px 40px' }}>
             <fieldset>
-                <legend class="sr-only">Contact Form</legend>
+                <legend className="sr-only">Contact Form</legend>
                 <div className="block-800" style={{ paddingBottom: '20px' }}>
                     <div className="flex block-800" style={{ paddingBottom: '10px', alignItems: 'center', justifyContent: 'space-between' }}>
                         <label htmlFor="name">Name:</label>

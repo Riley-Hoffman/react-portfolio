@@ -2,6 +2,7 @@
   "name": "riley-hoffman-portfolio",
   "version": "0.2.0",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -46,5 +47,17 @@
   "devDependencies": {
     "file-loader": "^6.2.0",
     "sass": "^1.44.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riley-Hoffman/react-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Riley-Hoffman/react-portfolio/issues"
   }
 }

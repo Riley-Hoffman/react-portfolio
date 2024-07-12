@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal } from '@fortawesome/free-solid-svg-icons'
 import { faLessThan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -220,7 +220,7 @@ const ParticleGame = () => {
       <h2 style={{ display: 'inline-block', backgroundImage: 'linear-gradient(90deg, #7868BF 0%, #ae4971 50%, #794e8e 70%)', color: 'white', padding: '0 5px', margin: '0 20px', fontFamily: '"Inconsolata", monospace' }}>Latest Project!</h2>
       <h3 className="text-40">Particle Animation Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
-      <ol class="flex block-500 numbered-icons medals">
+      <ol className="flex block-500 numbered-icons medals">
         <li className="text-26"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</li>
         <li className="text-26">15s-20s &nbsp;&nbsp;</li>
         <li className="text-26">21s-25s &nbsp;&nbsp;</li>
@@ -229,7 +229,7 @@ const ParticleGame = () => {
         <div ref={containerRef} className="width-100 particle-game overlay" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
           <canvas ref={canvasRef} style={{ display: 'block', position: 'absolute', top: 0, left: 0 }} />
           <div style={{ height: '100%' }}>
-            {allCleanRef.current && <div><p className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}}>All clean! <small>Time taken: <span class="text-halfbold">{displayTime} seconds</span></small> <span className="text-bold text-uppercase">{ medalDetails() && ( <span className="text-26"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
+            {allCleanRef.current && <div><p className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}}>All clean! <small>Time taken: <span className="text-halfbold">{displayTime} seconds</span></small> <span className="text-bold text-uppercase">{ medalDetails() && ( <span className="text-26"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
             </div>}
           </div>
         </div>
