@@ -35,7 +35,7 @@ function About() {
                 <Helmet>
                     <title>Riley Hoffman - Web Developer</title>
                     <meta property="og:image" content={thumbnail}></meta>
-                    <meta name="description" content="I'm a front-end developer focused on building accessible and responsive web applications. My background in technical troubleshooting and customer service gave me experience responding to user experience, and a wide variety of software and communication skills." />
+                    <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                     <link rel="canonical" href="https://rileyhoffman.com/" />
                 </Helmet>  
                 <div className="gradient-border overlay" ref={containerRef} style={{ backgroundColor: '#f9ddda', backgroundImage: `url(${pinkCloud})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', borderBottom: '7px solid'}}>
