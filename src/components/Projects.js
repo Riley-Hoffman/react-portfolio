@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ProjectBox from './ProjectBox';
 import '../styles/_projects.scss';
 import thumbnail from '../assets/thumbnail.jpg'
@@ -58,21 +58,23 @@ const Projects = () => {
 
 
   return (
-    <div id="content" className="max-1200px" style={{ padding: '100px 0'}}>
-        <Helmet>
-            <title>Projects - Riley Hoffman - Web Developer</title>
-            <meta property="og:image" content={thumbnail}></meta>
-            <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
-            <link rel="canonical" href="https://rileyhoffman.com/project/" />
-        </Helmet>  
-        <h1 className="text-40">Projects</h1>
-        <ul style={{ listStyle: 'none', padding: '0 20px', position: 'relative' }}>
-            {projects.map((project, index) => (
-                <ProjectBox key={index} {...project} />
-                
-            ))}
-        </ul>
-    </div>
+    <HelmetProvider context={Projects}>
+      <div id="content" className="max-1200px" style={{ padding: '100px 0'}}>
+          <Helmet>
+              <title>Projects - Riley Hoffman - Web Developer</title>
+              <meta property="og:image" content={thumbnail}></meta>
+              <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
+              <link rel="canonical" href="https://rileyhoffman.com/project/" />
+          </Helmet>  
+          <h1 className="text-40">Projects</h1>
+          <ul style={{ listStyle: 'none', padding: '0 20px', position: 'relative' }}>
+              {projects.map((project, index) => (
+                  <ProjectBox key={index} {...project} />
+                  
+              ))}
+          </ul>
+      </div>
+    </HelmetProvider>
   );
 };
 

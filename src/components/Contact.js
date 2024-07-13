@@ -1,10 +1,11 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Form from './Form';
 import thumbnail from '../assets/thumbnail.jpg'
 
 function Contact() {
     return (
-        <div id="content" className="max-700px" style={{ padding: '100px 0 18vh'}}> 
+        <HelmetProvider context={Contact}>
+            <div id="content" className="max-700px" style={{ padding: '100px 0 18vh'}}> 
                 <Helmet>
                     <title>Contact - Riley Hoffman - Web Developer</title>
                     <meta property="og:image" content={thumbnail}></meta>
@@ -13,7 +14,8 @@ function Contact() {
                 </Helmet>     
                 <h1 className="text-40">Contact Me</h1>
                 <Form/>
-        </div>
+            </div>
+        </HelmetProvider>      
     )
 }
 

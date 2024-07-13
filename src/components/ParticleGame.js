@@ -215,7 +215,7 @@ const ParticleGame = () => {
 
   return (
     <div>
-      <h2 style={{ display: 'inline-block', backgroundImage: 'linear-gradient(90deg, #7868BF 0%, #ae4971 50%, #794e8e 70%)', color: 'white', padding: '0 5px', margin: '0 20px', fontFamily: '"Inconsolata", monospace' }}>Latest Project!</h2>
+      <h2 style={{ display: 'inline-block', backgroundImage: 'linear-gradient(90deg, #7868BF 0%, #ae4971 50%, #794e8e 70%)', color: 'white', padding: '0 5px', margin: '0 20px', fontFamily: '"Inconsolata", monospace' }}>Fun With Particles</h2>
       <h3 className="text-40">Particle Animation Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medals">

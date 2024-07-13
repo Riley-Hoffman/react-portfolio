@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import SkillItem from './SkillItem';
 import { faUniversalAccess } from '@fortawesome/free-solid-svg-icons'; 
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
@@ -25,32 +25,34 @@ const Skills = () => {
   ];
 
   return (
-    <div className="skillsMain mainDiv">
-    <Helmet>
-        <title>Skills - Riley Hoffman - Web Developer</title>
-        <meta property="og:image" content={thumbnail}></meta>
-        <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
-        <link rel="canonical" href="https://rileyhoffman.com/skills/" />
-        
-    </Helmet>  
-      <section className="skills" id="skills">
-        <div className="wrapper">
-          <div>
-            <h1 className="text-center text-40">Skills</h1>
-            <ul className="max-1000px skillsGallery">
-              {skills.map((skill, index) => (
-                <SkillItem
-                  key={index}
-                  devicon={skill.devicon}
-                  icon={skill.icon}
-                  skill={skill.name}
-                />
-              ))}
-            </ul>
-          </div>
+    <HelmetProvider context={Skills}>
+      <div className="skillsMain mainDiv">
+        <Helmet>
+            <title>Skills - Riley Hoffman - Web Developer</title>
+            <meta property="og:image" content={thumbnail}></meta>
+            <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
+            <link rel="canonical" href="https://rileyhoffman.com/skills/" />
+            
+        </Helmet>  
+          <section className="skills" id="skills">
+            <div className="wrapper">
+              <div>
+                <h1 className="text-center text-40">Skills</h1>
+                <ul className="max-1000px skillsGallery">
+                  {skills.map((skill, index) => (
+                    <SkillItem
+                      key={index}
+                      devicon={skill.devicon}
+                      icon={skill.icon}
+                      skill={skill.name}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-    </div>
+    </HelmetProvider>
   );
 };
 
