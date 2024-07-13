@@ -225,7 +225,7 @@ const ParticleGame = () => {
       </ol>
       <div className="max-800px" style={{ marginLeft: 0 }}>
         <div ref={containerRef} className="width-100 particle-game overlay" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
-          <canvas ref={canvasRef} style={{ display: 'block', position: 'absolute', top: 0, left: 0 }} />
+          <canvas ref={canvasRef} style={{ display: 'block', position: 'absolute', top: 0, left: 0, filter: 'drop-shadow(1px 1px 0px #00000061)' }} />
           <div style={{ height: '100%' }}>
             {allCleanRef.current && <div><p className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}}>All clean! <small>Time taken: <span className="text-halfbold">{displayTime} seconds</span></small> <span className="text-bold text-uppercase">{ medalDetails() && ( <span className="text-26"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
             </div>}
