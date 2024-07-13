@@ -38,7 +38,7 @@ function About() {
                     <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                     <link rel="canonical" href="https://rileyhoffman.com/" />
                 </Helmet>  
-                <div className="gradient-border overlay" ref={containerRef} style={{ backgroundColor: '#f9ddda', backgroundImage: `url(${pinkCloud})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', borderBottom: '7px solid'}}>
+                <div className="gradient-border overlay" ref={containerRef} style={{ backgroundColor: '#f9ddda', backgroundImage: `url(${pinkCloud})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', borderBottom: '5px solid'}}>
                     <div className="max-1200px flex block-700" style={{ alignItems: 'flex-end', justifyContent: 'center' }}>
                         <div className="max-60 min-60 text-left" style={{ padding: '97px 20px 40px 0' }}>
                             <h1 style={{ marginBottom: '0'}}>Riley Hoffman</h1>

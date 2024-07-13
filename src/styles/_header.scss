@@ -1,14 +1,15 @@
 header {
   background-color: hsl(284, 38%, 92%);
   position: sticky;
-  top: 0;
+  top: -34px;
   left: 0;
   right: 0;
   bottom: auto;
   z-index: 999999;
   padding: 16px 0;
   box-shadow: 0 1px 3px -3px #12121c;
-  border-bottom: 7px solid;
+  border-bottom: 2px solid;
+  border-top: 34px solid #12121c;
 }
 .hamburger {
   display: none;

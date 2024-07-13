@@ -5,7 +5,7 @@ function Form() {
             <fieldset>
                 <legend className="sr-only">Contact Form</legend>
                 <div className="block-800" style={{ paddingBottom: '20px' }}>
-                    <div className="flex block-800" style={{ paddingBottom: '10px', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div className="flex block-800" style={{ paddingBottom: '10px', alignItems: 'center', justifyContent: 'space-between', gap: '22px'}}>
                         <label htmlFor="name">Name:</label>
                         <input
                             className="test max-40 width-100 gradient-border"

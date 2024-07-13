@@ -385,15 +385,16 @@ font-weight: 500;
 font-family: 'Karla', sans-serif;
 }
 
-label {margin: 10px 0;display: inline-block;}
+label {margin: 16px 0;display: inline-block;font-size: 20px;}
 
 
 input, textarea {
 font-family: 'Source Sans 3', sans-serif;
 background-color: #f8f3f9;
-border: 1px solid;
+border: 2px solid;
 padding: 10px;
 border-radius: 2px;
+font-size: 18px;
 }
 
 ::placeholder {
