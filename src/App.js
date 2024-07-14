@@ -1,4 +1,5 @@
 import './App.scss';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -23,38 +24,40 @@ function App() {
     },
   }; 
   return (
-    <Router>
-      <div className="App">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData), }} />
-        <Header />
-        <Routes>
-          <Route path='/' element={
-            <> 
-              <About/>
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData), }} />
+          <Header />
+          <Routes>
+            <Route path='/' element={
+              <> 
+                <About/>
+              </>
+          }/>
+          <Route path="/contact" element={
+            <>          
+              <Contact/> 
             </>
-        }/>
-        <Route path="/contact" element={
-          <>          
-            <Contact/> 
-          </>
-        } 
-        />
-        <Route path="/Projects" element={
-          <>          
-            <Projects/> 
-          </>
-        } 
-        />
-        <Route path="/Skills" element={
-          <>          
-            <Skills/> 
-          </>
-        } 
-        />
-        </Routes>
-        <Footer/>
-      </div>
-    </Router>
+          } 
+          />
+          <Route path="/Projects" element={
+            <>          
+              <Projects/> 
+            </>
+          } 
+          />
+          <Route path="/Skills" element={
+            <>          
+              <Skills/> 
+            </>
+          } 
+          />
+          </Routes>
+          <Footer/>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

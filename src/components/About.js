@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
 import '../styles/_particleGame.scss';
 import riley from '../assets/riley.png'
@@ -31,7 +31,6 @@ function About() {
           }
         }, [scrollPos]);
     return (
-      <HelmetProvider context={About}>
         <div id="content"> 
           <Helmet>
               <title>Riley Hoffman - Web Developer</title>
@@ -55,7 +54,6 @@ function About() {
               <ParticleGame/>
           </div>
         </div>
-      </HelmetProvider>
     )
 }
 

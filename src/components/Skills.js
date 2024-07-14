@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import SkillItem from './SkillItem';
 import { faUniversalAccess } from '@fortawesome/free-solid-svg-icons'; 
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
