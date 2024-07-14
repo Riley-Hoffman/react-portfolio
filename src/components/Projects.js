@@ -61,7 +61,7 @@ const Projects = () => {
     <div id="content" className="max-1200px" style={{ padding: '100px 0'}}>
         <Helmet>
             <title>Projects - Riley Hoffman - Web Developer</title>
-            <meta property="og:image" content={thumbnail}></meta>
+            <meta property="og:image" content={thumbnail} />
             <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
             <link rel="canonical" href="https://rileyhoffman.com/project/" />
         </Helmet>  

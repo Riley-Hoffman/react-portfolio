@@ -28,7 +28,7 @@ const Skills = () => {
     <div className="skillsMain mainDiv">
       <Helmet>
           <title>Skills - Riley Hoffman - Web Developer</title>
-          <meta property="og:image" content={thumbnail}></meta>
+          <meta property="og:image" content={thumbnail} />
           <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
           <link rel="canonical" href="https://rileyhoffman.com/skills/" />
           
