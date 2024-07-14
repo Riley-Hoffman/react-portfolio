@@ -25,34 +25,32 @@ const Skills = () => {
   ];
 
   return (
-    <HelmetProvider context={Skills}>
-      <div className="skillsMain mainDiv">
-        <Helmet>
-            <title>Skills - Riley Hoffman - Web Developer</title>
-            <meta property="og:image" content={thumbnail}></meta>
-            <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
-            <link rel="canonical" href="https://rileyhoffman.com/skills/" />
-            
-        </Helmet>  
-          <section className="skills" id="skills">
-            <div className="wrapper">
-              <div>
-                <h1 className="text-center text-40">Skills</h1>
-                <ul className="max-1000px skillsGallery">
-                  {skills.map((skill, index) => (
-                    <SkillItem
-                      key={index}
-                      devicon={skill.devicon}
-                      icon={skill.icon}
-                      skill={skill.name}
-                    />
-                  ))}
-                </ul>
-              </div>
+    <div className="skillsMain mainDiv">
+      <Helmet>
+          <title>Skills - Riley Hoffman - Web Developer</title>
+          <meta property="og:image" content={thumbnail}></meta>
+          <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
+          <link rel="canonical" href="https://rileyhoffman.com/skills/" />
+          
+      </Helmet>  
+        <section className="skills" id="skills">
+          <div className="wrapper">
+            <div>
+              <h1 className="text-center text-40">Skills</h1>
+              <ul className="max-1000px skillsGallery">
+                {skills.map((skill, index) => (
+                  <SkillItem
+                    key={index}
+                    devicon={skill.devicon}
+                    icon={skill.icon}
+                    skill={skill.name}
+                  />
+                ))}
+              </ul>
             </div>
-          </section>
-        </div>
-    </HelmetProvider>
+          </div>
+        </section>
+      </div>
   );
 };
 
