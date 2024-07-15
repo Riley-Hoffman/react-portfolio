@@ -99,7 +99,7 @@ const ParticleGame = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        const speedFactor = isMobile ? 0.45 : 1;
+        const speedFactor = isMobile ? 0.4 : 1;
         if (distance < mouse.radius) {
           if (distance < 50) distance = 50;
           let forceDirectionX = dx / distance;
