@@ -24,6 +24,8 @@ const ParticleGame = () => {
     radius: 150,
   }), []);
 
+  const isMobile = useMemo(() => window.innerWidth <= 768, []);
+
   const updateCursorPosition = useCallback((clientX, clientY) => {
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
@@ -44,7 +46,7 @@ const ParticleGame = () => {
     cursorInsideCanvasRef.current = isInside;
 
     if (event.type.startsWith('touch')) {
-      event.preventDefault(); // Prevent scrolling on mobile devices
+      event.preventDefault();
     }
   }, [updateCursorPosition]);
 
@@ -97,22 +99,23 @@ const ParticleGame = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
+        const speedFactor = isMobile ? 0.3 : 1; // Slow down on mobile devices
         if (distance < mouse.radius) {
           if (distance < 50) distance = 50;
           let forceDirectionX = dx / distance;
           let forceDirectionY = dy / distance;
           let maxDistance = mouse.radius;
           let force = (maxDistance - distance) / maxDistance + 0.5;
-          let directionX = forceDirectionX * force * this.weight * 5;
-          let directionY = forceDirectionY * force * this.weight * 5;
+          let directionX = forceDirectionX * force * this.weight * 5 * speedFactor;
+          let directionY = forceDirectionY * force * this.weight * 5 * speedFactor;
           this.x -= directionX;
           this.y -= directionY;
 
-          this.directionX = (Math.random() - 0.5) * 2;
-          this.directionY = (Math.random() - 0.5) * 2;
+          this.directionX = (Math.random() - 0.5) * 2 * speedFactor;
+          this.directionY = (Math.random() - 0.5) * 2 * speedFactor;
         } else {
-          this.directionX *= 0.95;
-          this.directionY *= 0.95;
+          this.directionX *= 0.95 * speedFactor;
+          this.directionY *= 0.95 * speedFactor;
         }
 
         this.x += this.directionX;
@@ -125,7 +128,7 @@ const ParticleGame = () => {
         this.draw(ctx);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   const createParticle = useCallback((canvas) => {
     let x = Math.random() * canvas.width;
