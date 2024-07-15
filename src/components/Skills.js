@@ -25,7 +25,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="skillsMain mainDiv">
+    <div>
       <Helmet>
           <title>Skills - Riley Hoffman - Web Developer</title>
           <meta property="og:image" content={thumbnail} />

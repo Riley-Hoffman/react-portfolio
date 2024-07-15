@@ -31,7 +31,7 @@ function About() {
           }
         }, [scrollPos]);
     return (
-        <div id="content"> 
+        <div> 
           <Helmet>
               <meta property="og:image" content={thumbnail} />
               <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />

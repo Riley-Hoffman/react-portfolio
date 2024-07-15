@@ -58,7 +58,7 @@ const Projects = () => {
 
 
   return (
-    <div id="content" className="max-1200px" style={{ padding: '100px 0'}}>
+    <div className="max-1200px" style={{ padding: '100px 0'}}>
         <Helmet>
             <title>Projects - Riley Hoffman - Web Developer</title>
             <meta property="og:image" content={thumbnail} />
