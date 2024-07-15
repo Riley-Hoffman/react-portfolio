@@ -14,31 +14,33 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <Routes>
-            <Route path='/' element={
-              <> 
-                <About/>
+          <main>
+            <Routes>
+              <Route path='/' element={
+                <> 
+                  <About/>
+                </>
+            }/>
+            <Route path="/contact" element={
+              <>          
+                <Contact/> 
               </>
-          }/>
-          <Route path="/contact" element={
-            <>          
-              <Contact/> 
-            </>
-          } 
-          />
-          <Route path="/Projects" element={
-            <>          
-              <Projects/> 
-            </>
-          } 
-          />
-          <Route path="/Skills" element={
-            <>          
-              <Skills/> 
-            </>
-          } 
-          />
-          </Routes>
+            } 
+            />
+            <Route path="/Projects" element={
+              <>          
+                <Projects/> 
+              </>
+            } 
+            />
+            <Route path="/Skills" element={
+              <>          
+                <Skills/> 
+              </>
+            } 
+            />
+            </Routes>
+          </main>
           <Footer/>
         </div>
       </Router>
