@@ -251,7 +251,7 @@ const ParticleGame = () => {
       <h3 className="text-40">Particle Animation Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medals" aria-label="Medal Criteria">
-        <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
+        <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-hidden="false" aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
         <li className="text-26">15s-20s &nbsp;&nbsp;</li>
         <li className="text-26">21s-25s &nbsp;&nbsp;</li>
       </ol>
@@ -259,7 +259,7 @@ const ParticleGame = () => {
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
           <canvas ref={ref => refs.current.canvas = ref} style={{ display: 'block', position: 'absolute', top: 0, left: 0, filter: 'drop-shadow(1px 1px 0px #00000061)' }} />
           <div style={{ height: '100%' }}>
-            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}} tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-halfbold" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-bold text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} aria-hidden="true" /></div> </span> )}</span></p>
+            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}} tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-halfbold" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-bold text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
             </div>}
           </div>
         </div>
