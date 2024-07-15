@@ -22,16 +22,24 @@ const ParticleGame = () => {
     radius: 150
   }), []);
 
-  const handleMouseMove = useCallback((event) => {
+  const updateCursorPosition = useCallback((clientX, clientY) => {
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
-    mouse.x = event.clientX - rect.left;
-    mouse.y = event.clientY - rect.top;
+    mouse.x = clientX - rect.left;
+    mouse.y = clientY - rect.top;
 
     if (startTimeRef.current === null) {
       startTimeRef.current = Date.now();
     }
   }, [mouse]);
+
+  const handleMouseMove = useCallback((event) => {
+    updateCursorPosition(event.clientX, event.clientY);
+  }, [updateCursorPosition]);
+
+  const handleTouchMove = useCallback((event) => {
+    updateCursorPosition(event.touches[0].clientX, event.touches[0].clientY);
+  }, [updateCursorPosition]);
 
   const Particle = useMemo(() => {
     return class {
@@ -128,7 +136,7 @@ const ParticleGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let remainingParticles = false;
     particlesArrayRef.current.forEach(particle => {
-      particle.update(ctx, mouse, canvas); // Pass ctx, mouse, and canvas to update method
+      particle.update(ctx, mouse, canvas);
       if (particle.inCanvas) {
         remainingParticles = true;
       }
@@ -169,6 +177,8 @@ const ParticleGame = () => {
   useEffect(() => {
     const container = containerRef.current;
     container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('touchmove', handleTouchMove);
+    container.addEventListener('touchstart', handleTouchMove);
 
     initializeAnimation();
 
@@ -183,10 +193,12 @@ const ParticleGame = () => {
 
     return () => {
       container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchstart', handleTouchMove);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameIdRef.current);
     };
-  }, [handleMouseMove, initializeAnimation]);
+  }, [handleMouseMove, handleTouchMove, initializeAnimation]);
 
   const getMedalDetails = (displayTime) => {
     if (displayTime <= 25 && displayTime > 20) {
