@@ -30,9 +30,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 /* mobile */
 @media (max-width:1600px) {
 .block-1600 {display: block !important;}
-.block-1600 * {float: none !important;max-width: 100%;}
+.block-1600 * {float: none !important;}
 .block-1600 > * {box-sizing: border-box;}
-.block-1600 *:not(img) {max-width: 100% !important;}
+.block-1600 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-1600 a {display: inline-block !important;}
 .block-1600 figure {text-align: center;}
 }
@@ -47,9 +47,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 .flex-wrap-1200 .max-33:last-child:not(:nth-child(6)), .flex-wrap-1200  .min-33:last-child:not(:nth-child(6)) { max-width: 100%; min-width: 100%; }
 
 .block-1200 {display: block !important;}
-.block-1200 * {float: none !important;max-width: 100%;}
+.block-1200 * {float: none !important;}
 .block-1200 > * {box-sizing: border-box;}
-.block-1200 *:not(img) {max-width: 100% !important;}
+.block-1200 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-1200 a {display: inline-block !important;}
 .block-1200 figure {text-align: center;}
 
@@ -68,9 +68,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 .flex-wrap-1000 .max-33:last-child:not(:nth-child(6)), .flex-wrap-1000  .min-33:last-child:not(:nth-child(6)) { max-width: 100%; min-width: 100%; }
 
 .block-1000 {display: block !important;}
-.block-1000 * {float: none !important;max-width: 100%;}
+.block-1000 * {float: none !important;}
 .block-1000 > * {box-sizing: border-box;}
-.block-1000 *:not(img) {max-width: 100% !important;}
+.block-1000 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-1000 a {display: inline-block !important;}
 .block-1000 figure {text-align: center;}
 
@@ -87,9 +87,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 .flex-wrap-800 .max-16, .flex-wrap-800 .min-16 { max-width: 50%; min-width: 50%; }
 
 .block-800 {display: block !important;}
-.block-800 * {float: none !important;max-width: 100%;}
+.block-800 * {float: none !important;}
 .block-800 > * {box-sizing: border-box;}
-.block-800 *:not(img) {max-width: 100% !important;}
+.block-800 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-800 a {display: inline-block !important;}
 .block-800 figure {text-align: center;}
 
@@ -104,9 +104,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 .flex-wrap-700 .max-16, .flex-wrap-700 .min-16 { max-width: 50%; min-width: 50%; }
 
 .block-700 {display: block !important;}
-.block-700 * {float: none !important;max-width: 100%;}
+.block-700 * {float: none !important;}
 .block-700 > * {box-sizing: border-box;}
-.block-700 *:not(img) {max-width: 100% !important;}
+.block-700 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-700 a {display: inline-block !important;}
 .block-700 figure {text-align: center;}
 
@@ -118,9 +118,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 .flex-wrap-600 .max-16, .flex-wrap-600 .min-16 { max-width: 50%; min-width: 50%; }
 
 .block-600 {display: block !important;}
-.block-600 * {float: none !important;max-width: 100%;}
+.block-600 * {float: none !important;}
 .block-600 > * {box-sizing: border-box;}
-.block-600 *:not(img) {max-width: 100% !important;}
+.block-600 *:not(img, .keep-width) {max-width: 100% !important;}
 .block-600 a {display: inline-block !important;}
 .block-600 figure {text-align: center;}
 
@@ -132,9 +132,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 	.flex-wrap-500 .max-16, .flex-wrap-500 .min-16 { max-width: 50%; min-width: 50%; }
 	
 	.block-500 {display: block !important;}
-	.block-500 * {float: none !important;max-width: 100%;}
+	.block-500 * {float: none !important;}
 	.block-500 > * {box-sizing: border-box;}
-	.block-500 *:not(img) {max-width: 100% !important;}
+	.block-500 *:not(img, .keep-width) {max-width: 100% !important;}
 	.block-500 a {display: inline-block !important;}
 	.block-500 figure {text-align: center;}
 	
@@ -146,9 +146,9 @@ button {padding: 0;border: none; background-color: transparent;cursor: pointer;}
 	.flex-wrap-400 .max-16, .flex-wrap-400 .min-16 { max-width: 50%; min-width: 50%; }
 	
 	.block-400 {display: block !important;}
-	.block-400 * {float: none !important;max-width: 100%;}
+	.block-400 * {float: none !important;}
 	.block-400 > * {box-sizing: border-box;}
-	.block-400 *:not(img) {max-width: 100% !important;}
+	.block-400 *:not(img, .keep-width) {max-width: 100% !important;}
 	.block-400 a {display: inline-block !important;}
 	.block-400 figure {text-align: center;}
 	
@@ -451,17 +451,17 @@ to {
 }
 
 span.typewriter {
-overflow: hidden; /* Ensures the content is not revealed until the animation */
-border-right: 1.5px solid #794E8D; /* The typewriter cursor */
-white-space: nowrap; /* Keeps the content on a single line */
-margin: 0 auto 0 0; /* Gives that scrolling effect as the typing happens */
-letter-spacing: .15em; /* Adjust as needed */
+overflow: hidden;
+border-right: 1.5px solid #794E8D;
+white-space: nowrap;
+margin: 0 auto 0 0;
+letter-spacing: .15em; 
 width: 160px;
 animation: 
 	typing 3.5s steps(40, end),
 	blink-caret .75s step-end infinite,
 	border-fade 0s 1.5s forwards;
-position: relative; /* Required for the pseudo-element */
+position: relative;
 display: inline-block;
 }
 
