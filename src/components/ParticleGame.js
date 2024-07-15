@@ -1,41 +1,39 @@
-import { useEffect, useRef, useCallback, useState, useMemo } from 'react';
-import { faMedal } from '@fortawesome/free-solid-svg-icons';
-import { faLessThan } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
+import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import background from '../assets/wood-background-grayscale.jpg';
 
 const ParticleGame = () => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
-  const particlesArrayRef = useRef([]);
-  const animationFrameIdRef = useRef(null);
-  const allCleanRef = useRef(false);
-  const startTimeRef = useRef(null);
-  const elapsedTimeRef = useRef(0);
-  const [displayTime, setDisplayTime] = useState(null);
-  const [gameInProgress, setGameInProgress] = useState(true);
-  const cursorInsideCanvasRef = useRef(false);
+  const refs = useRef({
+    canvas: null,
+    container: null,
+    particlesArray: [],
+    animationFrameId: null,
+    allClean: false,
+    startTime: null,
+    elapsedTime: 0,
+    cursorInsideCanvas: false,
+  });
 
-  const numberOfParticles = 50;
+  const [state, setState] = useState({
+    displayTime: null,
+    gameInProgress: true,
+  });
 
-  const mouse = useMemo(() => ({
-    x: null,
-    y: null,
-    radius: 150,
+  const memoizedValues = useMemo(() => ({
+    mouse: { x: null, y: null, radius: 150 },
+    isMobile: window.innerWidth <= 768,
   }), []);
 
-  const isMobile = useMemo(() => window.innerWidth <= 768, []);
-
   const updateCursorPosition = useCallback((clientX, clientY) => {
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = clientX - rect.left;
-    mouse.y = clientY - rect.top;
+    const rect = refs.current.canvas.getBoundingClientRect();
+    memoizedValues.mouse.x = clientX - rect.left;
+    memoizedValues.mouse.y = clientY - rect.top;
 
-    if (startTimeRef.current === null) {
-      startTimeRef.current = Date.now();
+    if (refs.current.startTime === null) {
+      refs.current.startTime = Date.now();
     }
-  }, [mouse]);
+  }, [memoizedValues.mouse]);
 
   const handleInteraction = useCallback((event, isInside) => {
     if (event.type === 'mousemove' || event.type === 'touchmove') {
@@ -43,7 +41,7 @@ const ParticleGame = () => {
       const clientY = event.clientY ?? event.touches[0].clientY;
       updateCursorPosition(clientX, clientY);
     }
-    cursorInsideCanvasRef.current = isInside;
+    refs.current.cursorInsideCanvas = isInside;
 
     if (event.type.startsWith('touch')) {
       event.preventDefault();
@@ -51,10 +49,10 @@ const ParticleGame = () => {
   }, [updateCursorPosition]);
 
   const handleScroll = useCallback((event) => {
-    if (gameInProgress && cursorInsideCanvasRef.current) {
+    if (state.gameInProgress && refs.current.cursorInsideCanvas) {
       event.preventDefault();
     }
-  }, [gameInProgress]);
+  }, [state.gameInProgress]);
 
   const Particle = useMemo(() => {
     return class {
@@ -99,7 +97,7 @@ const ParticleGame = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        const speedFactor = isMobile ? 0.4 : 1;
+        const speedFactor = memoizedValues.isMobile ? 0.4 : 1;
         if (distance < mouse.radius) {
           if (distance < 50) distance = 50;
           let forceDirectionX = dx / distance;
@@ -128,7 +126,7 @@ const ParticleGame = () => {
         this.draw(ctx);
       }
     };
-  }, [isMobile]);
+  }, [memoizedValues.isMobile]);
 
   const createParticle = useCallback((canvas) => {
     let x = Math.random() * canvas.width;
@@ -141,110 +139,110 @@ const ParticleGame = () => {
   }, [Particle]);
 
   const initParticles = useCallback((canvas) => {
-    particlesArrayRef.current.length = 0;
-    for (let i = 0; i < numberOfParticles; i++) {
-      particlesArrayRef.current.push(createParticle(canvas));
+    refs.current.particlesArray.length = 0;
+    for (let i = 0; i < 50; i++) {
+      refs.current.particlesArray.push(createParticle(canvas));
     }
   }, [createParticle]);
 
   const animateParticles = useCallback((ctx, canvas) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let remainingParticles = false;
-    particlesArrayRef.current.forEach(particle => {
-      particle.update(ctx, mouse, canvas);
+    refs.current.particlesArray.forEach(particle => {
+      particle.update(ctx, memoizedValues.mouse, canvas);
       if (particle.inCanvas) {
         remainingParticles = true;
       }
     });
 
-    if (!remainingParticles && !allCleanRef.current) {
-      allCleanRef.current = true;
+    if (!remainingParticles && !refs.current.allClean) {
+      refs.current.allClean = true;
       const endTime = Date.now();
-      elapsedTimeRef.current = ((endTime - startTimeRef.current) / 1000).toFixed(2);
-      setDisplayTime(elapsedTimeRef.current);
-      setGameInProgress(false);
+      refs.current.elapsedTime = ((endTime - refs.current.startTime) / 1000).toFixed(2);
+      setState(prevState => ({
+        ...prevState,
+        displayTime: refs.current.elapsedTime,
+        gameInProgress: false,
+      }));
     }
 
-    if (!remainingParticles && allCleanRef.current) {
-      cancelAnimationFrame(animationFrameIdRef.current);
-      const container = containerRef.current;
-      container.classList.add('done');
+    if (!remainingParticles && refs.current.allClean) {
+      cancelAnimationFrame(refs.current.animationFrameId);
+      refs.current.container.classList.add('done');
     } else {
-      animationFrameIdRef.current = requestAnimationFrame(() => animateParticles(ctx, canvas));
+      refs.current.animationFrameId = requestAnimationFrame(() => animateParticles(ctx, canvas));
     }
-  }, [mouse]);
+  }, [memoizedValues.mouse]);
 
   const initializeAnimation = useCallback(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    const container = containerRef.current;
+    const ctx = refs.current.canvas.getContext('2d');
+    const container = refs.current.container;
     if (container.classList.contains('done')) {
       container.classList.remove('done');
     }
     const containerRect = container.getBoundingClientRect();
 
-    canvas.width = containerRect.width;
-    canvas.height = containerRect.height;
+    refs.current.canvas.width = containerRect.width;
+    refs.current.canvas.height = containerRect.height;
 
-    initParticles(canvas);
-    animateParticles(ctx, canvas);
+    initParticles(refs.current.canvas);
+    animateParticles(ctx, refs.current.canvas);
   }, [initParticles, animateParticles]);
 
   useEffect(() => {
-    const container = containerRef.current;
+    const localRefs = { ...refs.current };
     const events = ['mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'];
-
+  
     const handleEvent = (event) => {
       const isInside = event.type !== 'mouseleave' && event.type !== 'touchend';
       handleInteraction(event, isInside);
     };
-
-    events.forEach(eventType => container.addEventListener(eventType, handleEvent, { passive: false }));
+  
+    events.forEach(eventType => localRefs.container.addEventListener(eventType, handleEvent, { passive: false }));
     window.addEventListener('wheel', handleScroll, { passive: false });
-
+  
     initializeAnimation();
-
+  
     const handleResize = () => {
-      const canvas = canvasRef.current;
-      const containerRect = container.getBoundingClientRect();
-      canvas.width = containerRect.width;
-      canvas.height = containerRect.height;
+      const containerRect = localRefs.container.getBoundingClientRect();
+      localRefs.canvas.width = containerRect.width;
+      localRefs.canvas.height = containerRect.height;
     };
-
+  
     window.addEventListener('resize', handleResize);
-
+  
     return () => {
-      events.forEach(eventType => container.removeEventListener(eventType, handleEvent));
+      events.forEach(eventType => localRefs.container.removeEventListener(eventType, handleEvent));
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameIdRef.current);
+      cancelAnimationFrame(localRefs.animationFrameId);
     };
   }, [handleInteraction, handleScroll, initializeAnimation]);
 
-  const getMedalDetails = (displayTime) => {
-    if (displayTime <= 25 && displayTime > 20) {
-      return { text: 'Bronze Medal', color: '#A2652A' };
-    } else if (displayTime <= 20 && displayTime > 15) {
-      return { text: 'Silver Medal', color: '#737373' };
-    } else if (displayTime < 15) {
-      return { text: 'Gold Medal', color: '#8A7400' };
-    } else {
-      return null;
+  const getMedalDetails = useCallback((displayTime) => {
+    if (displayTime <= 25) {
+      if (displayTime > 20) return { text: 'Bronze Medal', color: '#A2652A' };
+      else if (displayTime > 15) return { text: 'Silver Medal', color: '#737373' };
+      else return { text: 'Gold Medal', color: '#8A7400' };
     }
-  };
+    return null;
+  }, []);
 
-  const medalDetails = () => {
-    return allCleanRef.current ? getMedalDetails(displayTime) : null;
-  };
+  const medalDetails = useCallback(() => {
+    return refs.current.allClean ? getMedalDetails(state.displayTime) : null;
+  }, [getMedalDetails, state.displayTime]);
 
-  const reloadAnimation = () => {
-    allCleanRef.current = false;
-    startTimeRef.current = null;
-    elapsedTimeRef.current = 0;
-    setDisplayTime(null);
-    setGameInProgress(true);
+  const reloadAnimation = useCallback(() => {
+    refs.current.allClean = false;
+    refs.current.startTime = null;
+    refs.current.elapsedTime = 0;
+    setState(prevState => ({
+      ...prevState,
+      displayTime: null,
+      gameInProgress: true,
+    }));
     initializeAnimation();
-  };
+  }, [initializeAnimation]);
 
   return (
     <div>
@@ -257,10 +255,10 @@ const ParticleGame = () => {
         <li className="text-26">21s-25s &nbsp;&nbsp;</li>
       </ol>
       <div className="max-800px" style={{ marginLeft: 0 }}>
-        <div ref={containerRef} className="width-100 particle-game overlay" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
-          <canvas ref={canvasRef} style={{ display: 'block', position: 'absolute', top: 0, left: 0, filter: 'drop-shadow(1px 1px 0px #00000061)' }} />
+        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
+          <canvas ref={ref => refs.current.canvas = ref} style={{ display: 'block', position: 'absolute', top: 0, left: 0, filter: 'drop-shadow(1px 1px 0px #00000061)' }} />
           <div style={{ height: '100%' }}>
-            {allCleanRef.current && <div><p className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}}>All clean! <small>Time taken: <span className="text-halfbold">{displayTime} seconds</span></small> <span className="text-bold text-uppercase">{ medalDetails() && ( <span className="text-26"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
+            {refs.current.allClean && <div><p className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}}>All clean! <small>Time taken: <span className="text-halfbold">{state.displayTime} seconds</span></small> <span className="text-bold text-uppercase">{ medalDetails() && ( <span className="text-26"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
             </div>}
           </div>
         </div>
