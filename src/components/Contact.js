@@ -9,7 +9,7 @@ function Contact() {
                 <title>Contact - Riley Hoffman - Web Developer</title>
                 <meta property="og:image" content={thumbnail} />
                 <meta name="description" content="Contact Web Developer Riley Hoffman with the form on this page." />
-                <link rel="canonical" href="https://rileyhoffman.com/contact/" />
+                <link rel="canonical" href="https://rileyhoffman.com/contact" />
             </Helmet>     
             <h1 className="text-40">Contact Me</h1>
             <Form/>

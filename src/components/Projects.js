@@ -63,7 +63,7 @@ const Projects = () => {
             <title>Projects - Riley Hoffman - Web Developer</title>
             <meta property="og:image" content={thumbnail} />
             <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
-            <link rel="canonical" href="https://rileyhoffman.com/projects/" />
+            <link rel="canonical" href="https://rileyhoffman.com/projects" />
         </Helmet>  
         <h1 className="text-40">Projects</h1>
         <h2 className="text-30">Juno College Projects</h2>

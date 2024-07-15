@@ -30,7 +30,7 @@ const Skills = () => {
           <title>Skills - Riley Hoffman - Web Developer</title>
           <meta property="og:image" content={thumbnail} />
           <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
-          <link rel="canonical" href="https://rileyhoffman.com/skills/" />
+          <link rel="canonical" href="https://rileyhoffman.com/skills" />
           
       </Helmet>  
         <section className="skills" id="skills">
