@@ -251,7 +251,7 @@ const ParticleGame = () => {
       <h3 className="text-40">Particle Animation Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medals" aria-label="Medal Criteria">
-        <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-hidden="true" /> 15s &nbsp;&nbsp;</li>
+        <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
         <li className="text-26">15s-20s &nbsp;&nbsp;</li>
         <li className="text-26">21s-25s &nbsp;&nbsp;</li>
       </ol>
