@@ -42,6 +42,10 @@ const ParticleGame = () => {
       updateCursorPosition(clientX, clientY);
     }
     cursorInsideCanvasRef.current = isInside;
+
+    if (event.type.startsWith('touch')) {
+      event.preventDefault(); // Prevent scrolling on mobile devices
+    }
   }, [updateCursorPosition]);
 
   const handleScroll = useCallback((event) => {
@@ -192,7 +196,7 @@ const ParticleGame = () => {
       handleInteraction(event, isInside);
     };
 
-    events.forEach(eventType => container.addEventListener(eventType, handleEvent));
+    events.forEach(eventType => container.addEventListener(eventType, handleEvent, { passive: false }));
     window.addEventListener('wheel', handleScroll, { passive: false });
 
     initializeAnimation();
@@ -230,15 +234,14 @@ const ParticleGame = () => {
     return allCleanRef.current ? getMedalDetails(displayTime) : null;
   };
 
-  const reloadAnimation = useCallback(() => {
-    cancelAnimationFrame(animationFrameIdRef.current);
+  const reloadAnimation = () => {
     allCleanRef.current = false;
     startTimeRef.current = null;
     elapsedTimeRef.current = 0;
     setDisplayTime(null);
     setGameInProgress(true);
     initializeAnimation();
-  }, [initializeAnimation]);
+  };
 
   return (
     <div>
