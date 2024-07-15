@@ -13,13 +13,15 @@ const ParticleGame = () => {
   const startTimeRef = useRef(null);
   const elapsedTimeRef = useRef(0);
   const [displayTime, setDisplayTime] = useState(null);
+  const [gameInProgress, setGameInProgress] = useState(true);
+  const cursorInsideCanvasRef = useRef(false);
 
   const numberOfParticles = 50;
 
   const mouse = useMemo(() => ({
     x: null,
     y: null,
-    radius: 150
+    radius: 150,
   }), []);
 
   const updateCursorPosition = useCallback((clientX, clientY) => {
@@ -33,13 +35,20 @@ const ParticleGame = () => {
     }
   }, [mouse]);
 
-  const handleMouseMove = useCallback((event) => {
-    updateCursorPosition(event.clientX, event.clientY);
+  const handleInteraction = useCallback((event, isInside) => {
+    if (event.type === 'mousemove' || event.type === 'touchmove') {
+      const clientX = event.clientX ?? event.touches[0].clientX;
+      const clientY = event.clientY ?? event.touches[0].clientY;
+      updateCursorPosition(clientX, clientY);
+    }
+    cursorInsideCanvasRef.current = isInside;
   }, [updateCursorPosition]);
 
-  const handleTouchMove = useCallback((event) => {
-    updateCursorPosition(event.touches[0].clientX, event.touches[0].clientY);
-  }, [updateCursorPosition]);
+  const handleScroll = useCallback((event) => {
+    if (gameInProgress && cursorInsideCanvasRef.current) {
+      event.preventDefault();
+    }
+  }, [gameInProgress]);
 
   const Particle = useMemo(() => {
     return class {
@@ -63,7 +72,7 @@ const ParticleGame = () => {
           const radius = this.size * (Math.random() * 0.5 + 0.5);
           vertices.push({
             x: Math.cos(angle) * radius,
-            y: Math.sin(angle) * radius
+            y: Math.sin(angle) * radius,
           });
         }
         return vertices;
@@ -118,9 +127,8 @@ const ParticleGame = () => {
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
     let size = Math.random() * 30 + 10;
-    let colorIndex = Math.floor(Math.random() * 3);
     let colors = ['#A8A0D9', '#794E8D', '#ae4971'];
-    let color = colors[colorIndex];
+    let color = colors[Math.floor(Math.random() * colors.length)];
     let weight = Math.random() * 0.5 + 0.5;
     return new Particle(x, y, size, color, weight);
   }, [Particle]);
@@ -147,6 +155,7 @@ const ParticleGame = () => {
       const endTime = Date.now();
       elapsedTimeRef.current = ((endTime - startTimeRef.current) / 1000).toFixed(2);
       setDisplayTime(elapsedTimeRef.current);
+      setGameInProgress(false);
     }
 
     if (!remainingParticles && allCleanRef.current) {
@@ -176,9 +185,15 @@ const ParticleGame = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('touchmove', handleTouchMove);
-    container.addEventListener('touchstart', handleTouchMove);
+    const events = ['mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'];
+
+    const handleEvent = (event) => {
+      const isInside = event.type !== 'mouseleave' && event.type !== 'touchend';
+      handleInteraction(event, isInside);
+    };
+
+    events.forEach(eventType => container.addEventListener(eventType, handleEvent));
+    window.addEventListener('wheel', handleScroll, { passive: false });
 
     initializeAnimation();
 
@@ -192,13 +207,12 @@ const ParticleGame = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('touchmove', handleTouchMove);
-      container.removeEventListener('touchstart', handleTouchMove);
+      events.forEach(eventType => container.removeEventListener(eventType, handleEvent));
+      window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameIdRef.current);
     };
-  }, [handleMouseMove, handleTouchMove, initializeAnimation]);
+  }, [handleInteraction, handleScroll, initializeAnimation]);
 
   const getMedalDetails = (displayTime) => {
     if (displayTime <= 25 && displayTime > 20) {
@@ -206,15 +220,15 @@ const ParticleGame = () => {
     } else if (displayTime <= 20 && displayTime > 15) {
       return { text: 'Silver Medal', color: '#737373' };
     } else if (displayTime < 15) {
-      return { text: 'Gold Medal', color: '#8A7400'};
+      return { text: 'Gold Medal', color: '#8A7400' };
     } else {
       return null;
     }
   };
-  
+
   const medalDetails = () => {
     return allCleanRef.current ? getMedalDetails(displayTime) : null;
-  }
+  };
 
   const reloadAnimation = useCallback(() => {
     cancelAnimationFrame(animationFrameIdRef.current);
@@ -222,6 +236,7 @@ const ParticleGame = () => {
     startTimeRef.current = null;
     elapsedTimeRef.current = 0;
     setDisplayTime(null);
+    setGameInProgress(true);
     initializeAnimation();
   }, [initializeAnimation]);
 
