@@ -37,10 +37,10 @@ const Hamburger = () => {
                 ref={HamburgerRef}
                 className="hamburger"
             >
-                <span className="line"></span>
-                <span className="line"></span>
-                <span className="line"></span>
-                <span className="line"></span>
+                <span className="line gradient-border"></span>
+                <span className="line gradient-border"></span>
+                <span className="line gradient-border"></span>
+                <span className="line gradient-border"></span>
             </button>
         </div>
     );

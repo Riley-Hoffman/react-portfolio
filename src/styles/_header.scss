@@ -102,8 +102,8 @@ nav.menu {
         display: block;
         position: absolute;
         width: 25px;
-        height: 1.5px;
-        background: #12121c;
+        border: 2px solid;
+        filter: brightness(0.9);
         opacity: 1;
         -webkit-transform: rotate(0);
         -moz-transform: rotate(0);
@@ -128,6 +128,7 @@ nav.menu {
       .line:first-child, .line:nth-child(4) {
         top: 21px;
         width: 0;
+        border: none;
         left: 15px;
       }
       .line:nth-child(2) {
