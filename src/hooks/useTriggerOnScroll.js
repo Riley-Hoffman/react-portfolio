@@ -4,7 +4,7 @@ const useTriggerOnScroll = (force = 0) => {
   const elementsRef = useRef([]);
 
   useEffect(() => {
-    const updateParallax = () => {
+    const updateTriggerOnScroll = () => {
       let classes = ["trigger-on-scroll"];
       classes.forEach((cls) => {
         const elements = document.getElementsByClassName(cls);
@@ -26,10 +26,10 @@ const useTriggerOnScroll = (force = 0) => {
     };
 
     setTimeout(() => {
-      updateParallax();
+      updateTriggerOnScroll();
     }, 100);
 
-    window.onscroll = updateParallax;
+    window.onscroll = updateTriggerOnScroll;
 
     return () => {
       window.onscroll = null;
