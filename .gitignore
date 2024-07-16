@@ -19,6 +19,7 @@
 .env.production.local
 _redirects
 netlify.toml
+.vscode/
 
 npm-debug.log*
 yarn-debug.log*
