@@ -242,6 +242,7 @@ const ParticleGame = () => {
     refs.current.elapsedTime = 0;
     refs.current.cursorInsideCanvas = false;
     refs.current.particlesArray = [];
+    refs.current.isMobile = null;
     setState({
       displayTime: null,
       gameInProgress: true,
