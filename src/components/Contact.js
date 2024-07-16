@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Form from './Form';
-import thumbnail from '../assets/thumbnail.jpg'
+import thumbnail from '../assets/thumbnail.jpg';
 
 function Contact() {
     return (

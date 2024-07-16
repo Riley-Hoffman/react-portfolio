@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from './ProjectBox';
 import '../styles/_projects.scss';
-import thumbnail from '../assets/thumbnail.jpg'
+import thumbnail from '../assets/thumbnail.jpg';
 
 const Projects = () => {
     const projects = [
