@@ -1365,18 +1365,6 @@ ol.numbered-icons {
   counter-reset: circle;
 }
 
-ol.numbered-icons.medals > li:first-child:before {
-  background-color: #8A7400;
-}
-
-ol.numbered-icons.medals > li:nth-child(2):before {
-  background-color: #737373;
-}
-
-ol.numbered-icons.medals > li:nth-child(3):before {
-  background-color: #A2652A;
-}
-
 html {
   background-color: #f5eef7;
 }

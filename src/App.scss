@@ -342,6 +342,15 @@ color: #12121c;
 
 .no-pointer {pointer-events: none;}
 
+.label-text {
+	display: inline-block;
+	background-image: linear-gradient(90deg, #7868BF 0%, #ae4971 50%, #794e8e 70%); 
+	color: white; 
+	padding: 0 5px; 
+	margin: 0 20px; 
+	font-family: "Inconsolata", monospace;
+}
+
 .gradient-border {
 	border-image-source: linear-gradient(90deg, #a8a1d9 0%, #794e8e 70%) !important;
 	border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%) !important;

@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import background from '../assets/wood-background-grayscale.jpg';
 
 const ParticleGame = () => {
   const refs = useRef({
@@ -13,6 +12,7 @@ const ParticleGame = () => {
     startTime: null,
     elapsedTime: 0,
     cursorInsideCanvas: false,
+    isMobile: null,
   });
 
   const [state, setState] = useState({
@@ -22,7 +22,6 @@ const ParticleGame = () => {
 
   const memoizedValues = useMemo(() => ({
     mouse: { x: null, y: null, radius: 150 },
-    isMobile: window.innerWidth <= 768,
   }), []);
 
   const updateCursorPosition = useCallback((clientX, clientY) => {
@@ -66,6 +65,7 @@ const ParticleGame = () => {
         this.directionY = 0;
         this.vertices = this.generateVertices();
         this.inCanvas = true;
+        this.speedFactor = refs.current.isMobile ? 0.4 : 1;
       }
 
       generateVertices() {
@@ -97,23 +97,23 @@ const ParticleGame = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        const speedFactor = memoizedValues.isMobile ? 0.4 : 1;
+
         if (distance < mouse.radius) {
           if (distance < 50) distance = 50;
           let forceDirectionX = dx / distance;
           let forceDirectionY = dy / distance;
           let maxDistance = mouse.radius;
           let force = (maxDistance - distance) / maxDistance + 0.5;
-          let directionX = forceDirectionX * force * this.weight * 5 * speedFactor;
-          let directionY = forceDirectionY * force * this.weight * 5 * speedFactor;
+          let directionX = forceDirectionX * force * this.weight * 5 * this.speedFactor;
+          let directionY = forceDirectionY * force * this.weight * 5 * this.speedFactor;
           this.x -= directionX;
           this.y -= directionY;
-
-          this.directionX = (Math.random() - 0.5) * 2 * speedFactor;
-          this.directionY = (Math.random() - 0.5) * 2 * speedFactor;
+          
+          this.directionX = (Math.random() - 0.5) * 2 * this.speedFactor;
+          this.directionY = (Math.random() - 0.5) * 2 * this.speedFactor;
         } else {
-          this.directionX *= 0.95 * speedFactor;
-          this.directionY *= 0.95 * speedFactor;
+          this.directionX *= 0.95 * this.speedFactor;
+          this.directionY *= 0.95 * this.speedFactor;
         }
 
         this.x += this.directionX;
@@ -126,7 +126,7 @@ const ParticleGame = () => {
         this.draw(ctx);
       }
     };
-  }, [memoizedValues.isMobile]);
+  }, []);
 
   const createParticle = useCallback((canvas) => {
     let x = Math.random() * canvas.width;
@@ -186,6 +186,8 @@ const ParticleGame = () => {
     refs.current.canvas.width = containerRect.width;
     refs.current.canvas.height = containerRect.height;
 
+    refs.current.isMobile = window.innerWidth <= 768;
+
     initParticles(refs.current.canvas);
     animateParticles(ctx, refs.current.canvas);
   }, [initParticles, animateParticles]);
@@ -234,36 +236,38 @@ const ParticleGame = () => {
   }, [getMedalDetails, state.displayTime]);
 
   const reloadAnimation = useCallback(() => {
+    cancelAnimationFrame(refs.current.animationFrameId);
     refs.current.allClean = false;
     refs.current.startTime = null;
     refs.current.elapsedTime = 0;
-    setState(prevState => ({
-      ...prevState,
+    refs.current.cursorInsideCanvas = false;
+    refs.current.particlesArray = [];
+    setState({
       displayTime: null,
       gameInProgress: true,
-    }));
+    });
     initializeAnimation();
   }, [initializeAnimation]);
 
   return (
     <div>
-      <h2 style={{ display: 'inline-block', backgroundImage: 'linear-gradient(90deg, #7868BF 0%, #ae4971 50%, #794e8e 70%)', color: 'white', padding: '0 5px', margin: '0 20px', fontFamily: '"Inconsolata", monospace' }}>Fun With Particles</h2>
+      <h2 className="label-text">Fun With Particles</h2>
       <h3 className="text-40">Particle Animation Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
-      <ol className="flex block-500 numbered-icons medals" aria-label="Medal Criteria">
+      <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
         <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-hidden="false" aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
         <li className="text-26">15s-20s &nbsp;&nbsp;</li>
         <li className="text-26">21s-25s &nbsp;&nbsp;</li>
       </ol>
-      <div className="max-800px" style={{ marginLeft: 0 }}>
-        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game" style={{ height: '500px', position: 'relative', border: '11px solid #12121c', boxShadow: '2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5)', overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'right', maxWidth: 'calc(100% - 40px)', margin: '0 auto' }}>
-          <canvas ref={ref => refs.current.canvas = ref} style={{ display: 'block', position: 'absolute', top: 0, left: 0, filter: 'drop-shadow(1px 1px 0px #00000061)' }} />
-          <div style={{ height: '100%' }}>
-            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center" style={{ position: 'absolute', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '24px', fontFamily: '"Source Sans Pro 3", sans-serif', margin: 0, backgroundColor: 'white', padding: 0, flexDirection: 'column'}} tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-halfbold" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-bold text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><div style={{ animation: 'spin 2.4s infinite'}}><FontAwesomeIcon icon={faMedal} color={medalDetails().color} style={{ fontSize: '60px'}} /></div> </span> )}</span></p>
+      <div className="max-800px">
+        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
+          <canvas ref={ref => refs.current.canvas = ref} />
+          <div>
+            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-halfbold" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-bold text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><FontAwesomeIcon icon={faMedal} color={medalDetails().color} /> </span> )}</span></p>
             </div>}
           </div>
         </div>
-        <p><button className="button" onClick={reloadAnimation} style={{ position: 'relative', zIndex: 1 }}>Play Again</button></p>
+        <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
       </div>
     </div>
   );
