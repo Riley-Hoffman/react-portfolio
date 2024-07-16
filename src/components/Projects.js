@@ -27,7 +27,7 @@ const Projects = () => {
           srcSet: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1649247793/infinity-corkboard_tanxk3.webp 1280w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/v1651029506/infinity-corkboard_tanxk3900_oyg2mv.webp 900w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/v1651029506/infinity-corkboard_tanxk3550_dar26s.webp 550w',
           imgUrl: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1649247793/infinity-corkboard_tanxk3.png',
           imgAlt: 'Screenshot of the Infinity Corkboard app.',
-          animation: 'scroll-to-triggered slide-in-left'
+          animation: 'trigger-on-scroll slide-in-left'
           
         },
         {
@@ -40,7 +40,7 @@ const Projects = () => {
           srcSet: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642782603/weather-scout3x_hihe8q.webp 1280w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642782602/weather-scout2x_h1wuto.webp 900w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642782603/weather-scout1x_a5fbv9.webp 550w',
           imgUrl: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642782602/weather-scout_hglg66.png',
           imgAlt: 'Screenshot of the Weather Scout app.',
-          animation: 'scroll-to-triggered slide-in-right'
+          animation: 'trigger-on-scroll slide-in-right'
         },
         {
           title: 'Delicious',
@@ -52,7 +52,7 @@ const Projects = () => {
           srcSet: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642783284/delicious3x_pgwxjq.webp 1280w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642783284/delicious2x_bkve7w.webp 900w, https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642783281/delicious1x_g6etos.webp 550w',
           imgUrl: 'https://res.cloudinary.com/riley-hoffman-web-developer/image/upload/q_auto:low/v1642784060/delicious_aozvru.png',
           imgAlt: 'Screenshot of Delicious, a PSD conversion project.',
-          animation: 'scroll-to-triggered slide-in-left'
+          animation: 'trigger-on-scroll slide-in-left'
         }
       ]
 

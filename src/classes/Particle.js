@@ -1,4 +1,3 @@
-// Particle.js
 class Particle {
     constructor(x, y, size, color, weight, isMobile) {
       this.x = x;

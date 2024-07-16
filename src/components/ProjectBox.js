@@ -1,5 +1,6 @@
 import DOMPurify from 'dompurify';
-import '../scripts/parallax';
+import { useEffect } from 'react';
+import useTriggerOnScroll from '../hooks/useTriggerOnScroll';
 
 const ProjectBox = ({ 
   title, 
@@ -13,6 +14,12 @@ const ProjectBox = ({
   animation 
 }) => {
   const sanitizedDescription = DOMPurify.sanitize(description);
+
+  const elementsRef = useTriggerOnScroll();
+  useEffect(() => {
+    elementsRef.current = document.getElementsByClassName("trigger-on-scroll");
+  }, [elementsRef]);
+
   return (
     <li className={animation + " flex block-700 gradient-border projectBox"}>
       <div className="projectInfo">

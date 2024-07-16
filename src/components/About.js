@@ -7,7 +7,7 @@ import thumbnail from '../assets/thumbnail.jpg'
 import pinkCloud from '../assets/pink-cloud.jpg'
 
 function About() {
-
+  
         const containerRef = useRef(null);
         const [scrollPos, setScrollPos] = useState(0);
         const velocity = 0.4;

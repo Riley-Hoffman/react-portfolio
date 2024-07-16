@@ -1,0 +1,30 @@
+.trigger-on-scroll {
+    transition: all 1.3s;
+    opacity: 0;
+    position: relative;
+}
+.trigger-on-scroll[data-active="true"] {
+    opacity: 1;
+}
+.trigger-on-scroll.slide-in-left {
+    left: -100%;
+}
+.trigger-on-scroll.slide-in-right {
+    right: -100%;
+}
+.trigger-on-scroll.slide-in-left[data-active="true"] {
+    left: 0% !important;
+}
+.trigger-on-scroll.slide-in-right[data-active="true"] {
+    right: 0% !important;
+}
+.trigger-on-scroll.slide-up[data-active="true"] {
+    will-change: transform;
+    opacity: 1;
+    transition-duration: 1000ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
+    transform: translateY(-33vh);
+    position: relative;
+    visibility: visible;
+    top: calc(0px + 33vh);
+}
