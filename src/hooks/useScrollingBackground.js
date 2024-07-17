@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-function useScrollingBackground(velocity = 0.4) {
+function useScrollingBackground(velocity = 0.1) {
     const containerRef = useRef(null);
     const [scrollPos, setScrollPos] = useState(0);
 
