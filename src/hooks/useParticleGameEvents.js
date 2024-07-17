@@ -9,8 +9,16 @@ const useParticleGameEvents = (refs, handleInteraction, handleScroll, initialize
       const isInside = event.type !== 'mouseleave' && event.type !== 'touchend';
       handleInteraction(event, isInside);
     };
+
+    const addEventListeners = (element, eventTypes, handler, options) => {
+      eventTypes.forEach(eventType => element.addEventListener(eventType, handler, options));
+    };
+
+    const removeEventListeners = (element, eventTypes, handler) => {
+      eventTypes.forEach(eventType => element.removeEventListener(eventType, handler));
+    };
   
-    events.forEach(eventType => localRefs.container.addEventListener(eventType, handleEvent, { passive: false }));
+    addEventListeners(localRefs.container, events, handleEvent, { passive: false });
     window.addEventListener('wheel', handleScroll, { passive: false });
   
     initializeAnimation();
@@ -24,7 +32,7 @@ const useParticleGameEvents = (refs, handleInteraction, handleScroll, initialize
     window.addEventListener('resize', handleResize);
   
     return () => {
-      events.forEach(eventType => localRefs.container.removeEventListener(eventType, handleEvent));
+      removeEventListeners(localRefs.container, events, handleEvent);
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(localRefs.animationFrameId);

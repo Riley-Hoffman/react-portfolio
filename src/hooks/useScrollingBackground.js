@@ -7,13 +7,14 @@ function useScrollingBackground(velocity = 0.1) {
     useEffect(() => {
         let ticking = false;
 
+        const updateScrollPosition = () => {
+            setScrollPos(window.scrollY);
+            ticking = false;
+        };
+
         const handleScroll = () => {
-            const currentScrollPos = window.scrollY;
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    setScrollPos(currentScrollPos);
-                    ticking = false;
-                });
+                window.requestAnimationFrame(updateScrollPosition);
                 ticking = true;
             }
         };
@@ -25,10 +26,14 @@ function useScrollingBackground(velocity = 0.1) {
     }, []);
 
     useEffect(() => {
-        if (containerRef.current) {
-            const height = containerRef.current.offsetHeight - 18;
-            containerRef.current.style.backgroundPosition = `-${Math.round((height - scrollPos) * velocity)}px center`;
-        }
+        const updateBackgroundPosition = () => {
+            if (containerRef.current) {
+                const height = containerRef.current.offsetHeight - 18;
+                containerRef.current.style.backgroundPosition = `-${Math.round((height - scrollPos) * velocity)}px center`;
+            }
+        };
+
+        updateBackgroundPosition();
     }, [scrollPos, velocity]);
 
     return containerRef;

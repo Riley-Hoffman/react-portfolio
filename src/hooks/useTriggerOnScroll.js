@@ -5,34 +5,25 @@ const useTriggerOnScroll = (force = 0) => {
 
   useEffect(() => {
     const updateTriggerOnScroll = () => {
-      let classes = ["trigger-on-scroll"];
-      classes.forEach((cls) => {
-        const elements = document.getElementsByClassName(cls);
-        if (elements.length) {
-          Object.keys(elements).forEach((key) => {
-            const rect = elements[key].getBoundingClientRect();
-            if (force || rect.top < (elements[key].dataset.distance ?? 800)) {
-              elements[key].dataset.active = "true";
-            }
-            if (
-              elements[key].dataset.repeat &&
-              rect.top > (elements[key].dataset.distance ?? 800)
-            ) {
-              elements[key].dataset.active = "false";
-            }
-          });
+      const elements = document.querySelectorAll('.trigger-on-scroll');
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const distance = element.dataset.distance ?? 800;
+        const isActive = rect.top < distance;
+        element.dataset.active = isActive || force ? "true" : "false";
+
+        if (element.dataset.repeat && !isActive && !force) {
+          element.dataset.active = "false";
         }
       });
     };
 
-    setTimeout(() => {
-      updateTriggerOnScroll();
-    }, 100);
+    setTimeout(updateTriggerOnScroll, 100);
 
-    window.onscroll = updateTriggerOnScroll;
+    window.addEventListener('scroll', updateTriggerOnScroll);
 
     return () => {
-      window.onscroll = null;
+      window.removeEventListener('scroll', updateTriggerOnScroll);
     };
   }, [force]);
 
