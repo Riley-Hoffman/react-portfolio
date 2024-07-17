@@ -23,22 +23,22 @@ function Header() {
                     <Hamburger />         
                     <ul className="flex block-700">
                         <li>
-                            <NavLink className="button" to="/" activeclassname="active">
+                            <NavLink className="button" to="/">
                                 Home
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/projects" activeclassname="active">
+                            <NavLink className="button" to="/projects">
                                 Projects
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/skills" activeclassname="active">
+                            <NavLink className="button" to="/skills">
                                 Skills
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="button" to="/contact" activeclassname="active">
+                            <NavLink className="button" to="/contact">
                                 Contact
                             </NavLink>
                         </li>
