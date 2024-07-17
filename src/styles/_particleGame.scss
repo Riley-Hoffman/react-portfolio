@@ -6,7 +6,7 @@ ol.numbered-icons.medal-criteria > li:nth-child(3):before { background-color: #A
 .particle-game.done:hover {cursor: default !important;}
 
 .particle-game + .button {position: relative; z-index: 1}
-.particle-game {filter: drop-shadow(0.5px 0.5px 0.5px #693681);height: 500px; position: relative; border: 11px solid #12121c; box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5); overflow: hidden; background-image: url("../assets/wood-background-grayscale.jpg"); background-size: cover; background-position: right; max-width: calc(100% - 40px); margin: 0 auto;
+.particle-game {filter: drop-shadow(0.5px 0.5px 0.5px #693681);height: 500px; position: relative; border: 11px solid #12121c; box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5); overflow: hidden; background-image: url("../assets/wood-background.jpg"); background-size: cover; background-position: right; max-width: calc(100% - 40px); margin: 0 auto;
     canvas {display: block; position: absolute; top: 0; left: 0; filter: drop-shadow(1px 1px 0px #00000061)}
     canvas + div {height: 100%;}
     .completion-message {
