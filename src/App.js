@@ -14,7 +14,8 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <main id="content">
+          <main>
+            <a href="#content" id="content" className="skip-link start button">Start of main content</a>
             <Routes>
               <Route path='/' element={
                 <> 

@@ -1,27 +1,21 @@
-ol.numbered-icons.medal-criteria > li {
-    &:first-child:before {
-        background-color: #8a7400;
+ol.numbered-icons.medal-criteria {
+    > li {
+        &:first-child:before {
+            background-color: #8a7400;
+        }
+        &:nth-child(2):before {
+            background-color: #737373;
+        }
+        &:nth-child(3):before {
+            background-color: #a2652a;
+        }
     }
-    &:nth-child(2):before {
-        background-color: #737373;
-    }
-    &:nth-child(3):before {
-        background-color: #a2652a;
-    }
-}
-.medal-criteria + [class*="max-"] {
-    margin-left: 0;
-}
-.particle-game:not(.done) {
-    cursor: grabbing;
+    + [class*="max-"] {
+        margin-left: 0;
+    } 
 }
 .particle-game.done:hover {
     cursor: default !important;
-}
-
-.particle-game + .button {
-    position: relative;
-    z-index: 1;
 }
 .particle-game {
     filter: drop-shadow(0.5px 0.5px 0.5px #693681);
@@ -38,15 +32,22 @@ ol.numbered-icons.medal-criteria > li {
     background-position: right;
     max-width: calc(100% - 40px);
     margin: 0 auto;
+    &:not(.done) {
+        cursor: grabbing;
+    }
+    + .button {
+        position: relative;
+        z-index: 1;
+    }
     canvas {
         display: block;
         position: absolute;
         top: 0;
         left: 0;
         filter: drop-shadow(1px 1px 0px #00000061);
-    }
-    canvas + div {
-        height: 100%;
+        + div {
+            height: 100%;
+        }
     }
     .completion-message {
         position: absolute;
