@@ -1,11 +1,15 @@
 .contact {
     padding: 100px 0 18vh;
-    form {padding: 20px 20px 40px;}
+    form {
+        padding: 20px 20px 40px;
+    }
     fieldset > div {
         padding-bottom: 20px;
         > div {
-            padding-bottom: 10px; align-items: center; justify-content: space-between; gap: 22px;
+            padding-bottom: 10px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
         }
     }
-    
 }

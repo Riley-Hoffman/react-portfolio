@@ -1,14 +1,32 @@
 .about {
-    background-color: #f9ddda; background-image: url("../assets/clouds.jpg"); background-size: cover; background-attachment: fixed; background-repeat: repeat; border-bottom: 5px solid;
+    background-color: #f9ddda;
+    background-image: url("../assets/clouds.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    border-bottom: 5px solid;
+    + div {
+        padding: 100px 0;
+    }
     > div {
-        align-items: flex-end; justify-content: center;
+        align-items: flex-end;
+        justify-content: center;
         div:first-child {
             padding: 25vh 20px 25vh 0;
         }
     }
-    h1 {margin-bottom: 0;}
-    p.separator {margin-top: 0;}
-    p:not(.separator) {margin-top: 30px;}
-    img { padding-top: 20px; opacity: 0.9; display: inline-block;}
+    h1 {
+        margin-bottom: 0;
+    }
+    p.separator {
+        margin-top: 0;
+    }
+    p:not(.separator) {
+        margin-top: 30px;
+    }
+    img {
+        padding-top: 20px;
+        opacity: 0.9;
+        display: inline-block;
+    }
 }
-.about + div {padding: 100px 0;}

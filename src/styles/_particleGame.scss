@@ -1,16 +1,69 @@
-ol.numbered-icons.medal-criteria > li:first-child:before { background-color: #8A7400; }
-ol.numbered-icons.medal-criteria > li:nth-child(2):before { background-color: #737373; }
-ol.numbered-icons.medal-criteria > li:nth-child(3):before { background-color: #A2652A; }
-.medal-criteria + [class*="max-"] {margin-left: 0;}
-.particle-game:not(.done) {cursor: grabbing;}
-.particle-game.done:hover {cursor: default !important;}
+ol.numbered-icons.medal-criteria > li {
+    &:first-child:before {
+        background-color: #8a7400;
+    }
+    &:nth-child(2):before {
+        background-color: #737373;
+    }
+    &:nth-child(3):before {
+        background-color: #a2652a;
+    }
+}
+.medal-criteria + [class*="max-"] {
+    margin-left: 0;
+}
+.particle-game:not(.done) {
+    cursor: grabbing;
+}
+.particle-game.done:hover {
+    cursor: default !important;
+}
 
-.particle-game + .button {position: relative; z-index: 1}
-.particle-game {filter: drop-shadow(0.5px 0.5px 0.5px #693681);height: 500px; position: relative; border: 11px solid #12121c; box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset 1px 1px 0 rgba(255, 255, 255, 0.9), inset -1px -1px 0 rgba(0, 0, 0, 0.5); overflow: hidden; background-image: url("../assets/wood-background.jpg"); background-size: cover; background-position: right; max-width: calc(100% - 40px); margin: 0 auto;
-    canvas {display: block; position: absolute; top: 0; left: 0; filter: drop-shadow(1px 1px 0px #00000061)}
-    canvas + div {height: 100%;}
+.particle-game + .button {
+    position: relative;
+    z-index: 1;
+}
+.particle-game {
+    filter: drop-shadow(0.5px 0.5px 0.5px #693681);
+    height: 500px;
+    position: relative;
+    border: 11px solid #12121c;
+    box-shadow:
+        2px 2px 0.5em rgba(122, 122, 122, 0.55),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+        inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    background-image: url("../assets/wood-background.jpg");
+    background-size: cover;
+    background-position: right;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: drop-shadow(1px 1px 0px #00000061);
+    }
+    canvas + div {
+        height: 100%;
+    }
     .completion-message {
-        position: absolute; height: 100%; align-items: center; justify-content: center; font-size: 24px; font-family: "Source Sans Pro 3", sans-serif; margin: 0; background-color: white; padding: 0; flex-direction: column;
-        svg {font-size: 60px; animation: spin 2.4s infinite; display: block; margin: 0 auto;}
+        position: absolute;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-family: "Source Sans Pro 3", sans-serif;
+        margin: 0;
+        background-color: white;
+        padding: 0;
+        flex-direction: column;
+        svg {
+            font-size: 60px;
+            animation: spin 2.4s infinite;
+            display: block;
+            margin: 0 auto;
+        }
     }
 }

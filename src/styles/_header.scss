@@ -10,15 +10,21 @@ header {
   box-shadow: 0 1px 3px -3px #12121c;
   border-bottom: 2px solid;
   border-top: 34px solid #12121c;
-  > div {align-items: center; }
+  > div {
+    align-items: center;
+  }
   .logo a {
-    text-decoration: none;display: block;
+    text-decoration: none;
+    display: block;
     p {
-      color: #212738; font-family: 'Karla', sans-serif; margin: 0; padding: 0 0 0 10px; font-size: 18px;
+      color: #212738;
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 0 0 0 10px;
+      font-size: 18px;
     }
   }
 }
-
 
 [data-open="true"] > .closer,
 [data-open="true"] > .closer {
@@ -80,7 +86,7 @@ nav.menu {
       a:hover,
       a.active {
         background-color: #e5d4ed;
-        color: #12121c !important;
+        color: #12121c;
       }
     }
   }
@@ -88,7 +94,7 @@ nav.menu {
 
 @media (max-width: 700px) {
   nav.menu {
-    padding: 10px 0 !important;
+    padding: 10px 0;
     div.hamburger-box:not([data-open="true"]) + ul > li > * {
       display: none !important;
     }
@@ -120,31 +126,33 @@ nav.menu {
         -moz-transition: 0.2s ease-in-out;
         -o-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
-      }
-      .line:first-child {
-        top: 8px;
-      }
-      .line:nth-child(2), .line:nth-child(3) {
-        top: 16px;
-      }
-      .line:nth-child(4) {
-        top: 24px;
+        &:first-child {
+          top: 8px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 16px;
+        }
+        &:nth-child(4) {
+          top: 24px;
+        }
       }
     }
-    > .hamburger-box[data-open="true"] {
-      .line:first-child, .line:nth-child(4) {
+    > .hamburger-box[data-open="true"] .line {
+      &:first-child,
+      &:nth-child(4) {
         top: 21px;
         width: 0;
         border: none;
         left: 15px;
       }
-      .line:nth-child(2) {
+      &:nth-child(2) {
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg);
       }
-      .line:nth-child(3) {
+      &:nth-child(3) {
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);

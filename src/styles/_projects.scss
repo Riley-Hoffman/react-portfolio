@@ -11,11 +11,8 @@
   margin: 100px 0;
   border-top: 8px solid #794e8d;
   gap: 60px;
-  .imgBox,
   .projectInfo {
     flex-basis: 50%;
-  }
-  .projectInfo {
     padding: 20px 0 40px;
     position: relative;
     z-index: 10;
@@ -35,17 +32,18 @@
       text-transform: uppercase;
       transition: color 0.5s;
       margin: 0 20px;
-    }
-    a:last-of-type {
-      margin-left: 10px;
-    }
-    a:focus {
-      opacity: 0.6;
+      &:last-of-type {
+        margin-left: 10px;
+      }
+      &:focus {
+        opacity: 0.6;
+      }
     }
   }
   .imgBox {
     cursor: pointer;
     position: relative;
+    flex-basis: 50%;
     .projImgLink {
       color: #e5e8ee;
       padding: 0;
@@ -69,15 +67,17 @@
     }
   }
 }
-.projectBox:nth-child(even) {
-  flex-direction: row-reverse;
-}
-.projectBox:first-of-type {
-  margin-top: 50px;
-}
-.projectBox:nth-child(odd) .imgBox .oval {
-  left: -100%;
-}
-.projectBox:nth-child(even) .imgBox .oval {
-  right: -100%;
+.projectBox {
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  &:first-of-type {
+    margin-top: 50px;
+  }
+  &:nth-child(odd) .imgBox .oval {
+    left: -100%;
+  }
+  &:nth-child(even) .imgBox .oval {
+    right: -100%;
+  }
 }
