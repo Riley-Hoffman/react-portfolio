@@ -1,0 +1,14 @@
+.about.overlay:after {
+    background-image: linear-gradient(90deg, rgba(211, 216, 235, 0.83) 0%, rgba(245, 238, 247, 0.48) 100%);
+}
+.about {
+    background-color: #f9ddda; background-image: url("../assets/clouds.png"); background-size: cover; background-attachment: fixed; background-repeat: repeat; border-bottom: 5px solid;
+    > div {
+        align-items: flex-end; justify-content: center;
+    }
+    h1 {margin-bottom: 0;}
+    p.separator {margin-top: 0;}
+    p:not(.separator) {margin-top: 30px;}
+    img { marign-right: 0; padding-top: 20px; opacity: 0.9; display: inline-block;}
+}
+.about + div {padding: 100px 0;}

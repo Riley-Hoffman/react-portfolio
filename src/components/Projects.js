@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from './ProjectBox';
 import '../styles/_projects.scss';
+import '../styles/_triggerOnScroll.scss';
 import thumbnail from '../assets/thumbnail.jpg';
 
 const Projects = () => {
@@ -58,7 +59,7 @@ const Projects = () => {
 
 
   return (
-    <div className="max-1200px" style={{ padding: '100px 0'}}>
+    <div className="max-1200px projects">
         <Helmet>
             <title>Projects - Riley Hoffman - Web Developer</title>
             <meta property="og:image" content={thumbnail} />
@@ -67,7 +68,7 @@ const Projects = () => {
         </Helmet>  
         <h1 className="text-40">Projects</h1>
         <h2 className="text-30">Juno College Projects</h2>
-        <ul style={{ listStyle: 'none', padding: '0 20px', position: 'relative' }}>
+        <ul>
             {projects.map((project, index) => (
                 <ProjectBox key={index} {...project} />
  

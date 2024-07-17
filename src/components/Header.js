@@ -11,17 +11,17 @@ function Header() {
     return (
         <header className="gradient-border">
             <a href="#content" className="skip-link button">Skip To Content</a>
-            <div className="max-1200px flex" style={{ alignItems: 'center' }}>
+            <div className="max-1200px flex">
                 <div>
                     <div className="logo">
-                        <NavLink to="/" style={{ textDecoration: 'none', display: 'block' }} activeclassname="active">
-                            <p className="text-halfbold text-center text-uppercase" style={{ color: '#212738', fontFamily: '"Karla", sans-serif', margin: '0', padding: '0 0 0 10px', fontSize: '18px' }}>Riley Hoffman <span className="sr-only"> Home</span></p>
+                        <NavLink to="/">
+                            <p className="text-halfbold text-center text-uppercase">Riley Hoffman <span className="sr-only"> Home</span></p>
                         </NavLink>
                     </div>
                 </div>
                 <nav className="menu">
                     <Hamburger />         
-                    <ul className="flex block-700" style={{ alignItems: 'center' }} >
+                    <ul className="flex block-700">
                         <li>
                             <NavLink className="button" to="/" activeclassname="active">
                                 Home

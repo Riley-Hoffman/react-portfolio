@@ -1,4 +1,11 @@
-@import "../styles/trigger-on-scroll";
+.projects {
+  padding: 100px 0;
+  ul {
+    position: relative;
+    list-style: none;
+    padding: 0 20px;
+  }
+}
 
 .projectBox {
   margin: 100px 0;
