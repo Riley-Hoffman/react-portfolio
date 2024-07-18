@@ -162,8 +162,8 @@ const ParticleGame = () => {
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
         <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-        <li className="text-26"><span className="sr-only">Silver, 15-20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-        <li className="text-26"><span className="sr-only">Bronze, 21-25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+        <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+        <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
       </ol>
       <div className="max-800px">
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
