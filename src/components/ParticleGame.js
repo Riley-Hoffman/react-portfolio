@@ -157,8 +157,8 @@ const ParticleGame = () => {
 
   return (
     <div>
-      <h2 className="label-text">Fun With Particles</h2>
-      <h3 className="text-40">Particle Animation Cleanup Game</h3>
+      <h2 className="label-text">Latest Concept</h2>
+      <h3 className="text-40">Particle Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
         <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-hidden="false" aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
