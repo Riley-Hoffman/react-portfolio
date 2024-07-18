@@ -37,13 +37,8 @@
     }
   }
   .imgBox {
-    cursor: pointer;
     position: relative;
     flex-basis: 50%;
-    .projImgLink {
-      color: #e5e8ee;
-      padding: 0;
-    }
     img {
       position: relative;
       transition: filter 1s;
