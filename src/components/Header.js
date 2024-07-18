@@ -15,7 +15,7 @@ function Header() {
                 <div>
                     <div className="logo">
                         <NavLink to="/">
-                            <p className="text-halfbold text-center text-uppercase">Riley Hoffman <span className="sr-only"> Home</span></p>
+                            <p className="text-500 text-center text-uppercase">Riley Hoffman <span className="sr-only"> Home</span></p>
                         </NavLink>
                     </div>
                 </div>
