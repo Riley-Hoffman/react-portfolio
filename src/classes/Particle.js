@@ -63,7 +63,7 @@ class Particle {
       this.x += this.directionX;
       this.y += this.directionY;
   
-      if (this.x < -6 || this.x > canvas.width - 6 || this.y < -6 || this.y > canvas.height - 6) {
+      if (this.x < -5 || this.x > canvas.width - 5 || this.y < -5 || this.y > canvas.height - 5) {
         this.inCanvas = false;
       }
   
