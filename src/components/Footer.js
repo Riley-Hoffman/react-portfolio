@@ -8,7 +8,7 @@ function Footer() {
             <h2 className="sr-only">Footer</h2>
             <div className="wrapper flex">
                 <div>Riley Hoffman | Web Developer 
-                    <a href="https://github.com/Riley-Hoffman" target="_blank" rel="noopener noreferrer" aria-label="Github"> <FontAwesomeIcon icon={faGithub} /></a>
+                    <a href="https://github.com/Riley-Hoffman/react-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Site repo on Github"> <FontAwesomeIcon icon={faGithub} /></a>
                 </div>
                 ©{new Date().getFullYear()}
             </div>
