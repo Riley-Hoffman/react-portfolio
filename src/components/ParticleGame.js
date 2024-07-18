@@ -63,7 +63,7 @@ const ParticleGame = () => {
     let colors = ['#A8A0D9', '#794E8D', '#ae4971'];
     let color = colors[Math.floor(Math.random() * colors.length)];
     let weight = Math.random() * 0.5 + 0.5;
-    let speedFactor = refs.current.isMobile ? (window.innerHeight > 800 ? 0.3 * 0.54 : 0.3) : (window.innerHeight > 800 ? 0.8 * 0.54 : 0.9);
+    let speedFactor = refs.current.isMobile ? (window.innerHeight > 800 ? 0.4 * 0.54 : 0.4) : (window.innerHeight > 800 ? 0.8 * 0.54 : 0.9);
     speedFactor *= state.gameCompletedOnce ? 0.54 : 0.8;
 
     return new Particle(x, y, size, color, weight, speedFactor);
