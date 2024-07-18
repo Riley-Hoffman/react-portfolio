@@ -33,11 +33,10 @@ const Skills = () => {
           <link rel="canonical" href="https://rileyhoffman.com/skills" />
           
       </Helmet>  
-        <section className="skills" id="skills">
-          <div className="wrapper">
-            <div>
-              <h1 className="text-center text-40">Skills</h1>
-              <ul className="max-1000px skillsGallery">
+        <section>
+          <h1 className="text-center text-40 banner-heading gradient-border">Skills</h1>
+          <div className="wrapper skills">
+              <ul className="max-1000px block-400 skillsGallery">
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}
@@ -47,7 +46,7 @@ const Skills = () => {
                   />
                 ))}
               </ul>
-            </div>
+              <div className="oval"></div>
           </div>
         </section>
       </div>

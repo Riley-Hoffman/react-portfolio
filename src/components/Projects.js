@@ -59,22 +59,24 @@ const Projects = () => {
 
 
   return (
-    <div className="max-1200px projects">
-        <Helmet>
-            <title>Projects - Riley Hoffman - Web Developer</title>
-            <meta property="og:image" content={thumbnail} />
-            <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
-            <link rel="canonical" href="https://rileyhoffman.com/projects" />
-        </Helmet>  
-        <h1 className="text-40">Projects</h1>
-        <h2 className="text-30">Juno College Projects</h2>
-        <ul>
-            {projects.map((project, index) => (
-                <ProjectBox key={index} {...project} />
- 
-            ))}
-        </ul>
-    </div>
+    <section>
+      <Helmet>
+          <title>Projects - Riley Hoffman - Web Developer</title>
+          <meta property="og:image" content={thumbnail} />
+          <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
+          <link rel="canonical" href="https://rileyhoffman.com/projects" />
+      </Helmet>  
+      <h1 className="text-center text-40 banner-heading gradient-border">Projects</h1>
+      <div className="max-1200px projects">
+          <h2 className="text-30">Juno College Projects</h2>
+          <ul>
+              {projects.map((project, index) => (
+                  <ProjectBox key={index} {...project} />
+  
+              ))}
+          </ul>
+      </div>
+    </section>
   );
 };
 

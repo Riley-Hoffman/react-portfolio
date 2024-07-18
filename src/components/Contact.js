@@ -5,16 +5,18 @@ import thumbnail from '../assets/thumbnail.jpg';
 
 function Contact() {
     return (
-        <div className="max-700px contact"> 
+        <section>
             <Helmet>
                 <title>Contact - Riley Hoffman - Web Developer</title>
                 <meta property="og:image" content={thumbnail} />
                 <meta name="description" content="Contact Web Developer Riley Hoffman with the form on this page." />
                 <link rel="canonical" href="https://rileyhoffman.com/contact" />
             </Helmet>     
-            <h1 className="text-40">Contact Me</h1>
-            <Form/>
-        </div>
+            <h1 className="text-center text-40 banner-heading gradient-border">Contact Me</h1>
+            <div className="max-700px contact"> 
+                <Form/>
+            </div>
+        </section>
     )
 }
 
