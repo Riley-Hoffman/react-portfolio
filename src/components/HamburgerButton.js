@@ -1,26 +1,41 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 const Hamburger = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const HamburgerRef = useRef(null);
 
+    const updateAttributes = useCallback((newIsExpanded) => {
+        if (HamburgerRef.current) {
+            HamburgerRef.current.setAttribute('aria-expanded', newIsExpanded.toString());
+            HamburgerRef.current.setAttribute('aria-label', newIsExpanded ? 'Close Menu' : 'Open Menu');
+
+            const parentNode = HamburgerRef.current.parentNode;
+            if (parentNode) {
+                parentNode.dataset.open = newIsExpanded.toString();
+            }
+        }
+    }, []);
+
     const toggleMenu = useCallback(() => {
         setIsExpanded(prevState => {
             const newIsExpanded = !prevState;
-
-            if (HamburgerRef.current) {
-                HamburgerRef.current.setAttribute('aria-expanded', newIsExpanded);
-                HamburgerRef.current.setAttribute('aria-label', newIsExpanded ? 'Close Menu' : 'Open Menu');
-                
-                const parentNode = HamburgerRef.current.parentNode;
-                if (parentNode) {
-                    parentNode.dataset.open = newIsExpanded.toString();
-                }
-            }
-
+            updateAttributes(newIsExpanded);
             return newIsExpanded;
         });
-    }, []);
+    }, [updateAttributes]);
+
+    const handleResize = useCallback(() => {
+        const isWindowWideEnough = window.innerWidth > 700;
+        setIsExpanded(isWindowWideEnough ? false : isExpanded);
+        updateAttributes(isWindowWideEnough ? false : isExpanded);
+    }, [isExpanded, updateAttributes]);
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     return (
         <div className="hamburger-box">
