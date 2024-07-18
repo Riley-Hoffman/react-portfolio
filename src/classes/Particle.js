@@ -1,5 +1,5 @@
 class Particle {
-    constructor(x, y, size, color, weight, isMobile) {
+    constructor(x, y, size, color, weight, speedFactor) {
       this.x = x;
       this.y = y;
       this.size = size;
@@ -9,7 +9,7 @@ class Particle {
       this.directionY = 0;
       this.vertices = this.generateVertices();
       this.inCanvas = true;
-      this.speedFactor = isMobile ? 0.4 : 1;
+      this.speedFactor = speedFactor;
     }
   
     generateVertices() {

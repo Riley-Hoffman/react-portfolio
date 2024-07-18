@@ -20,6 +20,7 @@ const ParticleGame = () => {
   const [state, setState] = useState({
     displayTime: null,
     gameInProgress: true,
+    gameCompletedOnce: false,
   });
 
   const memoizedValues = useMemo(() => ({
@@ -62,8 +63,14 @@ const ParticleGame = () => {
     let colors = ['#A8A0D9', '#794E8D', '#ae4971'];
     let color = colors[Math.floor(Math.random() * colors.length)];
     let weight = Math.random() * 0.5 + 0.5;
-    return new Particle(x, y, size, color, weight, refs.current.isMobile);
-  }, []);
+    let speedFactor = refs.current.isMobile ? 0.4 : 1;
+
+    if (state.gameCompletedOnce) {
+      speedFactor *= 0.54;
+    }
+
+    return new Particle(x, y, size, color, weight, speedFactor);
+  }, [state.gameCompletedOnce]);
 
   const initParticles = useCallback((canvas) => {
     refs.current.particlesArray.length = 0;
@@ -90,6 +97,7 @@ const ParticleGame = () => {
         ...prevState,
         displayTime: refs.current.elapsedTime,
         gameInProgress: false,
+        gameCompletedOnce: true,
       }));
       document.getElementById('completionMessage').focus();
     }
@@ -142,10 +150,11 @@ const ParticleGame = () => {
     refs.current.cursorInsideCanvas = false;
     refs.current.particlesArray = [];
     refs.current.isMobile = null;
-    setState({
+    setState(prevState => ({
       displayTime: null,
       gameInProgress: true,
-    });
+      gameCompletedOnce: prevState.gameCompletedOnce,
+    }));
     initializeAnimation();
   }, [initializeAnimation]);
 
