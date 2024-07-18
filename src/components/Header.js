@@ -8,15 +8,19 @@ function Header() {
         document.documentElement.scrollTo({ top:0, left:0, behavior: "instant" });
     }, [location.pathname]);
 
+    const handleClickHome = () => {
+        window.location.href = '/';
+    };
+
     return (
         <header className="gradient-border">
             <a href="#content" className="skip-link button">Skip To Content</a>
             <div className="max-1200px flex">
                 <div>
                     <div className="logo">
-                        <NavLink to="/">
+                    <button onClick={handleClickHome} aria-hidden="true">
                             <p className="text-500 text-center text-uppercase">Riley Hoffman <span className="sr-only"> Home</span></p>
-                        </NavLink>
+                        </button>
                     </div>
                 </div>
                 <nav className="menu">

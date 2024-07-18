@@ -12,8 +12,10 @@ footer {
     }
     a {
       text-decoration: none;
-      &:hover .fa-github.svg-inline--fa {
-        color: #794e8d;
+      &:hover, &:focus-visible {
+        .fa-github.svg-inline--fa {
+          color: #794e8d;
+        }
       }
       .fa-github.svg-inline--fa {
         margin-left: 5px;

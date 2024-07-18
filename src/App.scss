@@ -891,7 +891,7 @@ a {
 	border-radius: 1px;
 	font-family: inherit;
 	text-decoration: none;
-	&:hover {
+	&:hover, &:focus-visible {
 		background-color: #e5d4ed;
 		color: #12121c;
 	}
@@ -1052,8 +1052,6 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
 	outline: 2px solid #a8a0d9;
-	background-color: #e5d4ed;
-	color: #12121c;
 }
 
 .svg-inline--fa {
