@@ -161,9 +161,9 @@ const ParticleGame = () => {
       <h3 className="text-40">Particle Cleanup Game</h3>
       <p className="text-26">How fast can you clear the board of particles?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
-        <li className="text-26"><FontAwesomeIcon icon={faLessThan} aria-hidden="false" aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
-        <li className="text-26">15s-20s &nbsp;&nbsp;</li>
-        <li className="text-26">21s-25s &nbsp;&nbsp;</li>
+        <li className="text-26"><span className="sr-only">Gold </span><FontAwesomeIcon icon={faLessThan} aria-hidden="false" aria-label="Less Than" /> 15s &nbsp;&nbsp;</li>
+        <li className="text-26"><span className="sr-only">Silver </span>15s-20s &nbsp;&nbsp;</li>
+        <li className="text-26"><span className="sr-only">Bronze </span>21s-25s &nbsp;&nbsp;</li>
       </ol>
       <div className="max-800px">
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
