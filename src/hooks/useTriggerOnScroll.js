@@ -8,7 +8,7 @@ const useTriggerOnScroll = (force = 0) => {
       const elements = document.querySelectorAll('.trigger-on-scroll');
       elements.forEach((element) => {
         const rect = element.getBoundingClientRect();
-        const distance = element.dataset.distance ?? 900;
+        const distance = element.dataset.distance ?? 800;
         const isActive = rect.top < distance;
         element.dataset.active = isActive || force ? "true" : "false";
 

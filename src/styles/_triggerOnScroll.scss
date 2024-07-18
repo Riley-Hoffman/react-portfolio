@@ -5,10 +5,16 @@
     &[data-active="true"] {
         opacity: 1;
     }
+    @media(max-width: 900px) {
+        opacity: 1;
+    }
 }
 .trigger-on-scroll.slide-in-left {
     left: -100%;
     &[data-active="true"] {
+        left: 0% !important;
+    }
+    @media(max-width: 900px) {
         left: 0% !important;
     }
 }
@@ -17,14 +23,7 @@
     &[data-active="true"] {
         right: 0% !important;
     }
-}
-.trigger-on-scroll.slide-up[data-active="true"] {
-    will-change: transform;
-    opacity: 1;
-    transition-duration: 1000ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
-    transform: translateY(-33vh);
-    position: relative;
-    visibility: visible;
-    top: calc(0px + 33vh);
+    @media(max-width: 900px) {
+        right: 0% !important;
+    }
 }
