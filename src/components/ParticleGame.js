@@ -163,7 +163,7 @@ const ParticleGame = () => {
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
           <canvas ref={ref => refs.current.canvas = ref} />
           <div>
-            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-900 text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><FontAwesomeIcon icon={faMedal} color={medalDetails().color} /> </span> )}</span></p>
+            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-800 text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><FontAwesomeIcon icon={faMedal} color={medalDetails().color} /> </span> )}</span></p>
             </div>}
           </div>
         </div>
