@@ -18,8 +18,8 @@ function Header() {
             <div className="max-1200px flex">
                 <div>
                     <div className="logo">
-                    <button onClick={handleClickHome} aria-hidden="true">
-                            <p className="text-500 text-center text-uppercase">Riley Hoffman <span className="sr-only"> Home</span></p>
+                    <button onClick={handleClickHome} aria-label="Back to home page">
+                            <p className="text-500 text-center text-uppercase">Riley Hoffman</p>
                         </button>
                     </div>
                 </div>
