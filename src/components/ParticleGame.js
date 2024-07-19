@@ -25,43 +25,41 @@ const ParticleGame = () => {
     messageVisible: true,
   });
 
-  const memoizedValues = useMemo(() => ({
-    mouse: { x: null, y: null, radius: 150 },
-  }), []);
+  const mouse = useMemo(() => ({ x: null, y: null, radius: 150 }), []);
 
   const updateCursorPosition = useCallback((clientX, clientY) => {
     const rect = refs.current.canvas.getBoundingClientRect();
-    memoizedValues.mouse.x = clientX - rect.left;
-    memoizedValues.mouse.y = clientY - rect.top;
+    mouse.x = clientX - rect.left;
+    mouse.y = clientY - rect.top;
 
     if (refs.current.startTime === null) {
       refs.current.startTime = Date.now();
     }
-  }, [memoizedValues.mouse]);
+  }, [mouse]);
+
+  const showMessageTemporarily = (message) => {
+    setState(prevState => ({
+      ...prevState,
+      cursorMessage: message,
+      messageVisible: false,
+    }));
+    setTimeout(() => {
+      setState(prevState => ({ ...prevState, messageVisible: true }));
+    }, 10);
+  };
 
   const handleInteraction = useCallback((event, isInside) => {
-    if (event.type === 'mousemove' || event.type === 'touchmove') {
+    if (['mousemove', 'touchmove'].includes(event.type)) {
       const clientX = event.clientX ?? event.touches[0].clientX;
       const clientY = event.clientY ?? event.touches[0].clientY;
       updateCursorPosition(clientX, clientY);
     }
     if (refs.current.cursorInsideCanvas !== isInside) {
       refs.current.cursorInsideCanvas = isInside;
-      refs.current.container.scrollIntoView({block: 'center', behavior: 'smooth'});
+      refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
 
       if (state.gameInProgress) {
-        setState(prevState => ({
-          ...prevState,
-          cursorMessage: isInside ? 'Your cursor is in the play area' : 'Your cursor has left the play area',
-          messageVisible: false,
-        }));
-
-        setTimeout(() => {
-          setState(prevState => ({
-            ...prevState,
-            messageVisible: true,
-          }));
-        }, 10);
+        showMessageTemporarily(isInside ? 'Your cursor is in the play area' : 'Your cursor has left the play area');
       }
     }
 
@@ -77,67 +75,57 @@ const ParticleGame = () => {
   }, [state.gameInProgress]);
 
   const createParticle = useCallback((canvas) => {
-    let x = Math.random() * canvas.width;
-    let y = Math.random() * canvas.height;
-    let size = Math.random() * 30 + 10;
-    let colors = ['#A8A0D9', '#794E8D', '#ae4971'];
-    let color = colors[Math.floor(Math.random() * colors.length)];
-    let weight = Math.random() * 0.5 + 0.5;
-    let speedFactor = refs.current.isMobile ? (window.innerHeight > 800 ? 0.4 * 0.54 : 0.4) : (window.innerHeight > 800 ? 0.8 * 0.54 : 0.9);
-    speedFactor *= state.gameCompletedOnce ? 0.54 : 0.8;
+    const { width, height } = canvas;
+    const size = Math.random() * 30 + 10;
+    const colors = ['#A8A0D9', '#794E8D', '#ae4971'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const weight = Math.random() * 0.5 + 0.5;
+    const speedFactor = (refs.current.isMobile ? (window.innerHeight > 800 ? 0.4 * 0.54 : 0.4) : (window.innerHeight > 800 ? 0.8 * 0.54 : 0.9)) * (state.gameCompletedOnce ? 0.54 : 0.8);
 
-    return new Particle(x, y, size, color, weight, speedFactor);
+    return new Particle(Math.random() * width, Math.random() * height, size, color, weight, speedFactor);
   }, [state.gameCompletedOnce]);
 
   const initParticles = useCallback((canvas) => {
-    refs.current.particlesArray.length = 0;
-    for (let i = 0; i < 50; i++) {
-      refs.current.particlesArray.push(createParticle(canvas));
-    }
+    refs.current.particlesArray = Array.from({ length: 50 }, () => createParticle(canvas));
   }, [createParticle]);
 
   const animateParticles = useCallback((ctx, canvas) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let remainingParticles = false;
+
     refs.current.particlesArray.forEach(particle => {
-      particle.update(ctx, memoizedValues.mouse, canvas);
-      if (particle.inCanvas) {
-        remainingParticles = true;
-      }
+      particle.update(ctx, mouse, canvas);
+      if (particle.inCanvas) remainingParticles = true;
     });
 
-    if (!remainingParticles && !refs.current.allClean) {
-      refs.current.allClean = true;
-      const endTime = Date.now();
-      refs.current.elapsedTime = ((endTime - refs.current.startTime) / 1000).toFixed(2);
-      setState(prevState => ({
-        ...prevState,
-        displayTime: refs.current.elapsedTime,
-        gameInProgress: false,
-        gameCompletedOnce: true,
-      }));
-      document.getElementById('completionMessage').focus();
-    }
-
-    if (!remainingParticles && refs.current.allClean) {
-      cancelAnimationFrame(refs.current.animationFrameId);
-      refs.current.container.classList.add('done');
+    if (!remainingParticles) {
+      if (!refs.current.allClean) {
+        refs.current.allClean = true;
+        refs.current.elapsedTime = ((Date.now() - refs.current.startTime) / 1000).toFixed(2);
+        setState(prevState => ({
+          ...prevState,
+          displayTime: refs.current.elapsedTime,
+          gameInProgress: false,
+          gameCompletedOnce: true,
+        }));
+        document.getElementById('completionMessage').focus();
+      } else {
+        cancelAnimationFrame(refs.current.animationFrameId);
+        refs.current.container.classList.add('done');
+      }
     } else {
       refs.current.animationFrameId = requestAnimationFrame(() => animateParticles(ctx, canvas));
     }
-  }, [memoizedValues.mouse]);
+  }, [mouse]);
 
   const initializeAnimation = useCallback(() => {
     const ctx = refs.current.canvas.getContext('2d');
     const container = refs.current.container;
-    if (container.classList.contains('done')) {
-      container.classList.remove('done');
-    }
-    const containerRect = container.getBoundingClientRect();
-
-    refs.current.canvas.width = containerRect.width;
-    refs.current.canvas.height = containerRect.height;
-
+    if (container.classList.contains('done')) container.classList.remove('done');
+    
+    const { width, height } = container.getBoundingClientRect();
+    refs.current.canvas.width = width;
+    refs.current.canvas.height = height;
     refs.current.isMobile = window.innerWidth <= 768;
 
     initParticles(refs.current.canvas);
@@ -149,24 +137,24 @@ const ParticleGame = () => {
   const getMedalDetails = useCallback((displayTime) => {
     if (displayTime <= 25) {
       if (displayTime > 20) return { text: 'Bronze Medal', color: '#A2652A' };
-      else if (displayTime > 15) return { text: 'Silver Medal', color: '#737373' };
-      else return { text: 'Gold Medal', color: '#8A7400' };
+      if (displayTime > 15) return { text: 'Silver Medal', color: '#737373' };
+      return { text: 'Gold Medal', color: '#8A7400' };
     }
     return null;
   }, []);
 
-  const medalDetails = useCallback(() => {
-    return refs.current.allClean ? getMedalDetails(state.displayTime) : null;
-  }, [getMedalDetails, state.displayTime]);
+  const medalDetails = useMemo(() => refs.current.allClean ? getMedalDetails(state.displayTime) : null, [getMedalDetails, state.displayTime]);
 
   const reloadAnimation = useCallback(() => {
     cancelAnimationFrame(refs.current.animationFrameId);
-    refs.current.allClean = false;
-    refs.current.startTime = null;
-    refs.current.elapsedTime = 0;
-    refs.current.cursorInsideCanvas = false;
-    refs.current.particlesArray = [];
-    refs.current.isMobile = null;
+    Object.assign(refs.current, {
+      allClean: false,
+      startTime: null,
+      elapsedTime: 0,
+      cursorInsideCanvas: false,
+      particlesArray: [],
+      isMobile: null,
+    });
     setState(prevState => ({
       displayTime: null,
       gameInProgress: true,
@@ -196,10 +184,10 @@ const ParticleGame = () => {
                 <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
                   All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.displayTime} seconds</span></small>
                   <span className="text-800 text-uppercase" aria-live="polite">
-                    {medalDetails() && (
+                    {medalDetails && (
                       <span className="text-26" aria-live="polite">
-                        {medalDetails().text} <br />
-                        <FontAwesomeIcon icon={faMedal} color={medalDetails().color} />
+                        {medalDetails.text} <br />
+                        <FontAwesomeIcon icon={faMedal} color={medalDetails.color} />
                       </span>
                     )}
                   </span>
