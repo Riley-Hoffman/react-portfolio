@@ -47,6 +47,7 @@ const ParticleGame = () => {
     }
     if (refs.current.cursorInsideCanvas !== isInside) {
       refs.current.cursorInsideCanvas = isInside;
+      refs.current.container.scrollIntoView({block: 'center', behavior: 'smooth'});
 
       if (state.gameInProgress) {
         setState(prevState => ({
@@ -187,7 +188,7 @@ const ParticleGame = () => {
         <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
       </ol>
       <div className="max-800px">
-        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
+        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
           <canvas ref={ref => refs.current.canvas = ref} />
           <div>
             {refs.current.allClean && (
