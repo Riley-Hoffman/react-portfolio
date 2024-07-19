@@ -59,7 +59,7 @@ const ParticleGame = () => {
       refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
 
       if (state.gameInProgress) {
-        showMessageTemporarily(isInside ? 'Your cursor is in the play area' : 'Your cursor has left the play area');
+        showMessageTemporarily('Your cursor has ' + (isInside ? 'entered' : 'exited') + ' Particle Cleanup Game play area');
       }
     }
 
