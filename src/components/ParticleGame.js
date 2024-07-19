@@ -21,6 +21,8 @@ const ParticleGame = () => {
     displayTime: null,
     gameInProgress: true,
     gameCompletedOnce: false,
+    cursorMessage: '',
+    messageVisible: true,
   });
 
   const memoizedValues = useMemo(() => ({
@@ -43,12 +45,29 @@ const ParticleGame = () => {
       const clientY = event.clientY ?? event.touches[0].clientY;
       updateCursorPosition(clientX, clientY);
     }
-    refs.current.cursorInsideCanvas = isInside;
+    if (refs.current.cursorInsideCanvas !== isInside) {
+      refs.current.cursorInsideCanvas = isInside;
+
+      if (state.gameInProgress) {
+        setState(prevState => ({
+          ...prevState,
+          cursorMessage: isInside ? 'Your cursor is in the play area' : 'Your cursor has left the play area',
+          messageVisible: false,
+        }));
+
+        setTimeout(() => {
+          setState(prevState => ({
+            ...prevState,
+            messageVisible: true,
+          }));
+        }, 10);
+      }
+    }
 
     if (event.type.startsWith('touch')) {
       event.preventDefault();
     }
-  }, [updateCursorPosition]);
+  }, [updateCursorPosition, state.gameInProgress]);
 
   const handleScroll = useCallback((event) => {
     if (state.gameInProgress && refs.current.cursorInsideCanvas) {
@@ -151,6 +170,8 @@ const ParticleGame = () => {
       displayTime: null,
       gameInProgress: true,
       gameCompletedOnce: prevState.gameCompletedOnce,
+      cursorMessage: '',
+      messageVisible: true,
     }));
     initializeAnimation();
   }, [initializeAnimation]);
@@ -159,7 +180,7 @@ const ParticleGame = () => {
     <div>
       <h2 className="label-text">Latest Concept</h2>
       <h3 className="text-40">Particle Cleanup Game</h3>
-      <p className="text-26">How fast can you clear the board of particles?</p>
+      <p className="text-26">How fast can you clear the board of particles with your cursor?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
         <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
         <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
@@ -169,10 +190,28 @@ const ParticleGame = () => {
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game">
           <canvas ref={ref => refs.current.canvas = ref} />
           <div>
-            {refs.current.allClean && <div><p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.displayTime} seconds</span></small> <span className="text-800 text-uppercase" aria-live="polite">{ medalDetails() && ( <span className="text-26" aria-live="polite"> {medalDetails().text} <br /><FontAwesomeIcon icon={faMedal} color={medalDetails().color} /> </span> )}</span></p>
-            </div>}
+            {refs.current.allClean && (
+              <div>
+                <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
+                  All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.displayTime} seconds</span></small>
+                  <span className="text-800 text-uppercase" aria-live="polite">
+                    {medalDetails() && (
+                      <span className="text-26" aria-live="polite">
+                        {medalDetails().text} <br />
+                        <FontAwesomeIcon icon={faMedal} color={medalDetails().color} />
+                      </span>
+                    )}
+                  </span>
+                </p>
+              </div>
+            )}
           </div>
         </div>
+        {state.gameInProgress && !refs.current.allClean && (
+          <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
+            {state.cursorMessage}
+          </p>
+        )}
         <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
       </div>
     </div>

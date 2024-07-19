@@ -25,7 +25,7 @@ function Header() {
                 </div>
                 <nav className="menu">
                     <Hamburger />         
-                    <ul className="flex block-700">
+                    <ul className="flex block-700" aria-label="Menu Links">
                         <li>
                             <NavLink className="button" to="/">
                                 Home

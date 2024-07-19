@@ -69,7 +69,7 @@ const Projects = () => {
       <h1 className="text-center text-40 banner-heading gradient-border">Projects</h1>
       <div className="max-1200px projects">
           <h2 className="text-30">Juno College Projects</h2>
-          <ul>
+          <ul aria-label="Projects">
               {projects.map((project, index) => (
                   <ProjectBox key={index} {...project} />
   

@@ -34,7 +34,7 @@ function Form() {
                         className="test width-100 gradient-border"
                         id="message"
                         name="message"
-                        placeholder="Write something.."
+                        placeholder="Write me a message.."
                         spellCheck="true"
                         rows="6"
                         required
