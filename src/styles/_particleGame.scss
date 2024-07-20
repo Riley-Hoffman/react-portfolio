@@ -44,9 +44,15 @@ ol.numbered-icons.medal-criteria {
         position: absolute;
         top: 0;
         left: 0;
+        height: 100%;
+        width: 100%;
         filter: drop-shadow(1px 1px 0px #00000061);
         + div {
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
         }
     }
     .completion-message {
