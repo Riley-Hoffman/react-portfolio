@@ -2,15 +2,14 @@ import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
-import riley from '../assets/riley.png';
 import thumbnail from '../assets/thumbnail.jpg';
+import riley from '../assets/riley.png';
+import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 function About() {
     
     const containerRef = useScrollingBackground();
-    useIntersectionObserver('.about', 'bg-image');
 
     return (
         <div>
@@ -18,6 +17,7 @@ function About() {
                 <meta property="og:image" content={thumbnail} />
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                 <link rel="canonical" href="https://rileyhoffman.com" />
+                <link rel="preload" href={clouds} as="image"></link>
             </Helmet>
             <div className="gradient-border overlay about" ref={containerRef}>
                 <div className="max-1200px flex block-700">
