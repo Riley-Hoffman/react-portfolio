@@ -1,3 +1,16 @@
+
+@font-face {
+    font-family: 'PreloadImage';
+    src: url('../assets/clouds.jpg') format('image');
+  }
+
+.preload-image {
+    font-family: 'PreloadImage';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 .about {
     background-color: #f9ddda;
     background-size: cover;
