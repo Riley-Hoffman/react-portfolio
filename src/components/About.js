@@ -2,13 +2,16 @@ import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
+import usePreloadImages from './usePreloadImages';
 import thumbnail from '../assets/thumbnail.jpg';
 import riley from '../assets/riley.png';
+import clouds from '../assets/clouds.png';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
 function About() {
     
     const containerRef = useScrollingBackground();
+    usePreloadImages([clouds]);
 
     return (
         <div>
@@ -17,7 +20,6 @@ function About() {
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
-            <div className="preload-image"></div>
             <div className="gradient-border overlay about" ref={containerRef}>
                 <div className="max-1200px flex block-700">
                     <div className="max-60 min-60 text-left">
