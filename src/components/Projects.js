@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import ProjectBox from './ProjectBox';
 import '../styles/_projects.scss';
 import '../styles/_triggerOnScroll.scss';
-import thumbnail from '../assets/thumbnail.jpg';
 
 const Projects = () => {
     const projects = [
@@ -58,8 +57,9 @@ const Projects = () => {
     <section>
       <Helmet>
           <title>Projects - Riley Hoffman - Web Developer</title>
-          <meta property="og:image" content={thumbnail} />
+          <meta property="og:title" content="Projects - Riley Hoffman - Web Developer" />
           <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
+          <meta property="og:url" content="https://rileyhoffman.com/projects" />
           <link rel="canonical" href="https://rileyhoffman.com/projects" />
       </Helmet>  
       <h1 className="text-center text-40 banner-heading gradient-border">Projects</h1>

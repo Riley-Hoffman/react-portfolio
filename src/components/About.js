@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
-import thumbnail from '../assets/thumbnail.jpg';
 import riley from '../assets/riley.png';
 import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
@@ -15,8 +14,8 @@ function About() {
         <div>
             <Helmet>
                 <link rel="preload" fetchpriority="high" href={clouds} as="image" type="image/jpeg" />
-                <meta property="og:image" content={thumbnail} />
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
+                <meta property="og:url" content="https://rileyhoffman.com" />
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <div className="gradient-border overlay about" ref={containerRef}>

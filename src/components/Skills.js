@@ -3,7 +3,6 @@ import SkillItem from './SkillItem';
 import { faUniversalAccess } from '@fortawesome/free-solid-svg-icons'; 
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import '../styles/_skills.scss';
-import thumbnail from '../assets/thumbnail.jpg';
 
 const Skills = () => {
   const skills = [
@@ -28,8 +27,9 @@ const Skills = () => {
     <div>
       <Helmet>
           <title>Skills - Riley Hoffman - Web Developer</title>
-          <meta property="og:image" content={thumbnail} />
+          <meta property="og:title" content="Skills - Riley Hoffman - Web Developer" />
           <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
+          <meta property="og:url" content="https://rileyhoffman.com/skills" />
           <link rel="canonical" href="https://rileyhoffman.com/skills" />
           
       </Helmet>  
