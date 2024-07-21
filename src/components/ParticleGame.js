@@ -80,7 +80,12 @@ const ParticleGame = () => {
     const colors = ['#A8A0D9', '#794E8D', '#ae4971'];
     const color = colors[Math.floor(Math.random() * colors.length)];
     const weight = Math.random() * 0.5 + 0.5;
-    const speedFactor = (refs.current.isMobile ? (window.innerHeight > 800 ? 0.4 * 0.54 : 0.4) : (window.innerHeight > 800 ? 0.8 * 0.54 : 0.9)) * (state.gameCompletedOnce ? 0.4 : 0.8);
+    const isMobile = refs.current.isMobile;
+    const isTallScreen = window.innerHeight > 800;
+    const baseSpeedFactor = isMobile ? 0.4 : 0.8;
+    const screenAdjustmentFactor = isTallScreen ? 0.54 : 1;
+    const completionFactor = state.gameCompletedOnce ? 0.4 : 0.8;
+    const speedFactor = baseSpeedFactor * screenAdjustmentFactor * completionFactor;
 
     return new Particle(Math.random() * width, Math.random() * height, size, color, weight, speedFactor);
   }, [state.gameCompletedOnce]);
