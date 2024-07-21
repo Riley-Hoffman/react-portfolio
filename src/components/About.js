@@ -14,6 +14,7 @@ function About() {
         <div>
             <Helmet>
                 <link rel="preload" fetchpriority="high" href={clouds} as="image" type="image/jpeg" />
+                <meta property="og:title" content="Riley Hoffman - Web Developer" />
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                 <meta property="og:url" content="https://rileyhoffman.com" />
                 <link rel="canonical" href="https://rileyhoffman.com" />
