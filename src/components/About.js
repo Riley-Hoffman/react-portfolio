@@ -2,16 +2,13 @@ import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
-import usePreloadImages from '../hooks/usePreloadImages';
 import thumbnail from '../assets/thumbnail.jpg';
 import riley from '../assets/riley.png';
-import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
 function About() {
     
     const containerRef = useScrollingBackground();
-    usePreloadImages([clouds]);
 
     return (
         <div>
