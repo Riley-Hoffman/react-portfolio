@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import { useEffect } from 'react';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
