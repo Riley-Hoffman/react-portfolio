@@ -49,21 +49,24 @@ const ParticleGame = () => {
   };
 
   const handleInteraction = useCallback((event, isInside) => {
+    const isTouchEvent = event.type.startsWith('touch');
+    const clientX = event.clientX ?? event.touches[0].clientX;
+    const clientY = event.clientY ?? event.touches[0].clientY;
+
     if (['mousemove', 'touchmove'].includes(event.type)) {
-      const clientX = event.clientX ?? event.touches[0].clientX;
-      const clientY = event.clientY ?? event.touches[0].clientY;
       updateCursorPosition(clientX, clientY);
     }
+
     if (refs.current.cursorInsideCanvas !== isInside) {
       refs.current.cursorInsideCanvas = isInside;
       refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
 
       if (state.gameInProgress) {
-        showMessageTemporarily('Your cursor has ' + (isInside ? 'entered' : 'exited') + ' Particle Cleanup Game play area');
+        showMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
       }
     }
 
-    if (event.type.startsWith('touch')) {
+    if (isTouchEvent) {
       event.preventDefault();
     }
   }, [updateCursorPosition, state.gameInProgress]);
@@ -126,8 +129,9 @@ const ParticleGame = () => {
   const initializeAnimation = useCallback(() => {
     const ctx = refs.current.canvas.getContext('2d');
     const container = refs.current.container;
+
     if (container.classList.contains('done')) container.classList.remove('done');
-    
+
     const { width, height } = container.getBoundingClientRect();
     refs.current.canvas.width = width;
     refs.current.canvas.height = height;
