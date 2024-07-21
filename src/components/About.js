@@ -1,14 +1,26 @@
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import ParticleGame from './ParticleGame';
 import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
 import thumbnail from '../assets/thumbnail.jpg';
 import riley from '../assets/riley.png';
+import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
 function About() {
     
     const containerRef = useScrollingBackground();
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = clouds;
+        link.fetchpriority = 'high';
+        link.as = 'image';
+        link.type = 'image/jpeg';
+        document.head.appendChild(link);
+      }, []);
 
     return (
         <div>
