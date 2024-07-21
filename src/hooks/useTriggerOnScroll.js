@@ -4,22 +4,25 @@ const useTriggerOnScroll = (force = 0) => {
   const elementsRef = useRef([]);
 
   useEffect(() => {
+    const updateElementActivation = (element, rect, distance) => {
+      const isActive = rect.top < distance;
+      element.dataset.active = isActive || force ? "true" : "false";
+
+      if (element.dataset.repeat && !isActive && !force) {
+        element.dataset.active = "false";
+      }
+    };
+
     const updateTriggerOnScroll = () => {
       const elements = document.querySelectorAll('.trigger-on-scroll');
       elements.forEach((element) => {
         const rect = element.getBoundingClientRect();
         const distance = element.dataset.distance ?? 800;
-        const isActive = rect.top < distance;
-        element.dataset.active = isActive || force ? "true" : "false";
-
-        if (element.dataset.repeat && !isActive && !force) {
-          element.dataset.active = "false";
-        }
+        updateElementActivation(element, rect, distance);
       });
     };
 
     setTimeout(updateTriggerOnScroll, 100);
-
     window.addEventListener('scroll', updateTriggerOnScroll);
 
     return () => {

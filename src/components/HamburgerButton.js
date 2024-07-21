@@ -26,8 +26,10 @@ const Hamburger = () => {
 
     const handleResize = useCallback(() => {
         const isWindowWideEnough = window.innerWidth > 700;
-        setIsExpanded(isWindowWideEnough ? false : isExpanded);
-        updateAttributes(isWindowWideEnough ? false : isExpanded);
+        if (isWindowWideEnough && isExpanded) {
+            setIsExpanded(false);
+            updateAttributes(false);
+        }
     }, [isExpanded, updateAttributes]);
 
     useEffect(() => {
@@ -39,19 +41,8 @@ const Hamburger = () => {
 
     return (
         <div className="hamburger-box">
-            <button
-                className="closer"
-                onClick={toggleMenu}
-                aria-label="Close Menu"
-            ></button>
-            <button
-                id="hamburger"
-                aria-expanded={isExpanded}
-                aria-label={isExpanded ? 'Close Menu' : 'Open Menu'}
-                onClick={toggleMenu}
-                ref={HamburgerRef}
-                className="hamburger"
-            >
+            <button className="closer" onClick={toggleMenu} aria-label="Close Menu" ></button>
+            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={HamburgerRef} className="hamburger" >
                 <span className="line gradient-border"></span>
                 <span className="line gradient-border"></span>
                 <span className="line gradient-border"></span>
