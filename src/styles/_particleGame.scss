@@ -14,9 +14,6 @@ ol.numbered-icons.medal-criteria {
         margin-left: 0;
     } 
 }
-.particle-game.done:hover {
-    cursor: default !important;
-}
 .particle-game {
     filter: drop-shadow(0.5px 0.5px 0.5px #693681);
     height: 500px;
@@ -32,6 +29,9 @@ ol.numbered-icons.medal-criteria {
     background-position: right;
     max-width: calc(100% - 40px);
     margin: 0 auto;
+    done:hover {
+        cursor: default !important;
+    }
     &:not(.done) {
         cursor: grabbing;
     }

@@ -117,9 +117,9 @@ const ParticleGame = () => {
           gameCompletedOnce: true,
         }));
         document.getElementById('completionMessage').focus();
+        refs.current.container.classList.add('done');
       } else {
         cancelAnimationFrame(refs.current.animationFrameId);
-        refs.current.container.classList.add('done');
       }
     } else {
       refs.current.animationFrameId = requestAnimationFrame(() => animateParticles(ctx, canvas));

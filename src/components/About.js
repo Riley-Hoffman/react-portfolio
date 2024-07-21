@@ -5,10 +5,12 @@ import '../styles/_particleGame.scss';
 import riley from '../assets/riley.png';
 import thumbnail from '../assets/thumbnail.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 function About() {
     
     const containerRef = useScrollingBackground();
+    useIntersectionObserver('.about', 'bg-image');
 
     return (
         <div>

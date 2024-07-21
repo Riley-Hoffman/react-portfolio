@@ -8,22 +8,22 @@
     @media(max-width: 900px) {
         opacity: 1;
     }
-}
-.trigger-on-scroll.slide-in-left {
-    left: -100%;
-    &[data-active="true"] {
-        left: 0% !important;
+    &.slide-in-left {
+        left: -100%;
+        &[data-active="true"] {
+            left: 0% !important;
+        }
+        @media(max-width: 900px) {
+            left: 0% !important;
+        }
     }
-    @media(max-width: 900px) {
-        left: 0% !important;
-    }
-}
-.trigger-on-scroll.slide-in-right {
-    right: -100%;
-    &[data-active="true"] {
-        right: 0% !important;
-    }
-    @media(max-width: 900px) {
-        right: 0% !important;
+    &.slide-in-right {
+        right: -100%;
+        &[data-active="true"] {
+            right: 0% !important;
+        }
+        @media(max-width: 900px) {
+            right: 0% !important;
+        }
     }
 }

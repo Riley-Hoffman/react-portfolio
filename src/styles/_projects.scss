@@ -11,6 +11,18 @@
   margin: 100px 0;
   border-top: 8px solid #794e8d;
   gap: 60px;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  &:first-of-type {
+    margin-top: 50px;
+  }
+  &:nth-child(odd) .imgBox .oval {
+    left: -100%;
+  }
+  &:nth-child(even) .imgBox .oval {
+    right: -100%;
+  }
   .projectInfo {
     flex-basis: 50%;
     padding: 20px 0 40px;
@@ -44,19 +56,5 @@
       transition: filter 1s;
       z-index: 10;
     }
-  }
-}
-.projectBox {
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  &:first-of-type {
-    margin-top: 50px;
-  }
-  &:nth-child(odd) .imgBox .oval {
-    left: -100%;
-  }
-  &:nth-child(even) .imgBox .oval {
-    right: -100%;
   }
 }
