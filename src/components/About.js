@@ -4,7 +4,6 @@ import '../styles/_about.scss';
 import '../styles/_particleGame.scss';
 import thumbnail from '../assets/thumbnail.jpg';
 import riley from '../assets/riley.png';
-import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
 function About() {
@@ -17,7 +16,7 @@ function About() {
                 <meta property="og:image" content={thumbnail} />
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                 <link rel="canonical" href="https://rileyhoffman.com" />
-                <link rel="preload" fetchpriority="high" href={clouds} as="image" type="image/webp"></link>
+                <link rel="preload" fetchpriority="high" href="https://rileyhoffman.com/static/media/clouds.e8c12cc01003906f36f0.jpg" as="image" type="image/webp"></link>
             </Helmet>
             <div className="gradient-border overlay about" ref={containerRef}>
                 <div className="max-1200px flex block-700">
