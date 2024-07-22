@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { useLayoutEffect } from "react";
+import { useLayoutEffect } from 'react';
 import Hamburger from './HamburgerButton';
 
 function Header() {
@@ -18,7 +18,7 @@ function Header() {
             <div className="max-1200px flex">
                 <div>
                     <div className="logo">
-                    <button onClick={handleClickHome} aria-label="Back to home page">
+                        <button onClick={handleClickHome} aria-label="Back to home page">
                             <p className="text-500 text-center text-uppercase">Riley Hoffman</p>
                         </button>
                     </div>
