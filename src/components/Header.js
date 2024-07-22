@@ -17,12 +17,10 @@ function Header() {
         <header className="gradient-border">
             <a href="#content" className="skip-link button">Skip To Content</a>
             <div className="max-1200px flex">
-                <div>
-                    <div className="logo">
-                        <button onClick={handleClickHome} aria-label="Back to home page">
-                            <p className="text-500 text-center text-uppercase">Riley Hoffman</p>
-                        </button>
-                    </div>
+                <div className="logo">
+                    <button onClick={handleClickHome} aria-label="Back to home page">
+                        <p className="text-500 text-center text-uppercase">Riley Hoffman</p>
+                    </button>
                 </div>
                 <nav className="menu">
                     <Hamburger />         
