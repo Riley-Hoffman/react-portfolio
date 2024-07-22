@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useLayoutEffect } from 'react';
 import Hamburger from './HamburgerButton';
+import resume from '../assets/riley-hoffman-resume.pdf';
 
 function Header() {
     const location = useLocation();
@@ -45,6 +46,11 @@ function Header() {
                             <NavLink className="button" to="/contact">
                                 Contact
                             </NavLink>
+                        </li>
+                        <li>
+                            <a className="button" href={resume} target="_blank" rel="noopener noreferrer">
+                                Resume
+                            </a>
                         </li>
                     </ul>
                 </nav>
