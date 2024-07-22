@@ -5,14 +5,12 @@ import '../styles/_particleGame.scss';
 import riley from '../assets/riley.png';
 import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
-import PreloadImage from '../classes/PreloadImage';
 
 function Home() {
     const containerRef = useScrollingBackground();
 
     return (
         <div>
-            <PreloadImage src={clouds} />
             <Helmet>
                 <link rel="preload" fetchpriority="high" href={clouds} as="image" type="image/jpeg" />
                 <meta property="og:title" content="Riley Hoffman - Web Developer" />
