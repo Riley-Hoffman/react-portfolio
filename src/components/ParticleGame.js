@@ -94,7 +94,7 @@ const ParticleGame = () => {
   }, [state.gameCompletedOnce]);
 
   const initParticles = useCallback((canvas) => {
-    refs.current.particlesArray = Array.from({ length: 50 }, () => createParticle(canvas));
+    refs.current.particlesArray = Array.from({ length: 150 }, () => createParticle(canvas));
   }, [createParticle]);
 
   const animateParticles = useCallback((ctx, canvas) => {
