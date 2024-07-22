@@ -178,7 +178,7 @@ const ParticleGame = () => {
     <div>
       <h2 className="label-text">Latest Concept</h2>
       <h3 className="text-40">Particle Cleanup Game</h3>
-      <p className="text-26">How fast can you clear the board of particles with your cursor?</p>
+      <p className="text-26">How quickly can you clear all the particles from the board using your cursor or finger?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
         <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
         <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
