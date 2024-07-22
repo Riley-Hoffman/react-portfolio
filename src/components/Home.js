@@ -6,7 +6,7 @@ import riley from '../assets/riley.png';
 import clouds from '../assets/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
-function About() {
+function Home() {
     
     const containerRef = useScrollingBackground();
 
@@ -38,4 +38,4 @@ function About() {
     );
 }
 
-export default About;
+export default Home;

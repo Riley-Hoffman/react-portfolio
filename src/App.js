@@ -2,7 +2,7 @@ import './App.scss';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import About from './components/About';
+import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -19,27 +19,27 @@ function App() {
             <Routes>
               <Route path='/' element={
                 <> 
-                  <About/>
+                  <Home/>
                 </>
-            }/>
-            <Route path="/contact" element={
-              <>          
-                <Contact/> 
-              </>
-            } 
-            />
-            <Route path="/Projects" element={
-              <>          
-                <Projects/> 
-              </>
-            } 
-            />
-            <Route path="/Skills" element={
-              <>          
-                <Skills/> 
-              </>
-            } 
-            />
+              }/>
+              <Route path="/Projects" element={
+                <>          
+                  <Projects/> 
+                </>
+              } 
+              />
+              <Route path="/Skills" element={
+                <>          
+                  <Skills/> 
+                </>
+              } 
+              />
+              <Route path="/contact" element={
+                <>          
+                  <Contact/> 
+                </>
+              } 
+              />
             </Routes>
           </main>
           <Footer/>
