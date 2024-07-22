@@ -1,3 +1,8 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
 header {
   background-color: #eee3f2;
   position: sticky;
@@ -137,13 +142,7 @@ nav.menu {
         border: 2px solid;
         filter: brightness(0.9);
         opacity: 1;
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -o-transform: rotate(0);
         transform: rotate(0);
-        -webkit-transition: 0.2s ease-in-out;
-        -moz-transition: 0.2s ease-in-out;
-        -o-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
         &:first-child {
           top: 8px;
@@ -166,15 +165,9 @@ nav.menu {
         left: 15px;
       }
       &:nth-child(2) {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
         transform: rotate(45deg);
       }
       &:nth-child(3) {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
     }
