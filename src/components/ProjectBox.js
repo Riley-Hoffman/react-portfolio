@@ -11,7 +11,8 @@ const ProjectBox = ({
   imgAlt, 
   imgUrl, 
   srcSet,
-  animation 
+  animation,
+  inverted
 }) => {
   const sanitizedDescription = DOMPurify.sanitize(description);
 
@@ -21,7 +22,7 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={animation + " flex block-700 gradient-border projectBox"}>
+    <li className={`animation + " flex block-700 gradient-border projectBox ${inverted}`}>
       <div className="projectInfo">
         <h2 translate="no">{title}</h2>
         <h3 translate="no">{skills}</h3>
