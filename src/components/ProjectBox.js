@@ -22,7 +22,7 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`animation + " flex block-700 gradient-border projectBox ${inverted}`}>
+    <li className={`${animation} + " flex block-700 gradient-border projectBox ${inverted}`}>
       <div className="projectInfo">
         <h2 translate="no">{title}</h2>
         <h3 translate="no">{skills}</h3>
