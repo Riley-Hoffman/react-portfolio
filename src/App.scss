@@ -917,8 +917,7 @@ a {
 }
 
 .gradient-border {
-	border-image-source: linear-gradient(90deg, #a8a1d9 0%, #794e8e 70%) !important;
-	border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%) !important;
+	border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
 	border-image-slice: 1 !important;
 }
 
@@ -999,6 +998,7 @@ ol.numbered-icons li {
     border-bottom: 2px solid;
     padding: 40px 20px;
     background-color: #eee3f278;
+	border-image-source: linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%) !important;
   }
 
 // Custom
