@@ -1,10 +1,7 @@
 .about {
-    background-color: #f9ddda;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: repeat;
     border-bottom: 5px solid;
     background-image: url("../assets/clouds.jpg");
+    background: #f9ddda url("../assets/clouds.jpg") fixed center / cover repeat ;
     + div {
         padding: 100px 0;
     }

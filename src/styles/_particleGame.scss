@@ -24,9 +24,7 @@ ol.numbered-icons.medal-criteria {
         inset 1px 1px 0 rgba(255, 255, 255, 0.9),
         inset -1px -1px 0 rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    background-image: url("../assets/wood-background.jpg");
-    background-size: cover;
-    background-position: right;
+    background: url("../assets/wood-background.jpg") right / cover no-repeat ;
     max-width: calc(100% - 40px);
     margin: 0 auto;
     done:hover {

@@ -11,19 +11,19 @@
     &.slide-in-left {
         left: -100%;
         &[data-active="true"] {
-            left: 0% !important;
+            left: 0%;
         }
         @media(max-width: 900px) {
-            left: 0% !important;
+            left: 0%;
         }
     }
     &.slide-in-right {
         right: -100%;
         &[data-active="true"] {
-            right: 0% !important;
+            right: 0%;
         }
         @media(max-width: 900px) {
-            right: 0% !important;
+            right: 0%;
         }
     }
     @media (prefers-reduced-motion: reduce) {
