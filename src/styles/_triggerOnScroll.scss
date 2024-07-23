@@ -26,10 +26,7 @@
             right: 0% !important;
         }
     }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .trigger-on-scroll {
+    @media (prefers-reduced-motion: reduce) {
         opacity: 1;
         &.slide-in-left {
             left: 0;
@@ -37,5 +34,5 @@
         &.slide-in-right {
             right: 0;
         }
-    }
-  }
+      }
+}

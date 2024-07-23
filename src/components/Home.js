@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import ParticleGame from './ParticleGame';
-import '../styles/_about.scss';
+import '../styles/_home.scss';
 import '../styles/_particleGame.scss';
 import riley from '../assets/riley.png';
 import clouds from '../assets/clouds.jpg';
