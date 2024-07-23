@@ -1150,3 +1150,21 @@ textarea:focus-visible {
 		border-color: transparent;
 	}
 }
+
+@media (prefers-contrast: more) and (forced-colors: none) {
+	html, input, textarea, .banner-heading, header, footer {
+		background-color: white;
+	} 
+	.button {
+		color: white;
+	}
+	::placeholder {
+		color: black;
+	}
+	.oval {
+		display: none;
+	}
+	.overlay:before {
+		background-color: #ffffff57;
+	}
+}
