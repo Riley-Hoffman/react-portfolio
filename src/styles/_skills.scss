@@ -25,15 +25,12 @@
     }
     li .skillsIconBox {
       padding: 0 10px;
-      width: 100%;
       + p {
         margin-top: 5px;
       }
       i,
       svg {
         font-size: 2.5rem;
-        width: 100%;
-        max-width: 75px;
       }
     }
   }
