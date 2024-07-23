@@ -27,3 +27,15 @@
         }
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .trigger-on-scroll {
+        opacity: 1;
+        &.slide-in-left {
+            left: 0;
+        }
+        &.slide-in-right {
+            right: 0;
+        }
+    }
+  }

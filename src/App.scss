@@ -1104,7 +1104,7 @@ textarea:focus-visible {
 	}
 }
 
-span.typewriter {
+.typewriter {
 	overflow: hidden;
 	border-right: 1.5px solid #794e8d;
 	white-space: nowrap;
@@ -1117,6 +1117,13 @@ span.typewriter {
 		border-fade 0s 1.5s forwards;
 	position: relative;
 	display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.typewriter {
+		animation: none;
+		border-right: none;
+	}
 }
 
 @keyframes typing {
