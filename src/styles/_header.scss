@@ -135,6 +135,8 @@ nav.menu {
         opacity: 1;
         transform: rotate(0);
         transition: $timing-function;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(90deg, $gradientlightpurple 0%, $gradientpink 50%, $gradientpurple 70%);
         &:first-child {
           top: 8px;
         }
