@@ -125,11 +125,11 @@ $text-weights: (
   min-width: map-get($max-widths-px, $size);
 }
 
-@mixin flex-wrap($wrap: wrap, $justify: center) {
+@mixin flex-wrap {
     display: flex;
-    flex-wrap: $wrap;
-    justify-content: $justify;
-  }
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 /* Boilerplate */
 html {

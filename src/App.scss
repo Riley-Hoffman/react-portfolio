@@ -1,5 +1,7 @@
 @import "./styles/sanitize";
 @import "./styles/boilerplate";
+@import "./styles/variables";
+@import "./styles/mixins";
 @import "./styles/header";
 @import "./styles/footer";
 
@@ -24,29 +26,17 @@ fieldset {
 
 /* Convenient Classes */
 
-.wrapper {
-	max-width: 1200px;
-	width: 90%;
-	margin: 0 auto;
-}
-
-.button,
-a {
-	transition: all 0.1s ease-out;
-	outline: none;
-}
-
 .button {
 	padding: 16px;
 	text-align: center;
-	background-color: #12121c;
-	color: #e5d4ed;
+	background-color: $black;
+	color: $pinkwhite;
 	border-radius: 1px;
 	font-family: inherit;
 	text-decoration: none;
 	&:hover, &:focus-visible {
-		background-color: #e5d4ed;
-		color: #12121c;
+		background-color: $pinkwhite;
+		color: $black;
 	}
 }
 
@@ -67,7 +57,7 @@ a {
 	background-image: linear-gradient(90deg, #7868bf 0%, #ae4971 50%, #794e8e 70%);
 	color: white;
 	padding: 0 5px;
-	margin: 0 20px;
+	margin: $base-margin;
 	font-family: "Inconsolata", monospace;
 	font-weight: 500;
 }
@@ -89,8 +79,7 @@ a {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		top: 0;
-		left: 0;
+		@include positioning (0, 0, 0, 0);
 		background-image: radial-gradient(rgba(255, 255, 255, 0.743) 0%, rgba(255, 255, 255, 0.498) 100%);
 	}
 	> * {
@@ -107,7 +96,7 @@ a {
 		left: 20px;
 		height: 11px;
 		width: 22px;
-		background-color: #794e8d;
+		background-color: $purple;
 	}
 }
 
@@ -119,7 +108,7 @@ ol.numbered-icons {
 		padding: 12px 0 12px 20px;
 		position: relative;
 		&:before {
-			background: #794e8d;
+			background: $purple;
 			border-radius: 50%;
 			color: #fbfdff;
 			content: counter(circle) "";
@@ -128,8 +117,7 @@ ol.numbered-icons {
 			padding: 4px;
 			position: absolute;
 			text-align: center;
-			left: -20px;
-			top: 50%;
+			@include positioning(50%, auto, auto, -20px);
 			transform: translateY(-50%);
 			height: 30px;
 			width: 30px;
@@ -146,10 +134,7 @@ ol.numbered-icons {
 	border-radius: 50%;
 	opacity: 0.1;
 	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	top: 5%;
+	@include positioning(5%, 0, 0, 0);
 	transition: all 2s;
 	z-index: 0;
   }
@@ -167,7 +152,7 @@ html {
 }
 
 body {
-	color: #12121c;
+	color: $black;
 	font-family: "Inconsolata", monospace;
 }
 main {
@@ -208,6 +193,12 @@ textarea {
 	font-weight: 300;
 }
 
+a,
+a > *,
+.button {
+	transition: color $timing-function, background-color $timing-function;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -232,8 +223,7 @@ textarea:focus-visible {
 //SKIP TO CONTENT
 .skip-link {
 	position: absolute;
-	top: 5px;
-	left: -1000px;
+	@include positioning(5px, auto, auto, -1000px);
 	z-index: 999999;
 	&:focus {
 		left: 0;
@@ -262,7 +252,7 @@ textarea:focus-visible {
 
 .typewriter {
 	overflow: hidden;
-	border-right: 1.5px solid #794e8d;
+	border-right: 1.5px solid $purple;
 	white-space: nowrap;
 	margin: 0 auto 0 0;
 	letter-spacing: 0.15em;

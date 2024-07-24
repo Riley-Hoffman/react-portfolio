@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./mixins";
+
 ol.numbered-icons.medal-criteria {
     > li {
         &:first-child:before {
@@ -18,7 +21,7 @@ ol.numbered-icons.medal-criteria {
     filter: drop-shadow(0.5px 0.5px 0.5px #693681);
     height: 500px;
     position: relative;
-    border: 11px solid #12121c;
+    border: 11px solid $black;
     box-shadow:
         2px 2px 0.5em rgba(122, 122, 122, 0.55),
         inset 1px 1px 0 rgba(255, 255, 255, 0.9),
@@ -40,17 +43,13 @@ ol.numbered-icons.medal-criteria {
     canvas {
         display: block;
         position: absolute;
-        top: 0;
-        left: 0;
+        @include positioning(0, auto, auto, 0);
         height: 100%;
-        width: 100%;
         filter: drop-shadow(1px 1px 0px #00000061);
         + div {
             height: 100%;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            @include positioning(0, auto, auto, 0);
         }
     }
     .completion-message {

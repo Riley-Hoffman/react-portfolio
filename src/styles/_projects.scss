@@ -1,14 +1,16 @@
+@import "./variables";
+
 .projects {
   padding: 60px 0 80px;
   ul {
     position: relative;
     list-style: none;
-    padding: 0 20px;
+    padding: $base-margin;
   }
 }
 .projectBox {
   margin: 100px 0;
-  border-top: 8px solid #794e8d;
+  border-top: 8px solid $purple;
   gap: 60px;
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -40,7 +42,7 @@
       padding: 5px 15px;
       text-transform: uppercase;
       transition: color 0.5s;
-      margin: 0 20px;
+      margin: $base-margin;
       &:last-of-type {
         margin-left: 10px;
       }

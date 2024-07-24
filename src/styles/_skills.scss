@@ -1,11 +1,10 @@
+@import "./mixins";
+
 .skills {
   position: relative;
   margin: 100px auto;
   .oval {
-    bottom: 3%;
-    left: 5%;
-    right: 5%;
-    top: 3%;
+    @include positioning(3%, 5%, 3%, 5%)
   }
   .iconContainer.contactJump {
     margin-top: 45px;
