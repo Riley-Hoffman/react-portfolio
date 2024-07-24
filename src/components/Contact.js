@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Form from './Form';
-import '../styles/_contact.scss';
+import '../styles/pages/_contact.scss';
 
 function Contact() {
     return (

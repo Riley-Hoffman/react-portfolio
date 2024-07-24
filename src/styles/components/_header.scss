@@ -1,5 +1,4 @@
-@import "./variables";
-@import "./mixins";
+@use "../abstracts/index" as *;
 
 header {
   background-color: $pink;

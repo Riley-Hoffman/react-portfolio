@@ -1,4 +1,4 @@
-@import "./variables";
+@use "../abstracts/index" as *;
 
 footer {
   background-color: $pinkwhite;

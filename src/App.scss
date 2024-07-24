@@ -1,9 +1,8 @@
-@import "./styles/sanitize";
-@import "./styles/boilerplate";
-@import "./styles/variables";
-@import "./styles/mixins";
-@import "./styles/header";
-@import "./styles/footer";
+@use "./styles/abstracts/index" as *;
+@import "./styles/base/sanitize";
+@import "./styles/base/boilerplate";
+@import "./styles/components/header";
+@import "./styles/components/footer";
 
 /* Stabilizing Base Styles */
 p {

@@ -1,4 +1,4 @@
-@import "./mixins";
+@use "../abstracts/index" as *;
 
 .skills {
   position: relative;

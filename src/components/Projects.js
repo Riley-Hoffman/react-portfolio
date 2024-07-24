@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from './ProjectBox';
-import '../styles/_projects.scss';
+import '../styles/pages/_projects.scss';
 import '../styles/_triggerOnScroll.scss';
 
 const Projects = () => {

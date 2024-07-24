@@ -1,5 +1,4 @@
-@import "./variables";
-@import "./mixins";
+@use "../abstracts/index" as *;
 
 ol.numbered-icons.medal-criteria {
     > li {
@@ -27,7 +26,7 @@ ol.numbered-icons.medal-criteria {
         inset 1px 1px 0 rgba(255, 255, 255, 0.9),
         inset -1px -1px 0 rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    background: url("../assets/wood-background.jpg") right / cover;
+    background: url("../../assets/wood-background.jpg") right / cover;
     max-width: calc(100% - 40px);
     margin: 0 auto;
     &:not(.done) {
