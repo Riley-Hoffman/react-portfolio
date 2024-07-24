@@ -31,7 +31,7 @@ const Skills = () => {
           <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
           <meta property="og:url" content="https://rileyhoffman.com/skills" />
           <link rel="canonical" href="https://rileyhoffman.com/skills" />
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+          <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </Helmet>  
         <section>
           <h1 className="text-center text-40 banner-heading gradient-border inverted">Skills</h1>
