@@ -13,13 +13,13 @@ const Skills = () => {
     { name: 'Accessibility', icon: faUniversalAccess, devicon: false },
     { name: 'React', icon: 'devicon-react-original', devicon: true },
     { name: 'Rest API', icon: faArrowsAltH, devicon: false },
-    { name: 'Github', icon: 'devicon-github-original', devicon: true },
+    { name: 'Git', icon: 'devicon-git-plain', devicon: true },
     { name: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true },
     { name: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true },
     { name: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true },
     { name: 'PHP', icon: 'devicon-php-plain', devicon: true },
     { name: 'Firebase', icon: 'devicon-firebase-plain', devicon: true },
-    { name: 'Git', icon: 'devicon-git-plain', devicon: true },
+    { name: 'JSON', icon: 'devicon-json-plain', devicon: true },
     { name: 'Photoshop', icon: 'devicon-photoshop-plain', devicon: true },
   ];
 
