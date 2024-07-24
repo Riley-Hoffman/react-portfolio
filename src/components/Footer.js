@@ -10,7 +10,9 @@ function Footer() {
                 <p>Riley Hoffman | Web Developer 
                     <a href="https://github.com/Riley-Hoffman/react-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Site repo on Github"> <FontAwesomeIcon icon={faGithub} /></a>
                 </p>
-                ©{new Date().getFullYear()}
+                <p>
+                    ©{new Date().getFullYear()}
+                </p>
             </div>
         </footer>
     )
