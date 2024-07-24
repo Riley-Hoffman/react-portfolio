@@ -9,6 +9,7 @@
 p {
 	font-size: 18px;
 }
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -54,8 +55,8 @@ fieldset {
 
 .label-text {
 	display: inline-block;
-	background-image: linear-gradient(90deg, #7868bf 0%, #ae4971 50%, #794e8e 70%);
-	color: white;
+	background-image: linear-gradient(90deg, #7868bf 0%, $gradientpink 50%, $gradientpurple 70%);
+	color: $white;
 	padding: 0 5px;
 	margin: $base-margin;
 	font-family: "Inconsolata", monospace;
@@ -63,12 +64,12 @@ fieldset {
 }
 
 .gradient-border {
-	border-image-slice: 1 !important;
+	border-image-slice: 1;
 	&:not(.inverted) {
-		border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%) !important;
+		border-image-source: linear-gradient(90deg, $gradientlightpurple 0%, $gradientpink 50%, $gradientpurple 70%);
 	}
 	&.inverted {
-		border-image-source: linear-gradient(90deg,#794e8e,#ae4971 50%,#a8a1d9 70%) !important;
+		border-image-source: linear-gradient(90deg,$gradientpurple,$gradientpink 50%,$gradientlightpurple 70%);
 	}
 }
 
@@ -129,7 +130,7 @@ ol.numbered-icons {
 
 
 .oval {
-	background: #a8a0d9;
+	background: $lightpurple;
 	border-radius: 50%;
 	opacity: 0.1;
 	position: absolute;
@@ -142,12 +143,12 @@ ol.numbered-icons {
     margin: 0 0 30px;
     border-bottom: 2px solid;
     padding: 40px 20px;
-    background-color: #eee3f278;
+    background-color: #{$pink}78;
   }
 
 // Custom
 html {
-	background-color: #f5eef7;
+	background-color: $white;
 }
 
 body {
@@ -202,7 +203,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-	outline: 2px solid #a8a0d9;
+	outline: 2px solid $lightpurple;
 }
 
 .svg-inline--fa {
@@ -210,12 +211,11 @@ textarea:focus-visible {
 }
 
 .sr-only {
-	position: absolute !important;
+	position: absolute;
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
 	white-space: nowrap;
 }
 

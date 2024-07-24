@@ -2,12 +2,12 @@
 
 footer {
   background-color: $pinkwhite;
-  border-top: 1px solid #a8a0d9;
+  border-top: 1px solid $lightpurple;
   > div {
     justify-content: space-between;
     padding: 35px 0;
     p {
-      color: #212738;
+      color: $black;
       margin: 0;
       font-size: 16px;
       padding: 0 10px;

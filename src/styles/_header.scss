@@ -2,7 +2,7 @@
 @import "./mixins";
 
 header {
-  background-color: #eee3f2;
+  background-color: $pink;
   position: sticky;
 	@include positioning(-34, 0, auto, 0);
   z-index: 999999;
@@ -17,7 +17,7 @@ header {
     text-decoration: none;
     display: block;
     p {
-      color: #212738;
+      color: $black;
       font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0 0 0 10px;
@@ -96,8 +96,8 @@ nav.menu {
       text-align: left;
       opacity: 0;
       grid-area: 2 / 1 / 1 span / 2 span;
-      height: auto !important;
-      padding: 0 !important;
+      height: auto;
+      padding: 0;
       box-shadow: 0 2px 16px -9px $black;
       @include positioning(23px, 0, auto, auto);
       width: 200px;
@@ -106,14 +106,14 @@ nav.menu {
       li {
         display: block;
         a {
-          padding: 13.78px 20px 13.78px 55px !important;
+          padding: 13.78px 20px 13.78px 55px;
           width: 100%;
           text-align: left;
         }
       }
     }
     div.hamburger-box:not([data-open="true"]) + ul > li > * {
-      display: none !important;
+      display: none;
     }
     > .hamburger-box[data-open="true"] + ul {
       opacity: 1;
