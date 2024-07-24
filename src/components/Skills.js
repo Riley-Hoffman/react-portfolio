@@ -19,7 +19,7 @@ const Skills = () => {
     { name: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true },
     { name: 'PHP', icon: 'devicon-php-plain', devicon: true },
     { name: 'Firebase', icon: 'devicon-firebase-plain', devicon: true },
-    { name: 'VS Code', icon: 'devicon-vscode-plain', devicon: true },
+    { name: 'Git', icon: 'devicon-git-plain', devicon: true },
     { name: 'Photoshop', icon: 'devicon-photoshop-plain', devicon: true },
   ];
 
