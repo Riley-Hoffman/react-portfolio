@@ -92,8 +92,7 @@ fieldset {
 	&:after {
 		content: "";
 		position: absolute;
-		bottom: -12px;
-		left: 20px;
+		@include positioning(auto, auto, -12px, 20px);
 		height: 11px;
 		width: 22px;
 		background-color: $purple;

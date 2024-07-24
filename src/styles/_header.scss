@@ -29,8 +29,7 @@ nav.menu {
   height: 55px;
   margin: auto 0 auto auto;
   max-width: 1200px;
-  left: 0;
-  right: 0;
+  @include positioning(auto, 0, auto, 0);
   display: grid;
   grid-template-columns: 200px auto;
   text-align: right;
