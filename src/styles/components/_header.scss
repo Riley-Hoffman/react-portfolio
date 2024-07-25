@@ -57,7 +57,7 @@ nav.menu {
     }
   }
   ul {
-    background: transparent;
+    background-color: $black;
     position: relative;
     margin: 0;
     z-index: 2;
@@ -98,6 +98,8 @@ nav.menu {
       padding: 0;
       box-shadow: 0 2px 16px -9px $black;
       transition: opacity $timing-function, transform $timing-function;
+      min-width: 200px;
+      min-height: 258px;
       @include positioning(23px, 0, auto, auto);
       width: 200px;
       transform-origin: right; 
