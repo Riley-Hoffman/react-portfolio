@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useLayoutEffect, useState, useEffect } from 'react';
-import Hamburger from './HamburgerButton';
+import Hamburger from './Hamburger';
 import resume from '../assets/riley-hoffman-resume.pdf';
 
 function Header() {
