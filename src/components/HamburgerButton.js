@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 
-const Hamburger = () => {
+const Hamburger = ({ expanded }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const hamburgerRef = useRef(null);
 
@@ -18,16 +18,22 @@ const Hamburger = () => {
         setIsExpanded(prevState => {
             const newIsExpanded = !prevState;
             updateAttributes(newIsExpanded);
+            if (expanded) {
+                expanded(newIsExpanded);
+            }
             return newIsExpanded;
         });
-    }, [updateAttributes]);
+    }, [updateAttributes, expanded]);
 
     const handleResize = useCallback(() => {
         if (window.innerWidth > 700 && isExpanded) {
             setIsExpanded(false);
             updateAttributes(false);
+            if (expanded) {
+                expanded(false);
+            }
         }
-    }, [isExpanded, updateAttributes]);
+    }, [isExpanded, updateAttributes, expanded]);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
