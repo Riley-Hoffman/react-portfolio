@@ -36,7 +36,7 @@ function Form() {
                         name="message"
                         placeholder="Write me a message.."
                         spellCheck="true"
-                        rows="6"
+                        rows="8"
                         required
                     ></textarea>
                 </div>
