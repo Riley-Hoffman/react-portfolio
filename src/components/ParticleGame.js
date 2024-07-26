@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState, useMemo, useEffect } from 'react';
+import { useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Particle from '../classes/Particle';
@@ -58,8 +58,10 @@ const ParticleGame = () => {
 
     if (refs.current.cursorInsideCanvas !== isInside) {
       refs.current.cursorInsideCanvas = isInside;
-      refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
-
+      if (isInside) {
+        refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+      
       if (state.gameInProgress) {
         showMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
       }
@@ -139,12 +141,6 @@ const ParticleGame = () => {
 
   useParticleGameEvents(refs, handleInteraction, handleScroll, initializeAnimation);
 
-  useEffect(() => {
-    if (refs.current.container) {
-      refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
-    }
-  }, []);
-
   const getMedalDetails = useCallback((time) => {
     if (time <= 25) {
       if (time > 20) return { text: 'Bronze Medal', color: '#A2652A' };
@@ -208,14 +204,14 @@ const ParticleGame = () => {
           </div>
         </div>
         {state.gameInProgress && !refs.current.allClean && (
-          <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
-            {state.cursorMessage}
-          </p>
-        )}
-        <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
+            <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
+              {state.cursorMessage}
+            </p>
+          )}
+          <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default ParticleGame;
+  export default ParticleGame;
