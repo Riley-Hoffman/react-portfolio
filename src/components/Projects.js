@@ -69,6 +69,7 @@ const Projects = () => {
               key={index} 
               {...project} 
               inverted={index % 2 !== 0 ? 'inverted' : ''}
+              isFirst={index === 0}
             />
           ))}
         </ul>
