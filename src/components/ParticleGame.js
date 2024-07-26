@@ -49,24 +49,26 @@ const ParticleGame = () => {
 
   const handleInteraction = useCallback((event, isInside) => {
     const isTouchEvent = event.type.startsWith('touch');
-    const clientX = event.clientX ?? event.touches[0].clientX;
-    const clientY = event.clientY ?? event.touches[0].clientY;
-
+    const clientX = event.clientX ?? event.touches[0]?.clientX;
+    const clientY = event.clientY ?? event.touches[0]?.clientY;
+  
     if (['mousemove', 'touchmove'].includes(event.type)) {
       updateCursorPosition(clientX, clientY);
     }
-
+  
     if (refs.current.cursorInsideCanvas !== isInside) {
       refs.current.cursorInsideCanvas = isInside;
       if (isInside) {
-        refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        setTimeout(() => {
+          refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }, 100);
       }
       
       if (state.gameInProgress) {
         showMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
       }
     }
-
+  
     if (isTouchEvent) {
       event.preventDefault();
     }
