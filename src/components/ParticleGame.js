@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState, useMemo } from 'react';
+import { useRef, useCallback, useState, useMemo, useEffect } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Particle from '../classes/Particle';
@@ -31,13 +31,12 @@ const ParticleGame = () => {
     const rect = refs.current.canvas.getBoundingClientRect();
     mouse.x = clientX - rect.left;
     mouse.y = clientY - rect.top;
-
     if (refs.current.startTime === null) {
       refs.current.startTime = Date.now();
     }
   }, [mouse]);
 
-  const showMessageTemporarily = (message) => {
+  const showMessageTemporarily = useCallback((message) => {
     setState(prevState => ({
       ...prevState,
       cursorMessage: message,
@@ -46,7 +45,7 @@ const ParticleGame = () => {
     setTimeout(() => {
       setState(prevState => ({ ...prevState, messageVisible: true }));
     }, 10);
-  };
+  }, []);
 
   const handleInteraction = useCallback((event, isInside) => {
     const isTouchEvent = event.type.startsWith('touch');
@@ -69,7 +68,7 @@ const ParticleGame = () => {
     if (isTouchEvent) {
       event.preventDefault();
     }
-  }, [updateCursorPosition, state.gameInProgress]);
+  }, [updateCursorPosition, state.gameInProgress, showMessageTemporarily]);
 
   const handleScroll = useCallback((event) => {
     if (state.gameInProgress && refs.current.cursorInsideCanvas) {
@@ -85,10 +84,7 @@ const ParticleGame = () => {
     const weight = Math.random() * 0.5 + 0.5;
     const isMobile = refs.current.isMobile;
     const isTallScreen = window.innerHeight > 800;
-    const baseSpeedFactor = isMobile ? 0.4 : 0.8;
-    const screenAdjustmentFactor = isTallScreen ? 0.54 : 1;
-    const completionFactor = state.gameCompletedOnce ? 0.4 : 0.8;
-    const speedFactor = baseSpeedFactor * screenAdjustmentFactor * completionFactor;
+    const speedFactor = (isMobile ? 0.4 : 0.8) * (isTallScreen ? 0.54 : 1) * (state.gameCompletedOnce ? 0.4 : 0.8);
 
     return new Particle(Math.random() * width, Math.random() * height, size, color, weight, speedFactor);
   }, [state.gameCompletedOnce]);
@@ -142,6 +138,12 @@ const ParticleGame = () => {
   }, [initParticles, animateParticles]);
 
   useParticleGameEvents(refs, handleInteraction, handleScroll, initializeAnimation);
+
+  useEffect(() => {
+    if (refs.current.container) {
+      refs.current.container.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+  }, []);
 
   const getMedalDetails = useCallback((time) => {
     if (time <= 25) {
