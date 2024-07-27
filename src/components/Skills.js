@@ -36,7 +36,7 @@ const Skills = () => {
         <section>
           <h1 className="text-center text-40 banner-heading gradient-border inverted">Skills</h1>
           <div className="max-1200px skills">
-              <ul className="max-1000px block-400 skillsGallery" aria-label="Skills">
+              <ul className="max-1000px block-400 skills-list" aria-label="Skills">
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}

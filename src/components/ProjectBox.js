@@ -23,8 +23,8 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`${animation} + " flex block-700 gradient-border projectBox ${inverted}`}>
-      <div className="projectInfo">
+    <li className={`${animation} + " flex block-700 gradient-border project-box ${inverted}`}>
+      <div className="project-info">
         <h2 translate="no">{title}</h2>
         <h3 translate="no">{skills}</h3>
         <p dangerouslySetInnerHTML={{ __html: sanitizedDescription }}></p>
@@ -39,7 +39,7 @@ const ProjectBox = ({
           <span className="sr-only">{title} </span>Repo
         </a>
       </div>
-      <div className="text-center imgBox">
+      <div className="text-center img-box">
         <img
           alt={imgAlt}
           src={imgUrl}

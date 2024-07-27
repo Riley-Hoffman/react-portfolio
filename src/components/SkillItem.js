@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const SkillItem = ({ devicon, icon, skill, safari }) => {
   return (
     <li className="text-center">
-      <div className={`skillsIconBox ${safari ? 'noAnimation' : ''}`}>
+      <div className={`skill-icon-box ${safari ? 'noAnimation' : ''}`}>
         {devicon ? (
           <i className={icon} aria-hidden="true"></i>
         ) : (

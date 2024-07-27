@@ -7,10 +7,7 @@
   .oval {
     @include positioning(3%, 5%, 3%, 5%)
   }
-  .iconContainer.contactJump {
-    margin-top: 45px;
-  }
-  .skillsGallery {
+  .skills-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -24,8 +21,9 @@
     li {
       margin: 30px 0;
     }
-    li .skillsIconBox {
+    li .skill-icon-box {
       padding: 0 10px;
+      min-height: 44.25px;
       + p {
         margin-top: 5px;
       }

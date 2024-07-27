@@ -1,6 +1,9 @@
 .about {
     border-bottom: 5px solid;
     background: #f9ddda url("../../assets/clouds.jpg") fixed center / cover repeat ;
+    &.overlay:before {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.743) 0%, rgba(255, 255, 255, 0.498) 100%), linear-gradient(-30deg, rgba(0, 247, 255, 0.08) 0%, #0000 15%, #0000 80%, rgba(0, 247, 255, 0.08) 100%);
+    }
     + div {
         padding: 100px 0;
     }
@@ -28,3 +31,6 @@
         filter: grayscale(0.42) saturate(1.67) brightness(0.99);
     }
 }
+// overlay sun effect 
+
+// linear-gradient(45deg, hsla(0, 0%, 100%, 1) 90%, hsla(40, 100%, 50%, 1) 100%);
