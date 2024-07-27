@@ -76,7 +76,7 @@ nav.menu {
       a:hover,
       a.active {
         color: $black;
-        background-color: $pinkwhite;
+        background-color: $pinkWhite;
         filter: brightness(1);
       }
       a:not(.active):hover {
@@ -129,7 +129,7 @@ nav.menu {
         transform: rotate(0);
         transition: $timing-function;
         border-image-slice: 1;
-        border-image-source: linear-gradient(90deg, $gradientlightpurple 0%, $gradientpink 50%, $gradientpurple 70%);
+        border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
         &:first-child {
           top: 8px;
         }

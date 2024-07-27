@@ -76,7 +76,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-	outline: 2px solid $lightpurple;
+	outline: 2px solid $lightPurple;
 }
 
 .svg-inline--fa {
@@ -108,13 +108,13 @@ textarea:focus-visible {
 	padding: 16px;
 	text-align: center;
 	background-color: $black;
-	color: $pinkwhite;
+	color: $pinkWhite;
 	border-radius: 1px;
 	font-family: inherit;
 	text-decoration: none;
 	&:hover,
 	&:focus-visible {
-		background-color: $pinkwhite;
+		background-color: $pinkWhite;
 		color: $black;
 	}
 }
@@ -133,7 +133,7 @@ textarea:focus-visible {
 
 .label-text {
 	display: inline-block;
-	background-image: linear-gradient(90deg, #7868bf 0%, $gradientpink 50%, $gradientpurple 70%);
+	background-image: linear-gradient(90deg, #7868bf 0%, $gradientPink 50%, $gradientPurple 70%);
 	color: $white;
 	padding: 0 5px;
 	margin: $base-margin;
@@ -144,10 +144,10 @@ textarea:focus-visible {
 .gradient-border {
 	border-image-slice: 1;
 	&:not(.inverted) {
-		border-image-source: linear-gradient(90deg, $gradientlightpurple 0%, $gradientpink 50%, $gradientpurple 70%);
+		border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
 	}
 	&.inverted {
-		border-image-source: linear-gradient(90deg, $gradientpurple, $gradientpink 50%, $gradientlightpurple 70%);
+		border-image-source: linear-gradient(90deg, $gradientPurple, $gradientPink 50%, $gradientLightPurple 70%);
 	}
 }
 
@@ -159,7 +159,7 @@ textarea:focus-visible {
 		height: 100%;
 		width: 100%;
 		@include positioning(0, 0, 0, 0);
-		background-image: radial-gradient(rgba(255, 255, 255, 0.743) 0%, rgba(255, 255, 255, 0.498) 100%);
+		background-image: $radialOverlay;
 	}
 	> * {
 		position: relative;
@@ -207,7 +207,7 @@ ol.numbered-icons {
 }
 
 .oval {
-	background: $lightpurple;
+	background: $lightPurple;
 	border-radius: 50%;
 	opacity: 0.1;
 	position: absolute;
