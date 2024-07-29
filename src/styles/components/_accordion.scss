@@ -28,9 +28,9 @@
        padding: 8px;
        transition: background-color $timing-function;
       }
-      &:focus-visible:before,
-      &:hover:before,
-      &[data-open=true]:before {
+      &:focus-visible svg,
+      &:hover svg,
+      &[data-open=true] svg {
         background-color: $lightPurple;
         color: $black;
       }
