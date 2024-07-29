@@ -28,13 +28,13 @@ h5,
 h6,
 label,
 legend {
-	font-weight: 500;
 	font-family: "Poppins", sans-serif;
+	font-weight: 500;
 }
 
 img {
-	width: 100%;
 	height: auto;
+	width: 100%;
 }
 
 fieldset {
@@ -43,25 +43,25 @@ fieldset {
 }
 
 label {
-	margin: 16px 0;
 	display: inline-block;
 	font-size: 20px;
+	margin: 16px 0;
 }
 
 input,
 textarea {
-	font-family: "Source Sans 3", sans-serif;
 	background-color: #f8f3f9;
 	border: 2px solid;
-	padding: 10px;
 	border-radius: 2px;
+	font-family: "Source Sans 3", sans-serif;
 	font-size: 18px;
+	padding: 10px;
 }
 
 ::placeholder {
 	color: #73738c;
-	opacity: 1;
 	font-weight: 300;
+	opacity: 1;
 }
 
 a,
@@ -84,20 +84,20 @@ textarea:focus-visible {
 }
 
 .sr-only {
+	clip-path: inset(50%);
+	overflow: hidden;
 	position: absolute;
+	white-space: nowrap;
 	height: 1px;
 	width: 1px;
-	overflow: hidden;
-	clip-path: inset(50%);
-	white-space: nowrap;
 }
 
 /* Utility Classes */
 
 .skip-link {
 	position: absolute;
-	@include positioning(5px, auto, auto, -1000px);
 	z-index: 999999;
+	@include positioning(5px, auto, auto, -1000px);
 	&:focus {
 		left: 0;
 		margin-left: 10px;
@@ -105,12 +105,12 @@ textarea:focus-visible {
 }
 
 .button {
+	background-color: $black;
+	border-radius: 1px;
+	color: $pinkWhite;
+	font-family: inherit;
 	padding: 16px;
 	text-align: center;
-	background-color: $black;
-	color: $pinkWhite;
-	border-radius: 1px;
-	font-family: inherit;
 	text-decoration: none;
 	&:hover,
 	&:focus-visible {
@@ -132,13 +132,13 @@ textarea:focus-visible {
 }
 
 .label-text {
-	display: inline-block;
 	background-image: linear-gradient(90deg, #7868bf 0%, $gradientPink 50%, $gradientPurple 70%);
 	color: $white;
-	padding: 0 5px;
-	margin: $base-margin;
+	display: inline-block;
 	font-family: "Inconsolata", monospace;
 	font-weight: 500;
+	margin: $base-margin;
+	padding: 0 5px;
 }
 
 .gradient-border {
@@ -154,12 +154,12 @@ textarea:focus-visible {
 .overlay {
 	position: relative;
 	&:before {
+		background-image: $radialOverlay;
 		content: "";
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		@include positioning(0, 0, 0, 0);
-		background-image: $radialOverlay;
 	}
 	> * {
 		position: relative;
@@ -169,18 +169,18 @@ textarea:focus-visible {
 .separator {
 	position: relative;
 	&:after {
+		background-color: $purple;
 		content: "";
 		position: absolute;
-		@include positioning(auto, auto, -12px, 20px);
 		height: 11px;
 		width: 22px;
-		background-color: $purple;
+		@include positioning(auto, auto, -12px, 20px);
 	}
 }
 
 ol.numbered-icons {
-	list-style: none;
 	counter-reset: circle;
+	list-style: none;
 	li {
 		counter-increment: circle;
 		padding: 12px 0 12px 20px;
@@ -188,20 +188,20 @@ ol.numbered-icons {
 		&:before {
 			background: $purple;
 			border-radius: 50%;
+			box-sizing: border-box;
 			color: #fbfdff;
 			content: counter(circle) "";
-			font-weight: 600;
 			font-family: "Poppins", sans-serif;
+			font-size: 17.5px;
+			font-weight: 600;
+			margin-right: 20px;
 			padding: 4px;
 			position: absolute;
 			text-align: center;
-			@include positioning(50%, auto, auto, -20px);
 			transform: translateY(-50%);
 			height: 30px;
 			width: 30px;
-			box-sizing: border-box;
-			margin-right: 20px;
-			font-size: 17.5px;
+			@include positioning(50%, auto, auto, -20px);
 		}
 	}
 }
@@ -211,15 +211,15 @@ ol.numbered-icons {
 	border-radius: 50%;
 	opacity: 0.1;
 	position: absolute;
-	@include positioning(5%, 0, 0, 0);
 	z-index: 0;
+	@include positioning(5%, 0, 0, 0);
 }
 
 .banner-heading {
-	margin: 0 0 30px;
-	border-bottom: 2px solid;
-	padding: 40px 20px;
 	background-color: #{$pink}78;
+	border-bottom: 2px solid;
+	margin: 0 0 30px;
+	padding: 40px 20px;
 }
 
 /* Animation */
@@ -242,18 +242,15 @@ ol.numbered-icons {
 }
 
 .typewriter {
-	overflow: hidden;
+	animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite, border-fade 0s 1.5s forwards;
 	border-right: 1.5px solid $purple;
-	white-space: nowrap;
-	margin: 0 auto 0 0;
-	letter-spacing: 0.15em;
-	width: 160px;
-	animation:
-		typing 3.5s steps(40, end),
-		blink-caret 0.75s step-end infinite,
-		border-fade 0s 1.5s forwards;
-	position: relative;
 	display: inline-block;
+	letter-spacing: 0.15em;
+	overflow: hidden;
+	margin: 0 auto 0 0;
+	position: relative;
+	white-space: nowrap;
+	width: 160px;
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 		border-right: none;
