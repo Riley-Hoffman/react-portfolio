@@ -1,0 +1,77 @@
+@use "../abstracts/index" as *;
+
+.accordion {
+    padding-bottom: 50px;
+    position: relative;
+    width: 100%;
+    > * {
+      width: 100%;
+    }
+    button {
+        padding: 14px 20px;
+        text-align: left;
+        font-size: 16.5px;
+        height: auto;
+        line-height: 2.1;
+        font-weight: 500;
+        width: 100%;
+        background-color: $pink;
+        color: #2d2b34;
+        border-bottom: 1px solid #e1d7ee;
+        transition: border-bottom $timing-function;
+        &:before {
+          content: '+';
+          padding: 5px 10px;
+          margin-right: 20px;
+          background-color: $black;
+          color: $pinkWhite;
+          transition: background-color $timing-function;
+          border-radius: 50%;
+        }
+        &:focus-visible:before,
+        &:hover:before,
+        &[data-open=true]:before {
+          background-color: $lightPurple;
+          color: $black;
+        }
+        &[data-open=true]:before {
+          content: '−';
+        }
+        &[data-open=true] {
+            border-bottom: 0px solid #e1d7ee;
+        }
+    }
+    > div:last-child button {
+        border-bottom: 0px solid #e1d7ee;
+    }
+  }
+  
+  div.accordion-panel {
+    transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out;
+    max-height: 0;
+    height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    & p {
+      font-size: 17px;
+    }
+    + hr {
+      margin: 0 20px 60px;
+      border-top: none;
+    }
+    .accordion button[data-open=true] + & {
+      max-height: 5000px;
+      height: 100%;
+      margin-bottom: 20px;
+      padding: 2px 18px;
+    }
+  }
+  
+  .accordion,
+  div.accordion-panel p,
+  div.accordion-panel + hr {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
