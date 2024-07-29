@@ -6,21 +6,21 @@ import '../styles/pages/_skills.scss';
 
 const Skills = () => {
   const skills = [
-    { name: 'HTML5', icon: 'devicon-html5-plain', devicon: true },
-    { name: 'CSS3', icon: 'devicon-css3-plain', devicon: true },
-    { name: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true },
-    { name: 'SASS', icon: 'devicon-sass-original', devicon: true },
-    { name: 'Accessibility', icon: faUniversalAccess, devicon: false },
-    { name: 'React', icon: 'devicon-react-original', devicon: true },
-    { name: 'Rest API', icon: faArrowsAltH, devicon: false },
-    { name: 'Git', icon: 'devicon-git-plain', devicon: true },
-    { name: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true },
-    { name: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true },
-    { name: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true },
-    { name: 'PHP', icon: 'devicon-php-plain', devicon: true },
-    { name: 'Firebase', icon: 'devicon-firebase-plain', devicon: true },
-    { name: 'JSON', icon: 'devicon-json-plain', devicon: true },
-    { name: 'Photoshop', icon: 'devicon-photoshop-plain', devicon: true },
+    { skill: 'HTML5', icon: 'devicon-html5-plain', devicon: true, image: false },
+    { skill: 'CSS3', icon: 'devicon-css3-plain', devicon: true, image: false },
+    { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false },
+    { skill: 'SASS', icon: 'devicon-sass-original', devicon: true, image: false },
+    { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false },
+    { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false },
+    { skill: 'Rest API', icon: faArrowsAltH, devicon: false, image: false },
+    { skill: 'Accessibility', icon: faUniversalAccess, devicon: false, image: false },
+    { skill: 'WCAG', devicon: false, image: true },
+    { skill: 'Git', icon: 'devicon-git-plain', devicon: true, image: false },
+    { skill: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true, image: false },
+    { skill: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true, image: false },
+    { skill: 'PHP', icon: 'devicon-php-plain', devicon: true, image: false },
+    { skill: 'Firebase', icon: 'devicon-firebase-plain', devicon: true, image: false },
+    { skill: 'JSON', icon: 'devicon-json-plain', devicon: true, image: false },
   ];
 
   return (
@@ -40,9 +40,10 @@ const Skills = () => {
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}
+                    skill={skill.skill}
                     devicon={skill.devicon}
                     icon={skill.icon}
-                    skill={skill.name}
+                    image={skill.image}
                   />
                 ))}
               </ul>

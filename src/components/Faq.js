@@ -11,10 +11,10 @@ const accordionItems = [
         )
     },
     {
-        question: "Question",
+        question: "What services do you offer?",
         answer: (
             <div>
-                <p>Answer</p>
+                <p>You can hire me to build or design websites, or modify existing sites with new features, content. I can also fix errors on your website, and accessibility remediations to meet WCAG requirements. </p>
             </div>
         )
     },

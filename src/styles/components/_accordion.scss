@@ -47,7 +47,7 @@
   }
   
   div.accordion-panel {
-    transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out;
+    transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out, padding .3s ease-in-out; 
     max-height: 0;
     height: 0;
     margin-bottom: 0;
