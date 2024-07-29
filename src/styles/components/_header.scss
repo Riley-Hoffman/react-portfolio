@@ -26,11 +26,10 @@ header {
 }
 nav.menu {
   height: 55px;
+  padding: 6px 0;
   margin: auto 0 auto auto;
   max-width: 1200px;
   @include positioning(auto, 0, auto, 0);
-  display: grid;
-  grid-template-columns: 200px auto;
   text-align: right;
   align-items: center;
   [data-open="true"] > .closer {

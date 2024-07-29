@@ -1,5 +1,7 @@
+@use "../abstracts/index" as *;
+
 .contact {
-    padding: 20px 0 15vh;
+    @include smallPagePadding;
     form {
         padding: 20px 20px 40px;
     }

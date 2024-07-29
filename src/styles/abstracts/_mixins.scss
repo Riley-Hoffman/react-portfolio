@@ -4,3 +4,6 @@
     bottom: $bottom;
     left: $left;
 }
+@mixin smallPagePadding {
+    padding: 30px 0 13vh;
+}

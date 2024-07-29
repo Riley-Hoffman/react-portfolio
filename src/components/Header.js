@@ -76,6 +76,11 @@ function Header() {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/faq">
+                                FAQ
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink className={`button${hide ? ' hidden' : ''}`} to="/contact">
                                 Contact
                             </NavLink>

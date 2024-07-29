@@ -8,9 +8,9 @@
       width: 100%;
     }
     button {
-        padding: 14px 20px;
+        padding: 24px 20px;
         text-align: left;
-        font-size: 16.5px;
+        font-size: 18px;
         height: auto;
         line-height: 2.1;
         font-weight: 500;
@@ -45,7 +45,6 @@
         border-bottom: 0px solid #e1d7ee;
     }
   }
-  
   div.accordion-panel {
     transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out, padding .3s ease-in-out; 
     max-height: 0;
@@ -53,13 +52,6 @@
     margin-bottom: 0;
     overflow: hidden;
     padding: 0 18px;
-    & p {
-      font-size: 17px;
-    }
-    + hr {
-      margin: 0 20px 60px;
-      border-top: none;
-    }
     .accordion button[data-open=true] + & {
       max-height: 5000px;
       height: 100%;
@@ -67,7 +59,6 @@
       padding: 2px 18px;
     }
   }
-  
   .accordion,
   div.accordion-panel p,
   div.accordion-panel + hr {

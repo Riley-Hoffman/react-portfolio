@@ -1,0 +1,5 @@
+@use "../abstracts/index" as *;
+
+.faq {
+    @include smallPagePadding;
+}
