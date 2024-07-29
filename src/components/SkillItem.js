@@ -4,7 +4,7 @@ import wcag from '../assets/wcag.png';
 const SkillItem = ({ skill, icon, devicon, image }) => {
   return (
     <li className="text-center">
-      <div className="skill-icon-box">
+      <div className="skill-icon-box flex">
         {devicon ? (
           <i className={icon} aria-hidden="true"></i>
         ) : image ? (
