@@ -4,15 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Accordion({ items }) {
     const [openIndex, setOpenIndex] = useState(null);
-    const panelRefs = useRef([]);
+    const contentRefs = useRef([]);
 
     const handleAccordionClick = index => {
         setOpenIndex(prevIndex => (prevIndex === index ? null : index));
     };
 
     useEffect(() => {
-        if (openIndex !== null && panelRefs.current[openIndex]) {
-            panelRefs.current[openIndex].focus();
+        if (openIndex !== null && contentRefs.current[openIndex]) {
+            contentRefs.current[openIndex].focus();
         }
     }, [openIndex]);
 
@@ -30,9 +30,9 @@ function Accordion({ items }) {
                         {item.question}
                     </button>
                     <div 
-                        className="accordion-panel"
+                        className="accordion-content"
                         tabIndex={-1}
-                        ref={answer => (panelRefs.current[index] = answer)}
+                        ref={answer => (contentRefs.current[index] = answer)}
                     >
                         {item.answer}
                     </div>
