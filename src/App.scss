@@ -188,7 +188,6 @@ ol.numbered-icons {
 		&:before {
 			background: $purple;
 			border-radius: 50%;
-			box-sizing: border-box;
 			color: #fbfdff;
 			content: counter(circle) "";
 			font-family: "Poppins", sans-serif;

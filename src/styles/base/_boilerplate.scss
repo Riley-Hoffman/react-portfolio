@@ -132,15 +132,6 @@ $text-weights: (
 }
 
 /* Boilerplate */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 
 p, ul, ol {
   font-size: 16px;
@@ -230,10 +221,6 @@ button {
       
       * {
         float: none !important;
-      }
-      
-      > * {
-        box-sizing: border-box;
       }
 
       *:not(img, .keep-width) {
