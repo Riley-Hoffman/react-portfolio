@@ -21,7 +21,7 @@ function Accordion({ items }) {
             {items.map((item, index) => (
                 <div key={index}>
                     <button 
-                        className="text-left"
+                        className="width-100 text-left"
                         onClick={() => handleAccordionClick(index)}
                         data-open={openIndex === index ? "true" : "false"}
                         aria-expanded={openIndex === index ? "true" : "false"}

@@ -2,8 +2,6 @@
 
 .accordion {
     padding-bottom: 50px;
-    position: relative;
-    width: 100%;
     > * {
       width: 100%;
     }
@@ -17,7 +15,6 @@
       padding: 24px 20px;
       transition: border-bottom $timing-function;
       height: auto;
-      width: 100%;
      svg {
        box-sizing: content-box;
        background-color: $black;
@@ -58,11 +55,5 @@
       margin-bottom: 20px;
       padding: 2px 18px;
     }
-  }
-  .accordion,
-  div.accordion-content p,
-  div.accordion-content + hr {
-    box-sizing: border-box;
-    max-width: 100%;
   }
   
