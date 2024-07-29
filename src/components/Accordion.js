@@ -4,7 +4,7 @@ function Accordion({ items }) {
     const [openIndex, setOpenIndex] = useState(null);
     const panelRefs = useRef([]);
 
-    const handleClick = index => {
+    const handleAccordionClick = index => {
         setOpenIndex(prevIndex => (prevIndex === index ? null : index));
     };
 
@@ -19,8 +19,9 @@ function Accordion({ items }) {
             {items.map((item, index) => (
                 <div key={index}>
                     <button 
-                        onClick={() => handleClick(index)}
+                        onClick={() => handleAccordionClick(index)}
                         data-open={openIndex === index ? "true" : "false"}
+                        aria-expanded={openIndex === index ? "true" : "false"}
                     >
                         {item.question}
                     </button>

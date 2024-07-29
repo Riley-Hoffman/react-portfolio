@@ -8,7 +8,7 @@ function Header() {
     const [hide, setHide] = useState(false);
     const location = useLocation();
 
-    const handleMenuToggle = (expanded) => {
+    const handleHamburgerClick = (expanded) => {
         setIsExpanded(expanded);
     };
     
@@ -58,7 +58,7 @@ function Header() {
                     </button>
                 </div>
                 <nav className="menu">
-                    <Hamburger expanded={handleMenuToggle} />
+                    <Hamburger expanded={handleHamburgerClick} />
                     <ul className="flex block-700" aria-label="Menu Links">
                         <li>
                             <NavLink className={`button${hide ? ' hidden' : ''}`} to="/">
