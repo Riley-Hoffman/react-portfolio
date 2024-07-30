@@ -48,6 +48,22 @@ function Header() {
         window.location.href = '/';
     };
 
+    const menuLinks = [
+        { to: "/", label: "Home" },
+        { to: "/projects", label: "Projects" },
+        { to: "/skills", label: "Skills" },
+        { to: "/faq", label: "FAQ" },
+        { to: "/contact", label: "Contact" },
+    ];
+
+    const renderLink = (to, label) => (
+        <li key={to}>
+            <NavLink className={`button${hide ? ' hidden' : ''}`} to={to}>
+                {label}
+            </NavLink>
+        </li>
+    );
+
     return (
         <header className="gradient-border">
             <a href="#content" className="skip-link button">Skip To Content</a>
@@ -60,31 +76,7 @@ function Header() {
                 <nav className="menu">
                     <Hamburger expanded={handleHamburgerClick} />
                     <ul className="flex block-700" aria-label="Menu Links">
-                        <li>
-                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/">
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/projects">
-                                Projects
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/skills">
-                                Skills
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/faq">
-                                FAQ
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={`button${hide ? ' hidden' : ''}`} to="/contact">
-                                Contact
-                            </NavLink>
-                        </li>
+                        {menuLinks.map(({ to, label }) => renderLink(to, label))}
                         <li>
                             <a className={`button${hide ? ' hidden' : ''}`} href={resume} target="_blank" rel="noopener noreferrer">
                                 Resume
