@@ -1,7 +1,7 @@
 @use "../abstracts/index" as *;
 
 header {
-  background-color: $pink;
+  background-color: $white;
   border-bottom: 2px solid;
   border-top: 34px solid $black;
   box-shadow: 0 1px 3px -3px $black;
@@ -18,9 +18,12 @@ header {
     p {
       color: $black;
       font-family: "Poppins", sans-serif;
-      font-size: 18px;
+      letter-spacing: 0.5px;
       margin: 0;
       padding: 0 0 0 10px;
+      @media (max-width: 800px) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -73,7 +76,7 @@ nav.menu {
       }
       a:hover,
       a.active {
-        background-color: $pinkWhite;
+        background-color: $pink;
         color: $black;
         filter: brightness(1);
       }

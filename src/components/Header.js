@@ -54,7 +54,7 @@ function Header() {
             <div className="max-1200px flex">
                 <div className="logo">
                     <button onClick={handleClickHome} aria-label="Back to home page">
-                        <p className="text-500 text-center text-uppercase">Riley Hoffman</p>
+                        <p className="text-22 text-500 text-center text-uppercase">Riley Hoffman</p>
                     </button>
                 </div>
                 <nav className="menu">
