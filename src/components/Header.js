@@ -12,6 +12,10 @@ function Header() {
         setIsExpanded(expanded);
     };
     
+    useEffect(() => {
+        setIsExpanded(false)
+    }, [location]);
+
     useLayoutEffect(() => {
         document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }, [location.pathname]);
