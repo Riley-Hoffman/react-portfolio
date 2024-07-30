@@ -49,7 +49,7 @@ const ProjectBox = ({
           width="887"
           sizes="(max-width: 900px) 100vw, 900px"
           loading={isFirst ? 'eager' : 'lazy'}
-          fetchPriority={isFirst ? 'high' : 'auto'}
+          fetchpriority={isFirst ? 'high' : 'auto'}
         />
         <div className="oval"></div>
       </div>

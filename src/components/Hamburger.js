@@ -1,7 +1,7 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 
 const Hamburger = ({ expanded }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const isExpandedRef = useRef(false);
     const hamburgerRef = useRef(null);
 
     const updateAttributes = useCallback((newIsExpanded) => {
@@ -15,25 +15,23 @@ const Hamburger = ({ expanded }) => {
     }, []);
 
     const toggleMenu = useCallback(() => {
-        setIsExpanded(prevState => {
-            const newIsExpanded = !prevState;
-            updateAttributes(newIsExpanded);
-            if (expanded) {
-                expanded(newIsExpanded);
-            }
-            return newIsExpanded;
-        });
+        isExpandedRef.current = !isExpandedRef.current;
+        const newIsExpanded = isExpandedRef.current;
+        updateAttributes(newIsExpanded);
+        if (expanded) {
+            expanded(newIsExpanded);
+        }
     }, [updateAttributes, expanded]);
 
     const handleResize = useCallback(() => {
-        if (window.innerWidth > 700 && isExpanded) {
-            setIsExpanded(false);
+        if (window.innerWidth > 700 && isExpandedRef.current) {
+            isExpandedRef.current = false;
             updateAttributes(false);
             if (expanded) {
                 expanded(false);
             }
         }
-    }, [isExpanded, updateAttributes, expanded]);
+    }, [updateAttributes, expanded]);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -42,8 +40,8 @@ const Hamburger = ({ expanded }) => {
 
     return (
         <div className="hamburger-box">
-            <button className="closer" onClick={toggleMenu} aria-label="Close Menu" ></button>
-            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger" >
+            <button className="closer" onClick={toggleMenu} aria-label="Close Menu"></button>
+            <button id="hamburger" aria-expanded={isExpandedRef.current} aria-label={isExpandedRef.current ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger">
                 <span className="line gradient-border"></span>
                 <span className="line gradient-border"></span>
                 <span className="line gradient-border"></span>
