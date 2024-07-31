@@ -38,7 +38,7 @@ const accordionItems = [
 ];
 function Faq() {
     return (
-        <section>
+        <>
             <Helmet>
                 <title>FAQ - Riley Hoffman - Web Developer</title>
                 <meta property="og:title" content="FAQ - Riley Hoffman - Web Developer" />
@@ -50,7 +50,7 @@ function Faq() {
             <div className="max-800px faq"> 
                 <Accordion items={accordionItems} />
             </div>
-        </section>
+        </>
     )
 }
 

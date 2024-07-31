@@ -52,7 +52,7 @@ const Projects = () => {
   ];
 
   return (
-    <section>
+    <>
       <Helmet>
         <title>Projects - Riley Hoffman - Web Developer</title>
         <meta property="og:title" content="Projects - Riley Hoffman - Web Developer" />
@@ -74,7 +74,7 @@ const Projects = () => {
           ))}
         </ul>
       </div>
-    </section>
+    </>
   );
 };
 

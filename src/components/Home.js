@@ -12,7 +12,7 @@ function Home() {
     const containerRef = useScrollingBackground();
 
     return (
-        <div>
+        <>
             <Helmet>
                 <link rel="preload" fetchpriority="high" href={clouds} as="image" type="image/jpeg" />
                 <meta property="og:title" content="Riley Hoffman - Web Developer" />
@@ -35,7 +35,7 @@ function Home() {
             <div className="max-1000px">
                 <ParticleGame/>
             </div>
-        </div>
+        </>
     );
 }
 
