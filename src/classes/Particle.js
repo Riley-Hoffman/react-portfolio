@@ -1,12 +1,10 @@
 class Particle {
   constructor(x, y, size, color, weight, speedFactor) {
-    this.x = x;
-    this.y = y;
+    this.position = { x, y };
     this.size = size;
     this.color = color;
     this.weight = weight;
-    this.directionX = 0;
-    this.directionY = 0;
+    this.direction = { x: 0, y: 0 };
     this.vertices = this.generateVertices();
     this.inCanvas = true;
     this.speedFactor = speedFactor;
@@ -14,60 +12,83 @@ class Particle {
 
   generateVertices() {
     const vertices = [];
-    const numVertices = Math.floor(Math.random() * 5) + 3;
+    const numVertices = this.getRandomInt(3, 8);
     for (let i = 0; i < numVertices; i++) {
       const angle = (i / numVertices) * Math.PI * 2;
       const radius = this.size * (Math.random() * 0.5 + 0.5);
-      vertices.push({
-        x: Math.cos(angle) * radius,
-        y: Math.sin(angle) * radius,
-      });
+      vertices.push(this.getVertex(angle, radius));
     }
     return vertices;
+  }
+
+  getVertex(angle, radius) {
+    return {
+      x: Math.cos(angle) * radius,
+      y: Math.sin(angle) * radius,
+    };
+  }
+
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   draw(ctx) {
     ctx.fillStyle = this.color;
     ctx.beginPath();
-    ctx.moveTo(this.x + this.vertices[0].x, this.y + this.vertices[0].y);
+    ctx.moveTo(this.position.x + this.vertices[0].x, this.position.y + this.vertices[0].y);
     for (let i = 1; i < this.vertices.length; i++) {
-      ctx.lineTo(this.x + this.vertices[i].x, this.y + this.vertices[i].y);
+      ctx.lineTo(this.position.x + this.vertices[i].x, this.position.y + this.vertices[i].y);
     }
     ctx.closePath();
     ctx.fill();
   }
 
   update(ctx, mouse, canvas) {
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
+    this.updateDirection(mouse);
+    this.updatePosition();
+    this.checkCanvasBounds(canvas);
+    this.draw(ctx);
+  }
 
-    if (distance < mouse.radius) {
-      if (distance < 50) distance = 50;
-      let forceDirectionX = dx / distance;
-      let forceDirectionY = dy / distance;
-      let maxDistance = mouse.radius;
-      let force = (maxDistance - distance) / maxDistance + 0.5;
-      let directionX = forceDirectionX * force * this.weight * 5 * this.speedFactor;
-      let directionY = forceDirectionY * force * this.weight * 5 * this.speedFactor;
-      this.x -= directionX;
-      this.y -= directionY;
+  updateDirection(mouse) {
+    const { x: mouseX, y: mouseY, radius: mouseRadius } = mouse;
+    const dx = mouseX - this.position.x;
+    const dy = mouseY - this.position.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-      this.directionX = (Math.random() - 0.5) * 2 * this.speedFactor;
-      this.directionY = (Math.random() - 0.5) * 2 * this.speedFactor;
+    if (distance < mouseRadius) {
+      this.applyMouseEffect(dx, dy, distance, mouseRadius);
     } else {
-      this.directionX *= 0.95 * this.speedFactor;
-      this.directionY *= 0.95 * this.speedFactor;
+      this.dampenDirection();
     }
+  }
 
-    this.x += this.directionX;
-    this.y += this.directionY;
+  applyMouseEffect(dx, dy, distance, mouseRadius) {
+    const adjustedDistance = Math.max(distance, 50);
+    const forceDirection = { x: -dx / adjustedDistance, y: -dy / adjustedDistance };
+    const force = (mouseRadius - adjustedDistance) / mouseRadius + 0.5;
+    const magnitude = force * this.weight * 5 * this.speedFactor;
+    this.direction.x = forceDirection.x * magnitude;
+    this.direction.y = forceDirection.y * magnitude;
+  }
+  
 
-    if (this.x < -7.4 || this.x > (canvas.width + 7.4) || this.y < -7.4 || this.y > (canvas.height + 7.4)) {
+  dampenDirection() {
+    this.direction.x *= 0.95 * this.speedFactor;
+    this.direction.y *= 0.95 * this.speedFactor;
+  }
+
+  updatePosition() {
+    this.position.x += this.direction.x;
+    this.position.y += this.direction.y;
+  }
+
+  checkCanvasBounds(canvas) {
+    const { width, height } = canvas;
+    if (this.position.x < -7.4 || this.position.x > width + 7.4 ||
+        this.position.y < -7.4 || this.position.y > height + 7.4) {
       this.inCanvas = false;
     }
-
-    this.draw(ctx);
   }
 }
 
