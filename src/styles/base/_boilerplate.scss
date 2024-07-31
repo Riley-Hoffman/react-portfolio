@@ -196,7 +196,7 @@ button {
 .fa-regular,
 .fa-solid,
 .fa-brands {
-  font-family: "Font Awesome 6 Free" !important;
+  font-family: "Font Awesome 6 Free";
 }
 
 .cover {
@@ -217,15 +217,15 @@ button {
       @include flex-wrap;
     }
 
-    .block-#{$breakpoint} {
-      display: block !important;
+    .block-#{$breakpoint}:not(#_), .flex.block-#{$breakpoint}:not(#_) {
+      display: block;
       
-      * {
-        float: none !important;
+      *:not(#_) {
+        float: none;
       }
 
       *:not(img, .keep-width) {
-        max-width: 100% !important;
+        max-width: 100%;
       }
 
       a {
@@ -238,7 +238,7 @@ button {
     }
 
     .hide-at-#{$breakpoint}:not(#_) {
-      display: none !important;
+      display: none;
     }
 
     .center-at-#{$breakpoint}, .center-at-#{$breakpoint} * {
@@ -248,7 +248,7 @@ button {
 
   @media (min-width: #{$breakpoint + 1}px) {
     .show-at-#{$breakpoint}:not(#_) {
-      display: none !important;
+      display: none;
     }
   }
 }

@@ -31,7 +31,6 @@ nav.menu {
   margin: auto 0 auto auto;
   padding: 6px 0;
   height: 55px;
-  max-width: 1200px;
   @include positioning(auto, 0, auto, 0);
   align-items: center;
   [data-open="true"] > .closer {

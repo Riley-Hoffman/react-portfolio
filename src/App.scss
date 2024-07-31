@@ -120,8 +120,8 @@ textarea:focus-visible {
 	}
 }
 
-.hidden {
-	display: none !important;
+.App .hidden:not(#_) {
+	display: none;
 }
 
 .no-scroll {
