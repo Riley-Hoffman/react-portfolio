@@ -20,25 +20,21 @@
   for = "/*.jpg"
   [headers.values]
     Cache-Control = "max-age=31536000"
-    Content-Encoding = "br"
 
 [[headers]]
   for = "/*.jpeg"
   [headers.values]
     Cache-Control = "max-age=31536000"
-    Content-Encoding = "br"
 
 [[headers]]
   for = "/*.png"
   [headers.values]
     Cache-Control = "max-age=31536000"
-    Content-Encoding = "br"
 
 [[headers]]
   for = "/*.ico"
   [headers.values]
     Cache-Control = "max-age=31536000"
-    Content-Encoding = "br"
 
 [[headers]]
   for = "/"
