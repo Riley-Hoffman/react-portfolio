@@ -9,24 +9,15 @@ status = 200
 [[headers]]
   for = "response"
   [headers.rules]
-  patterns = ["/*"]
-  headers = [
-    { key = "Cache-Control", value = "max-age=31536000, immutable" },
-    { key = "Content-Encoding", value = "gzip" }
-  ]
-
-[[headers]]
-  for = "response"
-  [headers.rules]
   patterns = ["/*.js", "/*.css", "/*.jpg", "/*.jpeg", "/*.png", "/*.ico"]
   headers = [
-    { key = "Cache-Control", value = "max-age=31536000" }
+    { key = "Cache-Control", value = "max-age=31536000, immutable" }
   ]
 
 [[headers]]
   for = "response"
   [headers.rules]
-  patterns = ["/"]
+  patterns = ["/index.html"]
   headers = [
     { key = "Cache-Control", value = "no-cache, no-store, must-revalidate" },
     { key = "Pragma", value = "no-cache" },
