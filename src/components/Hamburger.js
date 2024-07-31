@@ -8,8 +8,9 @@ const Hamburger = ({ expanded }) => {
 
     const updateAttributes = useCallback((newIsExpanded) => {
         if (hamburgerRef.current) {
-            hamburgerRef.current.setAttribute('aria-expanded', newIsExpanded.toString());
-            const parentNode = hamburgerRef.current.parentNode;
+            const { current: hamburgerElement } = hamburgerRef;
+            hamburgerElement.setAttribute('aria-expanded', newIsExpanded.toString());
+            const parentNode = hamburgerElement.parentNode;
             if (parentNode) {
                 parentNode.dataset.open = newIsExpanded.toString();
             }
@@ -20,9 +21,7 @@ const Hamburger = ({ expanded }) => {
         setIsExpanded(prevState => {
             const newIsExpanded = !prevState;
             updateAttributes(newIsExpanded);
-            if (expanded) {
-                expanded(newIsExpanded);
-            }
+            expanded?.(newIsExpanded);
             return newIsExpanded;
         });
     }, [updateAttributes, expanded]);
@@ -31,9 +30,7 @@ const Hamburger = ({ expanded }) => {
         if (window.innerWidth > 700 && isExpanded) {
             setIsExpanded(false);
             updateAttributes(false);
-            if (expanded) {
-                expanded(false);
-            }
+            expanded?.(false);
         }
     }, [isExpanded, updateAttributes, expanded]);
 
@@ -50,11 +47,10 @@ const Hamburger = ({ expanded }) => {
     return (
         <div className="hamburger-box">
             <button className="closer" onClick={toggleMenu} aria-label="Close Menu"></button>
-            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger">
-                <span className="line gradient-border"></span>
-                <span className="line gradient-border"></span>
-                <span className="line gradient-border"></span>
-                <span className="line gradient-border"></span>
+            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger" >
+                {[...Array(4)].map((_, index) => (
+                    <span key={index} className="line gradient-border"></span>
+                ))}
             </button>
         </div>
     );
