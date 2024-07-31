@@ -1,0 +1,42 @@
+@use "../abstracts/index" as *;
+
+.typewriter {
+	animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite, border-fade 0s 1.5s forwards;
+	border-right: 1.5px solid $purple;
+	display: inline-block;
+	letter-spacing: 0.15em;
+	overflow: hidden;
+	margin: 0 auto 0 0;
+	position: relative;
+	white-space: nowrap;
+	width: 160px;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+		border-right: none;
+	}
+}
+
+@keyframes typing {
+	from {
+		max-width: 0;
+	}
+	to {
+		max-width: 100%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #aab9bb;
+	}
+}
+
+@keyframes border-fade {
+	to {
+		border-color: transparent;
+	}
+}

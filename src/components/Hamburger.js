@@ -47,7 +47,7 @@ const Hamburger = ({ expanded }) => {
     return (
         <div className="hamburger-box">
             <button className="closer" onClick={toggleMenu} aria-label="Close Menu"></button>
-            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger" >
+            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger">
                 {[...Array(4)].map((_, index) => (
                     <span key={index} className="line gradient-border"></span>
                 ))}
