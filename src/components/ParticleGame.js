@@ -36,15 +36,13 @@ const ParticleGame = () => {
     }
   }, [mouse]);
 
-  const showMessageTemporarily = useCallback((message) => {
+  const sayMessageTemporarily = useCallback((message) => {
     setState(prevState => ({
       ...prevState,
       cursorMessage: message,
       messageVisible: false,
     }));
-    setTimeout(() => {
-      setState(prevState => ({ ...prevState, messageVisible: true }));
-    }, 10);
+    setTimeout(() => setState(prevState => ({ ...prevState, messageVisible: true })), 10);
   }, []);
 
   const handleInteraction = useCallback((event, isInside) => {
@@ -65,14 +63,14 @@ const ParticleGame = () => {
       }
       
       if (state.gameInProgress) {
-        showMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
+        sayMessageTemporarily(`Your cursor has ${isInside ? 'entered' : 'exited'} Particle Cleanup Game play area`);
       }
     }
   
     if (isTouchEvent) {
       event.preventDefault();
     }
-  }, [updateCursorPosition, state.gameInProgress, showMessageTemporarily]);
+  }, [updateCursorPosition, state.gameInProgress, sayMessageTemporarily]);
 
   const handleScroll = useCallback((event) => {
     if (state.gameInProgress && refs.current.cursorInsideCanvas) {
