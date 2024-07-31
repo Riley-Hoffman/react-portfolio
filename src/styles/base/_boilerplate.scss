@@ -185,10 +185,11 @@ img {
 }
 
 button {
-  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-family: inherit;
+  padding: 0;
 }
 
 .fa,
