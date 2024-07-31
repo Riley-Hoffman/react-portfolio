@@ -6,24 +6,26 @@ from = "/*"
 to = "/index.html"
 status = 200
 
-[headers]
-[[headers.rules]]
-patterns = ["/*"]
-headers = [
-  { key = "Cache-Control", value = "max-age=31536000, immutable" },
-  { key = "Content-Encoding", value = "gzip" }
-]
+[[headers]]
+  [headers.rules]
+  patterns = ["/*"]
+  headers = [
+    { key = "Cache-Control", value = "max-age=31536000, immutable" },
+    { key = "Content-Encoding", value = "gzip" }
+  ]
 
-[[headers.rules]]
-patterns = ["/*.js", "/*.css", "/*.jpg", "/*.jpeg", "/*.png", "/*.ico"]
-headers = [
-  { key = "Cache-Control", value = "max-age=31536000" }
-]
+[[headers]]
+  [headers.rules]
+  patterns = ["/*.js", "/*.css", "/*.jpg", "/*.jpeg", "/*.png", "/*.ico"]
+  headers = [
+    { key = "Cache-Control", value = "max-age=31536000" }
+  ]
 
-[[headers.rules]]
-patterns = ["/"]
-headers = [
-  { key = "Cache-Control", value = "no-cache, no-store, must-revalidate" },
-  { key = "Pragma", value = "no-cache" },
-  { key = "Expires", value = "0" }
-]
+[[headers]]
+  [headers.rules]
+  patterns = ["/"]
+  headers = [
+    { key = "Cache-Control", value = "no-cache, no-store, must-revalidate" },
+    { key = "Pragma", value = "no-cache" },
+    { key = "Expires", value = "0" }
+  ]
