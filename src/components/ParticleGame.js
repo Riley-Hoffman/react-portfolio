@@ -173,7 +173,7 @@ const ParticleGame = () => {
   }, [initializeAnimation]);
 
   return (
-    <div>
+    <>
       <h2 className="label-text">Latest Concept</h2>
       <h3 className="text-40">Particle Cleanup Game</h3>
       <p className="text-26">How quickly can you clear all the particles from the board using your cursor or finger?</p>
@@ -204,13 +204,13 @@ const ParticleGame = () => {
           </div>
         </div>
         {state.gameInProgress && !refs.current.allClean && (
-            <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
-              {state.cursorMessage}
-            </p>
-          )}
-          <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
-        </div>
+          <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
+            {state.cursorMessage}
+          </p>
+        )}
+        <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
       </div>
+    </>
     );
   };
 
