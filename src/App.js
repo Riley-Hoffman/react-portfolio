@@ -2,11 +2,11 @@ import './App.scss';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
+import Home from './components/pages/Home';
+import Projects from './components/pages/Projects';
+import Skills from './components/pages/Skills';
+import Faq from './components/pages/Faq';
+import Contact from './components/pages/Contact';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() { 

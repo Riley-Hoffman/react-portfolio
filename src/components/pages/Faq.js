@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
-import Accordion from './Accordion';
-import '../styles/pages/_faq.scss';
-import '../styles/components/_accordion.scss';
+import Accordion from '../Accordion';
+import '../../styles/pages/_faq.scss';
+import '../../styles/components/_accordion.scss';
 const accordionItems = [
     {
         question: "Are you available for freelance work?",

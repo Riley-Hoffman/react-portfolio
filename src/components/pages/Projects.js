@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
-import ProjectBox from './ProjectBox';
-import '../styles/pages/_projects.scss';
-import '../styles/animations/_triggerOnScroll.scss';
+import ProjectBox from '../ProjectBox';
+import '../../styles/pages/_projects.scss';
+import '../../styles/animations/_triggerOnScroll.scss';
 
 const Projects = () => {
   const projects = [
