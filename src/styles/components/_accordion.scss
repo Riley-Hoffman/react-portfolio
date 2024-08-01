@@ -26,11 +26,11 @@
       }
       &:focus-visible svg,
       &:hover svg,
-      &[data-open=true] svg {
+      &[aria-expanded="true"] svg {
         background-color: $lightPurple;
         color: $black;
       }
-      &[data-open=true] {
+      &[aria-expanded="true"] {
         border-bottom: 0px solid #e1d7ee;
       }
     }
@@ -45,10 +45,10 @@
     transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out, padding .3s ease-in-out; 
     max-height: 0;
     height: 0;
-    .accordion button:not([data-open=true]) + & > * {
+    .accordion button:not([aria-expanded="true"]) + & > * {
       display: none;
     }
-    .accordion button[data-open=true] + & {
+    .accordion button[aria-expanded="true"] + & {
       margin-bottom: 20px;
       padding: 2px 18px;
       max-height: 5000px;

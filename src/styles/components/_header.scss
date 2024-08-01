@@ -33,9 +33,6 @@ nav.menu {
   height: 55px;
   @include positioning(auto, 0, auto, 0);
   align-items: center;
-  [data-open="true"] > .closer {
-    display: block;
-  }
   .closer {
     cursor: default;
     display: none;
@@ -52,6 +49,9 @@ nav.menu {
     line-height: 0;
     margin-left: auto;
     padding: $base-margin;
+    &[aria-expanded="true"] ~ .closer {
+      display: block;
+    }
     * {
       pointer-events: none;
     }
@@ -109,15 +109,15 @@ nav.menu {
         }
       }
     }
-    > .hamburger-box[data-open="true"] + ul {
-      transform: scaleX(1);
-    }
     .hamburger {
       display: block;
       position: relative;
       z-index: 2;
       height: 40px;
       width: 67px;
+      &[aria-expanded="true"] ~ ul {
+        transform: scaleX(1);
+      }
       .line {
         border: 2px solid;
         border-image-slice: 1;
@@ -141,7 +141,7 @@ nav.menu {
         }
       }
     }
-    > .hamburger-box[data-open="true"] .line {
+    > .hamburger[aria-expanded="true"] .line {
       &:first-child,
       &:nth-child(4) {
         @include positioning(21px, auto, auto, 15px);

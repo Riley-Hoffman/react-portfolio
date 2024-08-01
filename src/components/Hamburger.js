@@ -10,10 +10,6 @@ const Hamburger = ({ expanded }) => {
         if (hamburgerRef.current) {
             const { current: hamburgerElement } = hamburgerRef;
             hamburgerElement.setAttribute('aria-expanded', newIsExpanded.toString());
-            const parentNode = hamburgerElement.parentNode;
-            if (parentNode) {
-                parentNode.dataset.open = newIsExpanded.toString();
-            }
         }
     }, []);
 
@@ -45,14 +41,14 @@ const Hamburger = ({ expanded }) => {
     }, [location, updateAttributes]);
 
     return (
-        <div className="hamburger-box">
-            <button className="closer" onClick={toggleMenu} aria-label="Close Menu"></button>
+        <>
             <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="hamburger">
                 {[...Array(4)].map((_, index) => (
                     <span key={index} className="line gradient-border"></span>
                 ))}
             </button>
-        </div>
+            <button className="closer" onClick={toggleMenu} aria-label="Close Menu"></button>
+        </>
     );
 };
 
