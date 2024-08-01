@@ -19,7 +19,7 @@ function Accordion({ items }) {
     return (
         <div className="accordion">
             {items.map((item, index) => (
-                <div key={index}>
+                <li key={index}>
                     <button 
                         className="width-100 text-left text-500"
                         onClick={() => handleAccordionClick(index)}
@@ -36,7 +36,7 @@ function Accordion({ items }) {
                     >
                         {item.answer}
                     </div>
-                </div>
+                </li>
             ))}
         </div>
     );
