@@ -1,7 +1,7 @@
 @use "./styles/abstracts/index" as *;
 @import "./styles/base/sanitize";
 @import "./styles/base/boilerplate";
-@import "./styles/googleFontFace";
+@import "./styles/font-face/googleFontFace";
 @import "./styles/components/header";
 @import "./styles/components/footer";
 
