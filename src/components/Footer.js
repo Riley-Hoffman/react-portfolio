@@ -7,11 +7,11 @@ function Footer() {
         <footer className="gradient-border">
             <h2 className="sr-only">Footer</h2>
             <div className="max-1200px flex">
-                <p>Riley Hoffman | Web Developer 
+                <p><span>Riley Hoffman</span> | Web Developer 
                     <a href="https://github.com/Riley-Hoffman/react-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Site repo on Github"> <FontAwesomeIcon icon={faGithub} /></a>
                 </p>
                 <p>
-                    ©{new Date().getFullYear()}
+                    <span>©</span>{new Date().getFullYear()}
                 </p>
             </div>
         </footer>
