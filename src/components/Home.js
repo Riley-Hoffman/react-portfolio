@@ -20,7 +20,7 @@ function Home() {
                 <meta property="og:url" content="https://rileyhoffman.com" />
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
-            <div className="gradient-border overlay about" ref={containerRef}>
+            <section className="gradient-border overlay about" ref={containerRef}>
                 <div className="max-1200px flex block-700">
                     <div className="max-60 min-60 text-left">
                         <h1 className="text-40 text-600">Riley Hoffman</h1>
@@ -31,10 +31,10 @@ function Home() {
                         <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className="max-300px" />
                     </div>
                 </div>
-            </div>
-            <div className="max-1000px">
+            </section>
+            <section className="max-1000px">
                 <ParticleGame/>
-            </div>
+            </section>
         </>
     );
 }
