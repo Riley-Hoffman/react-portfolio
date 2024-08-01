@@ -4,8 +4,8 @@ import '../styles/pages/_home.scss';
 import '../styles/animations/_typewriter.scss';
 import '../styles/components/_particleGame.scss';
 import '../styles/animations/_rotateSpin.scss';
-import riley from '../assets/riley.png';
-import clouds from '../assets/clouds.jpg';
+import riley from '../assets/images/riley.png';
+import clouds from '../assets/images/clouds.jpg';
 import useScrollingBackground from '../hooks/useScrollingBackground';
 
 function Home() {

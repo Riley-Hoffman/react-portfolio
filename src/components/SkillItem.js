@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import wcag from '../assets/wcag.png';
+import wcag from '../assets/images/wcag.png';
 
 const SkillItem = ({ skill, icon, devicon, image }) => {
   return (

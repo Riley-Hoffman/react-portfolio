@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useLayoutEffect, useState, useEffect } from 'react';
 import Hamburger from './Hamburger';
-import resume from '../assets/riley-hoffman-resume.pdf';
+import resume from '../assets/files/riley-hoffman-resume.pdf';
 
 function Header() {
     const [isExpanded, setIsExpanded] = useState(false);
