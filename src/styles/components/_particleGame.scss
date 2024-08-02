@@ -24,6 +24,7 @@ ol.numbered-icons.medal-criteria {
     margin: $baseMargin;
     overflow: hidden;
     height: 500px;
+    width: $calcMargin;
     &:not(.done) {
         cursor: grabbing;
     }
