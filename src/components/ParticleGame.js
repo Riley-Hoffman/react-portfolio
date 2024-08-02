@@ -184,7 +184,7 @@ const ParticleGame = () => {
       </ol>
       <div className="max-800px">
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-          <canvas className="width-100" ref={ref => refs.current.canvas = ref} />
+          <canvas ref={ref => refs.current.canvas = ref} />
           <div className="width-100">
             {refs.current.allClean && (
               <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
