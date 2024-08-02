@@ -174,7 +174,7 @@ const ParticleGame = () => {
 
   return (
     <>
-      <h2 className="label-text">Latest Concept</h2>
+      <h2 className="max-800px width-100 label-text">Latest Concept</h2>
       <h3 className="text-40">Particle Cleanup Game</h3>
       <p className="text-26">How quickly can you clear all the particles from the board using your cursor or finger?</p>
       <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">

@@ -69,8 +69,8 @@ a,
 a > *,
 .button {
 	transition:
-		color $timing-function,
-		background-color $timing-function;
+		color $timingFunction,
+		background-color $timingFunction;
 }
 
 a:focus-visible,
@@ -132,13 +132,13 @@ textarea:focus-visible {
 	pointer-events: none;
 }
 
-.label-text {
+.label-text:not(#_) {
 	background-image: linear-gradient(90deg, #7868bf 0%, $gradientPink 50%, $gradientPurple 70%);
 	color: $white;
 	display: inline-block;
 	font-family: $inconsolata;
 	font-weight: 500;
-	margin: $base-margin;
+	margin: $baseMargin;
 	padding: 0 5px;
 }
 

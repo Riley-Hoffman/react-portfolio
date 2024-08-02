@@ -12,7 +12,7 @@
       font-size: 18px;
       line-height: 2.1;
       padding: 24px 20px;
-      transition: border-bottom $timing-function;
+      transition: border-bottom $timingFunction;
       height: auto;
      svg {
        box-sizing: content-box;
@@ -22,7 +22,7 @@
        font-size: 13px;
        margin-right: 20px;
        padding: 8px;
-       transition: background-color $timing-function;
+       transition: background-color $timingFunction;
       }
       &:focus-visible svg,
       &:hover svg,

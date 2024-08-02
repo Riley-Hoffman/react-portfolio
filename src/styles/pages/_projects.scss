@@ -40,8 +40,8 @@
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
       padding: 5px 15px;
       text-transform: uppercase;
-      transition: color $timing-function;
-      margin: $base-margin;
+      transition: color $timingFunction;
+      margin: $baseMargin;
       &:last-of-type {
         margin-left: 10px;
       }

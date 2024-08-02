@@ -48,7 +48,7 @@ nav.menu {
     display: none;
     line-height: 0;
     margin-left: auto;
-    padding: $base-margin;
+    padding: $baseMargin;
     &[aria-expanded="true"] ~ .closer {
       display: block;
     }
@@ -69,7 +69,7 @@ nav.menu {
         letter-spacing: 0.5px;
         max-height: 100%;
         padding: 9px 15px;
-        transition: background-color $timing-function, filter $timing-function, color $timing-function;
+        transition: background-color $timingFunction, filter $timingFunction, color $timingFunction;
         white-space: nowrap;
       }
       a:hover,
@@ -95,7 +95,7 @@ nav.menu {
       text-align: left;
       transform: scaleX(0); 
       transform-origin: right; 
-      transition: transform $timing-function;
+      transition: transform $timingFunction;
       height: auto;
       width: 200px;
       @include positioning(23px, 0, auto, auto);
@@ -126,7 +126,7 @@ nav.menu {
         opacity: 1;
         position: absolute;
         transform: rotate(0);
-        transition: $timing-function;
+        transition: $timingFunction;
         width: 25px;
         &:first-child {
           top: 8px;
