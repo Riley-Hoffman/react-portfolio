@@ -10,7 +10,6 @@ const ProjectBox = ({
   gitUrl, 
   imgAlt, 
   imgUrl, 
-  srcSet,
   animation,
   inverted,
   isFirst
@@ -35,19 +34,17 @@ const ProjectBox = ({
           <span aria-hidden="true">Live</span>
           <span className="sr-only">{title} Live</span>
         </a>
-        <a className="button" href={gitUrl} target="_blank" rel="noopener noreferrer">
+        {gitUrl && (<a className="button" href={gitUrl} target="_blank" rel="noopener noreferrer">
           <span className="sr-only">{title} </span>Repo
-        </a>
+        </a>)}
       </div>
       <div className="text-center img-box">
         <img
           alt={imgAlt}
           src={imgUrl}
-          srcSet={srcSet}
           title={title}
           height="900"
           width="900"
-          sizes="(max-width: 900px) 100vw, 900px"
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
