@@ -6,9 +6,8 @@ header {
   border-top: 34px solid $black;
   box-shadow: 0 1px 3px -3px $black;
   padding: 16px 0;
-  position: sticky;
   z-index: 999999;
-	@include positioning(-34px, 0, auto, 0);
+	@include positioning(sticky, -34px, 0, auto, 0);
   > div {
     align-items: center;
   }
@@ -31,16 +30,13 @@ nav.menu {
   margin: auto 0 auto auto;
   padding: 6px 0;
   height: 55px;
-  @include positioning(auto, 0, auto, 0);
-  align-items: center;
   .closer {
     cursor: default;
     display: none;
-    position: fixed;
     z-index: 1;
     width: 100%;
     height: 100%;
-    @include positioning(0, 0, 0, 0);
+    @include positioning(fixed, 0, 0, 0, 0);
   }
   .hamburger {
     background-color: transparent;
@@ -58,7 +54,6 @@ nav.menu {
   }
   ul {
     margin: 0;
-    position: relative;
     z-index: 2;
     > li {
       display: inline;
@@ -98,7 +93,7 @@ nav.menu {
       transition: transform $timingFunction;
       height: auto;
       width: 200px;
-      @include positioning(23px, 0, auto, auto);
+      @include positioning(relative, 23px, 0, auto, auto);
       li {
         display: block;
         a {
@@ -143,7 +138,7 @@ nav.menu {
     > .hamburger[aria-expanded="true"] .line {
       &:first-child,
       &:nth-child(4) {
-        @include positioning(21px, auto, auto, 15px);
+        @include positioning(absolute, 21px, auto, auto, 15px);
         border: none;
         width: 0;
       }

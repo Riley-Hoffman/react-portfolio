@@ -96,9 +96,8 @@ textarea:focus-visible {
 /* Utility Classes */
 
 .skip-link {
-	position: absolute;
 	z-index: 999999;
-	@include positioning(5px, auto, auto, -1000px);
+	@include positioning(absolute, 5px, auto, auto, -1000px);
 	&:focus {
 		left: 0;
 		margin-left: 10px;
@@ -158,10 +157,9 @@ textarea:focus-visible {
 	&:before {
 		background-image: $radialOverlay;
 		content: "";
-		position: absolute;
 		height: 100%;
 		width: 100%;
-		@include positioning(0, 0, 0, 0);
+		@include positioning(absolute, 0, 0, 0, 0);
 	}
 	> * {
 		position: relative;
@@ -173,10 +171,9 @@ textarea:focus-visible {
 	&:after {
 		background-color: $purple;
 		content: "";
-		position: absolute;
 		height: 11px;
 		width: 22px;
-		@include positioning(auto, auto, -12px, 20px);
+		@include positioning(absolute, auto, auto, -12px, 20px);
 	}
 }
 
@@ -197,12 +194,11 @@ ol.numbered-icons {
 			font-weight: 600;
 			margin-right: 20px;
 			padding: 4px;
-			position: absolute;
 			text-align: center;
 			transform: translateY(-50%);
 			height: 30px;
 			width: 30px;
-			@include positioning(50%, auto, auto, -20px);
+			@include positioning(absolute, 50%, auto, auto, -20px);
 		}
 	}
 }
@@ -211,9 +207,8 @@ ol.numbered-icons {
 	background: $lightPurple;
 	border-radius: 50%;
 	opacity: 0.1;
-	position: absolute;
 	z-index: 0;
-	@include positioning(5%, 0, 0, 0);
+	@include positioning(absolute, 5%, 0, 0, 0);
 }
 
 .banner-heading {

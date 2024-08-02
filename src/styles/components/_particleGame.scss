@@ -35,13 +35,11 @@ ol.numbered-icons.medal-criteria {
     canvas {
         display: block;
         height: 100%;
-        position: absolute;
-        @include positioning(0, auto, auto, 0);
+        @include positioning(absolute, 0, auto, auto, 0);
         filter: drop-shadow(1px 1px 0px #00000061);
         + div {
             height: 100%;
-            position: absolute;
-            @include positioning(0, auto, auto, 0);
+            @include positioning(absolute, 0, auto, auto, 0);
         }
     }
     .completion-message {

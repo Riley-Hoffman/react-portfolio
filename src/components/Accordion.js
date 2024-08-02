@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Accordion({ items }) {
+function Accordion({ items, label }) {
     const [openIndex, setOpenIndex] = useState(null);
     const contentRefs = useRef([]);
 
@@ -17,7 +17,7 @@ function Accordion({ items }) {
     }, [openIndex]);
 
     return (
-        <div className="accordion">
+        <ul className="accordion" aria-label={label}>
             {items.map((item, index) => (
                 <li key={index}>
                     <button 
@@ -37,7 +37,7 @@ function Accordion({ items }) {
                     </div>
                 </li>
             ))}
-        </div>
+        </ul>
     );
 }
 

@@ -1,8 +1,9 @@
-@mixin positioning($top, $right, $bottom, $left) {
-    top: $top;
-    right: $right;
+@mixin positioning($position, $top, $right, $bottom, $left) {
+    position: $position;
     bottom: $bottom;
     left: $left;
+    right: $right;
+    top: $top;
 }
 @mixin smallPagePadding {
     padding: 30px 0 13vh;
