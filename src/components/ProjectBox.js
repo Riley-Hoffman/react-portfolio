@@ -25,7 +25,7 @@ const ProjectBox = ({
     <li className={`${animation} + " flex block-700 gradient-border project-box ${inverted}`}>
       <div className="project-info">
         <h2 translate="no">{title}</h2>
-        <h3 translate="no">{skills}</h3>
+        <h3 className="text-18" translate="no">{skills}</h3>
         <p dangerouslySetInnerHTML={{ __html: sanitizedDescription }}></p>
         <h4>
           <span translate="no">{title}</span> Links:
