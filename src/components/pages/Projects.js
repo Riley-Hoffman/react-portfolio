@@ -8,7 +8,7 @@ const Projects = () => {
   const freelanceProjects = [
     {
       title: 'Evangeline Gentle Music',
-      skills: 'Wordpress/PHP, HTML, CSS',
+      skills: 'Wordpress/PHP, HTML, CSS, jQuery',
       description: 'Lost Wordpress theme rebuild. Created a new custom WP theme with the original look. Implemented page/post/archive templates, primary/mobile navigations, widget area, functions.php etc. Got client back up and running, editing their own content.',
       liveUrl: 'https://evangelinegentlemusic.com/',
       gitUrl: '',
