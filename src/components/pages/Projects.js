@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from '../ProjectBox';
-import evangeline from '../../assets/images/evangeline-gental-music.jpg';
+import evangeline from '../../assets/images/evangeline-gentle-music.jpg';
 import '../../styles/pages/_projects.scss';
 import '../../styles/animations/_triggerOnScroll.scss';
 
