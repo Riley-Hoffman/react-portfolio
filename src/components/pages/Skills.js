@@ -8,7 +8,7 @@ const Skills = () => {
   const skills = [
     { skill: 'HTML5', icon: 'devicon-html5-plain', devicon: true, image: false, translate: 'yes' },
     { skill: 'CSS3', icon: 'devicon-css3-plain', devicon: true, image: false, translate: 'yes' },
-    { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false, translate: 'no' },
+    { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false, translate: 'yes' },
     { skill: 'SASS', icon: 'devicon-sass-original', devicon: true, image: false, translate: 'no' },
     { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false, translate: 'no' },
     { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false, translate: 'no' },

@@ -36,7 +36,7 @@ const Projects = () => {
       {
         title: 'Infinity Corkboard',
         skills: 'React, JSX, REST API, CSS',
-        description: 'This <span translate="no">React</span> based app presents the user with a 4X4 grid of photos from <span translate="no">NASA</span> API\'s <span translate="no">Astronomy Picture of the Day</span> endpoint. The user can click any images they wish to change, which swaps it out for a new one in the same position. When the user is pleased with how the grid looks, they may save it by printing to pdf. Print output is styled so the grid appears with no other page elements in the saved file.',
+        description: 'This <span translate="no">React</span> based app presents the user with a 4X4 grid of photos from NASA API\'s <span translate="no">Astronomy Picture of the Day</span> endpoint. The user can click any images they wish to change, which swaps it out for a new one in the same position. When the user is pleased with how the grid looks, they may save it by printing to pdf. Print output is styled so the grid appears with no other page elements in the saved file.',
         liveUrl: 'https://relaxed-visvesvaraya-8807c8.netlify.app/',
         gitUrl: 'https://github.com/Riley-Hoffman/riley-hoffman-project-three',
         imgUrl: infinityCorkboard,
