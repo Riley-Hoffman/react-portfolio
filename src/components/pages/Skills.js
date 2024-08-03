@@ -6,21 +6,21 @@ import '../../styles/pages/_skills.scss';
 
 const Skills = () => {
   const skills = [
-    { skill: 'HTML5', icon: 'devicon-html5-plain', devicon: true, image: false },
-    { skill: 'CSS3', icon: 'devicon-css3-plain', devicon: true, image: false },
-    { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false },
-    { skill: 'SASS', icon: 'devicon-sass-original', devicon: true, image: false },
-    { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false },
-    { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false },
-    { skill: 'Rest API', icon: faArrowsAltH, devicon: false, image: false },
-    { skill: 'Accessibility', icon: faUniversalAccess, devicon: false, image: false },
-    { skill: 'WCAG', devicon: false, image: true },
-    { skill: 'Git', icon: 'devicon-git-plain', devicon: true, image: false },
-    { skill: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true, image: false },
-    { skill: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true, image: false },
-    { skill: 'PHP', icon: 'devicon-php-plain', devicon: true, image: false },
-    { skill: 'Firebase', icon: 'devicon-firebase-plain', devicon: true, image: false },
-    { skill: 'JSON', icon: 'devicon-json-plain', devicon: true, image: false },
+    { skill: 'HTML5', icon: 'devicon-html5-plain', devicon: true, image: false, translate: 'yes' },
+    { skill: 'CSS3', icon: 'devicon-css3-plain', devicon: true, image: false, translate: 'yes' },
+    { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false, translate: 'no' },
+    { skill: 'SASS', icon: 'devicon-sass-original', devicon: true, image: false, translate: 'no' },
+    { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false, translate: 'no' },
+    { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false, translate: 'no' },
+    { skill: 'Rest API', icon: faArrowsAltH, devicon: false, image: false, translate: 'no' },
+    { skill: 'Accessibility', icon: faUniversalAccess, devicon: false, image: false, translate: 'yes' },
+    { skill: 'WCAG', devicon: false, image: true, translate: 'yes' },
+    { skill: 'Git', icon: 'devicon-git-plain', devicon: true, image: false, translate: 'no' },
+    { skill: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true, image: false, translate: 'no' },
+    { skill: 'Wordpress', icon: 'devicon-wordpress-plain', devicon: true, image: false, translate: 'yes' },
+    { skill: 'PHP', icon: 'devicon-php-plain', devicon: true, image: false, translate: 'yes' },
+    { skill: 'Firebase', icon: 'devicon-firebase-plain', devicon: true, image: false, translate: 'no' },
+    { skill: 'JSON', icon: 'devicon-json-plain', devicon: true, image: false, translate: 'yes' },
   ];
 
   return (
@@ -44,6 +44,7 @@ const Skills = () => {
                     devicon={skill.devicon}
                     icon={skill.icon}
                     image={skill.image}
+                    translate={skill.translate}
                   />
                 ))}
               </ul>

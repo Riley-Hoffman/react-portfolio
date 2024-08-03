@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import wcag from '../assets/images/wcag.png';
 
-const SkillItem = ({ skill, icon, devicon, image }) => {
+const SkillItem = ({ skill, icon, devicon, image, translate }) => {
   return (
     <li className="text-center">
       <div className="skill-icon-box flex">
@@ -13,7 +13,7 @@ const SkillItem = ({ skill, icon, devicon, image }) => {
           <FontAwesomeIcon aria-hidden="true" className="fa-solid" icon={icon} />
         )}
       </div>
-      <p>{skill}</p>
+      <p translate={translate}>{skill}</p>
     </li>
   );
 };
