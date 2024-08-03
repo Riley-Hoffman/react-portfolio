@@ -27,9 +27,6 @@ ol.numbered-icons.medal-criteria {
     overflow: hidden;
     height: 500px;
     width: $calcMargin;
-    &.overlay:before {
-        border: 1px solid #eee2f3;
-    }
     &:not(.done) {
         cursor: grabbing;
     }
@@ -45,11 +42,12 @@ ol.numbered-icons.medal-criteria {
         + div {
             height: 100%;
             @include positioning(absolute, 0, auto, auto, 0);
+            border: 1px solid $pink;
         }
     }
     .completion-message {
         align-items: center;
-        background-color: white;
+        background-color: $pink;
         flex-direction: column;
         font-family: $sourceSans;
         font-size: 24px;
