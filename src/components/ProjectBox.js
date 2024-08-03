@@ -45,8 +45,8 @@ const ProjectBox = ({
           alt={imgAlt}
           src={imgUrl}
           title={title}
-          height="900"
-          width="900"
+          height="570"
+          width="570"
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
