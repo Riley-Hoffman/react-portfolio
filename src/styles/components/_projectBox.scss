@@ -1,0 +1,51 @@
+@use "../abstracts/index" as *;
+
+.project-box {
+    margin: 100px 0;
+    border-top: 8px solid $purple;
+    gap: 60px;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    &:first-of-type {
+      margin-top: 50px;
+    }
+    &:nth-child(odd) .img-box .oval {
+      left: -100%;
+    }
+    &:nth-child(even) .img-box .oval {
+      right: -100%;
+    }
+    .project-info {
+      flex-basis: 50%;
+      padding: 20px 0 40px;
+      z-index: 10;
+      h2,
+      h3,
+      p {
+        padding-bottom: 15px;
+      }
+      h3,
+      h4 {
+        margin-bottom: 30px;
+      }
+      a {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        padding: 5px 15px;
+        text-transform: uppercase;
+        transition: color $timingFunction;
+        margin: $baseMargin;
+        &:last-of-type:not(:first-of-type) {
+          margin-left: 10px;
+        }
+      }
+    }
+    .img-box {
+      position: relative;
+      flex-basis: 50%;
+      img {
+        position: relative;
+        z-index: 10;
+      }
+    }
+  }

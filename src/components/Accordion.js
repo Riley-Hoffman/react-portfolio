@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/components/_accordion.scss';
 
 function Accordion({ items, label }) {
     const [openIndex, setOpenIndex] = useState(null);

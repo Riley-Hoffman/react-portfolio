@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import ParticleGame from '../ParticleGame';
 import '../../styles/pages/_home.scss';
 import '../../styles/animations/_typewriter.scss';
-import '../../styles/components/_particleGame.scss';
 import '../../styles/animations/_rotateSpin.scss';
 import riley from '../../assets/images/riley.png';
 import clouds from '../../assets/images/clouds.jpg';

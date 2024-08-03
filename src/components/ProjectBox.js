@@ -1,6 +1,8 @@
 import DOMPurify from 'dompurify';
 import { useEffect } from 'react';
 import useTriggerOnScroll from '../hooks/useTriggerOnScroll';
+import '../styles/components/_projectBox.scss';
+
 
 const ProjectBox = ({ 
   title, 
