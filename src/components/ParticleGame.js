@@ -174,16 +174,17 @@ const ParticleGame = () => {
   }, [initializeAnimation]);
 
   return (
-    <>
-      <h2 className="max-800px width-100 label-text">Latest Concept</h2>
-      <h3 className="text-40">Particle Cleanup Game</h3>
-      <p className="particle-game-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-      <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
-        <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-        <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-        <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
-      </ol>
-      <div className="max-800px">
+    <li className="trigger-on-scroll slide-in-left flex block-1000 gradient-border project-box">
+      <div className="project-info">
+        <h2 className="text-24">Particle Cleanup Game</h2>
+        <p className="particle-game-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
+        <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
+          <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+          <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+          <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+        </ol>
+      </div>
+      <div className="max-800px img-box">
         <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
           <canvas className="width-100" ref={ref => refs.current.canvas = ref} />
           <div className="width-100">
@@ -208,8 +209,9 @@ const ParticleGame = () => {
           </p>
         )}
         <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
+        <div className="oval"></div>
       </div>
-    </>
+    </li>
     );
   };
 

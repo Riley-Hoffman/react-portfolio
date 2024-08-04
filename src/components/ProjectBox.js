@@ -1,4 +1,3 @@
-import DOMPurify from 'dompurify';
 import { useEffect } from 'react';
 import useTriggerOnScroll from '../hooks/useTriggerOnScroll';
 import '../styles/components/_projectBox.scss';
@@ -16,7 +15,6 @@ const ProjectBox = ({
   inverted,
   isFirst
 }) => {
-  const sanitizedDescription = DOMPurify.sanitize(description);
 
   const elementsRef = useTriggerOnScroll();
   useEffect(() => {
@@ -24,11 +22,11 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`${animation} + " flex block-700 gradient-border project-box ${inverted}`}>
+    <li className={`${animation} + " flex block-700 gradient-border project-box ${inverted}`} ref={el => elementsRef.current[el] = el}>
       <div className="project-info">
-        <h2 translate="no">{title}</h2>
+        <h2>{title}</h2>
         <h3 translate="no">{skills}</h3>
-        <p dangerouslySetInnerHTML={{ __html: sanitizedDescription }}></p>
+        <p>{description}</p>
         <h4>
           <span translate="no">{title}</span> Links:
         </h4>
