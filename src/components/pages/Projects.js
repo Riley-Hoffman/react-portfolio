@@ -33,7 +33,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/dearJuno/outofContext',
         imgUrl: outOfContext,
         imgAlt: 'Screenshot of the Out Of Context app.',
-        animation: 'trigger-on-scroll slide-in-left'
+        animation: 'trigger-on-scroll slide-in-right'
       },
       {
         title: 'Infinity Corkboard',
@@ -43,7 +43,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Riley-Hoffman/riley-hoffman-project-three',
         imgUrl: infinityCorkboard,
         imgAlt: 'Screenshot of the Infinity Corkboard app.',
-        animation: 'trigger-on-scroll slide-in-right'
+        animation: 'trigger-on-scroll slide-in-left'
       },
       {
         title: 'Weather Scout',
@@ -53,7 +53,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Linda-Columbus-Riley-Hoffman-Developers/weatherScout',
         imgUrl: weatherScout,
         imgAlt: 'Screenshot of the Weather Scout app.',
-        animation: 'trigger-on-scroll slide-in-left'
+        animation: 'trigger-on-scroll slide-in-right'
       },
       {
         title: 'Delicious',
@@ -63,7 +63,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Riley-Hoffman/riley_hoffman_project_1_delicious',
         imgUrl: delicious,
         imgAlt: 'Screenshot of Delicious, a PSD conversion project.',
-        animation: 'trigger-on-scroll slide-in-right'
+        animation: 'trigger-on-scroll slide-in-left'
       }
     ]
   };
@@ -96,14 +96,12 @@ const Projects = () => {
       <h1 className="text-center text-40 banner-heading gradient-border inverted">Projects</h1>
       <div className="max-1200px projects">
         {renderProjects(projects.freelance, 'Freelance')}
-        {renderProjects(projects.juno, 'Juno College')}
-      </div>
-      <section className="max-1200px projects"> 
         <h2 className="text-30">Personal Projects</h2>
         <ul aria-label="Personal Projects">
           <ParticleGame/>
         </ul>
-      </section>
+        {renderProjects(projects.juno, 'Juno College')}
+      </div>
     </>
   );
 };
