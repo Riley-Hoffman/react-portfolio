@@ -1,7 +1,8 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useLayoutEffect, useState, useEffect } from 'react';
 import Hamburger from './Hamburger';
-import resume from '../assets/files/riley-hoffman-resume.pdf';
+import resumePdf from '../../assets/files/riley-hoffman-resume.pdf';
+import NavListItem from './NavListItem';
 
 function Header() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -11,26 +12,26 @@ function Header() {
     const handleHamburgerClick = (expanded) => {
         setIsExpanded(expanded);
     };
-    
+
     useEffect(() => {
-        setIsExpanded(false)
+        setIsExpanded(false);
     }, [location]);
 
     useLayoutEffect(() => {
-        document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, [location.pathname]);
-    
+
     useEffect(() => {
         let timeoutId = null;
         const handleHideShowLinks = () => {
             if (timeoutId) {
-                clearTimeout(timeoutId); 
+                clearTimeout(timeoutId);
             }
-            
+
             if (window.innerWidth <= 700 && !isExpanded) {
                 timeoutId = setTimeout(() => {
                     setHide(true);
-                }, 500); 
+                }, 500);
             } else {
                 setHide(false);
             }
@@ -38,7 +39,7 @@ function Header() {
 
         window.addEventListener('resize', handleHideShowLinks);
 
-        handleHideShowLinks(); 
+        handleHideShowLinks();
 
         return () => {
             window.removeEventListener('resize', handleHideShowLinks);
@@ -53,20 +54,12 @@ function Header() {
     };
 
     const menuLinks = [
-        { to: "/", label: "Home" },
-        { to: "/projects", label: "Projects" },
-        { to: "/skills", label: "Skills" },
-        { to: "/faq", label: "FAQ" },
-        { to: "/contact", label: "Contact" },
+        { to: '/', label: 'Home' },
+        { to: '/projects', label: 'Projects' },
+        { to: '/skills', label: 'Skills' },
+        { to: '/faq', label: 'FAQ' },
+        { to: '/contact', label: 'Contact' },
     ];
-
-    const renderLink = (to, label) => (
-        <li key={to}>
-            <NavLink className={`button${hide ? ' hidden' : ''}`} to={to}>
-                {label}
-            </NavLink>
-        </li>
-    );
 
     return (
         <header className="gradient-border">
@@ -80,12 +73,10 @@ function Header() {
                 <nav className="menu">
                     <Hamburger expanded={handleHamburgerClick} />
                     <ul className="flex block-700" aria-label="Menu Links">
-                        {menuLinks.map(({ to, label }) => renderLink(to, label))}
-                        <li>
-                            <a className={`button${hide ? ' hidden' : ''}`} href={resume} target="_blank" rel="noopener noreferrer">
-                                Resume
-                            </a>
-                        </li>
+                        {menuLinks.map(({ to, label }) => (
+                            <NavListItem key={to} to={to} label={label} hide={hide} />
+                        ))}
+                        <NavListItem isResume resumePdf={resumePdf} hide={hide} />
                     </ul>
                 </nav>
             </div>
