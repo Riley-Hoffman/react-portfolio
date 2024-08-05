@@ -7,6 +7,7 @@ import Projects from './components/pages/Projects';
 import Skills from './components/pages/Skills';
 import Faq from './components/pages/Faq';
 import Contact from './components/pages/Contact';
+import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() { 
@@ -23,13 +24,13 @@ function App() {
                   <Home/>
                 </>
               }/>
-              <Route path="/Projects" element={
+              <Route path="/projects" element={
                 <>          
                   <Projects/> 
                 </>
               } 
               />
-              <Route path="/Skills" element={
+              <Route path="/skills" element={
                 <>          
                   <Skills/> 
                 </>
@@ -44,6 +45,12 @@ function App() {
               <Route path="/contact" element={
                 <>          
                   <Contact/> 
+                </>
+              } 
+              />
+              <Route path="/projects/particle-cleanup" element={
+                <>          
+                  <ParticleCleanup/> 
                 </>
               } 
               />

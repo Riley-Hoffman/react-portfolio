@@ -1,11 +1,12 @@
+import { Helmet } from 'react-helmet-async';
 import { useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Particle from '../classes/Particle';
-import useParticleGameEvents from '../hooks/useParticleGameEvents';
-import '../styles/components/_particleGame.scss';
+import Particle from '../../../classes/Particle';
+import useParticleCleanupEvents from '../../../hooks/useParticleCleanupEvents';
+import '../../../styles/components/_particleCleanup.scss';
 
-const ParticleGame = () => {
+const ParticleCleanup = () => {
   const refs = useRef({
     canvas: null,
     container: null,
@@ -140,7 +141,7 @@ const ParticleGame = () => {
     animateParticles(ctx, refs.current.canvas);
   }, [initParticles, animateParticles]);
 
-  useParticleGameEvents(refs, handleInteraction, handleScroll, initializeAnimation);
+  useParticleCleanupEvents(refs, handleInteraction, handleScroll, initializeAnimation);
 
   const getMedalDetails = useCallback((time) => {
     if (time <= 25) {
@@ -174,46 +175,52 @@ const ParticleGame = () => {
   }, [initializeAnimation]);
 
   return (
-    <li className="trigger-on-scroll slide-in-left flex block-1000 gradient-border project-box">
-      <div className="project-info">
-        <h2 className="text-24">Particle Cleanup Game</h2>
-        <h3 translate="no"><span translate="no">React</span>, JSX, SCSS</h3>
-        <p className="particle-game-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-        <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
-          <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-          <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-          <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
-        </ol>
-      </div>
-      <div className="max-800px img-box">
-        <div ref={ref => refs.current.container = ref} className="width-100 particle-game overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-          <canvas className="width-100" ref={ref => refs.current.canvas = ref} />
-          <div className="width-100">
-            {refs.current.allClean && (
-              <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
-                All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.time} seconds</span></small>
-                <span className="text-800 text-uppercase" aria-live="polite">
-                  {medalDetails && (
-                    <span className="text-26" aria-live="polite">
-                      {medalDetails.text} <br />
-                      <FontAwesomeIcon icon={faMedal} color={medalDetails.color} />
-                    </span>
-                  )}
-                </span>
-              </p>
-            )}
+    <>
+      <Helmet>
+        <title>Particle Cleanup Game - Riley Hoffman - Web Developer</title>
+        <meta property="og:title" content="Particle Cleanup Game - Riley Hoffman - Web Developer" />
+        <meta name="description" content="How quickly can you clear all the particles from the board using your cursor or finger?" />
+        <meta property="og:url" content="https://rileyhoffman.com/particle-cleanup" />
+        <link rel="canonical" href="https://rileyhoffman.com/particle-cleanup" />
+      </Helmet>  
+      <div className="block-1000 gradient-border particle-cleanup-container">
+        <h1 className="text-center text-40 banner-heading gradient-border inverted">Particle Cleanup Game</h1>
+        <div className="max-800px">
+          <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
+          <p className="particle-cleanup-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
+          <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
+            <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+            <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+            <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+          </ol>
+          <div ref={ref => refs.current.container = ref} className="width-100 particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+            <canvas className="width-100" ref={ref => refs.current.canvas = ref} />
+            <div className="width-100">
+              {refs.current.allClean && (
+                <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
+                  All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.time} seconds</span></small>
+                  <span className="text-800 text-uppercase" aria-live="polite">
+                    {medalDetails && (
+                      <span className="text-26" aria-live="polite">
+                        {medalDetails.text} <br />
+                        <FontAwesomeIcon icon={faMedal} color={medalDetails.color} />
+                      </span>
+                    )}
+                  </span>
+                </p>
+              )}
+            </div>
           </div>
+          {state.gameInProgress && !refs.current.allClean && (
+            <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
+              {state.cursorMessage}
+            </p>
+          )}
+          <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
         </div>
-        {state.gameInProgress && !refs.current.allClean && (
-          <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
-            {state.cursorMessage}
-          </p>
-        )}
-        <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
-        <div className="oval"></div>
       </div>
-    </li>
+    </>
     );
   };
 
-  export default ParticleGame;
+  export default ParticleCleanup;

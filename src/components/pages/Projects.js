@@ -1,13 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from '../ProjectBox';
-import ParticleGame from '../ParticleGame';
 import evangeline from '../../assets/images/evangeline-gentle-music.jpg';
+import particleCleanup from '../../assets/images/particle-cleanup.jpg';
 import outOfContext from '../../assets/images/out-of-context.jpg';
 import infinityCorkboard from '../../assets/images/infinity-corkboard.jpg';
 import weatherScout from '../../assets/images/weather-scout.jpg';
 import delicious from '../../assets/images/delicious.jpg';
 import '../../styles/pages/_projects.scss';
-import '../../styles/components/_particleGame.scss';
 import '../../styles/animations/_triggerOnScroll.scss';
 
 const Projects = () => {
@@ -22,6 +21,18 @@ const Projects = () => {
         imgUrl: evangeline,
         imgAlt: 'Screenshot of Evangeline Gentle Music Wordpress Theme.',
         animation: 'no-animation'
+      }
+    ],
+    personal: [
+      {
+        title: 'Particle Cleanup Game',
+        skills: 'React, JSX, SCSS',
+        description: 'A game which generates particles from you to clean up by pushing them out of the canvas.',
+        liveUrl: '/projects/particle-cleanup',
+        gitUrl: '',
+        imgUrl: particleCleanup,
+        imgAlt: 'Screenshot of Particle Cleanup Game.',
+        animation: 'trigger-on-scroll slide-in-left'
       }
     ],
     juno: [
@@ -96,10 +107,7 @@ const Projects = () => {
       <h1 className="text-center text-40 banner-heading gradient-border inverted">Projects</h1>
       <div className="max-1200px projects">
         {renderProjects(projects.freelance, 'Freelance')}
-        <h2 className="text-30">Personal Projects</h2>
-        <ul aria-label="Personal Projects">
-          <ParticleGame/>
-        </ul>
+        {renderProjects(projects.personal, 'Personal')}
         {renderProjects(projects.juno, 'Juno College')}
       </div>
     </>

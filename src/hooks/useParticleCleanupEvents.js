@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useParticleGameEvents = (refs, handleInteraction, handleScroll, initializeAnimation) => {
+const useParticleCleanupEvents = (refs, handleInteraction, handleScroll, initializeAnimation) => {
   useEffect(() => {
     const localRefs = { ...refs.current };
     const events = ['mousemove', 'mouseleave', 'touchmove', 'touchend', 'touchstart'];
@@ -36,4 +36,4 @@ const useParticleGameEvents = (refs, handleInteraction, handleScroll, initialize
   }, [refs, handleInteraction, handleScroll, initializeAnimation]);
 };
 
-export default useParticleGameEvents;
+export default useParticleCleanupEvents;
