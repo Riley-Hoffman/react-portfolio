@@ -180,8 +180,8 @@ const ParticleCleanup = () => {
         <title>Particle Cleanup Game - Riley Hoffman - Web Developer</title>
         <meta property="og:title" content="Particle Cleanup Game - Riley Hoffman - Web Developer" />
         <meta name="description" content="How quickly can you clear all the particles from the board using your cursor or finger?" />
-        <meta property="og:url" content="https://rileyhoffman.com/particle-cleanup" />
-        <link rel="canonical" href="https://rileyhoffman.com/particle-cleanup" />
+        <meta property="og:url" content="https://rileyhoffman.com/projects/particle-cleanup" />
+        <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
       </Helmet>  
       <div className="block-1000 gradient-border particle-cleanup-container">
         <h1 className="text-center text-40 banner-heading gradient-border inverted">Particle Cleanup Game</h1>
