@@ -22,10 +22,10 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`${animation} + " md:flex my-28 gradient-border project-box ${inverted}`} ref={el => elementsRef.current[el] = el}>
+    <li className={`${animation} + " md:flex my-28 gap-14 gradient-border project-box relative ${inverted}`} ref={el => elementsRef.current[el] = el}>
       <div className="pt-5 pb-10 project-info">
         <h2 className="pb-4">{title}</h2>
-        <h3 className="pb-4 mb-8" translate="no">{skills}</h3>
+        <h3 className="pb-4 mb-8 text-lg" translate="no">{skills}</h3>
         <p className="pb-4">{description}</p>
         <h4 className="mb-8">
           <span translate="no">{title}</span> Links:

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 function NavListItem({ to, label, hide, isResume, resumePdf }) {
     return (
-        <li>
+        <li className="md:inline block">
             {isResume ? (
-                <a className={`button${hide ? ' hidden' : ''}`} href={resumePdf} target="_blank" rel="noopener noreferrer">
+                <a className={`button${hide ? ' hidden' : ''} tracking-wider inline-block w-full whitespace-nowrap md:py-2 md:px-4 py-3 pr-5 pl-14`} href={resumePdf} target="_blank" rel="noopener noreferrer">
                     Resume
                 </a>
             ) : (
-                <NavLink className={`button${hide ? ' hidden' : ''}`} to={to}>
+                <NavLink className={`button${hide ? ' hidden' : ''} tracking-wider inline-block w-full whitespace-nowrap md:py-2 md:px-4 py-3 pr-5 pl-14 `} to={to}>
                     {label}
                 </NavLink>
             )}

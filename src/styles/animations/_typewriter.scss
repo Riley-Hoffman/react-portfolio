@@ -3,10 +3,6 @@
 .typewriter {
 	animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite, border-fade 0s 1.5s forwards;
 	border-right: 1.5px solid $purple;
-	display: inline-block;
-	letter-spacing: 0.15em;
-	overflow: hidden;
-	width: 160px;
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 		border-right: none;

@@ -1,10 +1,6 @@
 @use "../abstracts/index" as *;
 
 .particle-cleanup-container {
-    padding-bottom: 60px;
-    .particle-cleanup-instructions > p {
-        font-size: 19px;
-    }
     ol.numbered-icons.medal-criteria {
         > li {
             &:first-child:before {
@@ -21,38 +17,27 @@
     .particle-cleanup {
         background: url("../../assets/images/wood-background.jpg") right / cover;
         border: 2px solid $pink;
-        border-radius: 1px;
-        overflow: hidden;
         height: 500px;
         width: $calcMargin;
         &:not(.done) {
             cursor: grabbing;
         }
-        + .button {
-            z-index: 1;
-        }
         canvas {
-            display: block;
-            height: 100%;
             @include positioning(absolute, 0, auto, auto, 0);
             filter: drop-shadow(1px 1px 0px #00000061);
             + div {
-                height: 100%;
                 @include positioning(absolute, 0, auto, auto, 0);
                 border: 1px solid $pink;
             }
         }
         .completion-message {
             background-color: white;
-            flex-direction: column;
             font-family: $sourceSans;
-            font-size: 24px;
-            position: absolute;
-            height: 100%;
+            &:focus-visible {
+                outline: none;
+            }
             svg {
                 animation: spin 2.4s infinite;
-                display: block;
-                font-size: 60px;
             }
         }
     }

@@ -114,8 +114,6 @@ textarea:focus-visible {
 	border-radius: 1px;
 	color: $pink;
 	font-family: inherit;
-	padding: 16px;
-	text-align: center;
 	text-decoration: none;
 	&:hover,
 	&:focus-visible {
@@ -134,16 +132,6 @@ textarea:focus-visible {
 
 .no-pointer {
 	pointer-events: none;
-}
-
-.label-text:not(#_) {
-	background-image: linear-gradient(90deg, #7868bf 0%, $gradientPink 50%, $gradientPurple 70%);
-	color: $white;
-	display: inline-block;
-	font-family: $inconsolata;
-	font-weight: 500;
-	margin: $baseMargin;
-	width: $calcMargin;
 }
 
 .gradient-border {
@@ -179,6 +167,10 @@ textarea:focus-visible {
 		width: 22px;
 		@include positioning(absolute, auto, auto, -12px, 20px);
 	}
+}
+
+.small-page {
+	padding: 30px 0 13vh;
 }
 
 ol.numbered-icons {

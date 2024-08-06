@@ -18,15 +18,15 @@ function Accordion({ items, label }) {
     }, [openIndex]);
 
     return (
-        <ul className="pb-12 accordion" aria-label={label}>
+        <ul className="pb-12 leading-loose accordion" aria-label={label}>
             {items.map((item, index) => (
                 <li key={index}>
                     <button 
-                        className="w-full text-left font-medium py-6 px-5"
+                        className="w-full text-left font-medium py-6 px-5 text-lg"
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   
-                        <FontAwesomeIcon className="p-2 mr-5" icon={openIndex === index ? faMinus : faPlus}  />
+                        <FontAwesomeIcon className="p-2 mr-5 text-xs" icon={openIndex === index ? faMinus : faPlus}  />
                         {item.question}
                     </button>
                     <div 

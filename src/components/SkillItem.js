@@ -6,11 +6,11 @@ const SkillItem = ({ skill, icon, devicon, image, translate }) => {
     <li className="my-8 text-center">
       <div className="skill-icon-box flex justify-center items-center px-3">
         {devicon ? (
-          <i className={icon} aria-hidden="true"></i>
+          <i className={`${icon} text-5xl`} aria-hidden="true"></i>
         ) : image ? (
           <img src={wcag} alt="" width="2013" height="474" />
         ) : (
-          <FontAwesomeIcon aria-hidden="true" className="fa-solid" icon={icon} />
+          <FontAwesomeIcon aria-hidden="true" className="text-5xl" icon={icon} />
         )}
       </div>
       <p className="mt-1" translate={translate}>{skill}</p>

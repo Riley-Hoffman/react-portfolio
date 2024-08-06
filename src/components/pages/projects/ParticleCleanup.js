@@ -183,7 +183,7 @@ const ParticleCleanup = () => {
         <meta property="og:url" content="https://rileyhoffman.com/projects/particle-cleanup" />
         <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
       </Helmet>  
-      <div className="particle-cleanup-container">
+      <div className="pb-16 particle-cleanup-container">
         <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
@@ -193,17 +193,17 @@ const ParticleCleanup = () => {
             <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
             <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="w-full mx-5 pt-28 particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+          <div ref={ref => refs.current.container = ref} className="w-full mx-5 pt-28 overflow-hidden rounded-sm particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
             <canvas className="w-full" ref={ref => refs.current.canvas = ref} />
-            <div className="w-full">
+            <div className="w-full h-full">
               {refs.current.allClean && (
-                <p id="completionMessage" className="flex justify-center items-center w-full p-0 m-0 text-center completion-message" tabIndex="-1">
+                <p id="completionMessage" className="flex flex-col justify-center items-center w-full h-full p-0 m-0 text-2xl text-center absolute completion-message" tabIndex="-1">
                   All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
                   <span className="font-extrabold uppercase" aria-live="polite">
                     {medalDetails && (
                       <span className="md:text-2xl text-xl md:leading-normal leading-normal" aria-live="polite">
                         {medalDetails.text} <br />
-                        <FontAwesomeIcon className="mx-auto" icon={faMedal} color={medalDetails.color} />
+                        <FontAwesomeIcon className="mx-auto text-6xl block" icon={faMedal} color={medalDetails.color} />
                       </span>
                     )}
                   </span>
@@ -216,7 +216,7 @@ const ParticleCleanup = () => {
               {state.cursorMessage}
             </p>
           )}
-          <p><button className="button" onClick={reloadAnimation}>Play Again</button></p>
+          <p><button className="p-4 button" onClick={reloadAnimation}>Play Again</button></p>
         </div>
       </div>
     </>

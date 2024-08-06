@@ -5,16 +5,12 @@
       background-color: $pinkWhite;
       border-bottom: 1px solid #e1d7ee;
       color: #2d2b34;
-      font-size: 18px;
-      line-height: 2.1;
       transition: border-bottom $timingFunction;
-      height: auto;
      svg {
        box-sizing: content-box;
        background-color: $black;
        border-radius: 50%;
        color: $pink;
-       font-size: 13px;
        transition: background-color $timingFunction;
       }
       &:focus-visible svg,

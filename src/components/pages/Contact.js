@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import Form from '../Form';
-import '../../styles/pages/_contact.scss';
 
 function Contact() {
     return (
@@ -13,7 +12,7 @@ function Contact() {
                 <link rel="canonical" href="https://rileyhoffman.com/contact" />
             </Helmet>     
             <h1 className="text-center text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Contact Me</h1>
-            <div className="max-w-screen-md contact"> 
+            <div className="max-w-screen-md contact small-page"> 
                 <Form/>
             </div>
         </>

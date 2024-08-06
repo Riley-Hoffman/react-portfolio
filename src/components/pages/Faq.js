@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import Accordion from '../Accordion';
-import '../../styles/pages/_faq.scss';
 
 const accordionItems = [
     {
@@ -47,7 +46,7 @@ function Faq() {
                 <link rel="canonical" href="https://rileyhoffman.com/faq" />
             </Helmet>     
             <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Frequently Asked Questions</h1>
-            <div className="max-w-screen-md faq"> 
+            <div className="max-w-screen-md faq small-page"> 
                 <Accordion items={accordionItems} label="Frequently Asked Questions" />
             </div>
         </>

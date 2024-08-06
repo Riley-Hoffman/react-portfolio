@@ -2,7 +2,6 @@
 
 .project-box {
     border-top: 8px solid $purple;
-    gap: 60px;
     &:nth-child(even) {
       flex-direction: row-reverse;
     }
@@ -17,9 +16,6 @@
     }
     .project-info {
       flex-basis: 50%;
-      h3 {
-        font-size: 17px;;
-      }
       a {
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         padding: 5px 15px;
@@ -31,8 +27,5 @@
     }
     .img-box {
       flex-basis: 50%;
-      img {
-        z-index: 10;
-      }
     }
   }
