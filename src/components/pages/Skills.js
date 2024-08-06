@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import SkillItem from '../SkillItem';
-import { faUniversalAccess } from '@fortawesome/free-solid-svg-icons'; 
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/pages/_skills.scss';
 
@@ -14,7 +13,6 @@ const Skills = () => {
     { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false, translate: 'no' },
     { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false, translate: 'no' },
     { skill: 'Rest API', icon: faArrowsAltH, devicon: false, image: false, translate: 'no' },
-    { skill: 'Accessibility', icon: faUniversalAccess, devicon: false, image: false, translate: 'yes' },
     { skill: 'WCAG', devicon: false, image: true, translate: 'yes' },
     { skill: 'Git', icon: 'devicon-git-plain', devicon: true, image: false, translate: 'no' },
     { skill: 'jQuery', icon: 'devicon-jquery-plain-wordmark', devicon: true, image: false, translate: 'no' },
