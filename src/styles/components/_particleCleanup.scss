@@ -17,16 +17,11 @@
                 background-color: #a2652a;
             }
         }
-        + [class*="max-"] {
-            margin-left: 0;
-        } 
     }
     .particle-cleanup {
         background: url("../../assets/images/wood-background.jpg") right / cover;
         border: 2px solid $pink;
         border-radius: 1px;
-        margin: $baseMargin;
-        padding-top: 100px;
         overflow: hidden;
         height: 500px;
         width: $calcMargin;
@@ -34,7 +29,6 @@
             cursor: grabbing;
         }
         + .button {
-            position: relative;
             z-index: 1;
         }
         canvas {
@@ -49,21 +43,16 @@
             }
         }
         .completion-message {
-            align-items: center;
             background-color: white;
             flex-direction: column;
             font-family: $sourceSans;
             font-size: 24px;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
             position: absolute;
             height: 100%;
             svg {
                 animation: spin 2.4s infinite;
                 display: block;
                 font-size: 60px;
-                margin: 0 auto;
             }
         }
     }

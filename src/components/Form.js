@@ -1,14 +1,14 @@
 
 function Form() {
     return (
-        <form className="max-700px" action="https://formspree.io/f/xwkyonza" method="POST">
+        <form className="max-w-screen-md pt-5 px-5 pb-10" action="https://formspree.io/f/xwkyonza" method="POST">
             <fieldset>
                 <legend className="sr-only">Contact Form</legend>
-                <div className="block-800">
-                    <div className="flex block-800">
+                <div className="pb-5">
+                    <div className="md:flex justify-between items-center gap-5 pb-3">
                         <label htmlFor="name">Name:</label>
                         <input
-                            className="test max-40 width-100 gradient-border"
+                            className="w-full gradient-border"
                             enterKeyHint="next"
                             id="name"
                             name="name"
@@ -16,11 +16,11 @@ function Form() {
                             type="text"
                             required
                             />
-                        <br className="show-at-800" />
-                        <br className="show-at-800" />
+                        <br className="md:hidden inline" />
+                        <br className="md:hidden inline" />
                         <label htmlFor="email">Email:</label>
                         <input
-                            className="test max-40 width-100 gradient-border"
+                            className="w-full gradient-border"
                             enterKeyHint="next"
                             id="email"
                             name="email"
@@ -31,7 +31,7 @@ function Form() {
                     </div>
                     <label htmlFor="message">Message:</label>
                     <textarea
-                        className="test width-100 gradient-border"
+                        className="w-full gradient-border"
                         id="message"
                         name="message"
                         placeholder="Write me a message.."

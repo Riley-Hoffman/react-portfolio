@@ -62,17 +62,17 @@ function Header() {
     ];
 
     return (
-        <header className="gradient-border">
+        <header className="py-4 gradient-border">
             <a href="#content" className="skip-link button">Skip To Content</a>
-            <div className="max-1200px flex">
+            <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
                     <button onClick={handleClickHome} aria-label="Back to home page">
-                        <p className="text-22 text-500 text-center text-uppercase">Riley Hoffman</p>
+                        <p className="pl-4 pr-0 md:text-2xl text-lg font-medium text-center uppercase m-0">Riley Hoffman</p>
                     </button>
                 </div>
-                <nav className="menu">
+                <nav className="py-2 m-auto mr-0 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="flex block-700" aria-label="Menu Links">
+                    <ul className="md:flex" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}

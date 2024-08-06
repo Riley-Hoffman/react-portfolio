@@ -1,18 +1,12 @@
 @use "../abstracts/index" as *;
 
 .accordion {
-    padding: 0 0 50px;
-    list-style: none;
-    > * {
-      width: 100%;
-    }
     button {
       background-color: $pinkWhite;
       border-bottom: 1px solid #e1d7ee;
       color: #2d2b34;
       font-size: 18px;
       line-height: 2.1;
-      padding: 24px 20px;
       transition: border-bottom $timingFunction;
       height: auto;
      svg {
@@ -21,8 +15,6 @@
        border-radius: 50%;
        color: $pink;
        font-size: 13px;
-       margin-right: 20px;
-       padding: 8px;
        transition: background-color $timingFunction;
       }
       &:focus-visible svg,
@@ -42,7 +34,6 @@
   div.accordion-content {
     margin-bottom: 0;
     overflow: hidden;
-    padding: 0 18px;
     transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out, padding .3s ease-in-out; 
     max-height: 0;
     height: 0;
@@ -51,7 +42,8 @@
     }
     .accordion button[aria-expanded="true"] + & {
       margin-bottom: 20px;
-      padding: 2px 18px;
+      padding-top: 2px;
+      padding-bottom: 2px;
       max-height: 5000px;
       height: 100%;
     }

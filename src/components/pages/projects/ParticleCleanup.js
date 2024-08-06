@@ -183,27 +183,27 @@ const ParticleCleanup = () => {
         <meta property="og:url" content="https://rileyhoffman.com/projects/particle-cleanup" />
         <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
       </Helmet>  
-      <div className="block-1000 gradient-border particle-cleanup-container">
-        <h1 className="text-center text-40 banner-heading gradient-border inverted">Particle Cleanup Game</h1>
-        <div className="max-800px">
+      <div className="particle-cleanup-container">
+        <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Particle Cleanup Game</h1>
+        <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
           <p className="particle-cleanup-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-          <ol className="flex block-500 numbered-icons medal-criteria" aria-label="Medal Criteria">
-            <li className="text-26"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-            <li className="text-26"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-            <li className="text-26"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+          <ol className="sm:flex pr-5 pl-10 numbered-icons medal-criteria" aria-label="Medal Criteria">
+            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="width-100 particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-            <canvas className="width-100" ref={ref => refs.current.canvas = ref} />
-            <div className="width-100">
+          <div ref={ref => refs.current.container = ref} className="w-full mx-5 pt-28 particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+            <canvas className="w-full" ref={ref => refs.current.canvas = ref} />
+            <div className="w-full">
               {refs.current.allClean && (
-                <p id="completionMessage" className="flex width-100 text-center completion-message" tabIndex="-1">
-                  All clean! <small aria-live="polite">Time taken: <span className="text-600" aria-live="polite">{state.time} seconds</span></small>
-                  <span className="text-800 text-uppercase" aria-live="polite">
+                <p id="completionMessage" className="flex justify-center items-center w-full p-0 m-0 text-center completion-message" tabIndex="-1">
+                  All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
+                  <span className="font-extrabold uppercase" aria-live="polite">
                     {medalDetails && (
-                      <span className="text-26" aria-live="polite">
+                      <span className="md:text-2xl text-xl md:leading-normal leading-normal" aria-live="polite">
                         {medalDetails.text} <br />
-                        <FontAwesomeIcon icon={faMedal} color={medalDetails.color} />
+                        <FontAwesomeIcon className="mx-auto" icon={faMedal} color={medalDetails.color} />
                       </span>
                     )}
                   </span>

@@ -3,8 +3,8 @@ import wcag from '../assets/images/wcag.png';
 
 const SkillItem = ({ skill, icon, devicon, image, translate }) => {
   return (
-    <li className="text-center">
-      <div className="skill-icon-box flex">
+    <li className="my-8 text-center">
+      <div className="skill-icon-box flex justify-center items-center px-3">
         {devicon ? (
           <i className={icon} aria-hidden="true"></i>
         ) : image ? (
@@ -13,7 +13,7 @@ const SkillItem = ({ skill, icon, devicon, image, translate }) => {
           <FontAwesomeIcon aria-hidden="true" className="fa-solid" icon={icon} />
         )}
       </div>
-      <p translate={translate}>{skill}</p>
+      <p className="mt-1" translate={translate}>{skill}</p>
     </li>
   );
 };

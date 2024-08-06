@@ -46,8 +46,8 @@ function Faq() {
                 <meta property="og:url" content="https://rileyhoffman.com/faq" />
                 <link rel="canonical" href="https://rileyhoffman.com/faq" />
             </Helmet>     
-            <h1 className="text-center text-40 banner-heading gradient-border inverted">Frequently Asked Questions</h1>
-            <div className="max-800px faq"> 
+            <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Frequently Asked Questions</h1>
+            <div className="max-w-screen-md faq"> 
                 <Accordion items={accordionItems} label="Frequently Asked Questions" />
             </div>
         </>

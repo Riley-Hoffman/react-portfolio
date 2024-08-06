@@ -4,13 +4,8 @@ footer {
   background-color: $pink;
   border-top: 1px solid $lightPurple;
   > div {
-    justify-content: space-between;
-    padding: 35px 0;
     p {
       color: $black;
-      font-size: 16px;
-      margin: 0;
-      padding: 0 10px;
       &:first-child {
         font-family: $urbanist;
       }
@@ -19,14 +14,10 @@ footer {
       }
     }
     a {
-      text-decoration: none;
       &:hover, &:focus-visible {
         .fa-github.svg-inline--fa {
           color: $purple;
         }
-      }
-      .fa-github.svg-inline--fa {
-        margin-left: 5px;
       }
     }
   }

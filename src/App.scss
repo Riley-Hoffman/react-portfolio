@@ -1,9 +1,14 @@
 @use "./styles/abstracts/index" as *;
-@import "./styles/base/sanitize";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "./styles/base/boilerplate";
 @import "./styles/font-face/googleFontFace";
 @import "./styles/components/header";
 @import "./styles/components/footer";
+
 
 html {
 	background-color: whitesmoke;
@@ -59,7 +64,7 @@ textarea {
 	padding: 10px;
 }
 
-::placeholder {
+.App ::placeholder {
 	color: #73738c;
 	font-weight: 300;
 	opacity: 1;
@@ -138,7 +143,6 @@ textarea:focus-visible {
 	font-family: $inconsolata;
 	font-weight: 500;
 	margin: $baseMargin;
-	padding: 0 5px;
 	width: $calcMargin;
 }
 
@@ -206,7 +210,6 @@ ol.numbered-icons {
 .oval {
 	background: $lightPurple;
 	border-radius: 50%;
-	opacity: 0.1;
 	z-index: -1;
 	@include positioning(absolute, 5%, 0, 0, 0);
 }

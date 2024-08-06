@@ -22,23 +22,23 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`${animation} + " flex block-700 gradient-border project-box ${inverted}`} ref={el => elementsRef.current[el] = el}>
-      <div className="project-info">
-        <h2>{title}</h2>
-        <h3 translate="no">{skills}</h3>
-        <p>{description}</p>
-        <h4>
+    <li className={`${animation} + " md:flex my-28 gradient-border project-box ${inverted}`} ref={el => elementsRef.current[el] = el}>
+      <div className="pt-5 pb-10 project-info">
+        <h2 className="pb-4">{title}</h2>
+        <h3 className="pb-4 mb-8" translate="no">{skills}</h3>
+        <p className="pb-4">{description}</p>
+        <h4 className="mb-8">
           <span translate="no">{title}</span> Links:
         </h4>
-        <a className="button" href={liveUrl} target="_blank" rel="noopener noreferrer">
+        <a className="mx-5 uppercase button" href={liveUrl} target="_blank" rel="noopener noreferrer">
           <span aria-hidden="true">Live</span>
           <span className="sr-only">{title} Live</span>
         </a>
-        {gitUrl && (<a className="button" href={gitUrl} target="_blank" rel="noopener noreferrer">
+        {gitUrl && (<a className="mx-5 uppercase button" href={gitUrl} target="_blank" rel="noopener noreferrer">
           <span className="sr-only">{title} </span>Repo
         </a>)}
       </div>
-      <div className="text-center img-box">
+      <div className="text-center relative img-box">
         <img
           alt={imgAlt}
           src={imgUrl}
@@ -48,7 +48,7 @@ const ProjectBox = ({
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
-        <div className="oval"></div>
+        <div className="oval opacity-10"></div>
       </div>
     </li>
   );
