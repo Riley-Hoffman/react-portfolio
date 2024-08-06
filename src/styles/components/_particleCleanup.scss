@@ -15,7 +15,6 @@ ol.numbered-icons.medal-criteria {
 }
 .particle-cleanup {
     background: url("../../assets/images/wood-background.jpg") right / cover;
-    border: 2px solid $pink;
     height: 500px;
     width: $calcMargin;
     &:not(.done) {
@@ -26,7 +25,6 @@ ol.numbered-icons.medal-criteria {
         filter: drop-shadow(1px 1px 0px #00000061);
         + div {
             @include positioning(absolute, 0, auto, auto, 0);
-            border: 1px solid $pink;
         }
     }
     .completion-message {

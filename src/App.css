@@ -1,66 +1,6 @@
-/* Boilerplate */
-p, ul, ol {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-ul, ol {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-h1, h2 {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h5 {
-  line-height: 1;
-  margin: 20px 0 0;
-  font-size: 26px;
-  font-weight: normal;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-p a, li a {
-  text-decoration: underline;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  padding: 0 20px;
-  margin: 20px 0;
-}
-
-img {
-  display: block;
-  height: auto;
-}
-
-.fa,
-.fa-regular,
-.fa-solid,
-.fa-brands {
-  font-family: "Font Awesome 6 Free";
-}
-
-*:not(.flex) > *[class*=max-] {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 header {
   background-color: #f4eef6;
-  border-bottom: 2px solid;
-  border-top: 34px solid #12121c;
+  border-top-width: 34px;
   box-shadow: 0 1px 3px -3px #12121c;
   z-index: 999999;
   position: sticky;
@@ -70,7 +10,6 @@ header {
   top: -34px;
 }
 header .logo p {
-  color: #12121c;
   font-family: "Urbanist", sans-serif;
 }
 header .closer {
@@ -119,7 +58,6 @@ header nav.menu ul > li a:not(.active):hover {
     transform: scaleX(1);
   }
   .hamburger .line {
-    border: 2px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
     filter: brightness(0.9);
@@ -151,22 +89,11 @@ header nav.menu ul > li a:not(.active):hover {
     transform: rotate(-45deg);
   }
 }
-footer {
-  background-color: #e5d4ed;
-  border-top: 1px solid #a8a0d9;
-}
-footer p {
-  color: #12121c;
-}
 footer p:first-child {
   font-family: "Urbanist", sans-serif;
 }
-footer p:last-child span {
+footer p:first-child:last-child span {
   margin-right: 2px;
-}
-footer p a:hover .fa-github.svg-inline--fa,
-footer p a:focus-visible .fa-github.svg-inline--fa {
-  color: #794e8d;
 }
 
 html {
@@ -174,7 +101,6 @@ html {
 }
 
 body {
-  color: #12121c;
   font-family: "Inconsolata", monospace;
 }
 
@@ -182,8 +108,22 @@ main {
   position: relative;
 }
 
-p {
+p,
+ul,
+ol {
   font-size: 18px;
+  line-height: 1.5;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0 20px;
+  margin: 20px 0;
 }
 
 h1,
@@ -198,9 +138,22 @@ legend {
   font-weight: 500;
 }
 
-img {
-  height: auto;
-  width: 100%;
+h1,
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+p a,
+li a {
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 fieldset {
@@ -222,6 +175,11 @@ textarea {
   font-family: "Source Sans 3", sans-serif;
   font-size: 18px;
   padding: 10px;
+}
+
+*:not(.flex) > *[class*=max-] {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .App ::-moz-placeholder {
@@ -249,10 +207,18 @@ textarea:focus-visible {
   outline: 2px solid #a8a0d9;
 }
 
+.fa,
+.fa-regular,
+.fa-solid,
+.fa-brands {
+  font-family: "Font Awesome 6 Free";
+}
+
 .svg-inline--fa {
   vertical-align: middle;
 }
 
+/* Utility Classes */
 .sr-only {
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
@@ -263,7 +229,6 @@ textarea:focus-visible {
   width: 1px;
 }
 
-/* Utility Classes */
 .skip-link {
   z-index: 999999;
   position: absolute;

@@ -1,21 +1,8 @@
 @use "../abstracts/index" as *;
 
-footer {
-  background-color: $pink;
-  border-top: 1px solid $lightPurple;
-  p {
-    color: $black;
-    &:first-child {
-      font-family: $urbanist;
-    }
-    &:last-child span {
-      margin-right: 2px;
-    }
-    a:hover,
-    a:focus-visible {
-      .fa-github.svg-inline--fa {
-        color: $purple;
-      }
-    }
+footer p:first-child {
+  font-family: $urbanist;
+  &:last-child span {
+    margin-right: 2px;
   }
 }

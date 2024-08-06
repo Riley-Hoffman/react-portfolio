@@ -62,7 +62,7 @@ function Header() {
     ];
 
     return (
-        <header className="py-4 gradient-border">
+        <header className="py-4 border-b-2 border-solid gradient-border">
             <a href="#content" className="p-4 skip-link button">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
@@ -72,7 +72,7 @@ function Header() {
                 </div>
                 <nav className="py-2 m-auto mr-0 h-14 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="md:flex m-0 md:w-auto w-52 z-20" aria-label="Menu Links">
+                    <ul className="md:flex m-0 md:w-auto w-52 z-20 text-base" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}

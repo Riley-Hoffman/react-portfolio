@@ -1,31 +1,28 @@
 @use "../abstracts/index" as *;
 
-.project-box {
-    border-top: 8px solid $purple;
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-    &:first-of-type {
-      margin-top: 50px;
-    }
-    &:nth-child(odd) .img-box .oval {
-      left: -100%;
-    }
-    &:nth-child(even) .img-box .oval {
-      right: -100%;
-    }
-    .project-info {
-      flex-basis: 50%;
-      a {
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        padding: 5px 15px;
-        transition: color $timingFunction;
-        &:last-of-type:not(:first-of-type) {
-          margin-left: 10px;
-        }
-      }
-    }
-    .img-box {
-      flex-basis: 50%;
+.project-box:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.project-box:first-of-type {
+  margin-top: 50px;
+}
+.project-box:nth-child(odd) .img-box .oval {
+  left: -100%;
+}
+.project-box:nth-child(even) .img-box .oval {
+  right: -100%;
+}
+.project-info {
+  flex-basis: 50%;
+  a {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 5px 15px;
+    transition: color $timingFunction;
+    &:last-of-type:not(:first-of-type) {
+      margin-left: 10px;
     }
   }
+}
+.img-box {
+  flex-basis: 50%;
+}

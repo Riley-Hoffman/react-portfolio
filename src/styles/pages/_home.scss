@@ -1,10 +1,10 @@
 @use "../abstracts/index" as *;
 
 .about {
-    border-bottom: 5px solid;
-    background: #f9ddda url("../../assets/images/clouds.jpg") fixed center / cover repeat ;
+    background: #f9ddda url("../../assets/images/clouds.jpg") fixed center / cover repeat;
     &.overlay:before {
-        background-image: $radialOverlay, linear-gradient(-30deg, rgba(0, 247, 255, 0.08) 0%, #0000 15%, #0000 80%, rgba(0, 247, 255, 0.08) 100%);
+        background-image: $radialOverlay,
+            linear-gradient(-30deg, rgba(0, 247, 255, 0.08) 0%, #0000 15%, #0000 80%, rgba(0, 247, 255, 0.08) 100%);
     }
     > div {
         min-height: calc(80vh - 34px);

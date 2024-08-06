@@ -2,13 +2,11 @@
 
 header {
   background-color: #f4eef6;
-  border-bottom: 2px solid;
-  border-top: 34px solid $black;
+  border-top-width: 34px;
   box-shadow: 0 1px 3px -3px $black;
   z-index: 999999;
   @include positioning(sticky, -34px, 0, auto, 0);
   .logo p {
-    color: $black;
     font-family: $urbanist;
   }
   .closer {
@@ -53,7 +51,6 @@ header {
     transform: scaleX(1);
   }
   .hamburger .line {
-    border: 2px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
     filter: brightness(0.9);

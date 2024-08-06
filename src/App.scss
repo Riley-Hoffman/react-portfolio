@@ -1,25 +1,32 @@
 @use "./styles/abstracts/index" as *;
-@import "./styles/base/boilerplate";
 @import "./styles/components/header";
 @import "./styles/components/footer";
-
 
 html {
 	background-color: whitesmoke;
 }
-
 body {
-	color: $black;
 	font-family: $inconsolata;
 }
 main {
 	position: relative;
 }
-
-p {
+p,
+ul,
+ol {
 	font-size: 18px;
+	line-height: 1.5;
 }
-
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0 20px;
+	margin: 20px 0;
+}
 h1,
 h2,
 h3,
@@ -31,23 +38,30 @@ legend {
 	font-family: $poppins;
 	font-weight: 500;
 }
-
-img {
-	height: auto;
-	width: 100%;
+h1,
+h2 {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.5;
 }
-
+p a,
+li a {
+	text-decoration: underline;
+}
+ul,
+ol {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
 fieldset {
 	border: none;
 	padding: 0;
 }
-
 label {
 	display: inline-block;
 	font-size: 20px;
 	margin: 16px 0;
 }
-
 input,
 textarea {
 	background-color: #f8f3f9;
@@ -57,13 +71,15 @@ textarea {
 	font-size: 18px;
 	padding: 10px;
 }
-
+*:not(.flex) > *[class*="max-"] {
+	margin-left: auto;
+	margin-right: auto;
+}
 .App ::placeholder {
 	color: #73738c;
 	font-weight: 300;
 	opacity: 1;
 }
-
 a,
 a > *,
 .button {
@@ -71,18 +87,22 @@ a > *,
 		color $timingFunction,
 		background-color $timingFunction;
 }
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
 	outline: 2px solid $lightPurple;
 }
-
+.fa,
+.fa-regular,
+.fa-solid,
+.fa-brands {
+	font-family: "Font Awesome 6 Free";
+}
 .svg-inline--fa {
 	vertical-align: middle;
 }
-
+/* Utility Classes */
 .sr-only {
 	clip-path: inset(50%);
 	overflow: hidden;
@@ -91,9 +111,6 @@ textarea:focus-visible {
 	height: 1px;
 	width: 1px;
 }
-
-/* Utility Classes */
-
 .skip-link {
 	z-index: 999999;
 	@include positioning(absolute, 5px, auto, auto, -1000px);
@@ -102,7 +119,6 @@ textarea:focus-visible {
 		margin-left: 10px;
 	}
 }
-
 .button {
 	background-color: $black;
 	border-radius: 1px;
@@ -115,19 +131,15 @@ textarea:focus-visible {
 		color: $black;
 	}
 }
-
 .App .hidden:not(#_) {
 	display: none;
 }
-
 .no-scroll {
 	overflow: hidden;
 }
-
 .no-pointer {
 	pointer-events: none;
 }
-
 .gradient-border {
 	border-image-slice: 1;
 	&:not(.inverted) {
@@ -137,7 +149,6 @@ textarea:focus-visible {
 		border-image-source: linear-gradient(90deg, $gradientPurple, $gradientPink 50%, $gradientLightPurple 70%);
 	}
 }
-
 .overlay {
 	position: relative;
 	&:before {
@@ -151,7 +162,6 @@ textarea:focus-visible {
 		position: relative;
 	}
 }
-
 .separator {
 	position: relative;
 	&:after {
@@ -162,11 +172,9 @@ textarea:focus-visible {
 		@include positioning(absolute, auto, auto, -12px, 20px);
 	}
 }
-
 .small-page {
 	padding: 30px 0 13vh;
 }
-
 ol.numbered-icons {
 	counter-reset: circle;
 	list-style: none;
@@ -192,21 +200,18 @@ ol.numbered-icons {
 		}
 	}
 }
-
 .oval {
 	background: $lightPurple;
 	border-radius: 50%;
 	z-index: -1;
 	@include positioning(absolute, 5%, 0, 0, 0);
 }
-
 .banner-heading {
 	background-color: #eee2f3;
 	border-bottom: 2px solid;
 	margin: 0 0 30px;
 	padding: 40px 20px;
 }
-
 @media (prefers-contrast: more) and (forced-colors: none) {
 	html,
 	input,

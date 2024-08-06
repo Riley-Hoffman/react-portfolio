@@ -1,7 +1,6 @@
 @use "../abstracts/index" as *;
 
 .accordion button {
-  background-color: $pinkWhite;
   border-bottom: 1px solid #e1d7ee;
   color: #2d2b34;
   transition: border-bottom $timingFunction;

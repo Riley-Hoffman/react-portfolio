@@ -22,7 +22,7 @@ function Accordion({ items, label }) {
             {items.map((item, index) => (
                 <li key={index}>
                     <button 
-                        className="w-full text-left font-medium py-6 px-5 text-lg"
+                        className="w-full text-left font-medium py-6 px-5 text-lg bg-pink-100"
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   

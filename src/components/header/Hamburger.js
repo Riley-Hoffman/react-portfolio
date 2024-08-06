@@ -42,9 +42,9 @@ const Hamburger = ({ expanded }) => {
 
     return (
         <>
-            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="w-16 px-5 ml-auto relative md:none block md:h-0 h-10 hamburger">
+            <button id="hamburger" aria-expanded={isExpanded} aria-label={isExpanded ? 'Close Menu' : 'Open Menu'} onClick={toggleMenu} ref={hamburgerRef} className="w-16 px-5 ml-auto relative md:none block md:hidden h-10 hamburger">
                 {[...Array(4)].map((_, index) => (
-                    <span key={index} className="block absolute line w-7 gradient-border"></span>
+                    <span key={index} className="block absolute line w-7 border-2 border-solid gradient-border"></span>
                 ))}
             </button>
             <button className="w-full h-full z-10 cursor-default closer" onClick={toggleMenu} aria-label="Close Menu"></button>

@@ -1,10 +1,13 @@
 .trigger-on-scroll {
     opacity: 0;
-    transition: opacity 1s ease, left 1s ease, right 1s ease;
+    transition:
+        opacity 1s ease,
+        left 1s ease,
+        right 1s ease;
     &[data-active="true"] {
         opacity: 1;
     }
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
         opacity: 1;
     }
     &.slide-in-left {
@@ -12,7 +15,7 @@
         &[data-active="true"] {
             left: 0%;
         }
-        @media(max-width: 900px) {
+        @media (max-width: 900px) {
             left: 0%;
         }
     }
@@ -21,7 +24,7 @@
         &[data-active="true"] {
             right: 0%;
         }
-        @media(max-width: 900px) {
+        @media (max-width: 900px) {
             right: 0%;
         }
     }
@@ -33,5 +36,5 @@
         &.slide-in-right {
             right: 0;
         }
-      }
+    }
 }

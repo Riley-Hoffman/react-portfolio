@@ -188,14 +188,14 @@ const ParticleCleanup = () => {
         <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
           <p className="particle-cleanup-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-          <ol className="sm:flex pr-5 pl-10 numbered-icons medal-criteria" aria-label="Medal Criteria">
-            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-            <li className="md:text-2xl text-xl md:leading-normal leading-normal"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+          <ol className="sm:flex pr-5 pl-10 numbered-icons medal-criteria md:text-2xl text-xl md:leading-normal leading-normal" aria-label="Medal Criteria">
+            <li><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+            <li><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+            <li><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="w-full mx-5 pt-28 overflow-hidden rounded-sm particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+          <div ref={ref => refs.current.container = ref} className="w-full mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
             <canvas className="w-full" ref={ref => refs.current.canvas = ref} />
-            <div className="w-full h-full">
+            <div className="w-full h-full border-1 boder-solid border-pink-200">
               {refs.current.allClean && (
                 <p id="completionMessage" className="flex flex-col justify-center items-center w-full h-full p-0 m-0 text-2xl text-center absolute completion-message" tabIndex="-1">
                   All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
