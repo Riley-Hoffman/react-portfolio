@@ -1,45 +1,42 @@
 @use "../abstracts/index" as *;
 
-.particle-cleanup-container {
-    ol.numbered-icons.medal-criteria {
-        > li {
-            &:first-child:before {
-                background-color: #8a7400;
-            }
-            &:nth-child(2):before {
-                background-color: #737373;
-            }
-            &:nth-child(3):before {
-                background-color: #a2652a;
-            }
+ol.numbered-icons.medal-criteria {
+    > li {
+        &:first-child:before {
+            background-color: #8a7400;
         }
-    }
-    .particle-cleanup {
-        background: url("../../assets/images/wood-background.jpg") right / cover;
-        border: 2px solid $pink;
-        height: 500px;
-        width: $calcMargin;
-        &:not(.done) {
-            cursor: grabbing;
+        &:nth-child(2):before {
+            background-color: #737373;
         }
-        canvas {
-            @include positioning(absolute, 0, auto, auto, 0);
-            filter: drop-shadow(1px 1px 0px #00000061);
-            + div {
-                @include positioning(absolute, 0, auto, auto, 0);
-                border: 1px solid $pink;
-            }
-        }
-        .completion-message {
-            background-color: white;
-            font-family: $sourceSans;
-            &:focus-visible {
-                outline: none;
-            }
-            svg {
-                animation: spin 2.4s infinite;
-            }
+        &:nth-child(3):before {
+            background-color: #a2652a;
         }
     }
 }
-
+.particle-cleanup {
+    background: url("../../assets/images/wood-background.jpg") right / cover;
+    border: 2px solid $pink;
+    height: 500px;
+    width: $calcMargin;
+    &:not(.done) {
+        cursor: grabbing;
+    }
+    canvas {
+        @include positioning(absolute, 0, auto, auto, 0);
+        filter: drop-shadow(1px 1px 0px #00000061);
+        + div {
+            @include positioning(absolute, 0, auto, auto, 0);
+            border: 1px solid $pink;
+        }
+    }
+    .completion-message {
+        background-color: white;
+        font-family: $sourceSans;
+        &:focus-visible {
+            outline: none;
+        }
+        svg {
+            animation: spin 2.4s infinite;
+        }
+    }
+}

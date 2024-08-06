@@ -1,47 +1,49 @@
 @use "../abstracts/index" as *;
 
-.accordion {
-    button {
-      background-color: $pinkWhite;
-      border-bottom: 1px solid #e1d7ee;
-      color: #2d2b34;
-      transition: border-bottom $timingFunction;
-     svg {
-       box-sizing: content-box;
-       background-color: $black;
-       border-radius: 50%;
-       color: $pink;
-       transition: background-color $timingFunction;
-      }
-      &:focus-visible svg,
-      &:hover svg,
-      &[aria-expanded="true"] svg {
-        background-color: $lightPurple;
-        color: $black;
-      }
-      &[aria-expanded="true"] {
-        border-bottom: 0px solid #e1d7ee;
-      }
-    }
-    > li:last-child button {
-      border-bottom: 0px solid #e1d7ee;
-    }
+.accordion button {
+  background-color: $pinkWhite;
+  border-bottom: 1px solid #e1d7ee;
+  color: #2d2b34;
+  transition: border-bottom $timingFunction;
+  svg {
+    box-sizing: content-box;
+    background-color: $black;
+    border-radius: 50%;
+    color: $pink;
+    transition: background-color $timingFunction;
   }
-  div.accordion-content {
-    margin-bottom: 0;
-    overflow: hidden;
-    transition: height .5s ease-in-out, margin-bottom .5s ease-in-out, max-height .5s ease-in-out, padding .3s ease-in-out; 
-    max-height: 0;
-    height: 0;
-    .accordion button:not([aria-expanded="true"]) + & > * {
-      display: none;
-    }
-    .accordion button[aria-expanded="true"] + & {
-      margin-bottom: 20px;
-      padding-top: 2px;
-      padding-bottom: 2px;
-      max-height: 5000px;
-      height: 100%;
-    }
+  &:focus-visible svg,
+  &:hover svg,
+  &[aria-expanded="true"] svg {
+    background-color: $lightPurple;
+    color: $black;
   }
-  
+  &[aria-expanded="true"] {
+    border-bottom: 0px solid #e1d7ee;
+  }
+}
+.accordion > li:last-child button {
+  border-bottom: 0px solid #e1d7ee;
+}
+
+div.accordion-content {
+  margin-bottom: 0;
+  overflow: hidden;
+  transition:
+    height 0.5s ease-in-out,
+    margin-bottom 0.5s ease-in-out,
+    max-height 0.5s ease-in-out,
+    padding 0.3s ease-in-out;
+  max-height: 0;
+  height: 0;
+  .accordion button:not([aria-expanded="true"]) + & > * {
+    display: none;
+  }
+  .accordion button[aria-expanded="true"] + & {
+    margin-bottom: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    max-height: 5000px;
+    height: 100%;
+  }
+}

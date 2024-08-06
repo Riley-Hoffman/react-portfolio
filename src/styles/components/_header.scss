@@ -6,15 +6,11 @@ header {
   border-top: 34px solid $black;
   box-shadow: 0 1px 3px -3px $black;
   z-index: 999999;
-	@include positioning(sticky, -34px, 0, auto, 0);
-  .logo button {
-    p {
-      color: $black;
-      font-family: $urbanist;
-    }
+  @include positioning(sticky, -34px, 0, auto, 0);
+  .logo p {
+    color: $black;
+    font-family: $urbanist;
   }
-}
-nav.menu {
   .closer {
     display: none;
     @include positioning(fixed, 0, 0, 0, 0);
@@ -28,70 +24,64 @@ nav.menu {
       pointer-events: none;
     }
   }
-  ul {
-    > li {
-      a {
-        transition: background-color $timingFunction, filter $timingFunction, color $timingFunction;
-      }
-      a:hover,
-      a.active {
-        background-color: $pink;
-        color: $black;
-        filter: brightness(1);
-      }
-      a:not(.active):hover {
-        filter:brightness(0.9);
-      }
+  nav.menu ul > li a {
+    transition:
+      background-color $timingFunction,
+      filter $timingFunction,
+      color $timingFunction;
+    &:hover,
+    &.active {
+      background-color: $pink;
+      color: $black;
+      filter: brightness(1);
+    }
+    &:not(.active):hover {
+      filter: brightness(0.9);
     }
   }
 }
-
 @media (max-width: 768px) {
-  nav.menu {
-    ul {
-      box-shadow: 0 2px 16px -9px $black;
-      grid-area: 2 / 1 / 1 span / 2 span;
-      transform: scaleX(0); 
-      transform-origin: right; 
-      transition: transform $timingFunction;
-      @include positioning(relative, 26px, 0, auto, auto);
+  nav.menu ul {
+    box-shadow: 0 2px 16px -9px $black;
+    grid-area: 2 / 1 / 1 span / 2 span;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform $timingFunction;
+    @include positioning(relative, 26px, 0, auto, auto);
+  }
+  .hamburger[aria-expanded="true"] ~ ul {
+    transform: scaleX(1);
+  }
+  .hamburger .line {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
+    filter: brightness(0.9);
+    transform: rotate(0);
+    transition: $timingFunction;
+    &:first-child {
+      top: 8px;
     }
-    .hamburger {
-      &[aria-expanded="true"] ~ ul {
-        transform: scaleX(1);
-      }
-      .line {
-        border: 2px solid;
-        border-image-slice: 1;
-        border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
-        filter: brightness(0.9);
-        transform: rotate(0);
-        transition: $timingFunction;
-        &:first-child {
-          top: 8px;
-        }
-        &:nth-child(2),
-        &:nth-child(3) {
-          top: 16px;
-        }
-        &:nth-child(4) {
-          top: 24px;
-        }
-      }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 16px;
     }
-    > .hamburger[aria-expanded="true"] .line {
-      &:first-child,
-      &:nth-child(4) {
-        @include positioning(absolute, 21px, auto, auto, 15px);
-        border: none;
-        width: 0;
-      }
-      &:nth-child(2) {
-        transform: rotate(45deg);
-      }
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-      }
+    &:nth-child(4) {
+      top: 24px;
+    }
+  }
+  .hamburger[aria-expanded="true"] .line {
+    &:first-child,
+    &:nth-child(4) {
+      @include positioning(absolute, 21px, auto, auto, 15px);
+      border: none;
+      width: 0;
+    }
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg);
     }
   }
 }

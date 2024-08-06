@@ -151,12 +151,11 @@ header {
   right: 0;
   top: -34px;
 }
-header .logo button p {
+header .logo p {
   color: #12121c;
   font-family: "Urbanist", sans-serif;
 }
-
-nav.menu .closer {
+header .closer {
   display: none;
   position: fixed;
   bottom: 0;
@@ -164,25 +163,24 @@ nav.menu .closer {
   right: 0;
   top: 0;
 }
-nav.menu .hamburger {
+header .hamburger {
   background-color: transparent;
 }
-nav.menu .hamburger[aria-expanded=true] ~ .closer {
+header .hamburger[aria-expanded=true] ~ .closer {
   display: block;
 }
-nav.menu .hamburger * {
+header .hamburger * {
   pointer-events: none;
 }
-nav.menu ul > li a {
+header nav.menu ul > li a {
   transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-nav.menu ul > li a:hover,
-nav.menu ul > li a.active {
+header nav.menu ul > li a:hover, header nav.menu ul > li a.active {
   background-color: #e5d4ed;
   color: #12121c;
   filter: brightness(1);
 }
-nav.menu ul > li a:not(.active):hover {
+header nav.menu ul > li a:not(.active):hover {
   filter: brightness(0.9);
 }
 
@@ -199,10 +197,10 @@ nav.menu ul > li a:not(.active):hover {
     right: 0;
     top: 26px;
   }
-  nav.menu .hamburger[aria-expanded=true] ~ ul {
+  .hamburger[aria-expanded=true] ~ ul {
     transform: scaleX(1);
   }
-  nav.menu .hamburger .line {
+  .hamburger .line {
     border: 2px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
@@ -210,16 +208,16 @@ nav.menu ul > li a:not(.active):hover {
     transform: rotate(0);
     transition: 0.2s ease-in-out;
   }
-  nav.menu .hamburger .line:first-child {
+  .hamburger .line:first-child {
     top: 8px;
   }
-  nav.menu .hamburger .line:nth-child(2), nav.menu .hamburger .line:nth-child(3) {
+  .hamburger .line:nth-child(2), .hamburger .line:nth-child(3) {
     top: 16px;
   }
-  nav.menu .hamburger .line:nth-child(4) {
+  .hamburger .line:nth-child(4) {
     top: 24px;
   }
-  nav.menu > .hamburger[aria-expanded=true] .line:first-child, nav.menu > .hamburger[aria-expanded=true] .line:nth-child(4) {
+  .hamburger[aria-expanded=true] .line:first-child, .hamburger[aria-expanded=true] .line:nth-child(4) {
     position: absolute;
     bottom: auto;
     left: 15px;
@@ -228,10 +226,10 @@ nav.menu ul > li a:not(.active):hover {
     border: none;
     width: 0;
   }
-  nav.menu > .hamburger[aria-expanded=true] .line:nth-child(2) {
+  .hamburger[aria-expanded=true] .line:nth-child(2) {
     transform: rotate(45deg);
   }
-  nav.menu > .hamburger[aria-expanded=true] .line:nth-child(3) {
+  .hamburger[aria-expanded=true] .line:nth-child(3) {
     transform: rotate(-45deg);
   }
 }
@@ -239,16 +237,17 @@ footer {
   background-color: #e5d4ed;
   border-top: 1px solid #a8a0d9;
 }
-footer > div p {
+footer p {
   color: #12121c;
 }
-footer > div p:first-child {
+footer p:first-child {
   font-family: "Urbanist", sans-serif;
 }
-footer > div p:last-child span {
+footer p:last-child span {
   margin-right: 2px;
 }
-footer > div a:hover .fa-github.svg-inline--fa, footer > div a:focus-visible .fa-github.svg-inline--fa {
+footer p a:hover .fa-github.svg-inline--fa,
+footer p a:focus-visible .fa-github.svg-inline--fa {
   color: #794e8d;
 }
 
