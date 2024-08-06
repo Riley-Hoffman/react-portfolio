@@ -81,7 +81,7 @@ const Projects = () => {
   const renderProjects = (projectsList, category) => (
     <>
       <h2 className="md:text-3xl text-2xl pb-5 leading-normal">{category} Projects</h2>
-      <ul className="pb-5" aria-label={`${category} Projects`}>
+      <ul className="pb-5 overflow-hidden" aria-label={`${category} Projects`}>
         {projectsList.map((project, index) => (
           <ProjectBox 
             key={index} 
