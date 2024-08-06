@@ -18,7 +18,7 @@ function Home() {
                 <meta property="og:url" content="https://rileyhoffman.com" />
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
-            <div className="gradient-border overlay border-b-4 border-solid about" ref={containerRef}>
+            <div className="border-b-4 border-solid gradient-border overlay about" ref={containerRef}>
                 <div className="max-w-screen-xl md:flex justify-center items-end">
                     <div className="md:w-3/5 self-center text-left">
 
