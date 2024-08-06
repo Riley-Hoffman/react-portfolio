@@ -1,9 +1,4 @@
 @use "./styles/abstracts/index" as *;
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "./styles/base/boilerplate";
 @import "./styles/font-face/googleFontFace";
 @import "./styles/components/header";
