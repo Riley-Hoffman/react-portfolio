@@ -41,7 +41,7 @@ function Form() {
                     ></textarea>
                 </div>
             </fieldset>
-            <button value="Submit" className="button">
+            <button value="Submit" className="p-3 button">
                 Submit
             </button>
         </form>

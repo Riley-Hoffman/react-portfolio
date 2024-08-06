@@ -216,7 +216,7 @@ const ParticleCleanup = () => {
               {state.cursorMessage}
             </p>
           )}
-          <p><button className="p-4 button" onClick={reloadAnimation}>Play Again</button></p>
+          <p><button className="p-3 button" onClick={reloadAnimation}>Play Again</button></p>
         </div>
       </div>
     </>
