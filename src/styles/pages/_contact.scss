@@ -2,16 +2,4 @@
 
 .contact {
     @include smallPagePadding;
-    form {
-        padding: 20px 20px 40px;
-    }
-    fieldset > div {
-        padding-bottom: 20px;
-        > div {
-            padding-bottom: 10px;
-            align-items: center;
-            justify-content: space-between;
-            gap: 22px;
-        }
-    }
 }

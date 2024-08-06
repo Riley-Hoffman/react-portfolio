@@ -1,136 +1,3 @@
-/* Variables */
-$font-sizes: (
-  100: 100px,
-  80: 80px,
-  70: 70px,
-  54: 54px,
-  52: 52px,
-  50: 50px,
-  48: 48px,
-  46: 46px,
-  44: 44px,
-  42: 42px,
-  40: 40px,
-  38: 38px,
-  36: 36px,
-  34: 34px,
-  32: 32px,
-  30: 30px,
-  28: 28px,
-  26: 26px,
-  24: 24px,
-  22: 22px,
-  20: 20px,
-  18: 18px,
-  16: 16px,
-  15: 15px,
-  14: 14px,
-  13: 13px,
-  12: 12px,
-  10: 10px
-);
-
-$max-widths: (
-  100: 100%,
-  80: 80%,
-  75: 75%,
-  70: 70%,
-  66: 66.66%,
-  60: 60%,
-  50: 50%,
-  40: 40%,
-  33: 33.33%,
-  30: 30%,
-  25: 25%,
-  20: 20%,
-  16: 16.66%,
-  10: 10%
-);
-
-$min-widths: $max-widths;
-
-$max-widths-px: (
-  20: 20px,
-  50: 50px,
-  100: 100px,
-  200: 200px,
-  300: 300px,
-  400: 400px,
-  500: 500px,
-  600: 600px,
-  700: 700px,
-  800: 800px,
-  900: 900px,
-  1000: 1000px,
-  1100: 1100px,
-  1200: 1200px,
-  1400: 1400px,
-  1600: 1600px,
-  1800: 1800px
-);
-
-$text-alignments: (
-  left: left,
-  right: right,
-  center: center
-);
-
-$text-transformations: (
-  uppercase: uppercase,
-  capitalize: capitalize,
-  lowercase: lowercase
-);
-
-$text-weights: (
-  900: 900,
-  800: 800,
-  700: 700,
-  600: 600,
-  500: 500,
-  400: 400,
-  300: 300,
-  200: 200
-);
-
-/* Mixins */
-@mixin font-size($size) {
-  font-size: map-get($font-sizes, $size);
-}
-
-@mixin text-weight($weight) {
-  font-weight: map-get($text-weights, $weight);
-}
-
-@mixin text-transform($transformation) {
-  text-transform: map-get($text-transformations, $transformation);
-}
-
-@mixin text-align($alignment) {
-  text-align: map-get($text-alignments, $alignment);
-}
-
-@mixin max-width($size) {
-  max-width: map-get($max-widths, $size);
-}
-
-@mixin min-width($size) {
-  min-width: map-get($min-widths, $size);
-}
-
-@mixin max-width-px($size) {
-  max-width: map-get($max-widths-px, $size);
-}
-
-@mixin min-width-px($size) {
-  min-width: map-get($max-widths-px, $size);
-}
-
-@mixin flex-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 /* Boilerplate */
 
 p, ul, ol {
@@ -138,20 +5,25 @@ p, ul, ol {
   line-height: 1.5;
 }
 
+ul, ol {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 h1, h2 {
-  @include font-size(24);
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.5;
 }
 
 h3 {
-  @include font-size(20);
+  font-size: 20px;
 }
 
 h5 {
   line-height: 1;
   margin: 20px 0 0;
-  @include font-size(26);
+  font-size: 26px;
   font-weight: normal;
 }
 
@@ -169,27 +41,9 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 20px 0;
 }
 
-figure {
-  margin: 0;
-  
-  > img + figcaption:not(:empty) {
-    text-align: center;
-    float: right;
-    width: 100%;
-  }
-}
-
 img {
   display: block;
   height: auto;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 0;
 }
 
 .fa,
@@ -199,145 +53,7 @@ button {
   font-family: "Font Awesome 6 Free";
 }
 
-/* Responsive */
-@mixin responsive($breakpoint) {
-  @media (max-width: #{$breakpoint}px) {
-    .flex-wrap-#{$breakpoint} {
-      @include flex-wrap;
-    }
-
-    .block-#{$breakpoint}:not(#_), .flex.block-#{$breakpoint}:not(#_) {
-      display: block;
-      
-      *:not(#_) {
-        float: none;
-      }
-
-      *:not(img, .keep-width) {
-        max-width: 100%;
-      }
-
-      a {
-        display: inline-block;
-      }
-
-      figure {
-        text-align: center;
-      }
-    }
-
-    .hide-at-#{$breakpoint}:not(#_) {
-      display: none;
-    }
-
-    .center-at-#{$breakpoint}, .center-at-#{$breakpoint} * {
-      @include text-align(center);
-    }
-  }
-
-  @media (min-width: #{$breakpoint + 1}px) {
-    .show-at-#{$breakpoint}:not(#_) {
-      display: none;
-    }
-  }
-}
-
-@include responsive(1600);
-@include responsive(1200);
-@include responsive(1000);
-@include responsive(800);
-@include responsive(700);
-@include responsive(600);
-@include responsive(500);
-@include responsive(400);
-
-
-/* Utility Classes */
-.flex {
-  display: flex;
-}
-
-.flex-wrap {
-  @include flex-wrap;
-}
-
-.width-100 {
-  width: 100%;
-}
-
 *:not(.flex) > *[class*="max-"] {
   margin-left: auto;
   margin-right: auto;
-}
-
-@each $size, $value in $max-widths {
-  .max-#{$size} {
-    @include max-width($size);
-  }
-}
-
-@each $size, $value in $min-widths {
-  .min-#{$size} {
-    @include min-width($size);
-  }
-}
-
-@each $size, $value in $max-widths-px {
-  .max-#{$size}px {
-    @include max-width-px($size);
-  }
-}
-
-@each $size, $value in $max-widths-px {
-  .min-#{$size}px {
-    @include min-width-px($size);
-  }
-}
-
-@each $size, $value in $font-sizes {
-  .text-#{$size} {
-    @include font-size($size);
-  }
-}
-
-@each $weight, $value in $text-weights {
-  .text-#{$weight} {
-    @include text-weight($weight);
-  }
-}
-
-@each $transformation, $value in $text-transformations {
-  .text-#{$transformation} {
-    @include text-transform($transformation);
-  }
-}
-
-@each $alignment, $value in $text-alignments {
-  .text-#{$alignment} {
-    @include text-align($alignment);
-  }
-}
-
-
-@media (max-width: 700px) {
-  .text-100 {font-size: 80px;}
-  .text-80 {font-size: 60px;}
-  .text-70 {font-size: 50px;}
-  .text-54 {font-size: 44px;}
-  .text-52 {font-size: 42px;}
-  .text-50 {font-size: 40px;}
-  .text-48 {font-size: 40px;}
-  .text-46 {font-size: 40px;}
-  .text-44 {font-size: 38px;}
-  .text-42 {font-size: 36px;}
-  .text-40 {font-size: 28px;}
-  .text-38 {font-size: 28px;}
-  .text-36 {font-size: 28px;}
-  .text-34 {font-size: 25px;}
-  .text-32 {font-size: 25px;}
-  .text-30 {font-size: 22px;}
-  .text-28 {font-size: 22px;}
-  .text-26 {font-size: 20px;}
-  .text-24 {font-size: 20px;}
-  .text-22 {font-size: 20px;}
 }

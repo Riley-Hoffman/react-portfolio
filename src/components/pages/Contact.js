@@ -12,8 +12,8 @@ function Contact() {
                 <meta property="og:url" content="https://rileyhoffman.com/contact" />
                 <link rel="canonical" href="https://rileyhoffman.com/contact" />
             </Helmet>     
-            <h1 className="text-center text-40 banner-heading gradient-border inverted">Contact Me</h1>
-            <div className="max-700px contact"> 
+            <h1 className="text-center text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Contact Me</h1>
+            <div className="max-w-screen-md contact"> 
                 <Form/>
             </div>
         </>

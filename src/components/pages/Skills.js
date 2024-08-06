@@ -10,6 +10,7 @@ const Skills = () => {
     { skill: 'CSS3', icon: 'devicon-css3-plain', devicon: true, image: false, translate: 'yes' },
     { skill: 'Javascript + ES6', icon: 'devicon-javascript-plain', devicon: true, image: false, translate: 'yes' },
     { skill: 'SASS', icon: 'devicon-sass-original', devicon: true, image: false, translate: 'no' },
+    { skill: 'Tailwind CSS', icon: 'devicon-tailwindcss-original', devicon: true, image: false, translate: 'no' },
     { skill: 'React', icon: 'devicon-react-original', devicon: true, image: false, translate: 'no' },
     { skill: 'Vue.js', icon: 'devicon-vuejs-plain', devicon: true, image: false, translate: 'no' },
     { skill: 'Rest API', icon: faArrowsAltH, devicon: false, image: false, translate: 'no' },
@@ -34,9 +35,9 @@ const Skills = () => {
           <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </Helmet>  
         <section>
-          <h1 className="text-center text-40 banner-heading gradient-border inverted">Skills</h1>
-          <div className="max-1200px skills">
-              <ul className="max-1000px block-400 skills-list" aria-label="Skills">
+          <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Skills</h1>
+          <div className="max-w-screen-xl relative skills">
+              <ul className="max-w-5xl grid sm:grid-cols-3 grid-cols-2 justify-items-center pt-5 pb-16 mt-16 skills-list" aria-label="Skills">
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}
@@ -48,7 +49,7 @@ const Skills = () => {
                   />
                 ))}
               </ul>
-              <div className="oval"></div>
+              <div className="oval opacity-10"></div>
           </div>
         </section>
       </div>

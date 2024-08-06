@@ -18,19 +18,19 @@ function Accordion({ items, label }) {
     }, [openIndex]);
 
     return (
-        <ul className="accordion" aria-label={label}>
+        <ul className="pb-12 accordion" aria-label={label}>
             {items.map((item, index) => (
                 <li key={index}>
                     <button 
-                        className="width-100 text-left text-500"
+                        className="w-full text-left font-medium py-6 px-5"
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   
-                        <FontAwesomeIcon icon={openIndex === index ? faMinus : faPlus}  />
+                        <FontAwesomeIcon className="p-2 mr-5" icon={openIndex === index ? faMinus : faPlus}  />
                         {item.question}
                     </button>
                     <div 
-                        className="accordion-content"
+                        className="px-5 accordion-content"
                         tabIndex={-1}
                         ref={answer => (contentRefs.current[index] = answer)}
                     >

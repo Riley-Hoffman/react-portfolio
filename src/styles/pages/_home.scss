@@ -6,30 +6,13 @@
     &.overlay:before {
         background-image: $radialOverlay, linear-gradient(-30deg, rgba(0, 247, 255, 0.08) 0%, #0000 15%, #0000 80%, rgba(0, 247, 255, 0.08) 100%);
     }
-    + section {
-        padding: 100px 0;
-    }
     > div {
-        align-items: flex-end;
-        justify-content: center;
         min-height: calc(80vh - 34px);
         div:first-child {
             padding: 18vh 20px 106px 0;
-            align-self: center;
         }
     }
-    h1 {
-        margin-bottom: 0;
-    }
-    p.separator {
-        margin-top: 0;
-    }
-    p:not(.separator) {
-        margin-top: 30px;
-    }
     img {
-        padding-top: 20px;
-        display: inline-block;
         filter: grayscale(0.42) saturate(1.67) brightness(0.99);
     }
 }

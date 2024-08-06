@@ -6,7 +6,6 @@ import outOfContext from '../../assets/images/out-of-context.jpg';
 import infinityCorkboard from '../../assets/images/infinity-corkboard.jpg';
 import weatherScout from '../../assets/images/weather-scout.jpg';
 import delicious from '../../assets/images/delicious.jpg';
-import '../../styles/pages/_projects.scss';
 import '../../styles/animations/_triggerOnScroll.scss';
 
 const Projects = () => {
@@ -81,8 +80,8 @@ const Projects = () => {
 
   const renderProjects = (projectsList, category) => (
     <>
-      <h2 className="text-30">{category} Projects</h2>
-      <ul aria-label={`${category} Projects`}>
+      <h2 className="md:text-3xl text-2xl pb-5 leading-normal">{category} Projects</h2>
+      <ul className="pb-5" aria-label={`${category} Projects`}>
         {projectsList.map((project, index) => (
           <ProjectBox 
             key={index} 
@@ -104,8 +103,8 @@ const Projects = () => {
         <meta property="og:url" content="https://rileyhoffman.com/projects" />
         <link rel="canonical" href="https://rileyhoffman.com/projects" />
       </Helmet>  
-      <h1 className="text-center text-40 banner-heading gradient-border inverted">Projects</h1>
-      <div className="max-1200px projects">
+      <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Projects</h1>
+      <div className="max-w-screen-xl pt-5 pb-20 projects">
         {renderProjects(projects.freelance, 'Freelance')}
         {renderProjects(projects.personal, 'Personal')}
         {renderProjects(projects.juno, 'Juno College')}

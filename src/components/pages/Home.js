@@ -19,14 +19,14 @@ function Home() {
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <div className="gradient-border overlay about" ref={containerRef}>
-                <div className="max-1200px flex block-700">
-                    <div className="max-60 min-60 text-left">
-                        <h1 className="text-40 text-600">Riley Hoffman</h1>
-                        <p className="separator"><span className="typewriter keep-width">Web Developer</span></p>
-                        <p>I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
+                <div className="max-w-screen-xl md:flex justify-center items-end">
+                    <div className="md:w-3/5 self-center text-left">
+                        <h1 className="md:text-4xl text-3xl leading-normal md:leading-normal font-semibold mb-0">Riley Hoffman</h1>
+                        <p className="mt-0 separator"><span className="m-o mr-auto whitespace-nowrap typewriter">Web Developer</span></p>
+                        <p className="mt-8">I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
                     </div>
-                    <div className="max-40 min-40 text-center">
-                        <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className="max-300px" />
+                    <div className="md:w-2/5 text-center">
+                        <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className="max-w-xs pt-5" />
                     </div>
                 </div>
             </div>

@@ -5,30 +5,17 @@ header {
   border-bottom: 2px solid;
   border-top: 34px solid $black;
   box-shadow: 0 1px 3px -3px $black;
-  padding: 16px 0;
   z-index: 999999;
 	@include positioning(sticky, -34px, 0, auto, 0);
-  > div {
-    align-items: center;
-  }
   .logo button {
-    display: block;
-    text-decoration: none;
     p {
       color: $black;
       font-family: $urbanist;
       letter-spacing: 0.5px;
-      margin: 0;
-      padding: 0 0 0 10px;
-      @media (max-width: 800px) {
-        font-size: 20px;
-      }
     }
   }
 }
 nav.menu {
-  margin: auto 0 auto auto;
-  padding: 6px 0;
   height: 55px;
   .closer {
     cursor: default;
@@ -40,11 +27,8 @@ nav.menu {
   }
   .hamburger {
     background-color: transparent;
-    border: none;
     display: none;
     line-height: 0;
-    margin-left: auto;
-    padding: $baseMargin;
     &[aria-expanded="true"] ~ .closer {
       display: block;
     }
@@ -82,11 +66,9 @@ nav.menu {
 
 @media (max-width: 700px) {
   nav.menu {
-    padding: 10px 0;
     ul {
       box-shadow: 0 2px 16px -9px $black;
       grid-area: 2 / 1 / 1 span / 2 span;
-      padding: 0;
       text-align: left;
       transform: scaleX(0); 
       transform-origin: right; 
@@ -105,7 +87,6 @@ nav.menu {
     }
     .hamburger {
       display: block;
-      position: relative;
       z-index: 2;
       height: 40px;
       width: 67px;
@@ -118,7 +99,6 @@ nav.menu {
         border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
         display: block;
         filter: brightness(0.9);
-        opacity: 1;
         position: absolute;
         transform: rotate(0);
         transition: $timingFunction;
