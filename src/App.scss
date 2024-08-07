@@ -118,9 +118,6 @@ textarea:focus-visible {
 .App .hidden:not(#_) {
 	display: none;
 }
-.no-pointer {
-	pointer-events: none;
-}
 .gradient-border {
 	border-image-slice: 1;
 	&:not(.inverted) {
