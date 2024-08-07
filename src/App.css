@@ -202,16 +202,6 @@ textarea:focus-visible {
 }
 
 /* Utility Classes */
-.sr-only {
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  height: 1px;
-  width: 1px;
-}
-
 .skip-link {
   z-index: 999999;
   position: absolute;
