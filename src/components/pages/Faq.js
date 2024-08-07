@@ -14,7 +14,7 @@ const accordionItems = [
         question: "What services do you offer?",
         answer: (
             <div>
-                <p>I offer a range of web services, including designing and building new websites, enhancing existing sites with new features or content, resolving errors, and performing accessibility remediations to ensure compliance with WCAG 2.0 standards.</p>
+                <p>I offer a range of web services, including designing and building new websites, enhancing existing sites with new features or content, resolving errors, and performing accessibility remediations to ensure compliance with WCAG 2.2 standards.</p>
             </div>
         )
     },
