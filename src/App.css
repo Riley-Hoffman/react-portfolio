@@ -202,17 +202,8 @@ textarea:focus-visible {
 }
 
 /* Utility Classes */
-.skip-link {
+.content-link {
   z-index: 999999;
-  position: absolute;
-  bottom: auto;
-  left: -1000px;
-  right: auto;
-  top: 5px;
-}
-.skip-link:focus {
-  left: 0;
-  margin-left: 10px;
 }
 
 .button {
