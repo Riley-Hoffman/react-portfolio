@@ -19,14 +19,14 @@ function Home() {
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <div className="border-b-4 border-solid gradient-border overlay about" ref={containerRef}>
-                <div className="max-w-screen-xl md:flex justify-center items-end">
-                    <div className="md:w-3/5 self-center text-left">
+                <div className="max-w-screen-xl justify-center items-end md:flex">
+                    <div className="self-center text-left md:w-3/5">
 
-                        <h1 className="md:text-4xl text-3xl leading-normal md:leading-normal font-semibold mb-0">Riley Hoffman</h1>
-                        <p className="mt-0 separator"><span className="m-o mr-auto whitespace-nowrap overflow-hidden tracking-widest inline-block w-40 border-r-2 border-purple-200 border-solid typewriter">Web Developer</span></p>
+                        <h1 className="font-semibold mb-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
+                        <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest typewriter">Web Developer</span></p>
                         <p className="mt-8">I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
                     </div>
-                    <div className="md:w-2/5 text-center">
+                    <div className="text-center md:w-2/5 ">
                         <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className="max-w-xs pt-5" />
                     </div>
                 </div>

@@ -1,8 +1,5 @@
 @use "../abstracts/index" as *;
 
-.skills .oval {
-  @include positioning(absolute, 3%, 5%, 3%, 5%);
-}
 .skills-list {
   li .skill-icon-box {
     min-height: 44.25px;
@@ -10,4 +7,7 @@
       width: 80px;
     }
   }
+}
+.skills-list + .oval {
+  @include positioning(absolute, 3%, 5%, 3%, 5%);
 }

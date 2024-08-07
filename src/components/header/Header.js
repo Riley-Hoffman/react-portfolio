@@ -67,12 +67,12 @@ function Header() {
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
                     <button onClick={handleClickHome} aria-label="Back to home page">
-                        <p className="pl-4 pr-0 md:text-2xl text-lg font-medium text-center uppercase m-0 tracking-wide">Riley Hoffman</p>
+                        <p className="pl-4 pr-0 m-0 font-medium text-lg text-center uppercase tracking-wide md:text-2xl">Riley Hoffman</p>
                     </button>
                 </div>
                 <nav className="py-2 m-auto mr-0 h-14 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="md:flex m-0 md:w-auto w-52 z-20 text-base" aria-label="Menu Links">
+                    <ul className="w-52 z-20 text-base md:flex m-0 md:w-auto" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}

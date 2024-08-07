@@ -20,25 +20,11 @@ header .closer {
   right: 0;
   top: 0;
 }
-header .hamburger {
-  background-color: transparent;
-}
 header .hamburger[aria-expanded=true] ~ .closer {
   display: block;
 }
-header .hamburger * {
-  pointer-events: none;
-}
 header nav.menu ul > li a {
   transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-header nav.menu ul > li a:hover, header nav.menu ul > li a.active {
-  background-color: #e5d4ed;
-  color: #12121c;
-  filter: brightness(1);
-}
-header nav.menu ul > li a:not(.active):hover {
-  filter: brightness(0.9);
 }
 
 @media (max-width: 768px) {

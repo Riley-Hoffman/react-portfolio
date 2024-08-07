@@ -33,9 +33,9 @@ const Skills = () => {
           <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </Helmet>  
         <section>
-          <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Skills</h1>
-          <div className="max-w-screen-xl relative skills">
-              <ul className="max-w-5xl grid sm:grid-cols-3 grid-cols-2 justify-items-center pt-5 pb-16 mt-16 skills-list" aria-label="Skills">
+          <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Skills</h1>
+          <div className="max-w-screen-xl relative">
+              <ul className="max-w-5xl pt-5 pb-16 mt-16 grid grid-cols-2 justify-items-center skills-list sm:grid-cols-3" aria-label="Skills">
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}
@@ -47,7 +47,7 @@ const Skills = () => {
                   />
                 ))}
               </ul>
-              <div className="oval opacity-10"></div>
+              <div className="opacity-10 oval"></div>
           </div>
         </section>
       </div>

@@ -13,29 +13,14 @@ header {
     display: none;
     @include positioning(fixed, 0, 0, 0, 0);
   }
-  .hamburger {
-    background-color: transparent;
-    &[aria-expanded="true"] ~ .closer {
-      display: block;
-    }
-    * {
-      pointer-events: none;
-    }
+  .hamburger[aria-expanded="true"] ~ .closer {
+    display: block;
   }
   nav.menu ul > li a {
     transition:
       background-color $timingFunction,
       filter $timingFunction,
       color $timingFunction;
-    &:hover,
-    &.active {
-      background-color: $pink;
-      color: $black;
-      filter: brightness(1);
-    }
-    &:not(.active):hover {
-      filter: brightness(0.9);
-    }
   }
 }
 @media (max-width: 768px) {

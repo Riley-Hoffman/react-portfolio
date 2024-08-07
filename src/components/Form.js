@@ -5,7 +5,7 @@ function Form() {
             <fieldset>
                 <legend className="sr-only">Contact Form</legend>
                 <div className="pb-5">
-                    <div className="md:flex justify-between items-center gap-5 pb-3">
+                    <div className="justify-between items-center gap-5 pb-3 md:flex ">
                         <label htmlFor="name">Name:</label>
                         <input
                             className="w-full gradient-border"
@@ -16,8 +16,8 @@ function Form() {
                             type="text"
                             required
                             />
-                        <br className="md:hidden inline" />
-                        <br className="md:hidden inline" />
+                        <br className="inline md:hidden" />
+                        <br className="inline md:hidden" />
                         <label htmlFor="email">Email:</label>
                         <input
                             className="w-full gradient-border"

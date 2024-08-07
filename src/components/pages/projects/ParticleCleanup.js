@@ -183,12 +183,12 @@ const ParticleCleanup = () => {
         <meta property="og:url" content="https://rileyhoffman.com/projects/particle-cleanup" />
         <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
       </Helmet>  
-      <div className="pb-16 particle-cleanup-container">
-        <h1 className="text-center md:text-5xl text-3xl leading-normal md:leading-normal banner-heading gradient-border inverted">Particle Cleanup Game</h1>
+      <div className="pb-16">
+        <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:leading-normal md:text-5xl">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
           <p className="particle-cleanup-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-          <ol className="sm:flex pr-5 pl-10 numbered-icons medal-criteria md:text-2xl text-xl md:leading-normal leading-normal" aria-label="Medal Criteria">
+          <ol className="pr-5 pl-10 text-xl leading-normal numbered-icons medal-criteria sm:flex md:text-2xl md:leading-normal" aria-label="Medal Criteria">
             <li><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
             <li><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
             <li><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
@@ -197,13 +197,13 @@ const ParticleCleanup = () => {
             <canvas className="w-full" ref={ref => refs.current.canvas = ref} />
             <div className="w-full h-full border-1 boder-solid border-pink-200">
               {refs.current.allClean && (
-                <p id="completionMessage" className="flex flex-col justify-center items-center w-full h-full p-0 m-0 text-2xl text-center absolute completion-message" tabIndex="-1">
+                <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center absolute p-0 m-0 text-2xl text-center completion-message" tabIndex="-1">
                   All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
                   <span className="font-extrabold uppercase" aria-live="polite">
                     {medalDetails && (
-                      <span className="md:text-2xl text-xl md:leading-normal leading-normal" aria-live="polite">
+                      <span className="text-xl leading-normal md:text-2xl md:leading-normal" aria-live="polite">
                         {medalDetails.text} <br />
-                        <FontAwesomeIcon className="mx-auto text-6xl block" icon={faMedal} color={medalDetails.color} />
+                        <FontAwesomeIcon className="block mx-auto text-6xl" icon={faMedal} color={medalDetails.color} />
                       </span>
                     )}
                   </span>

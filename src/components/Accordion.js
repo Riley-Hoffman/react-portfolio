@@ -22,11 +22,11 @@ function Accordion({ items, label }) {
             {items.map((item, index) => (
                 <li key={index}>
                     <button 
-                        className="w-full text-left font-medium py-6 px-5 text-lg bg-pink-100"
+                        className="w-full py-6 px-5 bg-pink-100 text-left font-medium text-lg group"
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   
-                        <FontAwesomeIcon className="p-2 mr-5 text-xs" icon={openIndex === index ? faMinus : faPlus}  />
+                        <FontAwesomeIcon className="p-2 mr-5 text-xs text-pink-200 bg-zinc-900 group-hover:text-zinc-900 group-focus-visible:text-zinc-900 group-aria-expanded:text-zinc-900 group-hover:bg-purple-100 group-focus-visible:bg-purple-100 group-aria-expanded:bg-purple-100" icon={openIndex === index ? faMinus : faPlus}  />
                         {item.question}
                     </button>
                     <div 

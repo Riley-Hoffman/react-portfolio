@@ -6,16 +6,8 @@
   transition: border-bottom $timingFunction;
   svg {
     box-sizing: content-box;
-    background-color: $black;
     border-radius: 50%;
-    color: $pink;
     transition: background-color $timingFunction;
-  }
-  &:focus-visible svg,
-  &:hover svg,
-  &[aria-expanded="true"] svg {
-    background-color: $lightPurple;
-    color: $black;
   }
   &[aria-expanded="true"] {
     border-bottom: 0px solid #e1d7ee;
@@ -27,7 +19,6 @@
 
 div.accordion-content {
   margin-bottom: 0;
-  overflow: hidden;
   transition:
     height 0.5s ease-in-out,
     margin-bottom 0.5s ease-in-out,

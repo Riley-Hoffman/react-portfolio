@@ -22,7 +22,7 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={` md:flex my-28 gap-14 relative border-t-8 border-solid gradient-border project-box ${inverted} ${animation}`} ref={el => elementsRef.current[el] = el}>
+    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border project-box ${inverted} ${animation} md:flex`} ref={el => elementsRef.current[el] = el}>
       <div className="pt-5 pb-10 project-info">
         <h2 className="pb-4">{title}</h2>
         <h3 className="pb-4 mb-8 text-lg" translate="no">{skills}</h3>
