@@ -30,7 +30,7 @@ function Accordion({ items, label }) {
                         {item.question}
                     </button>
                     <div 
-                        className="px-5 accordion-content"
+                        className="px-5 accordion-content focus:m-b-4"
                         tabIndex={-1}
                         ref={answer => (contentRefs.current[index] = answer)}
                     >
