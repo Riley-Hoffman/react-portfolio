@@ -19,8 +19,8 @@ function Home() {
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <div className="border-b-4 border-solid gradient-border overlay about" ref={containerRef}>
-                <div className="max-w-screen-xl justify-center items-end md:flex">
-                    <div className="self-center text-left md:w-3/5">
+                <div className="max-w-screen-xl md:flex md:justify-center md:items-end">
+                    <div className="text-left md:w-3/5 md:self-center">
 
                         <h1 className="font-semibold mb-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
                         <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest typewriter">Web Developer</span></p>

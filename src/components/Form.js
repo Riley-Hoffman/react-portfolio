@@ -5,7 +5,7 @@ function Form() {
             <fieldset>
                 <legend className="sr-only">Contact Form</legend>
                 <div className="pb-5">
-                    <div className="justify-between items-center gap-5 pb-3 md:flex ">
+                    <div className="pb-3 md:flex md:justify-between md:items-center md:gap-5">
                         <label htmlFor="name">Name:</label>
                         <input
                             className="w-full gradient-border"

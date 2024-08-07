@@ -7,6 +7,7 @@ import Projects from './components/pages/Projects';
 import Skills from './components/pages/Skills';
 import Faq from './components/pages/Faq';
 import Contact from './components/pages/Contact';
+import Accessibility from './components/pages/Accessibility';
 import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -45,6 +46,12 @@ function App() {
               <Route path="/contact" element={
                 <>          
                   <Contact/> 
+                </>
+              } 
+              />
+              <Route path="/accessibility" element={
+                <>          
+                  <Accessibility/> 
                 </>
               } 
               />
