@@ -90,10 +90,6 @@ body {
   font-family: "Inconsolata", monospace;
 }
 
-main {
-  position: relative;
-}
-
 p,
 ul,
 ol {

@@ -16,7 +16,7 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <main>
+          <main className="relative">
             <a href="#content" id="content" className="p-4 skip-link start button">Start of main content</a>
             <Routes>
               <Route path='/' element={
