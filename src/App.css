@@ -78,7 +78,8 @@ header nav.menu ul > li a {
 footer p:first-child {
   font-family: "Urbanist", sans-serif;
 }
-footer p:first-child:last-child span {
+
+footer p:nth-child(2) span {
   margin-right: 2px;
 }
 
@@ -186,7 +187,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #a8a0d9;
+  outline: 2px solid #6F00F7;
 }
 
 .fa,
