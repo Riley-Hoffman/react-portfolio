@@ -2,7 +2,7 @@
 
 footer p:first-child {
   font-family: $urbanist;
-  &:last-child span {
-    margin-right: 2px;
-  }
+}
+footer p:nth-child(2) span {
+  margin-right: 2px;
 }
