@@ -9,7 +9,7 @@ function NavListItem({ to, label, hide, isResume, resumePdf }) {
                     Resume
                 </a>
             ) : (
-                <NavLink className={`w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button ${hide ? 'hidden' : ''} md:py-2 md:px-4 hover:[&.button]:bg-pink-200 hover:brightness-90 hover:[&.active]:brightness-100 [&.active]:bg-pink-200 [&.active]:text-zinc-900`} to={to}>
+                <NavLink className={`w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button ${hide ? 'hidden' : ''} md:py-2 md:px-4 hover:[&.button]:bg-pink-200 hover:brightness-90 hover:[&.active]:brightness-100 [&.active]:bg-pink-200 [&.active]:text-zinc`} to={to}>
                     {label}
                 </NavLink>
             )}

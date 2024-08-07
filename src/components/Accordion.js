@@ -26,7 +26,7 @@ function Accordion({ items, label }) {
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   
-                        <FontAwesomeIcon className="p-2 mr-5 text-xs text-pink-200 bg-zinc-900 group-hover:text-zinc-900 group-focus-visible:text-zinc-900 group-aria-expanded:text-zinc-900 group-hover:bg-purple-100 group-focus-visible:bg-purple-100 group-aria-expanded:bg-purple-100" icon={openIndex === index ? faMinus : faPlus}  />
+                        <FontAwesomeIcon className="p-2 mr-5 text-xs text-pink-200 bg-zinc group-hover:text-zinc group-focus-visible:text-zinc group-aria-expanded:text-zinc group-hover:bg-purple-100 group-focus-visible:bg-purple-100 group-aria-expanded:bg-purple-100" icon={openIndex === index ? faMinus : faPlus}  />
                         {item.question}
                     </button>
                     <div 
