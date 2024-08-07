@@ -100,13 +100,8 @@ textarea:focus-visible {
 	vertical-align: middle;
 }
 /* Utility Classes */
-.skip-link {
+.content-link {
 	z-index: 999999;
-	@include positioning(absolute, 5px, auto, auto, -1000px);
-	&:focus {
-		left: 0;
-		margin-left: 10px;
-	}
 }
 .button {
 	background-color: $black;

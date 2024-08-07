@@ -63,7 +63,7 @@ function Header() {
 
     return (
         <header className="py-4 border-b-2 border-solid gradient-border">
-            <a href="#content" className="p-4 skip-link button">Skip To Content</a>
+            <a href="#content" className="sr-only button content-link focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
                     <button onClick={handleClickHome} aria-label="Back to home page">
