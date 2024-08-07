@@ -100,14 +100,6 @@ textarea:focus-visible {
 	vertical-align: middle;
 }
 /* Utility Classes */
-.sr-only {
-	clip-path: inset(50%);
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	height: 1px;
-	width: 1px;
-}
 .skip-link {
 	z-index: 999999;
 	@include positioning(absolute, 5px, auto, auto, -1000px);
