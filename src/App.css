@@ -162,7 +162,6 @@ textarea:focus-visible {
 /* Utility Classes */
 .button {
   background-color: #12121c;
-  border-radius: 1px;
   color: #e5d4ed;
   font-family: inherit;
   text-decoration: none;
