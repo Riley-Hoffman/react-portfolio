@@ -47,7 +47,7 @@ const Hamburger = ({ expanded }) => {
                     <span key={index} className="w-7 block absolute border-2 border-solid gradient-border transition-all duration-200 ease-in-out top-4 rotate-0 line brightness-90 first:top-2 last:top-6"></span>
                 ))}
             </button>
-            <button className="w-full h-full z-10 cursor-default closer hidden peer-aria-expanded:block" onClick={toggleMenu} aria-label="Close Menu"></button>
+            <button className="w-full h-full z-10 cursor-default closer hidden peer-aria-expanded:block" onClick={toggleMenu} aria-hidden="true" aria-label="Close Menu"></button>
         </>
     );
 };
