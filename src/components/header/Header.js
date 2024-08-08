@@ -66,7 +66,7 @@ function Header() {
             <a href="#content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
-                    <button onClick={handleClickHome} aria-label="Back to home page">
+                    <button onClick={handleClickHome}>
                         <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl">Riley Hoffman</p>
                     </button>
                 </div>

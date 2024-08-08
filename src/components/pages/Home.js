@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import '../../styles/pages/_home.scss';
 import '../../styles/animations/_typewriter.scss';
 import '../../styles/animations/_rotateSpin.scss';
-import riley from '../../assets/images/riley.png';
 import clouds from '../../assets/images/clouds.jpg';
 import useScrollingBackground from '../../hooks/useScrollingBackground';
 
@@ -19,15 +18,11 @@ function Home() {
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <div className="border-b-4 border-solid gradient-border overlay about" ref={containerRef}>
-                <div className="max-w-screen-xl min-h-[calc(100vh-213px)] md:flex md:justify-center md:items-end">
-                    <div className="p-[18vh_20px_106px_0] text-left md:w-3/5 md:self-center">
-
+                <div className="max-w-screen-xl min-h-[calc(100vh-213px)] py-[0.1px]">
+                    <div className="m-[18vh_20px_106px_0] py-5 bg-[radial-gradient(ellipse_closest-side_at_50%_50%,_#fff_0%,_transparent)] text-left md:w-3/5 md:translate-y-[20px]">
                         <h1 className="font-semibold mb-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
                         <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest typewriter">Web Developer</span></p>
                         <p className="mt-8">I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
-                    </div>
-                    <div className="text-center md:w-2/5 ">
-                        <img src={riley} alt="Headshot of Riley Hoffman, Web Developer" width="884" height="683" className="max-w-xs pt-5 grayscale-[0.42] saturate-[1.67] brightness[0.99]" />
                     </div>
                 </div>
             </div>

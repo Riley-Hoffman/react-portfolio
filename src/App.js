@@ -15,7 +15,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <div className="App">
+        <div className="App text-zinc">
           <Header />
           <main className="relative">
             <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
