@@ -31,8 +31,7 @@ const ProjectBox = ({
           <span translate="no">{title}</span> Links:
         </h4>
         <a className="mx-5 p-y-1 p-x-4 uppercase py-1 px-3 button" href={liveUrl} target="_blank" rel="noopener noreferrer">
-          <span aria-hidden="true">Live</span>
-          <span className="sr-only">{title} Live</span>
+          <span className="sr-only">{title} </span>Live
         </a>
         {gitUrl && (<a className="mr-5 ml-3 uppercase py-1 px-3 button" href={gitUrl} target="_blank" rel="noopener noreferrer">
           <span className="sr-only">{title} </span>Repo

@@ -3,21 +3,12 @@
 header {
   @include positioning(sticky, -34px, 0, auto, 0);
   .closer {
-    display: none;
     @include positioning(fixed, 0, 0, 0, 0);
-  }
-  .hamburger[aria-expanded="true"] ~ .closer {
-    display: block;
   }
 }
 @media (max-width: 768px) {
   nav.menu ul {
-    grid-area: 2 / 1 / 1 span / 2 span;
-    transform: scaleX(0);
     @include positioning(relative, 26px, 0, auto, auto);
-  }
-  .hamburger[aria-expanded="true"] ~ ul {
-    transform: scaleX(1);
   }
   .hamburger .line {
     border-image-slice: 1;

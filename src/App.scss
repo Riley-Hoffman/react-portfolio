@@ -113,9 +113,6 @@ textarea:focus-visible {
 		color: $black;
 	}
 }
-.App .hidden:not(#_) {
-	display: none;
-}
 .gradient-border {
 	border-image-slice: 1;
 	&:not(.inverted) {

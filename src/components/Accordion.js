@@ -22,7 +22,7 @@ function Accordion({ items, label }) {
             {items.map((item, index) => (
                 <li className="group" key={index}>
                     <button 
-                        className="w-full py-6 px-5 bg-pink-100 text-left font-medium text-[#2d2b34] border-b border-solid border-[#e1d7ee] text-lg transition-all duration-200 ease-in-out aria-expanded:border-b-0 group-last:border-b-0 group"
+                        className="w-full py-6 px-5 bg-pink-100 text-left font-medium text-[#2d2b34] border-b border-solid border-[#e1d7ee] text-lg transition-all duration-500 ease-in-out aria-expanded:border-b-0 group-last:border-b-0 group peer"
                         onClick={() => handleAccordionClick(index)}
                         aria-expanded={openIndex === index ? "true" : "false"}
                     >   
@@ -30,7 +30,7 @@ function Accordion({ items, label }) {
                         {item.question}
                     </button>
                     <div 
-                        className="px-5 accordion-content transition-all duration-500 ease-in-out focus:m-b-4"
+                        className="px-5 transition-all duration-500 ease-in-out accordion-content peer-aria-expanded:m-b-4 peer-aria-expanded:py-[2px]"
                         tabIndex={-1}
                         ref={answer => (contentRefs.current[index] = answer)}
                     >

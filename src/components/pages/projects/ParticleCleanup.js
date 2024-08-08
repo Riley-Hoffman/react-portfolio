@@ -24,7 +24,7 @@ const ParticleCleanup = () => {
     gameInProgress: true,
     gameCompletedOnce: false,
     cursorMessage: '',
-    messageVisible: true,
+    cursorMessageRead: true,
   });
 
   const mouse = useMemo(() => ({ x: null, y: null, radius: 150 }), []);
@@ -42,9 +42,9 @@ const ParticleCleanup = () => {
     setState(prevState => ({
       ...prevState,
       cursorMessage: message,
-      messageVisible: false,
+      cursorMessageRead: false,
     }));
-    setTimeout(() => setState(prevState => ({ ...prevState, messageVisible: true })), 10);
+    setTimeout(() => setState(prevState => ({ ...prevState, cursorMessageRead: true })), 10);
   }, []);
 
   const handleInteraction = useCallback((event, isInside) => {
@@ -169,7 +169,7 @@ const ParticleCleanup = () => {
       gameInProgress: true,
       gameCompletedOnce: prevState.gameCompletedOnce,
       cursorMessage: '',
-      messageVisible: true,
+      cursorMessageRead: true,
     }));
     initializeAnimation();
   }, [initializeAnimation]);
@@ -212,7 +212,7 @@ const ParticleCleanup = () => {
             </div>
           </div>
           {state.gameInProgress && !refs.current.allClean && (
-            <p className={`sr-only ${state.messageVisible ? '' : 'hidden'}`} aria-live="polite">
+            <p className={`sr-only ${state.cursorMessageRead ? '' : 'hidden'}`} aria-live="polite">
               {state.cursorMessage}
             </p>
           )}
