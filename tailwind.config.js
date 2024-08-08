@@ -17,6 +17,12 @@ module.exports = {
         gradientpurple: '#794e8e',
         gradientpink: '#ae4971',
         gradientlightpurple: '#a8a1d9',     
+      },
+      fontFamily: {
+        'poppins': ['"Poppins", sans-serif'],
+        'inconsolata': ['"Inconsolata", monospace'],
+        'source-sans': ['"Source Sans 3", sans-serif'],
+        'urbanist': ['"Urbanist", sans-serif'],
       }
     },
   },

@@ -1,14 +1,7 @@
 @use "../abstracts/index" as *;
 
 header {
-  background-color: #f4eef6;
-  border-top-width: 34px;
-  box-shadow: 0 1px 3px -3px $black;
-  z-index: 999999;
   @include positioning(sticky, -34px, 0, auto, 0);
-  .logo p {
-    font-family: $urbanist;
-  }
   .closer {
     display: none;
     @include positioning(fixed, 0, 0, 0, 0);
@@ -16,20 +9,11 @@ header {
   .hamburger[aria-expanded="true"] ~ .closer {
     display: block;
   }
-  nav.menu ul > li a {
-    transition:
-      background-color $timingFunction,
-      filter $timingFunction,
-      color $timingFunction;
-  }
 }
 @media (max-width: 768px) {
   nav.menu ul {
-    box-shadow: 0 2px 16px -9px $black;
     grid-area: 2 / 1 / 1 span / 2 span;
     transform: scaleX(0);
-    transform-origin: right;
-    transition: transform $timingFunction;
     @include positioning(relative, 26px, 0, auto, auto);
   }
   .hamburger[aria-expanded="true"] ~ ul {
@@ -38,19 +22,6 @@ header {
   .hamburger .line {
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
-    filter: brightness(0.9);
-    transform: rotate(0);
-    transition: $timingFunction;
-    &:first-child {
-      top: 8px;
-    }
-    &:nth-child(2),
-    &:nth-child(3) {
-      top: 16px;
-    }
-    &:nth-child(4) {
-      top: 24px;
-    }
   }
   .hamburger[aria-expanded="true"] .line {
     &:first-child,

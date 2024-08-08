@@ -62,17 +62,17 @@ function Header() {
     ];
 
     return (
-        <header className="py-4 border-b-2 border-solid gradient-border">
-            <a href="#content" className="sr-only button content-link focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
+        <header className="py-4 border-b-2 border-t-[34px] border-solid shadow[0_1px_3px_-3px_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999]">
+            <a href="#content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
                     <button onClick={handleClickHome} aria-label="Back to home page">
-                        <p className="pl-4 pr-0 m-0 font-medium text-lg text-center uppercase tracking-wide md:text-2xl">Riley Hoffman</p>
+                        <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl">Riley Hoffman</p>
                     </button>
                 </div>
                 <nav className="py-2 m-auto mr-0 h-14 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="w-52 z-20 text-base md:flex m-0 md:w-auto" aria-label="Menu Links">
+                    <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out md:flex m-0 md:w-auto md:shadow-none" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}

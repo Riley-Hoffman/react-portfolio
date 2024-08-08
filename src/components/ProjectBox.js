@@ -22,23 +22,23 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border project-box ${inverted} ${animation} md:flex`} ref={el => elementsRef.current[el] = el}>
-      <div className="pt-5 pb-10 project-info">
+    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border project-box ${inverted} ${animation} transition-all duration-1000 ease even:flex-row-reverse first:mt-12 md:flex`} ref={el => elementsRef.current[el] = el}>
+      <div className="pt-5 pb-10 basis-2/4 project-info">
         <h2 className="pb-4">{title}</h2>
         <h3 className="pb-4 mb-8 text-lg" translate="no">{skills}</h3>
         <p className="pb-4">{description}</p>
         <h4 className="mb-8">
           <span translate="no">{title}</span> Links:
         </h4>
-        <a className="mx-5 uppercase button" href={liveUrl} target="_blank" rel="noopener noreferrer">
+        <a className="mx-5 p-y-1 p-x-4 uppercase py-1 px-3 button" href={liveUrl} target="_blank" rel="noopener noreferrer">
           <span aria-hidden="true">Live</span>
           <span className="sr-only">{title} Live</span>
         </a>
-        {gitUrl && (<a className="mx-5 uppercase button" href={gitUrl} target="_blank" rel="noopener noreferrer">
+        {gitUrl && (<a className="mr-5 ml-3 uppercase py-1 px-3 button" href={gitUrl} target="_blank" rel="noopener noreferrer">
           <span className="sr-only">{title} </span>Repo
         </a>)}
       </div>
-      <div className="text-center relative img-box">
+      <div className="text-center relative basis-2/4 img-box">
         <img
           alt={imgAlt}
           src={imgUrl}

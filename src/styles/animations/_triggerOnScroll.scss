@@ -1,9 +1,5 @@
 .trigger-on-scroll {
     opacity: 0;
-    transition:
-        opacity 1s ease,
-        left 1s ease,
-        right 1s ease;
     &[data-active="true"] {
         opacity: 1;
     }

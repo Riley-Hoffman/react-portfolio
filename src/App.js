@@ -18,7 +18,7 @@ function App() {
         <div className="App">
           <Header />
           <main className="relative">
-            <a href="#content" id="content" className="sr-only button content-link focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
+            <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
             <Routes>
               <Route path='/' element={
                 <> 

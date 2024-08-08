@@ -5,7 +5,7 @@ function NavListItem({ to, label, hide, isResume, resumePdf }) {
     return (
         <li className="md:inline block">
             {isResume ? (
-                <a className={`w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button ${hide ? 'hidden' : ''} md:py-2 md:px-4 hover:[&.button]:bg-pink-200 hover:brightness-90`} href={resumePdf} target="_blank" rel="noopener noreferrer">
+                <a className={`w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button transition-all duration-200 ease-in-out ${hide ? 'hidden' : ''} md:py-2 md:px-4 hover:[&.button]:bg-pink-200 hover:brightness-90`} href={resumePdf} target="_blank" rel="noopener noreferrer">
                     Resume
                 </a>
             ) : (

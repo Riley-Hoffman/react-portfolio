@@ -1,16 +1,9 @@
 header {
-  background-color: #f4eef6;
-  border-top-width: 34px;
-  box-shadow: 0 1px 3px -3px #12121c;
-  z-index: 999999;
   position: sticky;
   bottom: auto;
   left: 0;
   right: 0;
   top: -34px;
-}
-header .logo p {
-  font-family: "Urbanist", sans-serif;
 }
 header .closer {
   display: none;
@@ -23,17 +16,11 @@ header .closer {
 header .hamburger[aria-expanded=true] ~ .closer {
   display: block;
 }
-header nav.menu ul > li a {
-  transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out, color 0.2s ease-in-out;
-}
 
 @media (max-width: 768px) {
   nav.menu ul {
-    box-shadow: 0 2px 16px -9px #12121c;
     grid-area: 2/1/1 span/2 span;
     transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.2s ease-in-out;
     position: relative;
     bottom: auto;
     left: auto;
@@ -46,18 +33,6 @@ header nav.menu ul > li a {
   .hamburger .line {
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
-    filter: brightness(0.9);
-    transform: rotate(0);
-    transition: 0.2s ease-in-out;
-  }
-  .hamburger .line:first-child {
-    top: 8px;
-  }
-  .hamburger .line:nth-child(2), .hamburger .line:nth-child(3) {
-    top: 16px;
-  }
-  .hamburger .line:nth-child(4) {
-    top: 24px;
   }
   .hamburger[aria-expanded=true] .line:first-child, .hamburger[aria-expanded=true] .line:nth-child(4) {
     position: absolute;
@@ -75,14 +50,6 @@ header nav.menu ul > li a {
     transform: rotate(-45deg);
   }
 }
-footer p:first-child {
-  font-family: "Urbanist", sans-serif;
-}
-
-footer p:nth-child(2) span {
-  margin-right: 2px;
-}
-
 html {
   background-color: whitesmoke;
 }
@@ -202,10 +169,6 @@ textarea:focus-visible {
 }
 
 /* Utility Classes */
-.content-link {
-  z-index: 999999;
-}
-
 .button {
   background-color: #12121c;
   border-radius: 1px;

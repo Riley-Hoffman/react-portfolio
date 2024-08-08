@@ -1,6 +1,5 @@
 @use "./styles/abstracts/index" as *;
 @import "./styles/components/header";
-@import "./styles/components/footer";
 
 html {
 	background-color: whitesmoke;
@@ -99,10 +98,9 @@ textarea:focus-visible {
 .svg-inline--fa {
 	vertical-align: middle;
 }
+
 /* Utility Classes */
-.content-link {
-	z-index: 999999;
-}
+
 .button {
 	background-color: $black;
 	border-radius: 1px;

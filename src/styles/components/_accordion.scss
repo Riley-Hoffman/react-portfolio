@@ -1,26 +1,6 @@
 @use "../abstracts/index" as *;
 
-.accordion button {
-  border-bottom: 1px solid #e1d7ee;
-  color: #2d2b34;
-  transition: border-bottom $timingFunction;
-  svg {
-    box-sizing: content-box;
-    border-radius: 50%;
-    transition: background-color $timingFunction;
-  }
-  &[aria-expanded="true"] {
-    border-bottom: 0px solid #e1d7ee;
-  }
-}
-.accordion > li:last-child button {
-  border-bottom: 0px solid #e1d7ee;
-}
-
 div.accordion-content {
-  transition:
-    margin-bottom 0.5s ease-in-out,
-    padding 0.3s ease-in-out;
   .accordion button:not([aria-expanded="true"]) + & > * {
     display: none;
   }

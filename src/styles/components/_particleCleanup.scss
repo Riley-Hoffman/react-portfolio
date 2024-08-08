@@ -15,11 +15,6 @@ ol.numbered-icons.medal-criteria {
 }
 .particle-cleanup {
     background: url("../../assets/images/wood-background.jpg") right / cover;
-    height: 500px;
-    width: $calcMargin;
-    &:not(.done) {
-        cursor: grabbing;
-    }
     canvas {
         @include positioning(absolute, 0, auto, auto, 0);
         filter: drop-shadow(1px 1px 0px #00000061);
@@ -27,14 +22,7 @@ ol.numbered-icons.medal-criteria {
             @include positioning(absolute, 0, auto, auto, 0);
         }
     }
-    .completion-message {
-        background-color: white;
-        font-family: $sourceSans;
-        &:focus-visible {
-            outline: none;
-        }
-        svg {
-            animation: spin 2.4s infinite;
-        }
+    .completion-message svg {
+        animation: spin 2.4s infinite;
     }
 }
