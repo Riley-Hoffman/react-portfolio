@@ -67,7 +67,7 @@ function Header() {
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">
                     <button onClick={handleClickHome}>
-                        <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl">Riley Hoffman</p>
+                        <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl"><span aria-hidden="true">Riley Hoffman</span><span className="sr-only">Back To Home Page</span></p>
                     </button>
                 </div>
                 <nav className="py-2 m-auto mr-0 h-14 menu">
