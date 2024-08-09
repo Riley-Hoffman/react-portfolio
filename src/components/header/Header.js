@@ -62,17 +62,17 @@ function Header() {
     ];
 
     return (
-        <header className="py-4 border-b-2 border-t-[34px] border-solid sticky top-[-34px] right-[0] left-[0] shadow[0_1px_3px_-3px_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999]">
+        <header className="min-h-[124px] py-4 border-b-2 border-t-[34px] border-solid sticky top-[-34px] right-[0] left-[0] shadow[0_1px_3px_-3px_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999]">
             <a href="#content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
-            <div className="max-w-screen-xl flex items-center">
+            <div className="max-w-screen-xl flex items-center justify-between">
                 <div className="logo">
                     <button onClick={handleClickHome}>
                         <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl"><span aria-hidden="true">Riley Hoffman</span><span className="sr-only">Back To Home Page</span></p>
                     </button>
                 </div>
-                <nav className="py-2 m-auto mr-0 h-14 menu">
+                <nav className="py-2 h-14 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 relative top-[26px] right-0 peer-aria-expanded:scale-100 md:flex m-0 md:w-auto md:shadow-none md:scale-x-100 md:static" aria-label="Menu Links">
+                    <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 relative top-[26px] right-0 peer-aria-expanded:scale-100 m-0 md:w-auto md:shadow-none md:scale-x-100 md:static" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}
