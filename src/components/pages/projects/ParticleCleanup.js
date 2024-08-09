@@ -187,14 +187,14 @@ const ParticleCleanup = () => {
         <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:leading-normal md:text-5xl">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
-          <p className="particle-cleanup-instructions">How quickly can you clear all the particles from the board using your cursor or finger?</p>
-          <ol className="pr-5 pl-10 text-xl leading-normal numbered-icons medal-criteria sm:flex md:text-2xl md:leading-normal" aria-label="Medal Criteria">
-            <li><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-            <li><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-            <li><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+          <p>How quickly can you clear all the particles from the board using your cursor or finger?</p>
+          <ol className="pr-5 pl-10 text-xl leading-normal numbered-icons sm:flex md:text-2xl md:leading-normal" aria-label="Medal Criteria">
+            <li className="before:bg-[#8a7400]"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+            <li className="before:bg-[#737373]"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+            <li className="before:bg-[#a2652a]"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="w-[calc(100% - 40px)] h-[500px] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-            <canvas className="w-full absolute top-0 left-0" ref={ref => refs.current.canvas = ref} />
+          <div ref={ref => refs.current.container = ref} className="w-[calc(100% - 40px)] h-[500px] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+            <canvas className="w-full absolute top-0 left-0 drop-shadow-[1px_1px_0px_#00000061]" ref={ref => refs.current.canvas = ref} />
             <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
               {refs.current.allClean && (
                 <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center font-source-sans absolute p-0 m-0 text-2xl text-center bg-white completion-message" tabIndex="-1">

@@ -5,18 +5,4 @@
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
   }
-  .hamburger[aria-expanded="true"] .line {
-    &:first-child,
-    &:nth-child(4) {
-      @include positioning(absolute, 21px, auto, auto, 15px);
-      border: none;
-      width: 0;
-    }
-    &:nth-child(2) {
-      transform: rotate(45deg);
-    }
-    &:nth-child(3) {
-      transform: rotate(-45deg);
-    }
-  }
 }

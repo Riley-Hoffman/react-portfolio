@@ -1,23 +1,7 @@
 @use "../abstracts/index" as *;
 
-ol.numbered-icons.medal-criteria {
-    > li {
-        &:first-child:before {
-            background-color: #8a7400;
-        }
-        &:nth-child(2):before {
-            background-color: #737373;
-        }
-        &:nth-child(3):before {
-            background-color: #a2652a;
-        }
-    }
-}
 .particle-cleanup {
-    background: url("../../assets/images/wood-background.jpg") right / cover;
-    canvas {
-        filter: drop-shadow(1px 1px 0px #00000061);
-    }
+    background-image: url("../../assets/images/wood-background.jpg");
     .completion-message svg {
         animation: spin 2.4s infinite;
     }

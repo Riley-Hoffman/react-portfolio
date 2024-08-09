@@ -1,5 +1,0 @@
-@use "../abstracts/index" as *;
-
-.accordion button:not([aria-expanded="true"]) + div.accordion-content > * {
-  display: none
-}

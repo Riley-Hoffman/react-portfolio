@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../styles/components/_accordion.scss';
 
 function Accordion({ items, label }) {
     const [openIndex, setOpenIndex] = useState(null);
@@ -18,7 +17,7 @@ function Accordion({ items, label }) {
     }, [openIndex]);
 
     return (
-        <ul className="pb-12 leading-loose accordion" aria-label={label}>
+        <ul className="pb-12 leading-loose" aria-label={label}>
             {items.map((item, index) => (
                 <li className="group" key={index}>
                     <button 
@@ -30,7 +29,7 @@ function Accordion({ items, label }) {
                         {item.question}
                     </button>
                     <div 
-                        className="px-5 transition-all duration-500 ease-in-out accordion-content peer-aria-expanded:m-b-4 peer-aria-expanded:py-[2px]"
+                        className="px-5 transition-all duration-500 ease-in-out [&>*]:hidden peer-aria-expanded:[&>*]:block peer-aria-expanded:m-b-4 peer-aria-expanded:py-[2px]"
                         tabIndex={-1}
                         ref={answer => (contentRefs.current[index] = answer)}
                     >

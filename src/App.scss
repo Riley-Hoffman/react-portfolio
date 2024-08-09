@@ -123,8 +123,10 @@ textarea:focus-visible {
 }
 .overlay {
 	position: relative;
-	&:before {
+	&:not([class*="before:bg-"]):before {
 		background-image: $radialOverlay;
+	}
+	&:before {
 		content: "";
 		height: 100%;
 		width: 100%;
@@ -155,7 +157,6 @@ ol.numbered-icons {
 		padding: 12px 0 12px 20px;
 		position: relative;
 		&:before {
-			background: $purple;
 			border-radius: 50%;
 			color: #fbfdff;
 			content: counter(circle) "";
@@ -169,6 +170,9 @@ ol.numbered-icons {
 			height: 30px;
 			width: 30px;
 			@include positioning(absolute, 50%, auto, auto, -20px);
+			&:not([class*="before:bg-"]){
+				background: $purple;
+			}
 		}
 	}
 }

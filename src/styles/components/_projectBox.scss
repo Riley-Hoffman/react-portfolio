@@ -1,8 +1,0 @@
-@use "../abstracts/index" as *;
-
-.project-box:nth-child(odd) .img-box .oval {
-  left: -100%;
-}
-.project-box:nth-child(even) .img-box .oval {
-  right: -100%;
-}

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import useTriggerOnScroll from '../hooks/useTriggerOnScroll';
-import '../styles/components/_projectBox.scss';
 
 
 const ProjectBox = ({ 
@@ -22,7 +21,7 @@ const ProjectBox = ({
   }, [elementsRef]);
 
   return (
-    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border project-box ${inverted} ${animation} transition-all duration-1000 ease even:flex-row-reverse first:mt-12 md:flex`} ref={el => elementsRef.current[el] = el}>
+    <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} ${animation} transition-all duration-1000 ease even:flex-row-reverse first:mt-12 md:flex group`} ref={el => elementsRef.current[el] = el}>
       <div className="pt-5 pb-10 basis-2/4 project-info">
         <h2 className="pb-4">{title}</h2>
         <h3 className="pb-4 mb-8 text-lg" translate="no">{skills}</h3>
@@ -37,7 +36,7 @@ const ProjectBox = ({
           <span className="sr-only">{title} </span>Repo
         </a>)}
       </div>
-      <div className="text-center relative basis-2/4 img-box">
+      <div className="text-center relative basis-2/4">
         <img
           alt={imgAlt}
           src={imgUrl}
@@ -47,7 +46,7 @@ const ProjectBox = ({
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
-        <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval"></div>
+        <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval group-odd:left-[-100%] group-even:right-[-100%]"></div>
       </div>
     </li>
   );

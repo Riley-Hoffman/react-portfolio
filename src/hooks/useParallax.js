@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useScrollingBackground = (velocity = 0.1) => {
-    const containerRef = useRef(null);
+const useParallax = (velocity = 0.1) => {
+    const imageRef = useRef(null);
     const [scrollPos, setScrollPos] = useState(0);
 
     useEffect(() => {
@@ -26,17 +26,18 @@ const useScrollingBackground = (velocity = 0.1) => {
     }, []);
 
     useEffect(() => {
-        const updateBackgroundPosition = () => {
-            if (containerRef.current) {
-                const height = containerRef.current.offsetHeight - 18;
-                containerRef.current.style.backgroundPosition = `-${Math.round((height - scrollPos) * velocity)}px center`;
+        const updateImagePosition = () => {
+            if (imageRef.current) {
+                const height = imageRef.current.offsetHeight - 18;
+                imageRef.current.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;
+                imageRef.current.style.top = `-${Math.round((height - scrollPos) * (velocity + 0.1))}px`;
             }
         };
 
-        updateBackgroundPosition();
+        updateImagePosition();
     }, [scrollPos, velocity]);
 
-    return containerRef;
+    return imageRef;
 }
 
-export default useScrollingBackground;
+export default useParallax;

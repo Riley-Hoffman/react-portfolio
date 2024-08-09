@@ -3,21 +3,6 @@
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
   }
-  .hamburger[aria-expanded=true] .line:first-child, .hamburger[aria-expanded=true] .line:nth-child(4) {
-    position: absolute;
-    bottom: auto;
-    left: 15px;
-    right: auto;
-    top: 21px;
-    border: none;
-    width: 0;
-  }
-  .hamburger[aria-expanded=true] .line:nth-child(2) {
-    transform: rotate(45deg);
-  }
-  .hamburger[aria-expanded=true] .line:nth-child(3) {
-    transform: rotate(-45deg);
-  }
 }
 html {
   background-color: whitesmoke;
@@ -162,8 +147,10 @@ textarea:focus-visible {
 .overlay {
   position: relative;
 }
-.overlay:before {
+.overlay:not([class*="before:bg-"]):before {
   background-image: radial-gradient(rgba(255, 255, 255, 0.743) 0%, rgba(255, 255, 255, 0.498) 100%);
+}
+.overlay:before {
   content: "";
   height: 100%;
   width: 100%;
@@ -206,7 +193,6 @@ ol.numbered-icons li {
   position: relative;
 }
 ol.numbered-icons li:before {
-  background: #794e8d;
   border-radius: 50%;
   color: #fbfdff;
   content: counter(circle) "";
@@ -224,6 +210,9 @@ ol.numbered-icons li:before {
   left: -20px;
   right: auto;
   top: 50%;
+}
+ol.numbered-icons li:before:not([class*="before:bg-"]) {
+  background: #794e8d;
 }
 
 .banner-heading {
