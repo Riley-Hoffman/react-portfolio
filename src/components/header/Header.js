@@ -62,7 +62,7 @@ function Header() {
     ];
 
     return (
-        <header className="py-4 border-b-2 border-t-[34px] border-solid shadow[0_1px_3px_-3px_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999]">
+        <header className="py-4 border-b-2 border-t-[34px] border-solid sticky top-[-34px] right-[0] left-[0] shadow[0_1px_3px_-3px_black] bg-[#f4eef6] shadow-zinc gradient-border z-[999999]">
             <a href="#content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Skip To Content</a>
             <div className="max-w-screen-xl flex items-center">
                 <div className="logo">

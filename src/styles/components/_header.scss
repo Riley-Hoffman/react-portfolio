@@ -1,11 +1,5 @@
 @use "../abstracts/index" as *;
 
-header {
-  @include positioning(sticky, -34px, 0, auto, 0);
-  .closer {
-    @include positioning(fixed, 0, 0, 0, 0);
-  }
-}
 @media (max-width: 768px) {
   nav.menu ul {
     @include positioning(relative, 26px, 0, auto, auto);
