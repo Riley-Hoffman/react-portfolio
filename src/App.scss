@@ -130,7 +130,7 @@ textarea:focus-visible {
 		width: 100%;
 		@include positioning(absolute, 0, 0, 0, 0);
 	}
-	> * {
+	> *:not(.absolute) {
 		position: relative;
 	}
 }
@@ -171,12 +171,6 @@ ol.numbered-icons {
 			@include positioning(absolute, 50%, auto, auto, -20px);
 		}
 	}
-}
-.oval {
-	background: $lightPurple;
-	border-radius: 50%;
-	z-index: -1;
-	@include positioning(absolute, 5%, 0, 0, 0);
 }
 .banner-heading {
 	background-color: #eee2f3;

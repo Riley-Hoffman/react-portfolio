@@ -1,5 +1,0 @@
-@use "../abstracts/index" as *;
-
-.skills-list + .oval {
-  @include positioning(absolute, 3%, 5%, 3%, 5%);
-}

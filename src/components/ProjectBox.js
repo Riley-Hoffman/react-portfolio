@@ -47,7 +47,7 @@ const ProjectBox = ({
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
-        <div className="opacity-10 oval"></div>
+        <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval"></div>
       </div>
     </li>
   );

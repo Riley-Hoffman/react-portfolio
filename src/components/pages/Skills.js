@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import SkillItem from '../SkillItem';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
-import '../../styles/pages/_skills.scss';
 
 const Skills = () => {
   const skills = [
@@ -47,7 +46,7 @@ const Skills = () => {
                   />
                 ))}
               </ul>
-              <div className="opacity-10 oval"></div>
+              <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
           </div>
         </section>
       </div>
