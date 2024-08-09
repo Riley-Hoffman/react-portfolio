@@ -1,11 +1,4 @@
 @media (max-width: 768px) {
-  nav.menu ul {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: 0;
-    top: 26px;
-  }
   .hamburger .line {
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);

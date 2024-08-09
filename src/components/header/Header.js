@@ -72,7 +72,7 @@ function Header() {
                 </div>
                 <nav className="py-2 m-auto mr-0 h-14 menu">
                     <Hamburger expanded={handleHamburgerClick} />
-                    <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 peer-aria-expanded:scale-100 md:flex m-0 md:w-auto md:shadow-none md:scale-x-100" aria-label="Menu Links">
+                    <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 relative top-[26px] right-0 peer-aria-expanded:scale-100 md:flex m-0 md:w-auto md:shadow-none md:scale-x-100 md:static" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}

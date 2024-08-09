@@ -1,9 +1,6 @@
 @use "../abstracts/index" as *;
 
 @media (max-width: 768px) {
-  nav.menu ul {
-    @include positioning(relative, 26px, 0, auto, auto);
-  }
   .hamburger .line {
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
