@@ -70,7 +70,7 @@ function Header() {
                         <p className="pl-4 pr-0 m-0 font-urbanist font-medium text-lg text-center uppercase tracking-wide md:text-2xl"><span aria-hidden="true">Riley Hoffman</span><span className="sr-only">Back To Home Page</span></p>
                     </button>
                 </div>
-                <nav className="py-2 h-14 menu">
+                <nav className="h-14 py-2 menu">
                     <Hamburger expanded={handleHamburgerClick} />
                     <ul className="w-52 z-20 text-base shadow-[0_2px_16px_-9px_black] shadow-zinc origin-right transition-transform duration-200 ease-in-out scale-x-0 relative top-[26px] right-0 peer-aria-expanded:scale-100 m-0 md:w-auto md:shadow-none md:scale-x-100 md:static" aria-label="Menu Links">
                         {menuLinks.map(({ to, label }) => (
