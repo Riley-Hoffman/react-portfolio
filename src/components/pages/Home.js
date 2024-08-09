@@ -19,7 +19,7 @@ function Home() {
                 <img className="max-w-none w-[130vw] h-[120vh] absolute top-0 left-0 z-[-1] object-cover" src={clouds} alt="" width="1260" height="800" fetchprority="high" ref={imageRef} />
                 <div className="max-w-screen-xl min-h-[calc(100vh-213px)] py-[0.1px]">
                     <div className="m-[18vh_20px_106px_0] py-5 bg-[radial-gradient(ellipse_closest-side_at_50%_50%,_#fff_0%,_transparent)] text-left md:w-3/5 md:translate-y-[20px]">
-                        <h1 className="font-semibold mb-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
+                        <h1 className="font-semibold m-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
                         <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest font-medium typewriter">Web Developer</span></p>
                         <p className="mt-8 font-medium">I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
                     </div>
