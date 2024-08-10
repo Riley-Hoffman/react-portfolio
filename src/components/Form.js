@@ -37,7 +37,7 @@ function Form() {
     return (
         <form className="max-w-screen-md pt-5 px-5 pb-10" action="https://formspree.io/f/xwkyonza" method="POST">
             <fieldset>
-                <legend className="sr-only">Contact Form</legend>
+                <legend className="sr-only">Contact Info</legend>
                 <div className="pb-5">
                     <div className="pb-3 relative md:flex md:justify-between md:items-center md:gap-5">
                         <label htmlFor="name">Name:</label>
