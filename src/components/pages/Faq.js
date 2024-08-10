@@ -22,7 +22,7 @@ const accordionItems = [
         question: "What technologies and tools do you use?",
         answer: (
             <div>
-                <p>Depending on your project's needs, I can work with various technologies including HTML, <span translate='"no'>React</span>, <span translate='"no'>Vue.js</span>, PHP, and custom WordPressthemes. I adapt quickly to new systems and structures, ensuring seamless integration and efficiency.</p>
+                <p>Depending on your project's needs, I can work with various technologies including HTML, <span translate='no'>React</span>, <span translate='no'>Vue.js</span>, PHP, and custom WordPressthemes. I adapt quickly to new systems and structures, ensuring seamless integration and efficiency.</p>
             </div>
         )
     },
