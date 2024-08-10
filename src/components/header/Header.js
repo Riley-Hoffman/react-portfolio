@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useLayoutEffect, useState, useEffect } from 'react';
 import Hamburger from './Hamburger';
-import resumePdf from '../../assets/files/riley-hoffman-resume.pdf';
 import NavListItem from './NavListItem';
 
 function Header() {
@@ -76,7 +75,7 @@ function Header() {
                         {menuLinks.map(({ to, label }) => (
                             <NavListItem key={to} to={to} label={label} hide={hide} />
                         ))}
-                        <NavListItem isResume resumePdf={resumePdf} hide={hide} />
+                        <NavListItem isResume resumePdf={process.env.PUBLIC_URL + '/riley-hoffman-resume.pdf'} hide={hide} />
                     </ul>
                 </nav>
             </div>
