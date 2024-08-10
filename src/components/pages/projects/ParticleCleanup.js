@@ -193,8 +193,8 @@ const ParticleCleanup = () => {
             <li className="before:bg-[#737373]"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
             <li className="before:bg-[#a2652a]"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="w-[calc(100% - 40px)] h-[500px] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-            <canvas className="w-full absolute top-0 left-0 drop-shadow-[1px_1px_0px_#00000061]" ref={ref => refs.current.canvas = ref} />
+          <div ref={ref => refs.current.container = ref} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+            <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={ref => refs.current.canvas = ref} />
             <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
               {refs.current.allClean && (
                 <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center font-source-sans absolute p-0 m-0 text-2xl text-center bg-white completion-message" tabIndex="-1">

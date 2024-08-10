@@ -29,7 +29,7 @@ function Accordion({ items, label }) {
                         {item.question}
                     </button>
                     <div 
-                        className="px-5 transition-all duration-500 ease-in-out [&>*]:hidden peer-aria-expanded:[&>*]:block peer-aria-expanded:m-b-4 peer-aria-expanded:py-[2px]"
+                        className="px-5 transition-all duration-500 ease-in-out [&>*]:hidden peer-aria-expanded:[&>*]:block peer-aria-expanded:m-b-4 peer-aria-expanded:py-[0.125rem]"
                         tabIndex={-1}
                         ref={answer => (contentRefs.current[index] = answer)}
                     >

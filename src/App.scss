@@ -10,7 +10,7 @@ body {
 p,
 ul,
 ol {
-	font-size: 18px;
+	font-size: 1.125rem;
 	line-height: 1.5;
 }
 p,
@@ -20,8 +20,8 @@ h3,
 h4,
 h5,
 h6 {
-	padding: 0 20px;
-	margin: 20px 0;
+	padding: 0 1.25rem;
+	margin: 1.25rem 0;
 }
 h1,
 h2,
@@ -36,7 +36,7 @@ legend {
 }
 h1,
 h2 {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -46,8 +46,8 @@ li a {
 }
 ul,
 ol {
-	margin-top: 16px;
-	margin-bottom: 16px;
+	margin-top: 1rem;
+	margin-bottom: 1rem
 }
 fieldset {
 	border: none;
@@ -55,17 +55,17 @@ fieldset {
 }
 label {
 	display: inline-block;
-	font-size: 20px;
-	margin: 16px 0;
+	font-size: 1.25rem;
+	margin: 1rem 0;
 }
 input,
 textarea {
 	background-color: #f8f3f9;
-	border: 2px solid;
-	border-radius: 2px;
+	border: 0.125rem solid;
+	border-radius: 0.125rem;
 	font-family: $sourceSans;
-	font-size: 18px;
-	padding: 10px;
+	font-size: 1.125rem;
+	padding: 0.625rem;
 }
 *:not(.flex) > *[class*="max-"] {
 	margin-left: auto;
@@ -87,7 +87,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-	outline: 2px solid #6F00F7;
+	outline: 0.125rem solid #6F00F7;
 }
 .fa,
 .fa-regular,
@@ -141,35 +141,35 @@ textarea:focus-visible {
 	&:after {
 		background-color: $purple;
 		content: "";
-		height: 11px;
-		width: 22px;
-		@include positioning(absolute, auto, auto, -12px, 20px);
+		height: 0.688rem;
+		width: 1.375rem;
+		@include positioning(absolute, auto, auto, -0.75rem, 1.25rem);
 	}
 }
 .small-page {
-	padding: 30px 0 13vh;
+	padding: 1.875rem 0 13vh;
 }
 ol.numbered-icons {
 	counter-reset: circle;
 	list-style: none;
 	li {
 		counter-increment: circle;
-		padding: 12px 0 12px 20px;
+		padding: 0.75rem 0 0.75rem 1.25rem;
 		position: relative;
 		&:before {
 			border-radius: 50%;
 			color: #fbfdff;
 			content: counter(circle) "";
 			font-family: $poppins;
-			font-size: 17.5px;
+			font-size: 1.094rem;
 			font-weight: 600;
-			margin-right: 20px;
-			padding: 4px;
+			margin-right: 1.25rem;
+			padding: 0.25rem;
 			text-align: center;
 			transform: translateY(-50%);
-			height: 30px;
-			width: 30px;
-			@include positioning(absolute, 50%, auto, auto, -20px);
+			height: 1.875rem;
+			width: 1.875rem;
+			@include positioning(absolute, 50%, auto, auto, -1.25rem);
 			&:not([class*="before:bg-"]){
 				background: $purple;
 			}
@@ -178,9 +178,9 @@ ol.numbered-icons {
 }
 .banner-heading {
 	background-color: #eee2f3;
-	border-bottom: 2px solid;
-	margin: 0 0 30px;
-	padding: 40px 20px;
+	border-bottom: 0.125rem solid;
+	margin: 0 0 1.875rem;
+	padding: 2.5rem 1.25rem;
 }
 @media (prefers-contrast: more) and (forced-colors: none) {
 	html,
