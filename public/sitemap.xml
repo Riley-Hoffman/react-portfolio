@@ -13,6 +13,11 @@
     <lastmod>2024-07-31</lastmod>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://rileyhoffman.com/projects/particle-cleanup</loc>
+    <lastmod>2024-07-31</lastmod>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://rileyhoffman.com/skills</loc>
     <lastmod>2024-07-31</lastmod>
@@ -25,6 +30,16 @@
   </url>
   <url>
     <loc>https://rileyhoffman.com/contact</loc>
+    <lastmod>2024-07-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rileyhoffman.com/accessibility</loc>
+    <lastmod>2024-07-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rileyhoffman.com/nojs</loc>
     <lastmod>2024-07-31</lastmod>
     <priority>0.8</priority>
   </url>
