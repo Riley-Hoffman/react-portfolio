@@ -24,7 +24,7 @@ const ProjectBox = ({
     <li className={`relative my-28 border-t-8 border-solid gap-14 gradient-border ${inverted} ${animation} transition-all duration-1000 ease even:flex-row-reverse first:mt-12 md:flex group`} ref={el => elementsRef.current[el] = el}>
       <div className="pt-5 pb-10 basis-2/4 project-info">
         <h2 className="pb-4">{title}</h2>
-        <h3 className="pb-4 mb-8 text-lg" translate="no">{skills}</h3>
+        <p className="pb-4 mb-8 text-lg font-poppins" translate="no">{skills}</p>
         <p className="pb-4">{description}</p>
         <h4 className="mb-8">
           <span translate="no">{title}</span> Links:
