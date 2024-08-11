@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import '../../styles/animations/_typewriter.scss';
 import '../../styles/animations/_rotateSpin.scss';
@@ -7,10 +8,21 @@ import useParallax from '../../hooks/useParallax';
 function Home() {
     const imageRef = useParallax();
 
+    useEffect(() => {
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.href = clouds;
+        preloadLink.as = 'image';
+        document.head.appendChild(preloadLink);
+
+        return () => {
+            document.head.removeChild(preloadLink);
+        };
+    }, []);
+
     return (
         <>
             <Helmet>
-                <link rel="preload" href="../../assets/images/clouds.jpg" as="image" />
                 <meta property="og:title" content="Riley Hoffman - Web Developer" />
                 <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
                 <meta property="og:url" content="https://rileyhoffman.com" />
