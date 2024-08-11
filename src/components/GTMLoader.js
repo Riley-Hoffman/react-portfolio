@@ -21,7 +21,7 @@ const GTMLoader = ({ gtmId }) => {
 
     document.head.insertBefore(initScript, document.head.firstChild);
     document.head.insertBefore(script, document.head.firstChild);
-    document.body.appendChild(noscript);
+    document.body.insertBefore(noscript, document.body.firstChild);
 
     return () => {
       document.head.removeChild(script);
