@@ -79,8 +79,8 @@ const Projects = () => {
 
   const renderProjects = (projectsList, category) => (
     <>
-      <h2 className="md:text-3xl text-2xl pb-5 leading-normal">{category} Projects</h2>
-      <ul className="pb-5 overflow-hidden text-base" aria-label={`${category} Projects`}>
+      <h2 className="max-w-screen-xl text-2xl pb-5 leading-normal md:text-3xl">{category} Projects</h2>
+      <ul className="max-w-screen-xl pb-5 text-base" aria-label={`${category} Projects`}>
         {projectsList.map((project, index) => (
           <ProjectBox 
             key={index} 
@@ -103,7 +103,7 @@ const Projects = () => {
         <link rel="canonical" href="https://rileyhoffman.com/projects" />
       </Helmet>  
       <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Projects</h1>
-      <div className="max-w-screen-xl pt-5 pb-20">
+      <div className="pt-5 pb-20 overflow-hidden">
         {renderProjects(projects.freelance, 'Freelance')}
         {renderProjects(projects.personal, 'Personal')}
         {renderProjects(projects.juno, 'Juno College')}

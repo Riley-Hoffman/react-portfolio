@@ -8,6 +8,7 @@ import Skills from './components/pages/Skills';
 import Faq from './components/pages/Faq';
 import Contact from './components/pages/Contact';
 import Accessibility from './components/pages/Accessibility';
+import BackToTopButton from './components/BackToTopButton';
 import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { Route, Routes} from 'react-router-dom';
 import GTMLoader from './components/GTMLoader';
@@ -22,6 +23,7 @@ function App() {
           <Header />
           <main className="relative">
             <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
+            <BackToTopButton />
             <Routes>
               <Route path='/' element={
                 <> 
