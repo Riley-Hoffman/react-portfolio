@@ -10,11 +10,17 @@ import Contact from './components/pages/Contact';
 import Accessibility from './components/pages/Accessibility';
 import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { Route, Routes} from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+
+const GTMLoader = lazy(() => import('./components/GTMLoader'));
 
 function App() { 
   return (
     <HelmetProvider>
       <div className="App text-zinc">
+        <Suspense fallback={null}>
+          <GTMLoader />
+        </Suspense>
         <Header />
         <main className="relative">
           <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
