@@ -1,14 +1,34 @@
 import { useEffect } from 'react';
-import TagManager from 'react-gtm-module';
 
-const GTMLoader = () => {
+const GTMLoader = ({ gtmId }) => {
   useEffect(() => {
-    const tagManagerArgs = {
-      gtmId: 'G-STET7NGB4K',
-    };
+    if (!gtmId) return;
 
-    TagManager.initialize(tagManagerArgs);
-  }, []);
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+    script.async = true;
+
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+
+    const initScript = document.createElement('script');
+    initScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gtmId}');
+    `;
+
+    document.head.insertBefore(initScript, document.head.firstChild);
+    document.head.insertBefore(script, document.head.firstChild);
+    document.body.appendChild(noscript);
+
+    return () => {
+      document.head.removeChild(script);
+      document.head.removeChild(initScript);
+      document.body.removeChild(noscript);
+    };
+  }, [gtmId]);
 
   return null;
 };
