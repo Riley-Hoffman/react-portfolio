@@ -42,7 +42,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="pt-16 pb-10 bg-diamonds">
+            <section className="pt-16 pb-10 diamonds">
                 <div className="max-w-screen-xl">
                     <div className="items-center md:flex">
                         <div className="md:w-1/3">
