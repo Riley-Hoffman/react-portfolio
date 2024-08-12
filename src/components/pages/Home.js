@@ -11,13 +11,13 @@ function Home() {
         preloadLink.rel = 'preload';
         preloadLink.href = clouds;
         preloadLink.as = 'image';
-        document.head.appendChild(preloadLink);
+        document.head.insertBefore(preloadLink, document.head.firstChild.nextSibling.nextSibling);
 
         return () => {
             document.head.removeChild(preloadLink);
         };
     }, []);
-
+    
     const imageRef = useParallax();
 
 

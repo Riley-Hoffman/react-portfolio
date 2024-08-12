@@ -5,6 +5,18 @@ const useParallax = (velocity = 0.1) => {
     const [scrollPos, setScrollPos] = useState(0);
 
     useEffect(() => {
+        const updateImagePosition = () => {
+            if (imageRef.current) {
+                const height = imageRef.current.offsetHeight - 18;
+                imageRef.current.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;
+                imageRef.current.style.top = `-${Math.round((height - scrollPos) * (velocity + 0.1))}px`;
+            }
+        };
+
+        updateImagePosition();
+    }, [scrollPos, velocity])
+
+    useEffect(() => {
         let ticking = false;
 
         const updateScrollPosition = () => {
@@ -23,19 +35,7 @@ const useParallax = (velocity = 0.1) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
-
-    useEffect(() => {
-        const updateImagePosition = () => {
-            if (imageRef.current) {
-                const height = imageRef.current.offsetHeight - 18;
-                imageRef.current.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;
-                imageRef.current.style.top = `-${Math.round((height - scrollPos) * (velocity + 0.1))}px`;
-            }
-        };
-
-        updateImagePosition();
-    }, [scrollPos, velocity]);
+    }, []);;
 
     return imageRef;
 }
