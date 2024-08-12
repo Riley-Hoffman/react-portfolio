@@ -243,6 +243,7 @@ footer {
 .skills-list {
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 .skills-list li {
@@ -252,6 +253,15 @@ footer {
     text-align: center;
     width: 100%;
     max-width: 33.33%;
+}
+
+@media (max-width: 630px) {
+    .skills-list {
+        display: block;
+    }
+    .skills-list li {
+        max-width: 100%;
+    }
 }
 
 .projects {
