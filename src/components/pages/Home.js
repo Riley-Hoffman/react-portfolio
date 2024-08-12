@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import '../../styles/animations/_typewriter.scss';
 import '../../styles/animations/_rotateSpin.scss';
-import clouds from '../../assets/images/clouds.jpg';
+import clouds from '../../assets/images/clouds.webp';
 import useParallax from '../../hooks/useParallax';
 
 function Home() {

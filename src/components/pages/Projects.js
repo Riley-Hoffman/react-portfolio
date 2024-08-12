@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import ProjectBox from '../ProjectBox';
-import evangeline from '../../assets/images/evangeline-gentle-music.jpg';
-import particleCleanup from '../../assets/images/particle-cleanup.jpg';
-import outOfContext from '../../assets/images/out-of-context.jpg';
-import infinityCorkboard from '../../assets/images/infinity-corkboard.jpg';
-import weatherScout from '../../assets/images/weather-scout.jpg';
-import delicious from '../../assets/images/delicious.jpg';
+import evangeline from '../../assets/images/evangeline-gentle-music.webp';
+import particleCleanup from '../../assets/images/particle-cleanup.webp';
+import outOfContext from '../../assets/images/out-of-context.webp';
+import infinityCorkboard from '../../assets/images/infinity-corkboard.webp';
+import weatherScout from '../../assets/images/weather-scout.webp';
+import delicious from '../../assets/images/delicious.webp';
 
 const Projects = () => {
   const projects = {
