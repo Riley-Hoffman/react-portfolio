@@ -19,6 +19,7 @@ const Skills = () => {
     { skill: 'PHP', icon: 'devicon-php-plain', devicon: true, image: false, translate: 'yes' },
     { skill: 'Firebase', icon: 'devicon-firebase-plain', devicon: true, image: false, translate: 'no' },
     { skill: 'JSON', icon: 'devicon-json-plain', devicon: true, image: false, translate: 'yes' },
+    { skill: 'Netlify', icon: 'devicon-netlify-plain', devicon: true, image: false, translate: 'yes' },
   ];
 
   return (
@@ -31,10 +32,10 @@ const Skills = () => {
           <link rel="canonical" href="https://rileyhoffman.com/skills" />
           <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </Helmet>  
-        <section>
+        <section className="pb-16">
           <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Skills</h1>
           <div className="max-w-screen-xl relative">
-              <ul className="max-w-5xl pt-5 pb-16 mt-16 grid grid-cols-2 justify-items-center skills-list sm:grid-cols-3" aria-label="Skills">
+              <ul className="max-w-5xl pt-5 pb-12 mt-16 grid grid-cols-2 justify-items-center skills-list sm:grid-cols-3 md:grid-cols-4" aria-label="Skills">
                 {skills.map((skill, index) => (
                   <SkillItem
                     key={index}
