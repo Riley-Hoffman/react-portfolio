@@ -28,7 +28,7 @@ module.exports = {
         'cut-corners': 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
       },
       backgroundImage: {
-        'diamonds': "url('data:image/svg+xml,<svg id=\"patternId\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"a\" patternUnits=\"userSpaceOnUse\" width=\"50\" height=\"50\" patternTransform=\"scale(11) rotate(0)\"><rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"hsla(0, 0%, 96%, 1)\"/><path d=\"M50 25L37.5 50 25 25 37.5 0zm-25 0L12.5 50 0 25 12.5 0z\" stroke-width=\"1\" stroke=\"hsla(247, 46%, 88%, 1)\" fill=\"none\"/></pattern></defs><rect width=\"800%\" height=\"800%\" transform=\"translate(0,0)\" fill=\"url(%23a)\"/></svg>')",
+        'diamonds': "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" id=\"patternId\" width=\"100%\" height=\"100%\"%3E%3Cdefs%3E%3Cpattern id=\"a\" patternUnits=\"userSpaceOnUse\" width=\"50\" height=\"50\" patternTransform=\"scale(11) rotate(0)\"%3E%3Crect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"hsla(0, 0%, 96%, 1)\"/%3E%3Cpath d=\"M50 25L37.5 50 25 25 37.5 0zm-25 0L12.5 50 0 25 12.5 0z\" stroke-width=\"1\" stroke=\"hsla(247, 46%, 88%, 1)\" fill=\"none\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\"800%25\" height=\"800%25\" transform=\"translate(0,0)\" fill=\"url(%23a)\"/%3E%3C/svg%3E')", 
       }
     },
   },
