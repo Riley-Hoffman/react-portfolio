@@ -26,44 +26,30 @@ function App() {
             <BackToTopButton />
             <Routes>
               <Route path='/' element={
-                <> 
-                  <Home/>
-                </>
+                <Home/>
               }/>
               <Route path="/projects" element={
-                <>          
-                  <Projects/> 
-                </>
+                <Projects/> 
               } 
               />
               <Route path="/skills" element={
-                <>          
-                  <Skills/> 
-                </>
+                <Skills/> 
               } 
               />
               <Route path="/faq" element={
-                <>          
-                  <Faq/> 
-                </>
+                <Faq/> 
               } 
               />
               <Route path="/contact" element={
-                <>          
-                  <Contact/> 
-                </>
+                <Contact/> 
               } 
               />
               <Route path="/accessibility" element={
-                <>          
-                  <Accessibility/> 
-                </>
+                <Accessibility/> 
               } 
               />
               <Route path="/projects/particle-cleanup" element={
-                <>          
-                  <ParticleCleanup/> 
-                </>
+                <ParticleCleanup/> 
               } 
               />
             </Routes>

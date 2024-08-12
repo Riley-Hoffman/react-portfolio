@@ -6,8 +6,6 @@ import clouds from '../../assets/images/clouds.webp';
 import useParallax from '../../hooks/useParallax';
 
 function Home() {
-    const imageRef = useParallax();
-
     useEffect(() => {
         const preloadLink = document.createElement('link');
         preloadLink.rel = 'preload';
@@ -19,6 +17,9 @@ function Home() {
             document.head.removeChild(preloadLink);
         };
     }, []);
+    
+    const imageRef = useParallax();
+
 
     return (
         <>
