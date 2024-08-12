@@ -23,8 +23,20 @@ module.exports = {
         'inconsolata': ['"Inconsolata", monospace'],
         'source-sans': ['"Source Sans 3", sans-serif'],
         'urbanist': ['"Urbanist", sans-serif'],
+      },
+      clipPath: {
+        'cut-corners': 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities, theme }) {
+      const clipPathUtilities = theme('clipPath');
+      const newUtilities = Object.keys(clipPathUtilities).reduce((acc, key) => {
+        acc[`.clip-path-${key}`] = { clipPath: clipPathUtilities[key] };
+        return acc;
+      }, {});
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 }
