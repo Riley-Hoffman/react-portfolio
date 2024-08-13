@@ -2,7 +2,6 @@
 
 @media (max-width: 768px) {
   .hamburger .line {
-    border-image-slice: 1;
     border-image-source: linear-gradient(90deg, $gradientLightPurple 0%, $gradientPink 50%, $gradientPurple 70%);
   }
 }
