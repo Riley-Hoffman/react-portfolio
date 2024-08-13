@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import SkillItem from '../SkillItem';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
+import SkillItem from '../SkillItem';
 
 const Skills = () => {
   const skills = [

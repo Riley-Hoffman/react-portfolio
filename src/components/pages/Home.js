@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clouds from '../../assets/images/clouds.webp';
 import cloudsMobile from '../../assets/images/clouds-mobile.webp';
 import headshot from '../../assets/images/headshot.webp';
 import useParallax from '../../hooks/useParallax';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Home() {
     useEffect(() => {
