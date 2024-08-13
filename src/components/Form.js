@@ -34,15 +34,18 @@ function Form() {
         }
     };
 
+ 
+
+    
     return (
         <form className="max-w-screen-md pt-5 px-5 pb-10" action="https://formspree.io/f/xwkyonza" method="POST">
             <fieldset>
                 <legend className="sr-only">Contact Info</legend>
                 <div className="pb-5">
                     <div className="pb-3 relative md:flex md:justify-between md:items-center md:gap-5">
-                        <label htmlFor="name">Name:</label>
+                        <label className="inline-block text-xl my-4" htmlFor="name">Name:</label>
                         <input
-                            className="w-full gradient-border"
+                            className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white"
                             enterKeyHint="next"
                             id="name"
                             name="name"
@@ -54,9 +57,9 @@ function Form() {
                         />
                         <br className="inline md:hidden" />
                         <br className="inline md:hidden" />
-                        <label htmlFor="email">Email:</label>
+                        <label className="inline-block text-xl my-4" htmlFor="email">Email:</label>
                         <input
-                            className="w-full gradient-border"
+                            className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white"
                             enterKeyHint="next"
                             id="email"
                             name="email"
@@ -74,9 +77,9 @@ function Form() {
                             </p>
                         }
                     </div>
-                    <label htmlFor="message">Message:</label>
+                    <label className="inline-block text-xl my-4" htmlFor="message">Message:</label>
                     <textarea
-                        className="w-full gradient-border"
+                        className="w-full p-2 border-2 bg-[#f8f3f9] rounded-sm font-source-sans text-lg gradient-border contrast-more:bg-white"
                         id="message"
                         name="message"
                         placeholder="Write me a message.."

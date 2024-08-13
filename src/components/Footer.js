@@ -4,7 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
 
     return (
-        <footer className="min-h-[5.563rem] border-t border-solid bg-pink-200 gradient-border">
+        <footer className="min-h-[5.563rem] border-t border-solid bg-pink-200 gradient-border contrast-more:bg-white">
             <h2 className="sr-only">Footer</h2>
             <div className="max-w-screen-xl py-7 md:items-center md:justify-between md:flex">
                 <p className="px-3 py-1 m-0 font-urbanist text-base">Riley Hoffman | Web Developer 

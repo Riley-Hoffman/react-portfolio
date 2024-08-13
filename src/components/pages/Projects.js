@@ -102,7 +102,7 @@ const Projects = () => {
         <meta property="og:url" content="https://rileyhoffman.com/projects" />
         <link rel="canonical" href="https://rileyhoffman.com/projects" />
       </Helmet>  
-      <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Projects</h1>
+      <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white">Projects</h1>
       <div className="pt-5 pb-20 overflow-hidden">
         {renderProjects(projects.freelance, 'Freelance')}
         {renderProjects(projects.personal, 'Personal')}

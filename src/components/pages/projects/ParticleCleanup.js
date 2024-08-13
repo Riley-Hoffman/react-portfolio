@@ -183,7 +183,7 @@ const ParticleCleanup = () => {
         <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
       </Helmet>  
       <div className="pb-16">
-        <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:leading-normal md:text-5xl">Particle Cleanup Game</h1>
+        <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:leading-normal md:text-5xl contrast-more:bg-white">Particle Cleanup Game</h1>
         <div className="max-w-screen-md">
           <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
           <p>How quickly can you clear all the particles from the board using your cursor or finger?</p>
