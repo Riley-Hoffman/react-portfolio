@@ -12,6 +12,7 @@ function Home() {
         preloadLink.rel = 'preload';
         preloadLink.href = clouds;
         preloadLink.as = 'image';
+        preloadLink.fetchPriority = "high";
         document.head.insertBefore(preloadLink, document.head.firstChild.nextSibling.nextSibling);
 
         return () => {
