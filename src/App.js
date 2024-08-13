@@ -11,13 +11,16 @@ import Accessibility from './components/pages/Accessibility';
 import BackToTopButton from './components/BackToTopButton';
 import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { Route, Routes} from 'react-router-dom';
-import GTMLoader from './components/GTMLoader';
+import { Suspense, lazy } from 'react';
 
 function App() { 
+  const LazyGTMComponent = lazy(() => import('./components/GTMLoader'));
   const gtmId = 'G-STET7NGB4K';
   return (
     <>
-      <GTMLoader gtmId={gtmId} />
+      <Suspense fallback={null}>
+        {gtmId && <LazyGTMComponent gtmId={gtmId} />}
+      </Suspense>
       <HelmetProvider>
         <div className="App text-zinc">
           <Header />
