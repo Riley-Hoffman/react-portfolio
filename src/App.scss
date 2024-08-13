@@ -82,16 +82,7 @@ textarea:focus-visible {
 		position: relative;
 	}
 }
-.separator {
-	position: relative;
-	&:after {
-		background-color: $purple;
-		content: "";
-		height: 0.688rem;
-		width: 1.375rem;
-		@include positioning(absolute, auto, auto, -0.75rem, 1.25rem);
-	}
-}
+
 ol.numbered-icons {
 	counter-reset: circle;
 	list-style: none;

@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'wood': "url('/src/assets/images/wood-background.webp')",
-        'diamonds': "url('/src/assets/images/diamonds.svg')"
+        'wood': "url('/src/images/wood-background.webp')",
+        'diamonds': "url('/src/images/diamonds.svg')"
       },
       colors: {
         zinc: '#12121c',
