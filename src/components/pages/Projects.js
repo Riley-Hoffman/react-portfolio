@@ -30,7 +30,7 @@ const Projects = () => {
         gitUrl: '',
         imgUrl: particleCleanup,
         imgAlt: 'Screenshot of Particle Cleanup Game.',
-        animation: 'trigger-on-scroll md:motion-safe:left-[-100%] [&[data-active="true"]]:left-0'
+        animation: 'trigger-on-scroll md:motion-safe:left-[-200%] [&[data-active="true"]]:left-0'
       }
     ],
     juno: [
@@ -42,7 +42,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/dearJuno/outofContext',
         imgUrl: outOfContext,
         imgAlt: 'Screenshot of the Out Of Context app.',
-        animation: 'trigger-on-scroll md:motion-safe:right-[-100%] [&[data-active="true"]]:right-0'
+        animation: 'trigger-on-scroll md:motion-safe:right-[-200%] [&[data-active="true"]]:right-0'
       },
       {
         title: 'Infinity Corkboard',
@@ -52,7 +52,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Riley-Hoffman/riley-hoffman-project-three',
         imgUrl: infinityCorkboard,
         imgAlt: 'Screenshot of the Infinity Corkboard app.',
-        animation: 'trigger-on-scroll md:motion-safe:left-[-100%] [&[data-active="true"]]:left-0'
+        animation: 'trigger-on-scroll md:motion-safe:left-[-200%] [&[data-active="true"]]:left-0'
       },
       {
         title: 'Weather Scout',
@@ -62,7 +62,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Linda-Columbus-Riley-Hoffman-Developers/weatherScout',
         imgUrl: weatherScout,
         imgAlt: 'Screenshot of the Weather Scout app.',
-        animation: 'trigger-on-scroll md:motion-safe:right-[-100%] [&[data-active="true"]]:right-0'
+        animation: 'trigger-on-scroll md:motion-safe:right-[-200%] [&[data-active="true"]]:right-0'
       },
       {
         title: 'Delicious',
@@ -72,7 +72,7 @@ const Projects = () => {
         gitUrl: 'https://github.com/Riley-Hoffman/riley_hoffman_project_1_delicious',
         imgUrl: delicious,
         imgAlt: 'Screenshot of Delicious, a PSD conversion project.',
-        animation: 'trigger-on-scroll md:motion-safe:left-[-100%] [&[data-active="true"]]:left-0'
+        animation: 'trigger-on-scroll md:motion-safe:left-[-200%] [&[data-active="true"]]:left-0'
       }
     ]
   };
