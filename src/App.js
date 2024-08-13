@@ -8,25 +8,27 @@ import Skills from './components/pages/Skills';
 import Faq from './components/pages/Faq';
 import Contact from './components/pages/Contact';
 import Accessibility from './components/pages/Accessibility';
-import BackToTopButton from './components/BackToTopButton';
 import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { Route, Routes} from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 function App() { 
-  const LazyGTMComponent = lazy(() => import('./components/GTMLoader'));
+  const LazyGTMLoader = lazy(() => import('./components/GTMLoader'));
+  const LazyBackToTopButton = lazy(() => import('./components/BackToTopButton'));
   const gtmId = 'G-STET7NGB4K';
   return (
     <>
       <Suspense fallback={null}>
-        {gtmId && <LazyGTMComponent gtmId={gtmId} />}
+        {gtmId && <LazyGTMLoader gtmId={gtmId} />}
       </Suspense>
       <HelmetProvider>
         <div className="App text-zinc">
           <Header />
           <main className="relative">
             <a href="#content" id="content" className="sr-only z-[999999] button focus:not-sr-only focus:p-4 focus:left-4 focus:absolute">Start of main content</a>
-            <BackToTopButton />
+            <Suspense fallback={null}>
+              <LazyBackToTopButton />
+            </Suspense>
             <Routes>
               <Route path='/' element={
                 <Home/>
