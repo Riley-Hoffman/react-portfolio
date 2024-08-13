@@ -4,7 +4,6 @@ import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Particle from '../../../classes/Particle';
 import useParticleCleanupEvents from '../../../hooks/useParticleCleanupEvents';
-import '../../../styles/components/_particleCleanup.scss';
 
 const ParticleCleanup = () => {
   const refs = useRef({
@@ -193,7 +192,7 @@ const ParticleCleanup = () => {
             <li className="before:bg-[#737373]"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
             <li className="before:bg-[#a2652a]"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
           </ol>
-          <div ref={ref => refs.current.container = ref} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+          <div ref={ref => refs.current.container = ref} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-wood bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
             <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={ref => refs.current.canvas = ref} />
             <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
               {refs.current.allClean && (
@@ -203,7 +202,7 @@ const ParticleCleanup = () => {
                     {medalDetails && (
                       <span className="text-xl leading-normal md:text-2xl md:leading-normal" aria-live="polite">
                         {medalDetails.text} <br />
-                        <FontAwesomeIcon className="block mx-auto text-6xl" icon={faMedal} color={medalDetails.color} />
+                        <FontAwesomeIcon className="block mx-auto text-6xl animate-[spin_2.4s_infinite]" icon={faMedal} color={medalDetails.color} />
                       </span>
                     )}
                   </span>

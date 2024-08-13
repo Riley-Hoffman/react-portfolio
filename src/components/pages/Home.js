@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import '../../styles/animations/_typewriter.scss';
-import '../../styles/animations/_rotateSpin.scss';
 import clouds from '../../assets/images/clouds.webp';
 import headshot from '../../assets/images/headshot.webp';
 import useParallax from '../../hooks/useParallax';
@@ -37,7 +35,7 @@ function Home() {
                 <div className="max-w-screen-xl min-h-[74vh] py-[0.1px]">
                     <div className="m-[18vh_1.25rem_6.625rem_0] py-5 bg-[radial-gradient(ellipse_closest-side_at_50%_50%,_#fff_0%,_transparent)] text-left md:w-3/5 md:translate-y-[1.25rem]">
                         <h1 className="font-semibold m-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
-                        <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest font-medium typewriter">Web Developer</span></p>
+                        <p className="mt-0 separator"><span className="inline-block w-40 m-o mr-auto border-r-2 border-purple-200 border-solid whitespace-nowrap overflow-hidden tracking-widest font-medium motion-safe:animate-typetext">Web Developer</span></p>
                         <p className="mt-8 font-medium">I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers.</p>
                     </div>
                 </div>
@@ -54,7 +52,7 @@ function Home() {
                             <p>Captivated by the potential for creativity and continous growth, I completed Web Development Bootcamp at Juno College of Technology in 2021.</p> 
                             <p>I believe that by prioritizing accessibility in our work as web developers we make our contributions to the online world more meaningful.</p>
                             <p className="mt-10">
-                                <a className="inline-block button group" href="https://www.linkedin.com/in/riley-hoffman-014623213" target="_blank" rel="noopener noreferrer">
+                                <a className="inline-block motion-safe:hover:animate-[wiggle_1s] button group" href="https://www.linkedin.com/in/riley-hoffman-014623213" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon aria-hidden="true" className="p-2 box-content text-5xl text-zinc bg-pink-200 group-hover:bg-zinc group-hover:text-pink-200" icon={faLinkedinIn} /> 
                                     <span className="px-6">Follow me on LinkedIn</span>
                                 </a>

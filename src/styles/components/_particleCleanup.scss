@@ -1,8 +1,0 @@
-@use "../abstracts/index" as *;
-
-.particle-cleanup {
-    background-image: url("../../assets/images/wood-background.webp");
-    .completion-message svg {
-        animation: spin 2.4s infinite;
-    }
-}
