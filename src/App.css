@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+  .hamburger .line {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
+  }
+}
 html {
   background-color: whitesmoke;
 }
@@ -42,15 +48,16 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 0.125rem solid #6F00F7;
 }
-.svg-inline--fa {
-  vertical-align: middle;
+
+.fa,
+.fa-regular,
+.fa-solid,
+.fa-brands {
+  font-family: "Font Awesome 6 Free";
 }
 
-@media (max-width: 768px) {
-  .hamburger .line {
-    border-image-slice: 1;
-    border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
-  }
+.svg-inline--fa {
+  vertical-align: middle;
 }
 
 /* Utility Classes */
