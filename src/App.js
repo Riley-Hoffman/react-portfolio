@@ -12,10 +12,22 @@ import ParticleCleanup from './components/pages/projects/ParticleCleanup';
 import { Route, Routes} from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
+const LazyGTMLoader = lazy(() => import('./components/GTMLoader'));
+const LazyBackToTopButton = lazy(() => import('./components/BackToTopButton'));
+
+const routes = [
+  { path: '/', element: <Home /> },
+  { path: '/projects', element: <Projects /> },
+  { path: '/skills', element: <Skills /> },
+  { path: '/faq', element: <Faq /> },
+  { path: '/contact', element: <Contact /> },
+  { path: '/accessibility', element: <Accessibility /> },
+  { path: '/projects/particle-cleanup', element: <ParticleCleanup /> }
+];
+
 function App() { 
-  const LazyGTMLoader = lazy(() => import('./components/GTMLoader'));
-  const LazyBackToTopButton = lazy(() => import('./components/BackToTopButton'));
   const gtmId = 'G-STET7NGB4K';
+
   return (
     <>
       <Suspense fallback={null}>
@@ -30,33 +42,9 @@ function App() {
               <LazyBackToTopButton />
             </Suspense>
             <Routes>
-              <Route path='/' element={
-                <Home/>
-              }/>
-              <Route path="/projects" element={
-                <Projects/> 
-              } 
-              />
-              <Route path="/skills" element={
-                <Skills/> 
-              } 
-              />
-              <Route path="/faq" element={
-                <Faq/> 
-              } 
-              />
-              <Route path="/contact" element={
-                <Contact/> 
-              } 
-              />
-              <Route path="/accessibility" element={
-                <Accessibility/> 
-              } 
-              />
-              <Route path="/projects/particle-cleanup" element={
-                <ParticleCleanup/> 
-              } 
-              />
+              {routes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
             </Routes>
           </main>
           <Footer/>
