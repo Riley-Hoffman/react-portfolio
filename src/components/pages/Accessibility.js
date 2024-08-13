@@ -11,7 +11,7 @@ function Accessibility() {
                 <link rel="canonical" href="https://rileyhoffman.com/accessibility" />
             </Helmet>     
             <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Accessibility</h1>
-            <div className="max-w-screen-md small-page"> 
+            <div className="max-w-screen-md p-[1.875rem_0_13vh]"> 
                 <h2>My Commitment</h2>
                 <p>As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users. I continuously strive to improve the user experience by adhering to and exceeding the accessibility standards outlined by the Web Content Accessibility Guidelines (WCAG).</p>
                 <h2>Third-Party Content</h2>

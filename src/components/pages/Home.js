@@ -45,13 +45,13 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="pt-16 pb-10 diamonds">
+            <section className="pt-16 pb-10 bg-diamonds contrast-more:bg-none">
                 <div className="max-w-screen-xl">
                     <div className="items-center md:flex">
                         <div className="md:w-1/3">
                             <img className="w-96 h-96 max-w-full object-cover border-x-2 clip-path-cut-corners" src={headshot} alt="" width="450" height="530" />
                         </div>
-                        <div className="py-6 my-6 bg-[whitesmoke] border-2 border-[#d6d2ee] md:w-2/3 lg:px-24">
+                        <div className="py-6 my-6 bg-[whitesmoke] border-2 border-[#d6d2ee] md:w-2/3 lg:px-24 contrast-more:bg-white">
                             <h2>My Journey</h2>
                             <p>My career journey began in customer service, tech support, and various non-profit organizations. Although these roles were valuable, I was eager to find a path that would truly ignite my passion and offer more engaging skills. This pursuit led me to web development through one of these non-profits.</p> 
                             <p>Captivated by the potential for creativity and continous growth, I completed Web Development Bootcamp at Juno College of Technology in 2021.</p> 

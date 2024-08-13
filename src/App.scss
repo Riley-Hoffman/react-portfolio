@@ -146,9 +146,6 @@ textarea:focus-visible {
 		@include positioning(absolute, auto, auto, -0.75rem, 1.25rem);
 	}
 }
-.small-page {
-	padding: 1.875rem 0 13vh;
-}
 ol.numbered-icons {
 	counter-reset: circle;
 	list-style: none;
@@ -182,10 +179,8 @@ ol.numbered-icons {
 	margin: 0 0 1.875rem;
 	padding: 2.5rem 1.25rem;
 }
-.diamonds {
-    background-image: url("./assets/images/diamonds.svg")
-}
-@media (prefers-contrast: more) and (forced-colors: none) {
+
+@media (prefers-contrast: more) {
 	html,
 	input,
 	textarea,
@@ -200,13 +195,7 @@ ol.numbered-icons {
 	::placeholder {
 		color: black;
 	}
-	.oval {
-		display: none;
-	}
 	.overlay:before {
 		background-color: #ffffff57;
-	}
-	.diamonds { 
-		background-image: none;
 	}
 }

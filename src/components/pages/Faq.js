@@ -46,7 +46,7 @@ function Faq() {
                 <link rel="canonical" href="https://rileyhoffman.com/faq" />
             </Helmet>     
             <h1 className="text-center text-3xl leading-normal banner-heading gradient-border inverted md:text-5xl md:leading-normal">Frequently Asked Questions</h1>
-            <div className="max-w-screen-md small-page"> 
+            <div className="max-w-screen-md p-[1.875rem_0_13vh]"> 
                 <Accordion items={accordionItems} label="Frequently Asked Questions" />
             </div>
         </>

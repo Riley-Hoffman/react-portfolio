@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'wood': "url('/src/assets/images/wood-background.webp')",
+        'diamonds': "url('/src/assets/images/diamonds.svg')"
       },
       colors: {
         zinc: '#12121c',
