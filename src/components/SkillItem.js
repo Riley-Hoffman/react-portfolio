@@ -10,7 +10,7 @@ const SkillItem = ({ skill, icon, devicon, image, translate }) => {
         ) : image ? (
           <img src={wcag} className="w-20" alt="" width="2013" height="474" />
         ) : (
-          <FontAwesomeIcon aria-hidden="true" className="text-5xl" icon={icon} />
+          <FontAwesomeIcon className="text-5xl" icon={icon} />
         )}
       </div>
       <p className="mt-1" translate={translate}>{skill}</p>
