@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import Accordion from '../Accordion';
+import Accordion from './components/Accordion';
 
 const accordionItems = [
     {

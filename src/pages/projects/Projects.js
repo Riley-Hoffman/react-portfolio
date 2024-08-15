@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import ProjectBox from '../ProjectBox';
+import ProjectBox from './components/ProjectBox';
 import evangeline from '../../images/evangeline-gentle-music.webp';
 import particleCleanup from '../../images/particle-cleanup.webp';
 import outOfContext from '../../images/out-of-context.webp';

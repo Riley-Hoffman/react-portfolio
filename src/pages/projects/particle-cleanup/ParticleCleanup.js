@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Particle from '../../../classes/Particle';
-import useParticleCleanupEvents from '../../../hooks/useParticleCleanupEvents';
+import Particle from './classes/Particle';
+import useParticleCleanupEvents from './hooks/useParticleCleanupEvents';
 
 const ParticleCleanup = () => {
   const refs = useRef({

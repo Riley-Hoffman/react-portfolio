@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CoverImage from '../CoverImage';
+import CoverImage from './components/CoverImage';
 import clouds from '../../images/clouds.webp';
 import cloudsMobile from '../../images/clouds-mobile.webp';
 import headshot from '../../images/headshot.webp';

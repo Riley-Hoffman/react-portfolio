@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useTriggerOnScroll from '../hooks/useTriggerOnScroll';
+import useTriggerOnScroll from '../../../hooks/useTriggerOnScroll';
 
 
 const ProjectBox = ({ 

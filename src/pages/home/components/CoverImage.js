@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useParallax from '../hooks/useParallax';
+import useParallax from '../../../hooks/useParallax';
 
 const CoverImage = ({srcImg, mobileImg, width, height}) => {
     
