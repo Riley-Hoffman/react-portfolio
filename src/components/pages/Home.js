@@ -1,31 +1,12 @@
-import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CoverImage from '../CoverImage';
 import clouds from '../../images/clouds.webp';
 import cloudsMobile from '../../images/clouds-mobile.webp';
 import headshot from '../../images/headshot.webp';
-import useParallax from '../../hooks/useParallax';
 
 function Home() {
-    useEffect(() => {
-        const preloadImage = () => {
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            const preloadLink = document.createElement('link');
-            preloadLink.rel = 'preload';
-            preloadLink.as = 'image';
-            preloadLink.href = isMobile ? cloudsMobile : clouds;
-            preloadLink.fetchPriority = "high";
-            document.head.insertBefore(preloadLink, document.head.firstChild.nextSibling.nextSibling);
-            return () => {
-                document.head.removeChild(preloadLink);
-            };
-        };
-        preloadImage();
-    }, []);
-    
-    const imageRef = useParallax();
-
 
     return (
         <>
@@ -36,7 +17,7 @@ function Home() {
                 <link rel="canonical" href="https://rileyhoffman.com" />
             </Helmet>
             <section className="border-b-4 border-solid gradient-border overlay overflow-hidden before:bg-[radial-gradient(rgba(255,255,255,0.743)_0%,_rgba(255,255,255,0.498)_100%),_linear-gradient(-30deg,_rgba(0,247,255,0.08)_0%,_#0000_15%,_#0000_80%,_rgba(0,247,255,0.08)_100%)]">
-                <img className="max-w-none w-[130vw] h-[120vh] absolute z-[-1] object-cover" src={clouds} srcSet={`${cloudsMobile} 1200w, ${clouds} 1920w`} sizes="(max-width: 768px) 100vw, 130vw" alt="" width="1920" height="1080" fetchpriority="high" ref={imageRef} />
+                <CoverImage width="1920" height="1080" srcImg={clouds} mobileImg={cloudsMobile} />
                 <div className="max-w-screen-xl min-h-[74vh] py-[0.1px]">
                     <div className="m-[18vh_1.25rem_6.625rem_0] py-5 bg-[radial-gradient(ellipse_closest-side_at_50%_50%,_#fff_0%,_transparent)] text-left md:w-3/5 md:translate-y-[1.25rem]">
                         <h1 className="font-semibold m-0 text-3xl leading-normal md:text-4xl md:leading-normal">Riley Hoffman</h1>
