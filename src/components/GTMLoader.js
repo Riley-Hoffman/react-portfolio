@@ -16,7 +16,7 @@ const GTMLoader = ({ gtmId }) => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${gtmId}', {cookie_flags: 'SameSite=None;Secure'});
+      gtag('config', '${gtmId}', {cookie_flags: 'max-age=7200;SameSite=None;Secure'});
     `;
 
     document.head.insertBefore(initScript, document.head.firstChild);
