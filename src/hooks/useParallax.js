@@ -6,6 +6,10 @@ const useParallax = (velocity = 0.1) => {
     const [position, setPosition] = useState({ top: 0, left: 0 });
 
     useEffect(() => {
+        setScrollPos(window.scrollY);
+    }, []);
+
+    useEffect(() => {
         const updateImagePosition = () => {
             if (imageRef.current) {
                 const rect = imageRef.current.getBoundingClientRect();
