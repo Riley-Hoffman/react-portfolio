@@ -1,3 +1,4 @@
+import './index.css';
 import './App.scss';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/header/Header';
