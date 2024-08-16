@@ -43,7 +43,7 @@ const useParallax = (velocity = 0.1) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);;
+    }, []);
 
     return {imageRef, position};
 }
