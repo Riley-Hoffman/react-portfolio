@@ -7,7 +7,8 @@ const useParallax = (velocity = 0.1) => {
     useEffect(() => {
         const updateImagePosition = () => {
             if (imageRef.current) {
-                const height = imageRef.current.offsetHeight - 18;
+                const rect = imageRef.current.getBoundingClientRect();
+                const height = rect.height;
                 imageRef.current.style.left = `-${Math.round((height - scrollPos) * velocity)}px`;
                 imageRef.current.style.top = `-${Math.round((height - scrollPos) * (velocity + 0.1))}px`;
             }
