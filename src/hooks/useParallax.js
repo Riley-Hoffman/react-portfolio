@@ -10,7 +10,6 @@ const useParallax = (velocity = 0.1) => {
             if (imageRef.current) {
                 const rect = imageRef.current.getBoundingClientRect();
                 const height = rect.height;
-                console.log(rect.left, rect.top)
                 setPosition({
                     left: -Math.round((height - scrollPos) * velocity),
                     top: -Math.round((height - scrollPos) * (velocity + 0.1)),
