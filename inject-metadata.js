@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const path = require('path');
 
 const metadata = {
   'projects': {
@@ -49,7 +50,7 @@ const meta = metadata[page] || {
     url: 'https://rileyhoffman.com'
 };
 
-const indexHtmlPath = 'public/index.html';
+const indexHtmlPath = path.join(__dirname, 'build', 'index.html')
 let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 
 indexHtml = indexHtml.replace(/<title>.*<\/title>/, `<title>${meta.title}</title>`);
@@ -60,3 +61,5 @@ indexHtml = indexHtml.replace(/<meta property="og:url" content=".*">/, `<meta pr
 indexHtml = indexHtml.replace(/<link rel="canonical" href=".*" \/>/, `<link rel="canonical" href="${meta.url}" />`);
 
 fs.writeFileSync(indexHtmlPath, indexHtml, 'utf-8');
+
+console.log(`Metadata for ${page} page injected into build/index.html`);
