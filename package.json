@@ -25,7 +25,6 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "postbuild": "node inject-metadata.js",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
