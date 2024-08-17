@@ -2,7 +2,7 @@
   NODE_VERSION = "16.20.0"
 
 [build]
-command = "node inject-metadata.js && npm run build"
+command = "npm run build:deploy"
 publish = "build"
   
 [[redirects]]

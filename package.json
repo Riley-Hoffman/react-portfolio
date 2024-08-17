@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build:deploy": "npm run build && npm run inject-metadata",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
