@@ -5,7 +5,7 @@ function NavListItem({ to, label, hide, isResume, resumePdf }) {
     const commonClasses = 'w-full inline-block py-3 pr-5 pl-14 tracking-wider whitespace-nowrap button md:py-2 md:px-4 md:inline-block md:w-auto hover:[&.button]:bg-pink-200 hover:brightness-90';
     const hiddenClass = hide ? 'hidden' : '';    
     return (
-        <li className="md:inline block">
+        <li className="block md:inline ">
             {isResume ? (
                 <a className={`button ${commonClasses} ${hiddenClass}`} href={resumePdf} target="_blank" rel="noopener noreferrer" >
                     Resume
