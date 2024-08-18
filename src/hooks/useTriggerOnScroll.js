@@ -14,11 +14,12 @@ const useTriggerOnScroll = (force = 0) => {
     };
 
     const updateTriggerOnScroll = () => {
-      const elements = document.querySelectorAll('.trigger-on-scroll');
-      elements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        const distance = element.dataset.distance ?? 800;
-        updateElementActivation(element, rect, distance);
+      requestAnimationFrame(() => {
+        elementsRef.current.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          const distance = parseInt(element.dataset.distance ?? "800", 10);
+          updateElementActivation(element, rect, distance);
+        });
       });
     };
 
