@@ -22,7 +22,7 @@ NavListItem.propTypes = {
     label: PropTypes.string,
     hide: PropTypes.bool,
     isResume: PropTypes.bool,
-    resume: PropTypes.string
+    resumePdf: PropTypes.string
 };
 
 NavListItem.defaultProps = {
@@ -30,7 +30,7 @@ NavListItem.defaultProps = {
     label: '',
     hide: false,
     isResume: false,
-    resume: ''
+    resumePdf: ''
 };
 
 export default NavListItem;
