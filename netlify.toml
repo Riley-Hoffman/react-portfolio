@@ -5,7 +5,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  
+
 [[redirects]]
   from = "/server.php"
   to = "/server.php"
@@ -17,7 +17,7 @@ for = "/*"
   Referrer-Policy = "no-referrer"
   X-Content-Type-Options = "nosniff"
   X-Frame-Options = "DENY"
-  Access-Control-Allow-Origin = "*"
+  Access-Control-Allow-Origin = "http://www.rileyhoffman.000.pe/"
   Access-Control-Allow-Methods = "GET, POST, OPTIONS"
   Access-Control-Allow-Headers = "Content-Type"
 
