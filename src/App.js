@@ -1,11 +1,11 @@
 import './index.css';
 import './App.scss';
+import { Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { Route, Routes} from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/Footer';
 import RouteRenderer from './components/navigation/RouteRenderer';
-import { Route, Routes} from 'react-router-dom';
-import { Suspense, lazy } from 'react';
 
 const LazyGTMLoader = lazy(() => import('./components/GTMLoader'));
 const LazyBackToTopButton = lazy(() => import('./components/BackToTopButton'));
