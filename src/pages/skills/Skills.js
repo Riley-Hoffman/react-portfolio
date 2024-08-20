@@ -23,7 +23,7 @@ const Skills = () => {
   ];
 
   return (
-    <div>
+    <>
       <Helmet>
           <title>Skills - Riley Hoffman - Web Developer</title>
           <meta property="og:title" content="Skills - Riley Hoffman - Web Developer" />
@@ -50,7 +50,7 @@ const Skills = () => {
               <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
           </div>
         </section>
-      </div>
+      </>
   );
 };
 
