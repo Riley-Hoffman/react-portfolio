@@ -26,8 +26,8 @@ a,
 a > *,
 .button {
 	transition:
-		color $timingFunction,
-		background-color $timingFunction;
+		color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out;
 }
 a:focus-visible,
 button:focus-visible,
