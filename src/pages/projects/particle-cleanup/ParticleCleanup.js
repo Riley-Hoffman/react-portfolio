@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useRef, useCallback, useState, useMemo } from 'react';
 import { faMedal, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -174,51 +173,42 @@ const ParticleCleanup = () => {
   }, [initializeAnimation]);
 
   return (
-    <>
-      <Helmet>
-        <title>Particle Cleanup Game - Riley Hoffman - Web Developer</title>
-        <meta property="og:title" content="Particle Cleanup Game - Riley Hoffman - Web Developer" />
-        <meta name="description" content="How quickly can you clear all the particles from the board using your cursor or finger?" />
-        <meta property="og:url" content="https://rileyhoffman.com/projects/particle-cleanup" />
-        <link rel="canonical" href="https://rileyhoffman.com/projects/particle-cleanup" />
-      </Helmet>  
-      <div className="pb-16">
-        <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:leading-normal md:text-5xl contrast-more:bg-white">Particle Cleanup Game</h1>
-        <div className="max-w-screen-md">
-          <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
-          <p>How quickly can you clear all the particles from the board using your cursor or finger?</p>
-          <ol className="pr-5 pl-10 text-xl leading-normal numbered-icons sm:flex md:text-2xl md:leading-normal" aria-label="Medal Criteria">
-            <li className="before:bg-[#8a7400]"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
-            <li className="before:bg-[#737373]"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
-            <li className="before:bg-[#a2652a]"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
-          </ol>
-          <div ref={ref => refs.current.container = ref} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-wood bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
-            <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={ref => refs.current.canvas = ref} />
-            <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
-              {refs.current.allClean && (
-                <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center font-source-sans absolute p-0 m-0 text-2xl text-center bg-white completion-message" tabIndex="-1">
-                  All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
-                  <span className="font-extrabold uppercase" aria-live="polite">
-                    {medalDetails && (
-                      <span className="text-xl leading-normal md:text-2xl md:leading-normal" aria-live="polite">
-                        {medalDetails.text} <br />
-                        <FontAwesomeIcon className="block mx-auto text-6xl animate-[spin_2.4s_infinite]" icon={faMedal} color={medalDetails.color} />
-                      </span>
-                    )}
-                  </span>
-                </p>
-              )}
-            </div>
+    <div className="pb-16">
+      <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:leading-normal md:text-5xl contrast-more:bg-white">Particle Cleanup Game</h1>
+      <div className="max-w-screen-md">
+        <h2 translate="no"><span translate="no">React</span>, JSX, SCSS</h2>
+        <p>How quickly can you clear all the particles from the board using your cursor or finger?</p>
+        <ol className="pr-5 pl-10 text-xl leading-normal numbered-icons sm:flex md:text-2xl md:leading-normal" aria-label="Medal Criteria">
+          <li className="before:bg-[#8a7400]"><span className="sr-only">Gold, Less Than 15 seconds.</span><span aria-hidden="true"><FontAwesomeIcon icon={faLessThan} /> 15s &nbsp;&nbsp;</span></li>
+          <li className="before:bg-[#737373]"><span className="sr-only">Silver, 15 to 20 seconds.</span><span aria-hidden="true">15s-20s &nbsp;&nbsp;</span></li>
+          <li className="before:bg-[#a2652a]"><span className="sr-only">Bronze, 21 to 25 seconds.</span><span aria-hidden="true">21s-25s &nbsp;&nbsp;</span></li>
+        </ol>
+        <div ref={ref => refs.current.container = ref} className="h-[31.25rem] mx-5 pt-28 overflow-hidden rounded-sm border-2 border-solid border-pink-200 bg-wood bg-cover bg-right cursor-grabbing [&.done]:cursor-default particle-cleanup overlay" role="application" aria-label="Cleanup Game" tabIndex="-1">
+          <canvas className="w-full absolute top-0 left-0 drop-shadow-[0.063rem_0.063rem_0_#00000061]" ref={ref => refs.current.canvas = ref} />
+          <div className="w-full h-full border-1 boder-solid border-pink-200 absolute top-0 left-0">
+            {refs.current.allClean && (
+              <p id="completionMessage" className="w-full h-full flex flex-col justify-center items-center font-source-sans absolute p-0 m-0 text-2xl text-center bg-white completion-message" tabIndex="-1">
+                All clean! <small aria-live="polite">Time taken: <span className="font-semibold" aria-live="polite">{state.time} seconds</span></small>
+                <span className="font-extrabold uppercase" aria-live="polite">
+                  {medalDetails && (
+                    <span className="text-xl leading-normal md:text-2xl md:leading-normal" aria-live="polite">
+                      {medalDetails.text} <br />
+                      <FontAwesomeIcon className="block mx-auto text-6xl animate-[spin_2.4s_infinite]" icon={faMedal} color={medalDetails.color} />
+                    </span>
+                  )}
+                </span>
+              </p>
+            )}
           </div>
-          {state.gameInProgress && !refs.current.allClean && (
-            <p className={`sr-only ${state.cursorMessageRead ? '' : 'hidden'}`} aria-live="polite">
-              {state.cursorMessage}
-            </p>
-          )}
-          <p><button className="p-3 button" onClick={reloadAnimation}>Play Again</button></p>
         </div>
+        {state.gameInProgress && !refs.current.allClean && (
+          <p className={`sr-only ${state.cursorMessageRead ? '' : 'hidden'}`} aria-live="polite">
+            {state.cursorMessage}
+          </p>
+        )}
+        <p><button className="p-3 button" onClick={reloadAnimation}>Play Again</button></p>
       </div>
-    </>
+    </div>
     );
   };
 

@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import ProjectBox from './components/ProjectBox';
 import evangeline from '../../images/evangeline-gentle-music.webp';
 import particleCleanup from '../../images/particle-cleanup.webp';
@@ -94,14 +93,7 @@ const Projects = () => {
   );
 
   return (
-    <>
-      <Helmet>
-        <title>Projects - Riley Hoffman - Web Developer</title>
-        <meta property="og:title" content="Projects - Riley Hoffman - Web Developer" />
-        <meta name="description" content="View past projects by Riley Hoffman - Web Developer." />
-        <meta property="og:url" content="https://rileyhoffman.com/projects" />
-        <link rel="canonical" href="https://rileyhoffman.com/projects" />
-      </Helmet>  
+    <> 
       <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Projects</h1>
       <div className="pt-5 pb-20 overflow-hidden">
         {renderProjects(projects.freelance, 'Freelance')}

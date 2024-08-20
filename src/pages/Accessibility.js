@@ -1,16 +1,6 @@
-import { Helmet } from 'react-helmet-async';
-
 function Accessibility() {
     return (
-        <>
-            <Helmet>
-                <title>Accessibility - Riley Hoffman - Web Developer</title>
-                <meta property="og:title" content="Accessibility - Riley Hoffman - Web Developer" />
-                <meta name="description" content="As a dedicated web developer, I am committed to creating an accessible and inclusive website experience for all users." />
-                <meta property="og:url" content="https://rileyhoffman.com/accessibility" />
-                <link rel="canonical" href="https://rileyhoffman.com/accessibility" />
-            </Helmet>     
-            
+        <>            
             <h1 className="text-center text-3xl leading-normal bg-[#eee2f3] border-b-2 mb-7 mt-0 py-10 px-5 gradient-border inverted md:text-5xl md:leading-normal contrast-more:bg-white" aria-live="polite">Accessibility</h1>
             <div className="max-w-screen-md p-[1.875rem_0_13vh]"> 
                 <h2>My Commitment</h2>

@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CoverImage from './components/CoverImage';
@@ -10,12 +9,6 @@ function Home() {
 
     return (
         <>
-            <Helmet>
-                <meta property="og:title" content="Riley Hoffman - Web Developer" />
-                <meta name="description" content="I'm a front-end developer with a passion for building accessible and responsive web applications. I quickly learn new concepts and love adding to my growing skill set. I am a proactive problem solver who enjoys writing future-proof, understandable code that fosters collaboration with other developers." />
-                <meta property="og:url" content="https://rileyhoffman.com" />
-                <link rel="canonical" href="https://rileyhoffman.com" />
-            </Helmet>
             <section className="border-b-4 border-solid gradient-border overlay overflow-hidden before:bg-[radial-gradient(rgba(255,255,255,0.743)_0%,_rgba(255,255,255,0.498)_100%),_linear-gradient(-30deg,_rgba(0,247,255,0.08)_0%,_#0000_15%,_#0000_80%,_rgba(0,247,255,0.08)_100%)]">
                 <CoverImage width="1920" height="1080" srcImg={clouds} mobileImg={cloudsMobile} />
                 <div className="max-w-screen-xl min-h-[74vh] py-[0.1px]">

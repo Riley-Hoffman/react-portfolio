@@ -23,13 +23,8 @@ const Skills = () => {
   ];
 
   return (
-    <div>
+    <>
       <Helmet>
-          <title>Skills - Riley Hoffman - Web Developer</title>
-          <meta property="og:title" content="Skills - Riley Hoffman - Web Developer" />
-          <meta name="description" content="My skills. Riley Hoffman - Web Developer." />
-          <meta property="og:url" content="https://rileyhoffman.com/skills" />
-          <link rel="canonical" href="https://rileyhoffman.com/skills" />
           <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </Helmet>  
         <section className="pb-16">
@@ -50,7 +45,7 @@ const Skills = () => {
               <div className="bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[3%] right-[5%] bottom-[3%] left-[5%] oval"></div>
           </div>
         </section>
-      </div>
+      </>
   );
 };
 
