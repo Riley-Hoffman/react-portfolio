@@ -1,5 +1,3 @@
-import './index.css';
-import './_App.scss';
 import { Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Route, Routes} from 'react-router-dom';

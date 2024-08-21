@@ -1,30 +1,9 @@
 html {
     background-color: #f8f3f9;
 }
-
 body {
     color: #12121c;
-    font-family: "Inconsolata", monospace, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
-p,
-ul,
-ol {
-    font-size: 1.125rem;
-    line-height: 1.5;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    padding: 0 1.25rem;
-    margin: 1.25rem 0;
-}
-
 h1,
 h2,
 h3,
@@ -33,76 +12,52 @@ h5,
 h6,
 label,
 legend {
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
 }
-
 h1,
 h2 {
     font-weight: 400;
-    line-height: 1.5;
 }
-
 h1 {
     font-size: 2rem;
 }
-
 h2 {
     font-size: 1.7rem;
 }
-
 h3 {
     font-size: 1.5rem;
 }
-
-p a,
-li a {
-    text-decoration: underline;
-}
-
-ul,
-ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
 header {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
 }
-
 section>div {
     max-width: 62.5rem;
     margin-left: auto;
     margin-right: auto;
     padding: 1.25rem 0;
 }
-
 form {
     margin: 0 auto;
     max-width: 50rem;
     padding: 0 1.25rem;
     text-align: left;
 }
-
 form button {
     font-size: 1.25rem;
     margin: 1.25rem 0;
 }
-
 fieldset {
     border: 0;
     margin-bottom: 1.25rem;
     padding: 0;
 }
-
 label {
     display: inline-block;
     font-size: 1.25rem;
     margin: 1rem 0;
 }
-
 input,
 textarea {
     background-color: #f8f3f9;
@@ -113,47 +68,23 @@ textarea {
     padding: 0.625rem;
     width: 100%;
 }
-
 .flex {
     display: flex;
 }
-
-*::placeholder {
-    color: #73738c;
-    font-weight: 300;
-    opacity: 1;
-}
-
-a,
-a>*,
-.button {
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 0.125rem solid #6F00F7;
-}
-
 footer {
     text-align: center;
 }
-
 .disclaimer {
     background-image: linear-gradient(90deg, #655d98 0%, #ae4971 50%, #794e8e 70%);
     color: white;
     margin: 0;
     padding: 1.25rem;
 }
-
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
 }
-
 .skills-list li {
     display: block;
     font-weight: 500;
@@ -162,7 +93,6 @@ footer {
     width: 100%;
     max-width: 33.33%;
 }
-
 @media (max-width: 630px) {
     .skills-list {
         display: block;
@@ -171,16 +101,13 @@ footer {
         max-width: 100%;
     }
 }
-
 .projects {
     list-style: none;
     padding: 0;
 }
-
 .projects li {
     padding: 2rem;
 }
-
 .contact {
     text-align: center;
 }
@@ -199,34 +126,10 @@ footer {
     white-space: nowrap;
     width: 1px;
 }
-
 .button {
-    background-color: #12121c;
     border: none;
-    color: #e5d4ed;
-    font-family: inherit;
-    text-decoration: none;
     padding: 0.5rem;
 }
-
-.button:hover,
-.button:focus-visible {
-    background-color: #eee3f2;
-    color: #12121c;
-}
-
-.gradient-border {
-    border-image-slice: 1;
-}
-
-.gradient-border:not(.inverted) {
-    border-image-source: linear-gradient(90deg, #a8a1d9 0%, #ae4971 50%, #794e8e 70%);
-}
-
-.gradient-border.inverted {
-    border-image-source: linear-gradient(90deg, #794e8e, #ae4971 50%, #a8a1d9 70%);
-}
-
 .banner-heading {
     background-color: #eee2f3;
     border-style: solid;
