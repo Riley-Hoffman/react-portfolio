@@ -18,7 +18,7 @@ function App() {
   // useEffect(() => {
   //   const fetchData = () => {
   //     const currentPage = window.location.pathname; // Get the current page path
-  //     fetch(`https://rileyhoffman.tiiny.io/?page=${encodeURIComponent(currentPage)}`)
+  //     fetch(`https://tiiny.host/server.php?page=${encodeURIComponent(currentPage)}`)
   //       .then((response) => response.json())
   //       .then((data) => {
   //         setMessage(data.message);
