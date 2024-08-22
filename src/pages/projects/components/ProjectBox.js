@@ -65,10 +65,8 @@ const ProjectBox = ({
           loading={isFirst ? 'eager' : 'lazy'}
           fetchpriority={isFirst ? 'high' : 'auto'}
         />
-        <div 
-          className={`bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${inverted ? 'group-odd:left-[-100%]' : 'group-even:right-[-100%]'}`}
-        />
       </div>
+      <div className={`bg-purple-100 rounded-[50%] z-[-1] opacity-10 absolute top-[5%] right-0 bottom-0 left-0 oval ${inverted ? 'group-odd:left-[-100%]' : 'group-even:right-[-100%]'}`} />
     </li>
   );
 };
