@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "homepage": "https://rileyhoffman.com",
-  "description": "A portofolio site for web developer Riley Hoffman",
+  "description": "A portfolio site for web developer Riley Hoffman made with React, and Tailwind.",
   "main": "index.js",
   "repository": {
     "type": "git",
